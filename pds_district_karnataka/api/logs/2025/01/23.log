@@ -1,0 +1,34 @@
+[2025-01-23 00:28:00] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"10_FPS141_FRice":"yes","10_FPS143_FRice":"yes","10_FPS228_FRice":"yes","10_FPS540_FRice":"yes","10_FPS141_Rice":"yes","10_FPS143_Rice":"yes","10_FPS228_Rice":"yes","10_FPS540_Rice":"yes"}
+[2025-01-23 00:28:00] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"10_FPS141_FRice":"yes","10_FPS143_FRice":"yes","10_FPS228_FRice":"yes","10_FPS540_FRice":"yes","10_FPS141_Rice":"yes","10_FPS143_Rice":"yes","10_FPS228_Rice":"yes","10_FPS540_Rice":"yes"}
+[2025-01-23 00:28:00] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"10_FPS141_FRice":"yes","10_FPS143_FRice":"yes","10_FPS228_FRice":"yes","10_FPS540_FRice":"yes","10_FPS141_Rice":"yes","10_FPS143_Rice":"yes","10_FPS228_Rice":"yes","10_FPS540_Rice":"yes"}
+[2025-01-23 00:28:00] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"10_FPS141_FRice":"yes","10_FPS143_FRice":"yes","10_FPS228_FRice":"yes","10_FPS540_FRice":"yes","10_FPS141_Rice":"yes","10_FPS143_Rice":"yes","10_FPS228_Rice":"yes","10_FPS540_Rice":"yes"}
+[2025-01-23 00:28:00] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"10_FPS141_FRice":"yes","10_FPS143_FRice":"yes","10_FPS228_FRice":"yes","10_FPS540_FRice":"yes","10_FPS141_Rice":"yes","10_FPS143_Rice":"yes","10_FPS228_Rice":"yes","10_FPS540_Rice":"yes"}
+[2025-01-23 00:28:00] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"10_FPS141_FRice":"yes","10_FPS143_FRice":"yes","10_FPS228_FRice":"yes","10_FPS540_FRice":"yes","10_FPS141_Rice":"yes","10_FPS143_Rice":"yes","10_FPS228_Rice":"yes","10_FPS540_Rice":"yes"}
+[2025-01-23 00:28:00] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"10_FPS141_FRice":"yes","10_FPS143_FRice":"yes","10_FPS228_FRice":"yes","10_FPS540_FRice":"yes","10_FPS141_Rice":"yes","10_FPS143_Rice":"yes","10_FPS228_Rice":"yes","10_FPS540_Rice":"yes"}
+[2025-01-23 00:28:00] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"10_FPS141_FRice":"yes","10_FPS143_FRice":"yes","10_FPS228_FRice":"yes","10_FPS540_FRice":"yes","10_FPS141_Rice":"yes","10_FPS143_Rice":"yes","10_FPS228_Rice":"yes","10_FPS540_Rice":"yes"}
+[2025-01-23 12:52:02] district User -> Save Data | approve district change yes ->admin@pds| 10 - FPS141
+[2025-01-23 12:52:02] User -> Save Data | district user change id ->admin@pds| 10 - FPS143| 336
+[2025-01-23 12:54:15] district User -> Save Data | approve district change yes ->admin@pds| 10 - FPS228
+[2025-01-23 12:54:15] User -> Save Data | district user change id ->admin@pds| 10 - FPS540| 35
+[2025-01-23 13:03:26] district User -> Save Data | approve district change yes ->Bagalkote@pds| 10 - FPS141
+[2025-01-23 13:03:26] User -> Save Data | district user change id ->Bagalkote@pds| 10 - FPS143| 35
+[2025-01-23 13:04:47] district User -> Save Data | approve district change yes ->Bagalkote@pds| 10 - FPS228
+[2025-01-23 13:04:47] district User -> Save Data | approve district change yes ->Bagalkote@pds| 10 - FPS540
+[2025-01-23 13:04:47] district User -> Save Data | approve district change yes ->Bagalkote@pds| 10 - FPS228
+[2025-01-23 13:04:47] district User -> Save Data | approve district change yes ->Bagalkote@pds| 10 - FPS540
+[2025-01-23 14:57:51] district User -> Save Data | implemeneted ->Bagalkote@pds| 10 - FPS141
+[2025-01-23 14:57:51] district User -> Save Data | implemeneted ->Bagalkote@pds| 10 - FPS143
+[2025-01-23 14:58:29] district User -> Save Data | implemeneted ->Bagalkote@pds| 10 - FPS228
+[2025-01-23 14:58:29] district User -> Save Data | implemeneted ->Bagalkote@pds| 10 - FPS540
+[2025-01-23 14:58:29] district User -> Save Data | implemeneted ->Bagalkote@pds| 10 - FPS228
+[2025-01-23 14:58:29] district User -> Save Data | implemeneted ->Bagalkote@pds| 10 - FPS540
+[2025-01-23 15:28:40] User -> Send  Message ->admin@pds| Requested JSON -> {"uid":"c308f10133"} | Bagalkote@pds
+[2025-01-23 15:31:30] district User -> Save Data | approve district change yes ->Ballari@pds| 10 - FPS554
+[2025-01-23 15:31:31] district User -> Save Data | approve district change yes ->Ballari@pds| 10 - FPS805
+[2025-01-23 15:31:31] district User -> Save Data | approve district change yes ->Ballari@pds| 10 - FPS554
+[2025-01-23 15:31:31] district User -> Save Data | approve district change yes ->Ballari@pds| 10 - FPS805
+[2025-01-23 15:31:36] district User -> Save Data | implemeneted ->Ballari@pds| 10 - FPS554
+[2025-01-23 15:31:37] district User -> Save Data | implemeneted ->Ballari@pds| 10 - FPS805
+[2025-01-23 15:31:37] district User -> Save Data | implemeneted ->Ballari@pds| 10 - FPS554
+[2025-01-23 15:31:37] district User -> Save Data | implemeneted ->Ballari@pds| 10 - FPS805
+[2025-01-23 15:31:39] User -> Send  Message ->admin@pds| Requested JSON -> {"uid":"bfc8d1c992"} | Ballari@pds

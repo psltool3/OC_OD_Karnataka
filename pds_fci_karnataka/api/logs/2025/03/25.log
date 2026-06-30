@@ -1,0 +1,7 @@
+[2025-03-25 11:23:54] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"admin","district":"Belagavi","newpassword":"admin@123"} | admin
+[2025-03-25 11:24:51] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"admin123","district":"Bangalore","newpassword":"admin@123"} | admin123
+[2025-03-25 11:40:44] User -> Cost for legl Added ->admin@pds| Requested JSON -> {"cost_gfyIp22F19cvwh":"-500"} | 2024 | sept
+[2025-03-25 11:41:23] User -> Cost for legl Added ->admin@pds| Requested JSON -> {"cost_gfyIp22F19cvwh":"-500"} | 2024 | sept
+[2025-03-25 11:42:28] User -> Cost for leg1 Reset ->admin@pds| Requested JSON -> {"id":"gfyIp22F19cvwh"} | 
+[2025-03-25 11:43:06] User -> Cost for legl Added ->admin@pds| Requested JSON -> {"cost_gfyIp22F19cvwh":"-500"} | 2024 | sept
+[2025-03-25 11:43:11] User -> Cost for legl Added ->admin@pds| Requested JSON -> {"cost_gfyIp22F19cvwh":"-500"} | 2024 | sept

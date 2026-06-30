@@ -1,0 +1,4 @@
+[2025-02-17 16:37:30] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"admin@pds1","district":"admin","newpassword":"saurabhsf"} | admin@pds1
+[2025-02-17 16:42:25] User -> Verify User ->admin@pds| Requested JSON -> {"uid":"67a89ea957231"} | Jammu@pds
+[2025-02-17 16:42:37] User -> Verify User ->admin@pds| Requested JSON -> {"uid":"67a89ea957231"} | Jammu@pds
+[2025-02-17 16:42:45] User -> Delete User ->admin@pds| Requested JSON -> {"uid":"67a89dd73dfe4"} | Anantnag@pds

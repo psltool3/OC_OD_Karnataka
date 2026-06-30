@@ -1,0 +1,97 @@
+[2025-01-22 10:02:56] User -> admin@pds| Requested JSON -> {"name":"Bagalkot","uid":"'6640537fc4c53'"}
+[2025-01-22 10:10:03] User -> admin@pds| Requested JSON -> {"uid":"67907644d2ac1"}
+[2025-01-22 10:11:03] User -> admin@pds| Requested JSON -> {"name":"Shallu"}
+[2025-01-22 10:12:42] User -> admin@pds| Requested JSON -> {"uid":"679076df6ef90"}
+[2025-01-22 10:16:20] User -> District Name Editadmin@pds| Requested JSON -> {"name":"Bagalkotrtg","uid":"'6640537fc4c53'"}
+[2025-01-22 10:17:25] User -> District Name Edit->admin@pds| Requested JSON -> {"name":"Bagalkot","uid":"'6640537fc4c53'"}
+[2025-01-22 10:18:25] User -> District added ->admin@pds| Requested JSON -> {"name":"Aman"}
+[2025-01-22 10:18:40] User -> District deleted -> admin@pds| Requested JSON -> {"uid":"6790789927a62"}
+[2025-01-22 11:11:16] User -> District Name Edit->admin@pds| Requested JSON -> {"name":"Bagalkotyh","uid":"'6640537fc4c53'"}
+[2025-01-22 11:11:35] User -> District deleted -> admin@pds| Requested JSON -> {"uid":"6640537fc4c53"} | 
+[2025-01-22 11:11:49] User -> District added ->admin@pds| Requested JSON -> {"name":"Himanshu"}
+[2025-01-22 11:16:28] User -> District deleted -> admin@pds| Requested JSON -> {"uid":"6790851daa71d"} | Himanshu
+[2025-01-22 11:31:57] User -> FPS added ->admin@pds| Requested JSON -> {"name":"Shallu","type":"Model FPS","latitude":"34.5","longitude":"78.9","district":"Ballari","id":"678","demand":"78","demand_rice":"78"}
+[2025-01-22 11:32:19] User -> FPS Data Edit->admin@pds| Requested JSON -> {"name":"Shallubhasin","uniqueid":"FPS_679089d5a2f","active":"1","type":"Model FPS","latitude":"34.5","longitude":"78.9","district":"Ballari","id":"678","demand":"78","demand_rice":"78"}
+[2025-01-22 11:32:36] User -> District deleted -> admin@pds| Requested JSON -> {"uid":"FPS_679089d5a2f"} | 
+[2025-01-22 11:36:31] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_6733c12101f"} | 
+[2025-01-22 11:40:20] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_6733c120ed0"} | 
+[2025-01-22 11:40:36] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_6733c120e1d"} | 
+[2025-01-22 11:45:17] User -> FPS added ->admin@pds| Requested JSON -> {"name":"Aam","type":"Model FPS","latitude":"45.6","longitude":"78.6","district":"Ballari","id":"67","demand":"89","demand_rice":"89"}
+[2025-01-22 11:46:11] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_67908cf529e"} | 
+[2025-01-22 11:57:44] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_6733c120d58"} | 
+[2025-01-22 12:09:02] User -> Bulk FPS Add ->| Requested JSON -> []
+[2025-01-22 12:16:45] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_67909286838"} | 
+[2025-01-22 12:21:40] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_67909286838"} | 
+[2025-01-22 12:21:55] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_6790928668e"} | 
+[2025-01-22 12:23:38] User -> Bulk FPS Add ->| Requested JSON -> []
+[2025-01-22 12:24:04] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_679095f25e9"} | 
+[2025-01-22 12:28:55] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_679095f24b1"} | 
+[2025-01-22 12:30:51] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_679095f24b1"} | 
+[2025-01-22 12:31:37] User -> Bulk FPS Add ->| Requested JSON -> []
+[2025-01-22 12:31:47] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_679097d0f2a"} | ujh
+[2025-01-22 12:32:21] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"FPS_679097d0d99"} | anahaj
+[2025-01-22 12:48:37] User -> Warehouse added ->admin@pds| Requested JSON -> {"name":"Arun","type":"motorable","latitude":"34.5","storage":"700000","district":"Ballari","id":"8970","warehousetype":"swc","longitude":"56.7"}
+[2025-01-22 12:49:14] User -> Warehouse Edit ->admin@pds| Requested JSON -> {"name":"Mudholtg","uniqueid":"WH_6733bff8adaa","active":"1","type":"motorable","latitude":"16.355331","storage":"200001","district":"Ballari","id":"7","warehousetype":"swc","longitude":"75.276515"}
+[2025-01-22 12:49:34] User -> Warehouse deleted -> admin@pds| Requested JSON -> {"uid":"WH_6733bff91f5f"} | A
+[2025-01-22 17:55:17] User -> FPS deleted -> admin@pds| Requested JSON -> {"uid":"all"} | 
+[2025-01-22 17:56:07] User -> District added ->admin@pds| Requested JSON -> {"name":"Bagalkot"}
+[2025-01-22 17:57:56] User -> District Name Edit->admin@pds| Requested JSON -> {"name":"Bagalkote","uid":"'6790e3df15d6a'"}
+[2025-01-22 17:58:20] User -> FPS Added -> | Gss Gundanapalle95 Singalagi
+[2025-01-22 17:58:20] User -> FPS Added -> | Vivekanand Y M Bhagavati
+[2025-01-22 17:58:20] User -> FPS Added -> | DURGADEVI GRAM MANDAL SHIRUR TANDA
+[2025-01-22 17:58:21] User -> FPS Added -> | P K P S Bank Ltd., Malali
+[2025-01-22 17:58:21] User -> FPS Added -> | Srimahalingeshwaravividhodeshagala Seva Sangh Mugalakhod
+[2025-01-22 17:58:21] User -> FPS Added -> | F.P.S. YuvakaSangha halkundi
+[2025-01-22 17:58:21] User -> FPS Added -> | Hjuo
+[2025-01-22 18:11:33] User -> FPS Edit -> | Gss Gundanapalle95 Singalagi
+[2025-01-22 18:11:33] User -> FPS Edit -> | Vivekanand Y M Bhagavati
+[2025-01-22 18:11:33] User -> FPS Edit -> | DURGADEVI GRAM MANDAL SHIRUR TANDA
+[2025-01-22 18:11:33] User -> FPS Edit -> | P K P S Bank Ltd., Malali
+[2025-01-22 18:11:33] User -> FPS Edit -> | Srimahalingeshwaravividhodeshagala Seva Sangh Mugalakhod
+[2025-01-22 18:11:34] User -> FPS Edit -> | F.P.S. YuvakaSangha halkundi
+[2025-01-22 18:11:34] User -> FPS Edit -> | Hjuo
+[2025-01-22 18:25:03] User -> Warehouse deleted -> admin@pds| Requested JSON -> {"uid":"all"} | 
+[2025-01-22 18:27:08] User -> Warehouse Added -> | Mudholtg
+[2025-01-22 18:27:09] User -> Warehouse Added -> | GULEDAGUDD
+[2025-01-22 18:27:11] User -> Warehouse Added -> | BALLARI
+[2025-01-22 18:27:12] User -> Warehouse Added -> | KURUGODU
+[2025-01-22 18:27:12] User -> Warehouse Added -> | A
+[2025-01-22 18:27:13] User -> Warehouse Added -> | A
+[2025-01-22 18:27:13] User -> Warehouse Added -> | Test
+[2025-01-22 18:27:13] User -> Warehouse Added -> | Test
+[2025-01-22 18:27:13] User -> Warehouse Added -> | Test
+[2025-01-22 18:27:14] User -> Warehouse Added -> | Arun
+[2025-01-22 18:27:14] User -> Warehouse Added -> | Pawan
+[2025-01-22 18:27:59] User -> Warehouse Edit -> | Mudholtg
+[2025-01-22 18:28:01] User -> Warehouse Edit -> | GULEDAGUDD
+[2025-01-22 18:28:01] User -> Warehouse Edit -> | BALLARI
+[2025-01-22 18:28:01] User -> Warehouse Edit -> | KURUGODU
+[2025-01-22 18:28:01] User -> Warehouse Edit -> | A
+[2025-01-22 18:28:01] User -> Warehouse Edit -> | A
+[2025-01-22 18:28:01] User -> Warehouse Edit -> | Test
+[2025-01-22 18:28:02] User -> Warehouse Edit -> | Test
+[2025-01-22 18:28:02] User -> Warehouse Edit -> | Test
+[2025-01-22 18:28:02] User -> Warehouse Edit -> | Arun
+[2025-01-22 18:28:02] User -> Warehouse Edit -> | Pawan
+[2025-01-22 18:33:19] User -> Warehouse added ->admin@pds| Requested JSON -> {"uid":"66ed4e14c2f00"}
+[2025-01-22 18:33:23] User -> Warehouse added ->admin@pds| Requested JSON -> {"uid":"66ed4f8794f53"}
+[2025-01-22 18:38:01] User -> Verify User ->admin@pds| Requested JSON -> {"uid":"66ed524755f2c"}
+[2025-01-22 18:38:40] User -> Verify User ->admin@pds| Requested JSON -> {"uid":"66ed524755f2c"}
+[2025-01-22 18:38:44] User -> Verify User ->admin@pds| Requested JSON -> {"uid":"66ed5370ebec6"}
+[2025-01-22 18:39:30] User -> Block User ->admin@pds| Requested JSON -> {"uid":"66ed4f8794f53"}
+[2025-01-22 18:39:35] User -> Block User ->admin@pds| Requested JSON -> {"uid":"66ed506c0aacb"}
+[2025-01-22 18:53:24] User -> Verify User ->admin@pds| Requested JSON -> {"uid":"66ed505452f58"}
+[2025-01-22 18:53:29] User -> Block User ->admin@pds| Requested JSON -> {"uid":"66ed4f8794f53"}
+[2025-01-22 18:54:05] User -> Block User ->admin@pds| Requested JSON -> {"uid":"66ed5370ebec6"}
+[2025-01-22 18:54:10] User -> Block User ->admin@pds| Requested JSON -> {"uid":"66ed535d9ce9b"}
+[2025-01-22 18:54:15] User -> Verify User ->admin@pds| Requested JSON -> {"uid":"66ed532f89561"}
+[2025-01-22 19:11:39] User -> Block User ->admin@pds| Requested JSON -> {"uid":"66ed52c482307"}
+[2025-01-22 19:14:39] User -> Block User ->admin@pds| Requested JSON -> {"uid":"66ed5370ebec6"} | Yadgir@pds
+[2025-01-22 19:15:30] User -> Verify User ->admin@pds| Requested JSON -> {"uid":"66ed4d80961c1"}
+[2025-01-22 19:16:10] User -> Verify User ->admin@pds| Requested JSON -> {"uid":"66ed4d80961c1"} | Bagalkote@pds
+[2025-01-22 19:17:56] User -> Delete User ->admin@pds| Requested JSON -> {"uid":"66ed5370ebec6"} | Yadgir@pds
+[2025-01-22 19:22:46] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Yadgir@pds","district":"Yadgir","newpassword":"Yadgir"} | 
+[2025-01-22 19:31:51] User -> Delete Message ->admin@pds| Requested JSON -> {"uid":"c39f5834f2"} | 
+[2025-01-22 19:50:23] User -> Delete Message ->admin@pds| Requested JSON -> {"uid":"0565ce430a"} | Bagalkote@pds
+[2025-01-22 19:56:40] User -> Send  Message ->admin@pds| Requested JSON -> {"message":"Happy","uniqueid":"all"} | 
+[2025-01-22 22:47:20] User -> Warehouse Edit ->admin@pds| Requested JSON -> {"name":"GULEDAGUDD","uniqueid":"WH_6790eb25c6c1","active":"1","type":"motorable","latitude":"16.085255","storage":"100000000000","district":"Bagalkote","id":"10","warehousetype":"swc","longitude":"75.810359"}

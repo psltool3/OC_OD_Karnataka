@@ -1,0 +1,12 @@
+C:\Apache24\htdocs\karnataka_Distribution\pds_admin_karnataka\Backend\server_karnataka_GSBFL_CMD.py:4642: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value 'shallu' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
+  df5.fillna('shallu', inplace=True)
+C:\Apache24\htdocs\karnataka_Distribution\pds_admin_karnataka\Backend\server_karnataka_GSBFL_CMD.py:4792: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df10 = pd.concat([df9, df7], ignore_index=True)
+C:\Apache24\htdocs\karnataka_Distribution\pds_admin_karnataka\Backend\server_karnataka_GSBFL_CMD.py:5299: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value 'shallu' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
+  df5.fillna('shallu', inplace=True)
+C:\Apache24\htdocs\karnataka_Distribution\pds_admin_karnataka\Backend\server_karnataka_GSBFL_CMD.py:5451: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df10 = pd.concat([df9, df7], ignore_index=True)
+C:\Apache24\htdocs\karnataka_Distribution\pds_admin_karnataka\Backend\server_karnataka_GSBFL_CMD.py:5961: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value 'shallu' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
+  df5.fillna('shallu', inplace=True)
+C:\Apache24\htdocs\karnataka_Distribution\pds_admin_karnataka\Backend\server_karnataka_GSBFL_CMD.py:6113: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df10 = pd.concat([df9, df7], ignore_index=True)

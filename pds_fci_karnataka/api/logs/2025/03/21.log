@@ -1,0 +1,9 @@
+[2025-03-21 10:08:25] User -> Cost for leg2 Added ->admin@pds| Requested JSON -> {"cost_hHfqZK5t5HQMCd":"12"} | 2024 | sept
+[2025-03-21 10:08:32] {"id":"hHfqZK5t5HQMCd"}
+[2025-03-21 10:08:32] User -> Cost for leg2 Reset ->admin@pds| Requested JSON -> {"id":"hHfqZK5t5HQMCd"} | 
+[2025-03-21 10:15:54] User -> Cost for leg2 Added ->admin@pds| Requested JSON -> {"cost_hHfqZK5t5HQMCd":"52"} | 2024 | sept
+[2025-03-21 10:15:55] {"id":"hHfqZK5t5HQMCd"}
+[2025-03-21 10:15:55] User -> Cost for leg2 Reset ->admin@pds| Requested JSON -> {"id":"hHfqZK5t5HQMCd"} | 
+[2025-03-21 10:15:59] User -> Cost for leg2 Added ->admin@pds| Requested JSON -> {"cost_hHfqZK5t5HQMCd":"85"} | 2024 | sept
+[2025-03-21 10:16:04] {"id":"hHfqZK5t5HQMCd"}
+[2025-03-21 10:16:04] User -> Cost for leg2 Reset ->admin@pds| Requested JSON -> {"id":"hHfqZK5t5HQMCd"} | 

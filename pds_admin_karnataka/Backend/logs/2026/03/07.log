@@ -1,0 +1,6 @@
+[2026-03-07 06:51:01] User ->  Optimization Start Requested JSON -> ImmutableMultiDict([('month', 'march'), ('year', '2026'), ('type', 'intra'), ('applicable', 'feb'), ('username', 'Admin@pds')])
+[2026-03-07 07:09:30] User ->  Optimization Start Requested JSON -> ImmutableMultiDict([('month', 'march'), ('year', '2026'), ('type', 'intra'), ('applicable', 'feb'), ('username', 'Admin@pds')])
+[2026-03-07 07:19:46] User ->  Optimization Start Requested JSON -> ImmutableMultiDict([('month', 'march'), ('year', '2026'), ('type', 'intra'), ('applicable', 'feb'), ('username', 'Admin@pds')])
+[2026-03-07 07:23:55] User ->  Optimization Start Requested JSON -> ImmutableMultiDict([('month', 'march'), ('year', '2026'), ('type', 'intra'), ('applicable', 'feb'), ('username', 'Admin@pds')])
+[2026-03-07 07:40:44] User ->  Optimization Start Requested JSON -> ImmutableMultiDict([('month', 'march'), ('year', '2026'), ('type', 'inter'), ('applicable', 'feb'), ('username', 'Admin@pds')])
+[2026-03-07 07:43:16] User ->  Optimization Start Requested JSON -> ImmutableMultiDict([('month', 'march'), ('year', '2026'), ('type', 'inter'), ('applicable', 'feb'), ('username', 'Admin@pds')])

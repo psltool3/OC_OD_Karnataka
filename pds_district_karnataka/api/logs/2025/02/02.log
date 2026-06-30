@@ -1,0 +1,1497 @@
+[2025-02-02 16:51:02] district_user -> Warehouse added ->Bagalkote@pds| Requested JSON -> {"name":"test","type":"motorable","latitude":"9.89","storage":"250","district":"Bagalkote","id":"qwe123","warehousetype":"swc","longitude":"76.7661"}
+[2025-02-02 17:38:09] district_user -> Warehouse added ->Bagalkote@pds| Requested JSON -> {"name":"Bongaigaon","type":"motorable","latitude":"9.89","storage":"250","district":"Bagalkote","id":"Bagalkote@pds","warehousetype":"swc","longitude":"78"}
+[2025-02-02 17:44:02] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | 
+[2025-02-02 17:44:34] User -> Warehouse Added -> Bagalkote@pds| Test
+[2025-02-02 17:44:34] User -> Warehouse Added -> Bagalkote@pds| Bongaigaon
+[2025-02-02 17:44:42] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | 
+[2025-02-02 17:49:08] User -> Warehouse Added -> Bagalkote@pds| Test
+[2025-02-02 17:49:08] User -> Warehouse Added -> Bagalkote@pds| Bongaigaon
+[2025-02-02 17:51:05] User -> Warehouse InActive -> admin@pds| 
+[2025-02-02 17:51:08] User -> Warehouse Active -> admin@pds| 
+[2025-02-02 17:51:31] User -> Warehouse InActive -> admin@pds| 
+[2025-02-02 17:51:34] User -> Warehouse Active -> admin@pds| 
+[2025-02-02 17:51:47] district_user -> Warehouse Edit ->Bagalkote@pds| Requested JSON -> {"name":"Bongaigaon","uniqueid":"WH_679f62bc6b59","active":"1","type":"motorable","latitude":"9.89","storage":"25000","district":"Bagalkote","id":"Bagalkote@pds","warehousetype":"swc","longitude":"78"}
+[2025-02-02 17:53:36] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"WH_679f62bc6b59"} | Bongaigaon
+[2025-02-02 17:53:42] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"WH_679f62bc60a4"} | Test
+[2025-02-02 17:54:46] User -> Warehouse Added -> Bagalkote@pds| Test
+[2025-02-02 17:54:46] User -> Warehouse Added -> Bagalkote@pds| Bongaigaon
+[2025-02-02 17:59:47] User -> Warehouse Edit -> Bagalkote@pds| Test
+[2025-02-02 17:59:47] User -> Warehouse Edit -> Bagalkote@pds| Bongaigaon
+[2025-02-02 18:00:28] district_user -> Warehouse Edit ->Bagalkote@pds| Requested JSON -> {"name":"Test","uniqueid":"WH_679f640e6309","active":"1","type":"motorable","latitude":"9.89","storage":"23345","district":"Bagalkote","id":"qwe123","warehousetype":"swc","longitude":"76.7661"}
+[2025-02-02 18:00:47] district_user -> Warehouse Edit ->Bagalkote@pds| Requested JSON -> {"name":"Test","uniqueid":"WH_679f640e6309","active":"1","type":"motorable","latitude":"9.89","storage":"23","district":"Bagalkote","id":"qwe123","warehousetype":"swc","longitude":"76.7661"}
+[2025-02-02 18:14:17] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"name":"Demo","type":"Model FPS","latitude":"9.89","longitude":"76.7661","district":"Bagalkote","id":"123qwert","demand":"1000","demand_rice":"1223"}
+[2025-02-02 18:14:31] User -> FPS InActive -> | 
+[2025-02-02 18:16:57] district_user -> FPS deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | 
+[2025-02-02 18:17:40] User -> FPS Added -> Bagalkote@pds| Gram Mandal Maninagar
+[2025-02-02 18:17:40] User -> FPS Added -> Bagalkote@pds| MAHAKUTESHWAR YUVAKA MANDAL YANKANCHI
+[2025-02-02 18:17:40] User -> FPS Added -> Bagalkote@pds| MAHAKUTESHWAR Y.M. GUBBERAKOPPA
+[2025-02-02 18:17:40] User -> FPS Added -> Bagalkote@pds| L.B. NAIKAR. KHANAPUR.S.K. 68 (C)(RADDERTIMMAPUR)
+[2025-02-02 18:17:40] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL HAVALAKOD
+[2025-02-02 18:17:40] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL FAKIRBUDIHAL
+[2025-02-02 18:17:41] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL SAGANUR
+[2025-02-02 18:17:41] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL CHINCHALAKATTI
+[2025-02-02 18:17:41] User -> FPS Added -> Bagalkote@pds| K.K.LAMANI CHINCHALAKATTI L.T.
+[2025-02-02 18:17:41] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA HANAMANERI (S)
+[2025-02-02 18:17:41] User -> FPS Added -> Bagalkote@pds| V.S.S. NEERBUDIHAL
+[2025-02-02 18:17:41] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL GANGANABUDIHAL
+[2025-02-02 18:17:41] User -> FPS Added -> Bagalkote@pds| S.M.GONNAGAR JANGAWAD
+[2025-02-02 18:17:41] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDALA HOSAKOTI-37 (C)(KAINAKATTI)
+[2025-02-02 18:17:41] User -> FPS Added -> Bagalkote@pds| Y.S.NARASANVAR SHIPARMATTI
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL HOSAKOTI
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MATTIKATTI
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| SHIVANAND YUVAKA MANDAL MALAGI
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| SHRADDANAND YUVAKA MANDAL NARENUR
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| KRISHNA YUVAKA MANDAL NARENUR L.T.2
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| Ranganath Hanamappa Sunagad (PH) Inam Hanamaneri
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| PKPS Anawal
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL KALABANDKERI
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL YANDIGERI
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| V.S.S.KAGALGOMBA
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| V.S.S.KERAKALMATTI
+[2025-02-02 18:17:42] User -> FPS Added -> Bagalkote@pds| PKPS Halakurki
+[2025-02-02 18:17:43] User -> FPS Added -> Bagalkote@pds| V.S.S.HULAGERI
+[2025-02-02 18:17:43] User -> FPS Added -> Bagalkote@pds| BASAVESHWARA YUVAKA MANDAL JALAGERI
+[2025-02-02 18:17:43] User -> FPS Added -> Bagalkote@pds| Manjunatha Shivappa Rathod (PH)
+[2025-02-02 18:17:43] User -> FPS Added -> Bagalkote@pds| Secretory Neeralkeri Milk producers Co-Op Society Ltd.
+[2025-02-02 18:17:43] User -> FPS Added -> Bagalkote@pds| P.K.P.S.MUSTIGERI.
+[2025-02-02 18:17:43] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDALA HULLIKERI INAM
+[2025-02-02 18:17:43] User -> FPS Added -> Bagalkote@pds| YOUTH ASSOCIATION MUMARADDIKOPPA
+[2025-02-02 18:17:43] User -> FPS Added -> Bagalkote@pds| P.K.P.S. UGLVAT
+[2025-02-02 18:17:43] User -> FPS Added -> Bagalkote@pds| PURNANANDA YUVAKA MANDAL KALLAPUR.S.K.
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| KALIKADEVI YUVAK MANDALA TAPPASAKATTI
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL HANAMASAGAR
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| PURNANAND YUVAKA MANDAL SOMANAKOPPA
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| L.B. NAYAKAR KHANAPUR S,K.
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| V.S.S. KAKANUR
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| GRAMA MANDALA CHIMMANAKATTI
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| NEERU BALAKEDARAR SAHAKARI SANGHA HAGANUR
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| V.S.S. TALAKAWAD
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NEELGUND
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL LAKHAMAPUR
+[2025-02-02 18:17:44] User -> FPS Added -> Bagalkote@pds| IRAPP. K.BIRANUR BIRANUR
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR YUVAKA MANDAL ALUR S.K.
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR YUVAK MANDAL TIMMAPUR S.N.
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| VEERABHADHRESHWARA Y M MALLAPUR S.L.
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| Kalasa (Govonakopp) Milk producers Co op Society
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL ALADAKATTI
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| PKPS Hebballi
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| V.S.S. MUTTALAGERI
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR TARUN SANGHA NAVILAHOLE.
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| BASAVALINGESHWAR Y M BACHINAGUDDA.
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GONAL
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| V.S.S.CHOLACHAGUDDA
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| BANASHANKARI DEVASTHANA SEVA SAMITI BANASHANKARI.
+[2025-02-02 18:17:45] User -> FPS Added -> Bagalkote@pds| REVANASHIDDESHWAR YUVAKA SANGHA HIRENASIBI
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| AMBEDAKAR VIDYA VARDHAKA SANGHA BELUR
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| V.S.S.JALIHAL
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| Halu Utpadakara sahakari sangha,Pattadakal
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL ADAGAL.
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| V.S.S.KUTAKANAKERI
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| V.S.S.YARAGOPPA.S.B
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| SANGAMESHWAR Y M CHIKKAMUCCHALGUDD
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| P K P S BANK HIREMUCCHALAGUDDA
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| RAIT SEVA SAHAKARI SANGHA NANDIKESHWAR
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR YUVAKA MANDAL B.N.JALIHAL
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| AKKAMAHADEVI MAHILA MANDAL NEERALGI.
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA KHYAD
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| AKKAMAHADEVI. MAHILA MANDAL NEERALAGI-107 (C)(TAMINAL)
+[2025-02-02 18:17:46] User -> FPS Added -> Bagalkote@pds| PKPS Kataraki
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL MANNERI
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| V.S.S.DANAKASHIRUR
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| GRAMA MANDALA GUDDADAMALLAPUR.
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL ANATAGERI (Attach)Guddad mallapur
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| N B MULLUR BELUR.117 (C)(NASAGUNNI)
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL GIDDANAYAKANAL
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| N.B.MULLUR BELUR
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL MANGALUR
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL SHIRBADAGI.
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL NELAVAGI (Attach)Chalukya CCS Badami
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR YUVAKA MANDAL BEDARBUDIHAL.
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL BANDAKERI
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| KUNCHIKORAVAR SANGHA SHIVAPUR
+[2025-02-02 18:17:47] User -> FPS Added -> Bagalkote@pds| RAIT SANGH KARADIGUDD S N
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| ChairmanSecretory Milk Producers Co-Op Society , Narasapur
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| PKPS Hosur
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| Ranganath Grameen Abhivrudhi Samsthe, Suleekeri
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| Sri. Shiddalingeshwara neeru balakedarar sahakari sangha, sulla.
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| Sri. Sidrameshwara Purushara Swasahaya sangha, Kittali
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| Dr.Babu. Jagajeevanram Vivedoddesha sahakari sangha, Kendur
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| Neharu Havyashi Kala Sanskrutika hagu krida sangha, haligeri
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| Maruteshwara vevedoddeshagala seva sangha,Kabbalageri
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| PKPS Kadarakoppa
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| Savitri Bhimanagouda Halegoudru FPS, Agasankoppa
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| Milk Producers Society Ltd, FPS, Vadavatti
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| Adarsha Sangha (R),FPS, Belavalakoppa, Tq. Badami
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| Mamatageri Milk producers Co-Op Society. Ltd,FPS, Mamatageri
+[2025-02-02 18:17:48] User -> FPS Added -> Bagalkote@pds| RAKESH P AMBIGER, FPS, JAKANOOR
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| Basavaraj Gopal Sharanar, Narenur Tanda No:01
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.BADAMI
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| Consumers Co op Socity Badami
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| CHALUKYA C C S BADAMI
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| PKPS KERUR
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| MARUTI C C S KERUR.
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| NEKAR U.H.MARATA S. S.NO.2.KERUR.
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| BANASHAKARI GRAM MANDALA BADAMI.
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| SHARANAMMA M V S S BADAMI
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| Shri Maruteshwara VVS Ltd. Kerur
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| Kuri Sakanike Mattu Unne Utpadakara Sahakari Sangha . Ltd. Kerur
+[2025-02-02 18:17:49] User -> FPS Added -> Bagalkote@pds| CONSUMERS CO-OP SOCIETY BAGALKOT
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| SWASTIK C CO-OP SO BAGALKOT
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| BHAVANI C CO-OP SO BAGALKOT
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| SMT:R.S.TUPPAD BAGALKOT
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| JANATA BAZAR BAGALKOT
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S. SHOP BAGALKOT
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| GOVERNMENT E CO-OP SO BAGALKOT
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| The Bagalkot Extension Primary Consumers CO.Op Society Ltd. Bagalkot
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| KARIHALLA W.S.Co.Co-Op.S.BAGALKOT
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| MAHILA V V CO-OP SO BAGALKOT
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| Samruddhi Swa Sahaya Sangha, Bagalkot
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| SMT: Mamtaj Begam.N.AARI NAVANAGAR, BAGALKOT
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HAVELI BGK
+[2025-02-02 18:17:50] User -> FPS Added -> Bagalkote@pds| B.M.KOTI NAVANAGR BGK
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| JANATHA BAZAR NAVANAGAR BGK
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| KITTUR RANI C M U S NAVANAGAR BGK
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| BHAGYASHREE M N U S S G NAVANAGAR BGK
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| M.Y.MALAKGUND N B A NAVANAGAR BGK
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| Raziya Sultan Womens Society,Navanagar,Bagalkot
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| Chairman Secretory Shri.Indrapriya. SCST Women Society , Bagalkot
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| SHRI.SURENDRA VENKANNA GADAGADI. FPS, BAGALKOTE
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| SMT JAYASHRI S HELAVAR, URF SHELLIKERI, FPS
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| SARVAMANDALA MALLAPUR
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| KURI SAKANIKE CO-OP S BEVINAMATTI
+[2025-02-02 18:17:51] User -> FPS Added -> Bagalkote@pds| VIVEKANDA.Y.M.BHAGAVATI-21 (S)HONNAKATTI
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NEERALKERI
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| MARUTI VALMIKI SEVA YUVAK MANDAL NEERALKERI
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| GSS GUNDANAPALLE-95 (S)(INGALAGI)
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| V.S.S.BENAKATTI
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| VIVEKANAND Y M BHAGAVATI
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MUDAPALAJIVI
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL KADLIMATTI
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| V.S.S.HALLUR
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| V.S.S.BHAIRAMATTI
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL CHAVADAPUR
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL SANGAPUR
+[2025-02-02 18:17:52] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MUCHAKHANDI
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MUCHAKHANDI.L.T-1
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MUCHAKHANDI L.T-2
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| MARUTESHWER Y M SHIGIKER
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| HANNU B S S KALADAGI
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| V.S.S. KHAJJIDONI
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL ANKALAGI
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| Maruteshwar GRAM MANDAL SHARADAL
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL UDAGATTI
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| V.S.S. CHIKKASHELLIKERI
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HIRESHELLIKERI
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| GRAM.M.HIRESHELLIKERI (S)KALASAKOPPA
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| V.S.S DEVANAL
+[2025-02-02 18:17:53] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIKKASANSHI
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| DR.B.R.AMBEDKER T S.TULASIGERI
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GOVINKOPPA
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL YADAHALLI
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHABBI
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| SEVEN STAR Y M SOKANADAGI
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| SIDDARAMESHWAR Y M GADDANAKERI
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| DURGADEVI Y M GADDANAKERI L.T.
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| V.S.S. SIMIKERI
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| SHIVALINGESHWAR G. H. M MURANAL
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| SHIVALINGESHWAR T S VEERAPUR
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| Shri Dhanalaxmi Unneya utpadakara Sahakari Sangha Ltd. Anadinni takuk Bagalkot
+[2025-02-02 18:17:54] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SORAKOPPA
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NAKKARAGUNDI
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HONARALLI
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| BALAJI BANJARA S, RAMPUR R.C.
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HOSUR (Attach) GRAM MANDAL NAGARAL
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SUTAGUNDAR
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| V.S.S. MANKANI
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL DOMANAL
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| V.S.S. MUGALOLLI
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL MUGALOLLI TANDA
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SANGONDI
+[2025-02-02 18:17:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HIREGULBAL TANDA(Sus)
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL MUTTATTI
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR Y S HIREMURAMATTI
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NAYANEGALI
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NAGARAL
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NAGASAMPAGI
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHITAGINAKOPPA
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL DEVALAPUR
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIKKAMYAGERI
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HANDARAGAL
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| LAXMIDEVI Y M BOMMANAGI
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| PKPS BILKERUR
+[2025-02-02 18:17:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL TIMMAPUR
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL JADRAMKUNTI
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL JADRAMKUNTI TANDA
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL LAVALESHWAR TANDA
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| GRAHAKAR S S GUNDANAPALLE
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| MARUTESWAR S S S S G KIRASUR
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| SHRI.MALLIKARJUN,V. U.S.S,BEVOOR
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| G.M. TIMMAPUR-80 (S) (BODANAYAKADINNI)
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| V.S.S. MURNAL
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| DURGAPARAMESHWARI. V. S,KADAMPUR
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL,YANKANCHI
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| DR.B.R.AMBEDKAR.T.S.RAMPUR
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MANAHALLI
+[2025-02-02 18:17:57] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL ALUR LT
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| DR:AMBEDKAR Y M ALUR
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| VSS ILYAL
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL HIERGULABAL
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL CHIKKAHODLUR
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| MILLAT EDUCTION & W SO,KALADAGI
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| R.R.MUDHOLE.GADDANAKERI
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| P.R.DESHAMUKH KALADAGI
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| Secretary P.K.P.S Achanuru
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| Smt. Pavithra Manjunath Talawar FPS, Bennur
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| Shri.Papanna. Sangappa. Bhadrashetti At: Mannikatti FPD
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| Navachaitanya Banjara Vivedoddesha sahakari sangha, Niyamit FPS, SINDGI
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| Kittur Channamma Mahila Sangh (R) FPS, Bevoor
+[2025-02-02 18:17:58] User -> FPS Added -> Bagalkote@pds| Shri Haripriya Pattina S S N, Tulashigeri
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| Smt. Girijabai Kodleppa Sudi FPS, HireMyageri
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| RAMAPPA HANAMAPPA MUDUKANNANAVAR (PH), Hiresanshi
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| Dr BABASAHEB AMBEDKAR, YUVAKA SANGHA , MUDUVINAKOPPA
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| DURGADEVI GRAM MANDAL SHIRUR TANDA
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| SUDAGADSIDDHARA MAHILA S.S.G.SHIRUR
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| SHRI.SIDDHALINGESHWAR.K.V.V.S.S.N.SHIRUR
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| KARANATAKA R S G M N BANGALORE
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| Shri. Y.N.Naikar,FPS
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| P.K.P.S. BANK GALAGALI
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KOLUR
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR YUVAKA MANDAL CHIKKAHANCHINAL
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| P.K.P.S BANK YADAHALLI
+[2025-02-02 18:17:59] User -> FPS Added -> Bagalkote@pds| NEERU BALAKEDARAR CO-OP SANGHA BISANAL
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| P.K.P.S. BANK TEGGI
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| P.K.P.S. BANK AMALAZARI
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| HUCHESHWAR GRAM MANDAL SIDDAPUR
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SIDDAPUR L.T.
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL BUDIHAL S.G.
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| MILK PROD. CO-OP SANGHA GULABAL
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| DIGAMBARESHWAR NEKARAR CO-OP SANGHA NAGARAL
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| SHRI MALLIKARJUN GRAM MANDAL INAMHANCHINAL
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| BALLESHWAR GRAM MANDAL BALLUR
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| SHRI.ARAVIND PANDAPPA JEERALE KORTI
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| P.K.P.S.BADAGANDI
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| P.K.P.S BANK SONNA
+[2025-02-02 18:18:00] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL DHAVALESHWARA
+[2025-02-02 18:18:01] User -> FPS Added -> Bagalkote@pds| P.K.P.S.BANK ROLLI
+[2025-02-02 18:18:01] User -> FPS Added -> Bagalkote@pds| Secretory PKPS Takkalaki
+[2025-02-02 18:18:01] User -> FPS Added -> Bagalkote@pds| NIJALINGADEV GRAM MANDAL LINGAPUR S.R. BILAGI CROSS NO.1
+[2025-02-02 18:18:01] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL ANAGAWADI
+[2025-02-02 18:18:01] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KOPPA S.R.
+[2025-02-02 18:18:01] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HONNIHAL
+[2025-02-02 18:18:01] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR V.U.S.BIRAKABBI
+[2025-02-02 18:18:01] User -> FPS Added -> Bagalkote@pds| KANAKESHWAR GRAM MANDAL KANDAGAL
+[2025-02-02 18:18:01] User -> FPS Added -> Bagalkote@pds| SOMESHWAR GRAM MANDAL BADARADINNI
+[2025-02-02 18:18:02] User -> FPS Added -> Bagalkote@pds| Siddappa Maliyappa Kerakalamatti
+[2025-02-02 18:18:02] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SHIRAGUPPI
+[2025-02-02 18:18:02] User -> FPS Added -> Bagalkote@pds| PKPS Arakeri
+[2025-02-02 18:18:02] User -> FPS Added -> Bagalkote@pds| Maruteshwar Grama Sangha Arakeri Tanda
+[2025-02-02 18:18:02] User -> FPS Added -> Bagalkote@pds| PKPS BANK KOPPA S.K.
+[2025-02-02 18:18:02] User -> FPS Added -> Bagalkote@pds| PKPS BUDIHAL S.H.
+[2025-02-02 18:18:02] User -> FPS Added -> Bagalkote@pds| MARUTI GRAM MANDAL KOVALLI
+[2025-02-02 18:18:02] User -> FPS Added -> Bagalkote@pds| Chairman-Secretory Gajanana Mahila Samukhya Swasahaya Sangha Chikkalagundi
+[2025-02-02 18:18:02] User -> FPS Added -> Bagalkote@pds| PKPS BANK KUNDARAGI
+[2025-02-02 18:18:02] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KUNDARAGI L.T-1
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KUNDARAGI L.T-2
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR GRAM MANDAL JANAMATTI Temp Att (SUNAG L.T-1)
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| JANASEVA GRAM MANDAL HERAKALL
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL YALLIGUTTI
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| V.S.S.S SUNAG
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SUNAG L.T-1
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SUNAG L.T-2
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| PKPS BANK TUMBARAMATTI
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL TOLAMATTI
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL MANNIKERI
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| PKPS NAGARAL
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| PKPSLtd Girisagar No 2
+[2025-02-02 18:18:03] User -> FPS Added -> Bagalkote@pds| TAPCMS BILAGI, Branch BADAGI
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| P K P S ANGAWADI
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| YALLAVVA,DHALAPPA, ARABAVVGOL
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| BHUVANESHWARI M.S. S.SUNAGA
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| P.K.P.S Mundaganur
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HEGGUR
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| Shri Swami Vivekananda Grameena Abhivrudhi Samste. (R) Galagali
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| SHRI.PRASAD BHARAMAPPA MADIVALAR FPS, BAVALATTI (PH)
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S. BILAGI
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| P.K.P.S.S.BILAGI
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| TAPCMS BILAGI Branch 3
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| Shri. Shiddeshwar con.co-op soci- Bilagi
+[2025-02-02 18:18:04] User -> FPS Added -> Bagalkote@pds| Smt. SHARAVVA SIDDAPPA GALAGALI
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL HANAPUR L.T
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAK MANDAL ASANGI
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| P.K.P.S,KATAGERI.
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR YUVAKA MANDAL HOUSANUR attached to consummer s guledgud
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA RAGHAPUR
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| MARUTI.Y.M MURUDI.-148 (C)(TEGGI)
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| V.S.S.HALADUR.
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| RAITA SANGHA ALLUR S.P
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| MUKESHWARI YUVAKA MANDAL BUDINAGAD
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| SHASTRI Y M KATAGINAHALLI
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| PKPS Layadagundi
+[2025-02-02 18:18:05] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL KOTNALLI
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA NAGARAL S.P
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| B H A GULEDDAGUDDA-8 (C)(SABBLAHUNACHI)
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| DURGADEVI YUVAKA MANDAL HULLIKERI S.P
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| V.S.S.KOTIKALL
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR YUVAKA MANDAL TIMMASAGAR.
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA LINGAPUR
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL KELAVADI
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR TARUN SANGH HIREBUDIHAL.
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| FRIENDS UNION CLUB KONKANAKOPPA
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL JAMMANAKATTI
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL LAKKASAKOPPA
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| RAITA SANGHA HULASAGERI
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| A.M.MULLA PARVATI
+[2025-02-02 18:18:06] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL KHANAPUR S.P.
+[2025-02-02 18:18:07] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HANAPUR S.P.
+[2025-02-02 18:18:07] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL MURADI
+[2025-02-02 18:18:07] User -> FPS Added -> Bagalkote@pds| L.R.NAGARAL PADANAKATTI
+[2025-02-02 18:18:07] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIMMALAGI
+[2025-02-02 18:18:07] User -> FPS Added -> Bagalkote@pds| NAGESHWAR TARUN SANGHA KATAPUR
+[2025-02-02 18:18:07] User -> FPS Added -> Bagalkote@pds| S,Y,SALAGUNDI KHAJIBUDIHAL
+[2025-02-02 18:18:07] User -> FPS Added -> Bagalkote@pds| V,S,S,HANGARAGI
+[2025-02-02 18:18:07] User -> FPS Added -> Bagalkote@pds| Shri Mangala Shakkshanika Hagu Grameenabhruddi Samste FPS, Mangalgudda
+[2025-02-02 18:18:07] User -> FPS Added -> Bagalkote@pds| PKPS, TOGUNASHI
+[2025-02-02 18:18:08] User -> FPS Added -> Bagalkote@pds| JANATA N.U.S.S. GULEDAGUDD.
+[2025-02-02 18:18:08] User -> FPS Added -> Bagalkote@pds| BANASHANKARI H. ASSO.GULEDGUDD
+[2025-02-02 18:18:08] User -> FPS Added -> Bagalkote@pds| KAIMAGGA K.T.ASSO. GULEDGUDD
+[2025-02-02 18:18:08] User -> FPS Added -> Bagalkote@pds| RENUKA MAHILA MANDAL GULEDAGUDDA.
+[2025-02-02 18:18:08] User -> FPS Added -> Bagalkote@pds| CONSUMERS CO-OP SOCIETY GULEDGUDD.
+[2025-02-02 18:18:08] User -> FPS Added -> Bagalkote@pds| NEHARU YUVAKA MANDAL GULEDGUDD
+[2025-02-02 18:18:08] User -> FPS Added -> Bagalkote@pds| ADISHAKTI YUVAKA MANDAL GULEDGUDD
+[2025-02-02 18:18:08] User -> FPS Added -> Bagalkote@pds| KARNATAKA C C S GULEDGUDD
+[2025-02-02 18:18:09] User -> FPS Added -> Bagalkote@pds| SIDDESHWAR A.S.S.GULEDGUDD
+[2025-02-02 18:18:09] User -> FPS Added -> Bagalkote@pds| NEELKANTESHWAR H,A GULEDAGUDDA.
+[2025-02-02 18:18:09] User -> FPS Added -> Bagalkote@pds| ANUPAMA MAHILA MANDAL GULEDGUDDA.
+[2025-02-02 18:18:09] User -> FPS Added -> Bagalkote@pds| Chairman PKPS Ltd. Sangam
+[2025-02-02 18:18:09] User -> FPS Added -> Bagalkote@pds| Secratory, Ranichannamma Multipurpose Women Society , Ganjihal
+[2025-02-02 18:18:09] User -> FPS Added -> Bagalkote@pds| D.S.BHAVI. KATAGUR
+[2025-02-02 18:18:09] User -> FPS Added -> Bagalkote@pds| V.S.S.SANGAM BISALADINNI
+[2025-02-02 18:18:09] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL HUVANUR HADAGALI
+[2025-02-02 18:18:09] User -> FPS Added -> Bagalkote@pds| V.S.S. IDDALAGI
+[2025-02-02 18:18:09] User -> FPS Added -> Bagalkote@pds| P.M.MADANSHETTY, CHITTARAGI
+[2025-02-02 18:18:10] User -> FPS Added -> Bagalkote@pds| F.S.C.S HUNGUND (TIMMAPUR)
+[2025-02-02 18:18:10] User -> FPS Added -> Bagalkote@pds| V.S.S.BELAGAL
+[2025-02-02 18:18:10] User -> FPS Added -> Bagalkote@pds| B.R ANGADI HADAGALI
+[2025-02-02 18:18:10] User -> FPS Added -> Bagalkote@pds| S.V DESAI HULIGINAL
+[2025-02-02 18:18:10] User -> FPS Added -> Bagalkote@pds| V.S.S NIMBALGUNDI
+[2025-02-02 18:18:10] User -> FPS Added -> Bagalkote@pds| V.S.S MUGANUR
+[2025-02-02 18:18:10] User -> FPS Added -> Bagalkote@pds| SIDDARUD TARUN SANGHA K.KALLAPUR
+[2025-02-02 18:18:10] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KALLIGUDD
+[2025-02-02 18:18:10] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL BEVINAL
+[2025-02-02 18:18:10] User -> FPS Added -> Bagalkote@pds| L.N.NAGANGOUDRA.BEVINAMATTI-51 (S)(NAGUR)
+[2025-02-02 18:18:11] User -> FPS Added -> Bagalkote@pds| V.S.S. BANNIHATTI
+[2025-02-02 18:18:11] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIKKAYARANAKERI
+[2025-02-02 18:18:11] User -> FPS Added -> Bagalkote@pds| V.S.S. CHITTAWADGI
+[2025-02-02 18:18:11] User -> FPS Added -> Bagalkote@pds| M.Y. MULLUR HUVINAHALLI
+[2025-02-02 18:18:11] User -> FPS Added -> Bagalkote@pds| JAGADISH SUBAS HALLUR HIREBADAWADGI
+[2025-02-02 18:18:11] User -> FPS Added -> Bagalkote@pds| SHAKHAMBARI NE.SAH.SANGHA. SULEBHAVI
+[2025-02-02 18:18:11] User -> FPS Added -> Bagalkote@pds| PRIMARI CONS. CO-OP SO. SULEBAVI
+[2025-02-02 18:18:11] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL RAKKASAGI
+[2025-02-02 18:18:11] User -> FPS Added -> Bagalkote@pds| V.S.S.DHANNUR
+[2025-02-02 18:18:11] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL LAVALASAR
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KAMALADINNI
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| PKPS MAROL
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| V.S.S. HAVARAGI.
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| Gram Mandal Chinnapur S K 88 (S) (DASABAL)
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| V.S.S. GHATTIGANUR
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| V.S.S. HAGEDAL
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| P.S.PATIL, BUDHIHAL.SK.-96 (S)MANMATALAL
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| HUCHESHWAR YUVAKA MANDAL CHIKKAMAGI
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| V.S.S. GANGUR
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| S.A.PYATISHETTAR
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| Prakash Laxman Naganagoudar,Bevinamatti FPS
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| Smt. Shakuntala Basavaraj Karadi FPS, Amarawati
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| Sri Yallamma Devi Mahila Swa Sahaya sangha FPS,Hiremagi
+[2025-02-02 18:18:12] User -> FPS Added -> Bagalkote@pds| MUDDESHWAR YUVAKA SANGHA, HIREMAGI.
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| F.A.C.S.HUNGUND
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.HUNGUND
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| JANATA CONSUMERS CO-OP. SOCIETY HUNGUND
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| V.M.K.CO-OP.SOCIETY HUNGUND
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| SMT. P M SAJJAN AMINGAD
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| SHIVKUMAR SIDDAPPA KANNUR AMINGAD
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| DEVAL MAHARSHI CO. SOCIETY AMINGAD
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| R.S REVANAKIMATH AMINGAD
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| NANJUNDESHWAR V V S AMINGAD
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| SHREE SHAKHAMBARI SWAYAM SEWA SANGHA KAMATAGI
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| SANGAMESHWAR CONSUMERS CO-OP SOCIETY KAMATGI
+[2025-02-02 18:18:13] User -> FPS Added -> Bagalkote@pds| SHAKTI CONSUMERS CO-OP SO. KAMATAGI
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| LALBAHADDUR SHATREE YUVAK SANGA KAMATAGI
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| SHIVASHARANAYYA HARALAYYA SO KAMATAGI
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| SAYYAD MURTUJ KHADRI SO. KAMATAGI
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| VITHOBA M.V.S.SANGHA KAMATAGI
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| V.S.S. KAMATAGI
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| PARVATI M.V.V.SANGHA KAMATGI
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| ARTHIKA H.M.SO. KAMATAGI
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| SHREE BHAVANI VIVIDHODESHAGALA GRAMINABHIVRIDDHI MAHILA SEVA SAMSTHE
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| SRI. SURESH SHIVALINGAPPA HALLAD, KAMATAGI TANADA
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| V.M.K.CONSUMERS CO-OP SOCIETY ILKAL (Temp Susp) Attach Shakambari WCS ilkal No:08
+[2025-02-02 18:18:14] User -> FPS Added -> Bagalkote@pds| MALLIKARJUN CON.CO-OP. SOCIETY ILKAL
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| Sectratory Shri Vijay Mahantesh Cottage Industries Co-op Society Ltd Ilkal
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| SHAKAMBARI,N.S. SANGHA ILKAL
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| MAHILA V.V.S.ILKAL
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| THE ANJUMAN NEKARAR SAHAKARI SANGHA ILKAL
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| JANATA NEKARAR SAHAKARI SANGHA ILKAL
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| MARKANDESHWAR NEKARAR SAHAKARI SOCIETY ILKAL
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| ILKAL DYEING CO-OP SOCIETY ILKAL
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| R.V.Chavan. NYAYA BELE ANGADI ILKAL
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| MARKANDESWARA HOU.NE.ILKAL
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| ILKAL NEKARAR SAHAKARI SANGAH ILKAL
+[2025-02-02 18:18:15] User -> FPS Added -> Bagalkote@pds| ILKAL HALU UTPADAKAR SAHAKARI SANGHA ILKAL
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| ILKAL CONSUMERS NEKARAR SAHAKARI SANGHA ILKAL
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| Dhatatray Sahakari Society Ilkal
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| Nelkanteswer Sahakar Society Ilkal
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| Chairman, Veermata Jeejabai Mahila Strishakti Sangha, Ilkal
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| Radhakrishna Kala Sanskruti And Krida Sangha, Ilkal
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| VIJAYNAGAR MAHILA SANGHA. FPS, ILKAL
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL BHIMANGAD
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| SHRI CHALAGERI CHIKANAL
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| MAHILA V.U. SANGHA GUDUR.S.C.
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| Secretory PKPS Gudur S.C
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| AJAD CONSUMERS SOCIETY GUDUR S.C.
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| Sharanappa.Basavantappa.Adin at Dammur
+[2025-02-02 18:18:16] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KYADIGGERI
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| M.H. HIREKURABAR VADAGERI
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| PKPS Ilal
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| V.S.S. KELUR
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KUNIBENCHI
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GORJANAL
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR TARUN SANGHA TALLIKERI
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| M.P.KADI. AMARAWADGI
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| PKPS KODIHAL
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHINNAPUR S.K.
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| Gram Mandal Chinnapur S.K.-96 (S)(PALTI)
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL TURAMARI temp susp -p s patil - 96
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHATNIHAL
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| P.S.PATIL BUDIHAL S.K.
+[2025-02-02 18:18:17] User -> FPS Added -> Bagalkote@pds| V.S.S. JAMBALADINNI
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| V.S.S. HIRESHINGANAGUTTI
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| M.C.GONDI CHIKKASHINGANAGUTTI
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| V.S.S. TUMBA
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| V.S.S. HIREADAPUR
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| TARUN RAIT SANGH GONAL S.T
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIKKOTAGERI
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| SHRIMATI L.S.NAGANAGOUDRA
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| V.S.S. NANDAWADGI
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR TARUNA SANGHA MARATAGERI
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GONAL S.K.
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GORABAL
+[2025-02-02 18:18:18] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIKKAKODAGALI L.T.
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| V.S.S. HIREKODAGALI
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| CHANNABASAVESHWAR TARUN SANGHA CHIKKAKODAGALI
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| S.S. ADAVI HERUR
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| P.P.HIREMATH BALAKUNDI (Susp) Temp Att R.V.Chavan No:14
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| FPS Chairman, Milk Producers Co-Operative Society, Tondihal
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| PKPS FPS, Kandagalla
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| PKPS FPS, Hireootageri
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| Shri Vijayananda Siddappa Kadiwal FPD
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| Prakhamika Krushi Pattina Sahakari Sangha Ltd. FPS, Karadi
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| SMT. SHARANAVVA KALAKAMALLAPPA HADPAD,FPS, MURUDI (CG)
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| ASHOK SIDAPPA RATHOD, FPS, BALKUNDI TANDA
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| JANATA BAZAR JAMKHANDI S.NO.1
+[2025-02-02 18:18:19] User -> FPS Added -> Bagalkote@pds| JANATA BAZAR JAMKHANDI S.NO.2
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.JAMKHANDI S.NO.3
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| JANATA CON.CO-OP SOCI. JAMKHANDI S.NO.4
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| JAMKHANDI CON.CO-OP SOCI. JAMKHANDI S.NO.5
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| M.R.VANI JAMKHANDI S.NO.6
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| A.L.SHIROL JAMKHANDI S.NO.7
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| G.P.TELI JAMKHANDI S.NO.8
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| VIJAYAPURA JILLA SUDAGADSIDD SOCI. S.NO.9
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| Chairman Rajeev Gandhi Meenugarara Sahakari Sangha.Ltd Jamkhandi
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| RAMESVAR MAHILA V.U.S.SANGH JAMKHANDI NO-13
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| SHRI BANASHANKARI.S.A.SANGH JAMKHANDI NO-14
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| SHRI VARADANESHWARI V U SANGH JAMKHANDI NO-15
+[2025-02-02 18:18:20] User -> FPS Added -> Bagalkote@pds| SHRI RAJESHWARI MAHELA V U S SANGH JAMKHANDI NO-16
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| ALPASANKYATAR MAHILA V U S SANGH JAMKHANDI NO-17
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| Alhuda multi purpose sosiety No10 jamkhandi
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| Shri. BHAGYAVANTI PARISHIST JATI MAHILA SAHAKARA SANGHA NIYAMITA. JAMKHANDI
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| GRAHAKAR.S.S. SANGHA.LTD.TUNGAL
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.JAMKHANDI.BRANCH,SAVALAGI NO1
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.BRANCH.SAVALAGI NO 2
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| P.K.P.S SURPALI-JAMBAGI K D
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| T A P C M S JAMKHANDI BRANCH JAMBAGI B.K.
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| S.B.BIRADAR KURAGODA
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| MALLIKARJUNA YUVAKA MANDAL GOTE
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| PANDURANG.G.S.S. SANGHA KALABEELAGI
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| V.S.S.GOTHE-KHAJIBILAGI
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| PKPS TODALABAGI (Old)
+[2025-02-02 18:18:21] User -> FPS Added -> Bagalkote@pds| PKPS TODALABAGI (New)
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| V.SS.ADIHUDI
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| V.S.S.HIREPADASALAGI
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| V.S.S.CHIKKAPADASALAGI
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| V.S.S.BIDARI
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| V.S.S.CHIKKALKI
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| V.S.S.ALAGUR
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| HANUMANA. Y.MANDAL SANAL
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| V.S.S.KONNUR
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| P.K.P.S.BANK LTD.MAREGUDDI
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| V.S.S.HULYAL
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| SHWAMI VIVEKANAND Y.M.HUNSHIKATTI Attach V.S.S.Hulyal
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| Kankanwadi Women Milk CO operative society Kankanwadi
+[2025-02-02 18:18:22] User -> FPS Added -> Bagalkote@pds| Muttanna sattyappa Kittur (PH) At post Muttur
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| V.S.S.SHIRAGUPPI
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| V.S.S.HUNNUR
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| Shri Roup Noorsab bagawan at post Jamkhandi
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| V.S.S.GANI
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| M.B.GURAV BUDNI
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| V.S.S.KUNCHANUR
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| AKKAMAHADEVI MAHILA MANDAL CHINAGUNDI
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S JAMKHANDI BRANCH KALAHALLI
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| Hanuman Grahakara Sahakari Sangha, Madarakhandi
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| Sadasiv vividdosh sahakari sangha gadyal
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| KUNTALADEVI MAHILA P S SANGH TUNGAL
+[2025-02-02 18:18:23] User -> FPS Added -> Bagalkote@pds| SMT:UMADEVI JAGADISH DAYAL-SAVALAGI
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| SHRI:BASAYYA PANCHAYYA HIREMATH-SHURAPALI
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| SHRI:HANAMANT DUNDAPPA KAMBLE-ALAGUR
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| SHIVANAND URBAN CO-OP SOCIETY-MAIGUR
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| SHRI:PARASAPPA BHAGAVANT CHANNAPPAGOL-HUNNUR
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| SHRI:SANJAY BASAVARAJ KALYANI-KADAPATTI
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| PKPS Kumbarhalla
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| Secretory PKPS Ltd Naganur
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| PKPS Ltd, Kalahalli
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| PKPS Tungal Ltd - 02
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| PKPS Ltd FPS, Siddapur
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| Halu Utpadakara Sahakari Sangha Niyamit FPS, Aalgur
+[2025-02-02 18:18:24] User -> FPS Added -> Bagalkote@pds| PKPS,FPS Savalagi (Old)
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| PKPS, FPS Savalagi (New)
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| CHIKKAPADASALAGI VIVIDHODESHAGALA SAHAKARI SANGHA FPS,CHIKKAPADASALAGI
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| ABHYUDAYA VIVIDHODESHAGALA SAHAKARI SANGHA NI. FPS, BANAHATTI
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| Shri.GUNDURAO SADASHIV KAMBALE, TAKKOD
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| MILK PRODUCERS CO-OPERATIVE SOCIETY, MADARKHANDI
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| Sri.MahalingeshwaraVividhodeshagala Seva Sangh, Nagaral
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| I.S.SARAVAN SHIROL
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| P K P S Bank Ltd., Malali
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| DALIT SANGHARSH SAMITI MALALI
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| BIRESHWAR K.S.S SORGAVI
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| V.S.S.Hebbal
+[2025-02-02 18:18:25] User -> FPS Added -> Bagalkote@pds| BHARATHTAMBE SHRI shakti sva sahaya sangh Halagali
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| ASHOK SATHYAPPA BADNNUR MELIGERI
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| VEERUPAKSHI HIREMATH MANTTUR
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| VITTAL RANNAPPA MADAR (C)BUDNI P M
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| V.S.S. UTTUR
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| RAIT YUVAKA SANGHA INGALGI
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| V.S.S. YADAHALLI
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| KADASIDDESHWAR CONSUMERS SAHAKARISANGHA BARAGI
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| H.V.PATIL BUDNI.K.D.
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| N.G.TOLAGATTI BIDARI
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| Sri.MahalingeshwaraVividhodeshagala Seva Sangh, Mugalakhod
+[2025-02-02 18:18:26] User -> FPS Added -> Bagalkote@pds| V.S.S. GULAGAL JAMBAGI
+[2025-02-02 18:18:27] User -> FPS Added -> Bagalkote@pds| N.R.IHolli Kulali
+[2025-02-02 18:18:27] User -> FPS Added -> Bagalkote@pds| P.G PATIL PETLUR
+[2025-02-02 18:18:27] User -> FPS Added -> Bagalkote@pds| V.S.S. CHINCHAKHANDI K.D.
+[2025-02-02 18:18:27] User -> FPS Added -> Bagalkote@pds| S.R.KAMATAGI MUDDAPUR
+[2025-02-02 18:18:27] User -> FPS Added -> Bagalkote@pds| B.H. UTTUR BANTANUR
+[2025-02-02 18:18:27] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S. MUDHOL (C) ALAGUNDI B.K.
+[2025-02-02 18:18:27] User -> FPS Added -> Bagalkote@pds| MILK PRODUCERS CO-OP SANGHA JUNNUR
+[2025-02-02 18:18:27] User -> FPS Added -> Bagalkote@pds| V.S.S.CHIKKUR
+[2025-02-02 18:18:27] User -> FPS Added -> Bagalkote@pds| Shri Laxmidevi ShtriShakti Mahila Swasahaya sangha Venkatpur Laxanatti
+[2025-02-02 18:18:27] User -> FPS Added -> Bagalkote@pds| V.V.CO-OP Society VARCHAGAL
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| T.C.SHIRUR MALLAPUR P.L
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| Shri. Malappa H Bijjannavar At Post :Dadanatti
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| Y.V Budni Arlikatti
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| PDO Gram Panchayat Vantigodi
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| Sarvodaya StriShakti Sangha Metagudda
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| PARVATI STRI SHAKTI SANGH ANTAPUR
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| SMT UMASHRI ISAWAR MANE BALLUR R.C AND HANCHANAL R C
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| Adi Banajiga Samaj Seva Sangh Shirol
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| MILK PRODUCERS CO-OP SANGHA BADANUR
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| SCST vividoyoshagala sahakari sanga ni.Shirol.
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| R.B.Patil BUDNI B.K
+[2025-02-02 18:18:28] User -> FPS Added -> Bagalkote@pds| G.K. Timmapur Ranjanagi
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| PARASURAM HOSUR MANTUR
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| LAXAMAN KATTIMANI MANTUR
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| SUBAS MADAR KISHORI
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| HANAMANT.B.MUCHANNAVAR HALAGALI
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| AMBIGER CHOUDAYA S.S CHANNAL
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| P.K.P.S.VAJJARAMATTI
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| I.M.PUJARI JALIKATTI B.K
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| M.B.PATIL CHOUDAPUR
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| SHIVANGOUDA PATIL NAGANAPUR
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| SURESH SHANKAR MIRJI JALIBER
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| Secretary Sri.Ambigera Chodayya Samaja Kshemabhiruddi seva samshte, Mugalakoda
+[2025-02-02 18:18:29] User -> FPS Added -> Bagalkote@pds| Sri.Rajeeshwari Mahila Sangha. Roogi
+[2025-02-02 18:18:30] User -> FPS Added -> Bagalkote@pds| Secretary P.K.P.S Kasaba Jambagi
+[2025-02-02 18:18:30] User -> FPS Added -> Bagalkote@pds| Secretary P.K.P.S Jambagi.K.D
+[2025-02-02 18:18:30] User -> FPS Added -> Bagalkote@pds| Secretary P.K.P.S Machakanur.
+[2025-02-02 18:18:30] User -> FPS Added -> Bagalkote@pds| Secretary Neeru Balakedarar Sahakari Sangha. Akkimaradi
+[2025-02-02 18:18:30] User -> FPS Added -> Bagalkote@pds| Secretary P.K.P.S Ningapura
+[2025-02-02 18:18:30] User -> FPS Added -> Bagalkote@pds| Chairman, Seemisalad milk producers co-op society Ltd, Mirji.
+[2025-02-02 18:18:30] User -> FPS Added -> Bagalkote@pds| Bandhalakshmi Mahila SC ST Vividodesha sangha, Maalapura
+[2025-02-02 18:18:30] User -> FPS Added -> Bagalkote@pds| P.K.P.S Mantur
+[2025-02-02 18:18:30] User -> FPS Added -> Bagalkote@pds| Siddappa Laxman Aralikatti At Post:Nagaral
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| Chairman, Shri Mailarlingeshwar Kuri Sangopane And Unne Utpadakara Sangha, Dadanatti
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| Shri Ranganath Kuri Sangopana mattu Unne Utpadakara Sahakari Sangha, Kanasageri.
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| Malagar (Mali) SamajaKshemabhivruddhi Sangha. FPS, Shirol
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| Shri. Kadashiddeshwar Vividhodeshagala Sangha, FPS Shirol
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| PKPS,FPS, MALAPUR
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| PKPS, HALAKI
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| PKPS, KULALI
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| Anand Shankrappa Lamani, Chikkur Tanda (PH Quata)
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| RAIT SEVA S.S.N. MUDHOL
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| M.V. KANKANAWADI MUDHOL
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| MAHILA V.U.S.S. MUDHOL
+[2025-02-02 18:18:31] User -> FPS Added -> Bagalkote@pds| TOWN PRIMARI CO. SO. MUDHOL
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| HARALAYYA CHA.KAI.SAM. MUDHOL
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| MUDHOL PRIMARY G.S.Sanga.MUDHOL
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| MAHALINGESHWAR TARUN SANHG BELGALI
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| HANUMAN YUVAKA MANDAL BELAGALI
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| PRABHU BHOLISHTTI LOKAPUR
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| M M HUNDEKAR SUBAS NAGAR LOKAPUR.
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| ISHWAR MARUTI KUGATE BELAGALI
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| SHANTJOTI MAHILA MANDAL BELAGALI
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| M.R.ARENAD BELAGALI
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| SURESH HUGGI VENKATAPUR,THANIKERI LOKAPUR
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| Shri.Bhagyalakshmi Women association and Shreeshakthi association,Mudhol
+[2025-02-02 18:18:32] User -> FPS Added -> Bagalkote@pds| Shri Renuka Shtri Shakti swa sahaya sangha, kodihal Garden, Belagali
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| JAIWANT PAWAR MUDHOL GIRAGAOV
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| Secretory TAPCMS Ltd Mudhol
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| Ku. Spoorthi vivida uddeshagala souharda sahakara nigama. Mudhol.
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| Sri Veerarani Kittur Chennamma co-operative society limited, Mudhol
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| Shri Aadi Jambava SC Kshemabhivrudhi Samsthe, Mudhol
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| Shri Durgadevi Devastana Jirnodhara Samiti, Mudhol
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| Kumari Aishwarya Basavaraj Talawar,Lokapur
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| VEERABHADRESHWAR CO.SOCI.BANAHATTI S.NO.1
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| Secratory, Madina Women Minority Multipurpose society Rampur
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| HOSUR V.CO-OP SO. S.NO.3
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| SARVODAYA SO. RAMPUR NO.5
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| RAIT YUVAKA SANGHA HOSUR NO.6
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| AKKAMAHADEVI CO. CO-OP SO. RABAKAVI NO.8
+[2025-02-02 18:18:33] User -> FPS Added -> Bagalkote@pds| GARIBI HATAVO CO-OP.S. RABAKAVI NO.9
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| RABAKAVI-BANAHATTI TOWN CON. CO.SOCI. RABAKAVI NO.17
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| Bharat.Nekar.S.Sangha. Banahatti
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| VIJAYALAXMI V.V.S.S. BANAHATTI NO.6
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| WEAVERS CO-OP SO. RAMPUR NO.14
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| MAHILA V.S. RABAKAVI NO.15
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| S.S.BIDARI BANAHATTI NO.16
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| BANASHANKARI CO-OP SO. RABAKAVI NO.17
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| JAI BHAVANI V.V.S.RAMPUR NO.19
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| ALANKAR V.U.S.S.HOSUR NO.20
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| SHRISHAIL C. JAVALAGI BANAHATTI NO.21
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| SIDDIVINAYAK ASSOCIATION.BANAHATTI
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| CHANDRODAYA K.G.S.S. BANAHATTI NO.23
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| RAGHAVENDRA V.U.S. RABAKAVI
+[2025-02-02 18:18:34] User -> FPS Added -> Bagalkote@pds| The Nekarar Co-Op Society Banahatti
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| HANUMAN V S SANGH BANAHATTI NO 24
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| JAMKHANDI TQ K.G.K. Sangh Banahatti No 25
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| NILAKANTESHWAR CON.CO-OP SOCIETY
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| Dr. AMBEDKAR P J V U S SANGH RABAKAVI
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| SRI GURUDEV DANESHWAR P J SANGH
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| KADAPPA HANAMANT MANTUR BANAHATTI NO-
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| BALAPPA S. SIDDAPPAGOL BANAHATTI NO-
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| NAMADEV SIMPI V U S SANGH Banahatti NO
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| BHUVIVADDAR SAMAJ ABIVRDDI SANGH BANAHATTI
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| SHRI MAHALXMI MAHILA ABIVRDDI SAHAKARI SANGH RABAKAVI
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| RAMABAI AMBEDKAR SC V U S SANGH RABAKAVI
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| KANNAD YUVAK SANGH HOSUR NO-
+[2025-02-02 18:18:35] User -> FPS Added -> Bagalkote@pds| MALLIKARJUN VIDYUT CHALIT M U & M S SANGH NI RAMPUR NO-
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| Adrasha Kadashiddeshwar VSSN, Banahatti
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| RABAKAVI VIDYUTH CHALITH MAGGAGALA CO-OP SOCIETY, FPS, RABAKAVI
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| P.K.P.S HIPPARAGI
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| Secretory PKPS Shop-No-02 Atpost Kulahalli , Taluk Jamkhandi
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| GAJANANA MITRA MANDAL ASANGI
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| Secretory Shri Hanuman CO. op Credit Society Madanamatti
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| ARAVIND YUVAKA MANDAL NAVALAGI
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| JAI HANUMANA YUVAKA SANGHA JAGADAL
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| MILK PRODUCERS CO-OP SOCITEY JAGADAL
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| BHARAT NEKAR SAHAKARI SANGHA YALLATTI
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| GAJANANA VIVIDHODDESHA SAHAKARI SANGHA CHIMMAD
+[2025-02-02 18:18:36] User -> FPS Added -> Bagalkote@pds| GARIBI HATAVO SAHAKARI SANGHA CHIMMAD
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| BASAVRAJ P YARGUDRI GOLBHAVI
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| JAI HANUMAN YUVAKA MANDAL KALATIPPI
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| V.S.S.SASALATTI
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| V.S.S.KESARAGOPPA
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| MARUTI TARUN SANGHA BISNAL
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| V.S.S.SAIDAPUR
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| V.S.S. MADABHAVI
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| AMBEDKAR YUVAKA SANGANATTI
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| BASAWESWAR YUVAKA MANDAL SANGANATTI
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| HARIJAN &.G..N A.S.S.N DAVALESHWAR
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| Shri Bagyalaxmi S.S V.Sangha Dawleshwar
+[2025-02-02 18:18:37] User -> FPS Added -> Bagalkote@pds| LACHAPPA.G.LAMANI. SAMEERAWADI
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| NAVEEN LAXMAN MADANAMATTI HALANGALI
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| PRAKRATI SAVAYAV K.S.HIPPARAGI
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| PEERAPPA M.MADAR MARAPUR
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR ABHIVARDI SANGHA NANDAGOV
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| SHRI:PARAPPA SHENKREPPA BARAGAL-CHIMMAD
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| Shri Purushottam Prakash Bakare -(PH)-Yaragatti- Banahatti
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| SHRI:DIGAMBARESHWAR STRI SHAKTI SANGH-HANAGANDI
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| SHRI:MAHAVEER ALPASANKHYATAR V U SAHAKARI SANGH-HALINGALI
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| P.K.P.S.BANK ASANGI
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| Secretory Bhumakkanavar garden MIlk Producers Co-Operative Society Navalagi, Taluk Jamkhandi
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| Secretory Milk Producers Co-Operative Society At:Kulahalli, Taluk -Jamkhandi
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| FPS PKPS Ltd Tamadaddi (New)
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| PKPS Ltd Tamadaddi (Old)
+[2025-02-02 18:18:38] User -> FPS Added -> Bagalkote@pds| Prakhamika Krushi Pattina Sahakari Sangha Ltd. FPS, Yallatti
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| Sec. Rani Channamma Souhardha Sahakari Sangha,Navalagi.
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| Pujeri Tota Halu Utpadakara Sahakari Sangha, FPS Chimmad
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| PRATHAMIKA KRUSHI PATTINA SAHAKARI SANGHA NI. FPS, NAVALAGI-2
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| PKPS, KULAHALLI
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| PATIL TOTA HALU UTPADAKARA SAHAKARI SANGHA, Ni. HANAGANDI
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| SRI SANGAPPA VITTAL MADAR, BANDIGANNI
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.TERDAL NO-1
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.TERDAL NO-2
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.TERDAL NO-3
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| V S S KALATTI-Teradal S.NO-4
+[2025-02-02 18:18:39] User -> FPS Added -> Bagalkote@pds| GAREEBI HATAVO CON.CO-OP SOCIETY TERDAL NO-5
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| ADHILAXMI NAGAR STREE SHAKTI SANGH.TERDAL
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| ALPASANKHYATARA V.S.S.TERDAL NO-7
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| CHANNAGIRESHWAR P.CO. MAHALINGAPUR
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| GARIBI HATAVO S.S. MAHALINGAPUR
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| BHAGYALAXMI ASSOCIATION MAHALINGAPUR
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| KARNATAKA CONSUMERS.K.CO-OP. SOCI MAHALINGAPURL
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| BANASHANKARI K.G.S.S. MAHALINGAPUR
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| SHI VENKATESHWAR DALIT SEVA SAMITI MAHALINGAPUR
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| SHRI PANDURANG TARUN SANGH BUDNI P.D. MAHALINGAPUR
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| MAHALAXMI V V S N LAXMI ,MAHALINGAPUR
+[2025-02-02 18:18:40] User -> FPS Added -> Bagalkote@pds| P.J.P.P. MAHILA VI.UDDESHGALA S.S.MAHALINGAPUR.
+[2025-02-02 18:18:41] User -> FPS Added -> Bagalkote@pds| BHIMAPPA BABU GOUDI BASAVA NAGAR MHALINGPUR
+[2025-02-02 18:18:41] User -> FPS Added -> Bagalkote@pds| DANAMMADEVI CON.SOCIETY MAHALINGAPUR
+[2025-02-02 18:18:41] User -> FPS Added -> Bagalkote@pds| MAHATHMA GANDHI V.U.S SANGH TERADAL
+[2025-02-02 18:18:41] User -> FPS Added -> Bagalkote@pds| Kuvempu Kannada Yuvaka sangha Teradal
+[2025-02-02 18:18:41] User -> FPS Added -> Bagalkote@pds| Sri Vaddina Mahalakshmidevi Mahila vivida uddeshagala Sahakari Sangha.
+[2025-02-02 18:18:41] User -> FPS Added -> Bagalkote@pds| S.B.Sajjanavar Vividha Uddeshagala Sangha, Rabakavi
+[2025-02-02 18:18:41] User -> FPS Added -> Bagalkote@pds| Sri Akkamahadevi vividha uddeshagala sahakari sangha
+[2025-02-02 18:18:41] User -> FPS Added -> Bagalkote@pds| JAI KANNADAMBE MVUS,MUGALAKHOD
+[2025-02-02 18:18:41] User -> FPS Added -> Bagalkote@pds| Mugalkhod Dakshina Bhag PKPS FPS, Mugalkhod
+[2025-02-02 18:18:41] User -> FPS Added -> Bagalkote@pds| MASAPPA SUDI KABBARAGI
+[2025-02-02 18:18:42] User -> FPS Added -> Bagalkote@pds| V S S KENGALGUTTI
+[2025-02-02 18:18:42] User -> FPS Added -> Bagalkote@pds| CHAIRMAN SHRI LAKSHMI MAHILA SVA SAHAYA SANGHA TADDEWADI
+[2025-02-02 18:18:42] User -> FPS Added -> Bagalkote@pds| CHAIRMAN SHRI BEERALINGESHWAR GRAMINABHIVRUDDI SANGHA HAGARAGUND
+[2025-02-02 22:09:06] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"name":"test","type":"Model FPS","latitude":"9.89","longitude":"76.7661","district":"Bagalkote","id":"123qwer","demand":"1000","demand_rice":"500"}
+[2025-02-02 22:10:32] User -> FPS InActive -> | 
+[2025-02-02 22:10:56] User -> FPS Active -> | 
+[2025-02-02 22:11:37] district_user -> FPS deleted -> Bagalkote@pds| Requested JSON -> {"uid":"FPS_679f9faa429"} | test
+[2025-02-02 22:13:29] district_user -> FPS deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | 
+[2025-02-02 22:14:31] User -> FPS Added -> Bagalkote@pds| Gram Mandal Maninagar
+[2025-02-02 22:14:31] User -> FPS Added -> Bagalkote@pds| MAHAKUTESHWAR YUVAKA MANDAL YANKANCHI
+[2025-02-02 22:14:31] User -> FPS Added -> Bagalkote@pds| MAHAKUTESHWAR Y.M. GUBBERAKOPPA
+[2025-02-02 22:14:31] User -> FPS Added -> Bagalkote@pds| L.B. NAIKAR. KHANAPUR.S.K. 68 (C)(RADDERTIMMAPUR)
+[2025-02-02 22:14:31] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL HAVALAKOD
+[2025-02-02 22:14:31] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL FAKIRBUDIHAL
+[2025-02-02 22:14:31] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL SAGANUR
+[2025-02-02 22:14:31] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL CHINCHALAKATTI
+[2025-02-02 22:14:31] User -> FPS Added -> Bagalkote@pds| K.K.LAMANI CHINCHALAKATTI L.T.
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA HANAMANERI (S)
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| V.S.S. NEERBUDIHAL
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL GANGANABUDIHAL
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| S.M.GONNAGAR JANGAWAD
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDALA HOSAKOTI-37 (C)(KAINAKATTI)
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| Y.S.NARASANVAR SHIPARMATTI
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL HOSAKOTI
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MATTIKATTI
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| SHIVANAND YUVAKA MANDAL MALAGI
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| SHRADDANAND YUVAKA MANDAL NARENUR
+[2025-02-02 22:14:32] User -> FPS Added -> Bagalkote@pds| KRISHNA YUVAKA MANDAL NARENUR L.T.2
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| Ranganath Hanamappa Sunagad (PH) Inam Hanamaneri
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| PKPS Anawal
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL KALABANDKERI
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL YANDIGERI
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| V.S.S.KAGALGOMBA
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| V.S.S.KERAKALMATTI
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| PKPS Halakurki
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| V.S.S.HULAGERI
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| BASAVESHWARA YUVAKA MANDAL JALAGERI
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| Manjunatha Shivappa Rathod (PH)
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| Secretory Neeralkeri Milk producers Co-Op Society Ltd.
+[2025-02-02 22:14:33] User -> FPS Added -> Bagalkote@pds| P.K.P.S.MUSTIGERI.
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDALA HULLIKERI INAM
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| YOUTH ASSOCIATION MUMARADDIKOPPA
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| P.K.P.S. UGLVAT
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| PURNANANDA YUVAKA MANDAL KALLAPUR.S.K.
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| KALIKADEVI YUVAK MANDALA TAPPASAKATTI
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL HANAMASAGAR
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| PURNANAND YUVAKA MANDAL SOMANAKOPPA
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| L.B. NAYAKAR KHANAPUR S,K.
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| V.S.S. KAKANUR
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| GRAMA MANDALA CHIMMANAKATTI
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| NEERU BALAKEDARAR SAHAKARI SANGHA HAGANUR
+[2025-02-02 22:14:34] User -> FPS Added -> Bagalkote@pds| V.S.S. TALAKAWAD
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NEELGUND
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL LAKHAMAPUR
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| IRAPP. K.BIRANUR BIRANUR
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR YUVAKA MANDAL ALUR S.K.
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR YUVAK MANDAL TIMMAPUR S.N.
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| VEERABHADHRESHWARA Y M MALLAPUR S.L.
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| Kalasa (Govonakopp) Milk producers Co op Society
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL ALADAKATTI
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| PKPS Hebballi
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| V.S.S. MUTTALAGERI
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR TARUN SANGHA NAVILAHOLE.
+[2025-02-02 22:14:35] User -> FPS Added -> Bagalkote@pds| BASAVALINGESHWAR Y M BACHINAGUDDA.
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GONAL
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| V.S.S.CHOLACHAGUDDA
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| BANASHANKARI DEVASTHANA SEVA SAMITI BANASHANKARI.
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| REVANASHIDDESHWAR YUVAKA SANGHA HIRENASIBI
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| AMBEDAKAR VIDYA VARDHAKA SANGHA BELUR
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| V.S.S.JALIHAL
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| Halu Utpadakara sahakari sangha,Pattadakal
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL ADAGAL.
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| V.S.S.KUTAKANAKERI
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| V.S.S.YARAGOPPA.S.B
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| SANGAMESHWAR Y M CHIKKAMUCCHALGUDD
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| P K P S BANK HIREMUCCHALAGUDDA
+[2025-02-02 22:14:36] User -> FPS Added -> Bagalkote@pds| RAIT SEVA SAHAKARI SANGHA NANDIKESHWAR
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR YUVAKA MANDAL B.N.JALIHAL
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| AKKAMAHADEVI MAHILA MANDAL NEERALGI.
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA KHYAD
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| AKKAMAHADEVI. MAHILA MANDAL NEERALAGI-107 (C)(TAMINAL)
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| PKPS Kataraki
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL MANNERI
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| V.S.S.DANAKASHIRUR
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| GRAMA MANDALA GUDDADAMALLAPUR.
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL ANATAGERI (Attach)Guddad mallapur
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| N B MULLUR BELUR.117 (C)(NASAGUNNI)
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL GIDDANAYAKANAL
+[2025-02-02 22:14:37] User -> FPS Added -> Bagalkote@pds| N.B.MULLUR BELUR
+[2025-02-02 22:14:38] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL MANGALUR
+[2025-02-02 22:14:38] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL SHIRBADAGI.
+[2025-02-02 22:14:38] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL NELAVAGI (Attach)Chalukya CCS Badami
+[2025-02-02 22:14:38] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR YUVAKA MANDAL BEDARBUDIHAL.
+[2025-02-02 22:14:38] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL BANDAKERI
+[2025-02-02 22:14:38] User -> FPS Added -> Bagalkote@pds| KUNCHIKORAVAR SANGHA SHIVAPUR
+[2025-02-02 22:14:38] User -> FPS Added -> Bagalkote@pds| RAIT SANGH KARADIGUDD S N
+[2025-02-02 22:14:39] User -> FPS Added -> Bagalkote@pds| ChairmanSecretory Milk Producers Co-Op Society , Narasapur
+[2025-02-02 22:14:39] User -> FPS Added -> Bagalkote@pds| PKPS Hosur
+[2025-02-02 22:14:39] User -> FPS Added -> Bagalkote@pds| Ranganath Grameen Abhivrudhi Samsthe, Suleekeri
+[2025-02-02 22:14:39] User -> FPS Added -> Bagalkote@pds| Sri. Shiddalingeshwara neeru balakedarar sahakari sangha, sulla.
+[2025-02-02 22:14:39] User -> FPS Added -> Bagalkote@pds| Sri. Sidrameshwara Purushara Swasahaya sangha, Kittali
+[2025-02-02 22:14:39] User -> FPS Added -> Bagalkote@pds| Dr.Babu. Jagajeevanram Vivedoddesha sahakari sangha, Kendur
+[2025-02-02 22:14:39] User -> FPS Added -> Bagalkote@pds| Neharu Havyashi Kala Sanskrutika hagu krida sangha, haligeri
+[2025-02-02 22:14:39] User -> FPS Added -> Bagalkote@pds| Maruteshwara vevedoddeshagala seva sangha,Kabbalageri
+[2025-02-02 22:14:39] User -> FPS Added -> Bagalkote@pds| PKPS Kadarakoppa
+[2025-02-02 22:14:39] User -> FPS Added -> Bagalkote@pds| Savitri Bhimanagouda Halegoudru FPS, Agasankoppa
+[2025-02-02 22:14:40] User -> FPS Added -> Bagalkote@pds| Milk Producers Society Ltd, FPS, Vadavatti
+[2025-02-02 22:14:40] User -> FPS Added -> Bagalkote@pds| Adarsha Sangha (R),FPS, Belavalakoppa, Tq. Badami
+[2025-02-02 22:14:40] User -> FPS Added -> Bagalkote@pds| Mamatageri Milk producers Co-Op Society. Ltd,FPS, Mamatageri
+[2025-02-02 22:14:40] User -> FPS Added -> Bagalkote@pds| RAKESH P AMBIGER, FPS, JAKANOOR
+[2025-02-02 22:14:40] User -> FPS Added -> Bagalkote@pds| Basavaraj Gopal Sharanar, Narenur Tanda No:01
+[2025-02-02 22:14:40] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.BADAMI
+[2025-02-02 22:14:40] User -> FPS Added -> Bagalkote@pds| Consumers Co op Socity Badami
+[2025-02-02 22:14:40] User -> FPS Added -> Bagalkote@pds| CHALUKYA C C S BADAMI
+[2025-02-02 22:14:40] User -> FPS Added -> Bagalkote@pds| PKPS KERUR
+[2025-02-02 22:14:40] User -> FPS Added -> Bagalkote@pds| MARUTI C C S KERUR.
+[2025-02-02 22:14:41] User -> FPS Added -> Bagalkote@pds| NEKAR U.H.MARATA S. S.NO.2.KERUR.
+[2025-02-02 22:14:41] User -> FPS Added -> Bagalkote@pds| BANASHAKARI GRAM MANDALA BADAMI.
+[2025-02-02 22:14:41] User -> FPS Added -> Bagalkote@pds| SHARANAMMA M V S S BADAMI
+[2025-02-02 22:14:41] User -> FPS Added -> Bagalkote@pds| Shri Maruteshwara VVS Ltd. Kerur
+[2025-02-02 22:14:41] User -> FPS Added -> Bagalkote@pds| Kuri Sakanike Mattu Unne Utpadakara Sahakari Sangha . Ltd. Kerur
+[2025-02-02 22:14:41] User -> FPS Added -> Bagalkote@pds| CONSUMERS CO-OP SOCIETY BAGALKOT
+[2025-02-02 22:14:41] User -> FPS Added -> Bagalkote@pds| SWASTIK C CO-OP SO BAGALKOT
+[2025-02-02 22:14:41] User -> FPS Added -> Bagalkote@pds| BHAVANI C CO-OP SO BAGALKOT
+[2025-02-02 22:14:41] User -> FPS Added -> Bagalkote@pds| SMT:R.S.TUPPAD BAGALKOT
+[2025-02-02 22:14:42] User -> FPS Added -> Bagalkote@pds| JANATA BAZAR BAGALKOT
+[2025-02-02 22:14:42] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S. SHOP BAGALKOT
+[2025-02-02 22:14:42] User -> FPS Added -> Bagalkote@pds| GOVERNMENT E CO-OP SO BAGALKOT
+[2025-02-02 22:14:42] User -> FPS Added -> Bagalkote@pds| The Bagalkot Extension Primary Consumers CO.Op Society Ltd. Bagalkot
+[2025-02-02 22:14:42] User -> FPS Added -> Bagalkote@pds| KARIHALLA W.S.Co.Co-Op.S.BAGALKOT
+[2025-02-02 22:14:42] User -> FPS Added -> Bagalkote@pds| MAHILA V V CO-OP SO BAGALKOT
+[2025-02-02 22:14:42] User -> FPS Added -> Bagalkote@pds| Samruddhi Swa Sahaya Sangha, Bagalkot
+[2025-02-02 22:14:42] User -> FPS Added -> Bagalkote@pds| SMT: Mamtaj Begam.N.AARI NAVANAGAR, BAGALKOT
+[2025-02-02 22:14:42] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HAVELI BGK
+[2025-02-02 22:14:42] User -> FPS Added -> Bagalkote@pds| B.M.KOTI NAVANAGR BGK
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| JANATHA BAZAR NAVANAGAR BGK
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| KITTUR RANI C M U S NAVANAGAR BGK
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| BHAGYASHREE M N U S S G NAVANAGAR BGK
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| M.Y.MALAKGUND N B A NAVANAGAR BGK
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| Raziya Sultan Womens Society,Navanagar,Bagalkot
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| Chairman Secretory Shri.Indrapriya. SCST Women Society , Bagalkot
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| SHRI.SURENDRA VENKANNA GADAGADI. FPS, BAGALKOTE
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| SMT JAYASHRI S HELAVAR, URF SHELLIKERI, FPS
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| SARVAMANDALA MALLAPUR
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| KURI SAKANIKE CO-OP S BEVINAMATTI
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| VIVEKANDA.Y.M.BHAGAVATI-21 (S)HONNAKATTI
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NEERALKERI
+[2025-02-02 22:14:43] User -> FPS Added -> Bagalkote@pds| MARUTI VALMIKI SEVA YUVAK MANDAL NEERALKERI
+[2025-02-02 22:14:44] User -> FPS Added -> Bagalkote@pds| GSS GUNDANAPALLE-95 (S)(INGALAGI)
+[2025-02-02 22:14:44] User -> FPS Added -> Bagalkote@pds| V.S.S.BENAKATTI
+[2025-02-02 22:14:44] User -> FPS Added -> Bagalkote@pds| VIVEKANAND Y M BHAGAVATI
+[2025-02-02 22:14:44] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MUDAPALAJIVI
+[2025-02-02 22:14:44] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL KADLIMATTI
+[2025-02-02 22:14:44] User -> FPS Added -> Bagalkote@pds| V.S.S.HALLUR
+[2025-02-02 22:14:44] User -> FPS Added -> Bagalkote@pds| V.S.S.BHAIRAMATTI
+[2025-02-02 22:14:44] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL CHAVADAPUR
+[2025-02-02 22:14:45] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL SANGAPUR
+[2025-02-02 22:14:45] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MUCHAKHANDI
+[2025-02-02 22:14:45] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MUCHAKHANDI.L.T-1
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MUCHAKHANDI L.T-2
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| MARUTESHWER Y M SHIGIKER
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| HANNU B S S KALADAGI
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| V.S.S. KHAJJIDONI
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL ANKALAGI
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| Maruteshwar GRAM MANDAL SHARADAL
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL UDAGATTI
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| V.S.S. CHIKKASHELLIKERI
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HIRESHELLIKERI
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| GRAM.M.HIRESHELLIKERI (S)KALASAKOPPA
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| V.S.S DEVANAL
+[2025-02-02 22:14:46] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIKKASANSHI
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| DR.B.R.AMBEDKER T S.TULASIGERI
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GOVINKOPPA
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL YADAHALLI
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHABBI
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| SEVEN STAR Y M SOKANADAGI
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| SIDDARAMESHWAR Y M GADDANAKERI
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| DURGADEVI Y M GADDANAKERI L.T.
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| V.S.S. SIMIKERI
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| SHIVALINGESHWAR G. H. M MURANAL
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| SHIVALINGESHWAR T S VEERAPUR
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| Shri Dhanalaxmi Unneya utpadakara Sahakari Sangha Ltd. Anadinni takuk Bagalkot
+[2025-02-02 22:14:47] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SORAKOPPA
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NAKKARAGUNDI
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HONARALLI
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| BALAJI BANJARA S, RAMPUR R.C.
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HOSUR (Attach) GRAM MANDAL NAGARAL
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SUTAGUNDAR
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| V.S.S. MANKANI
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL DOMANAL
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| V.S.S. MUGALOLLI
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL MUGALOLLI TANDA
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SANGONDI
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HIREGULBAL TANDA(Sus)
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL MUTTATTI
+[2025-02-02 22:14:48] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR Y S HIREMURAMATTI
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NAYANEGALI
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NAGARAL
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NAGASAMPAGI
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHITAGINAKOPPA
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL DEVALAPUR
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIKKAMYAGERI
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HANDARAGAL
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| LAXMIDEVI Y M BOMMANAGI
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| PKPS BILKERUR
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL TIMMAPUR
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL JADRAMKUNTI
+[2025-02-02 22:14:49] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL JADRAMKUNTI TANDA
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL LAVALESHWAR TANDA
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| GRAHAKAR S S GUNDANAPALLE
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| MARUTESWAR S S S S G KIRASUR
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| SHRI.MALLIKARJUN,V. U.S.S,BEVOOR
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| G.M. TIMMAPUR-80 (S) (BODANAYAKADINNI)
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| V.S.S. MURNAL
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| DURGAPARAMESHWARI. V. S,KADAMPUR
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL,YANKANCHI
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| DR.B.R.AMBEDKAR.T.S.RAMPUR
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MANAHALLI
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL ALUR LT
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| DR:AMBEDKAR Y M ALUR
+[2025-02-02 22:14:50] User -> FPS Added -> Bagalkote@pds| VSS ILYAL
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL HIERGULABAL
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL CHIKKAHODLUR
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| MILLAT EDUCTION & W SO,KALADAGI
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| R.R.MUDHOLE.GADDANAKERI
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| P.R.DESHAMUKH KALADAGI
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| Secretary P.K.P.S Achanuru
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| Smt. Pavithra Manjunath Talawar FPS, Bennur
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| Shri.Papanna. Sangappa. Bhadrashetti At: Mannikatti FPD
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| Navachaitanya Banjara Vivedoddesha sahakari sangha, Niyamit FPS, SINDGI
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| Kittur Channamma Mahila Sangh (R) FPS, Bevoor
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| Shri Haripriya Pattina S S N, Tulashigeri
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| Smt. Girijabai Kodleppa Sudi FPS, HireMyageri
+[2025-02-02 22:14:51] User -> FPS Added -> Bagalkote@pds| RAMAPPA HANAMAPPA MUDUKANNANAVAR (PH), Hiresanshi
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| Dr BABASAHEB AMBEDKAR, YUVAKA SANGHA , MUDUVINAKOPPA
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| DURGADEVI GRAM MANDAL SHIRUR TANDA
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| SUDAGADSIDDHARA MAHILA S.S.G.SHIRUR
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| SHRI.SIDDHALINGESHWAR.K.V.V.S.S.N.SHIRUR
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| KARANATAKA R S G M N BANGALORE
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| Shri. Y.N.Naikar,FPS
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| P.K.P.S. BANK GALAGALI
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KOLUR
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR YUVAKA MANDAL CHIKKAHANCHINAL
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| P.K.P.S BANK YADAHALLI
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| NEERU BALAKEDARAR CO-OP SANGHA BISANAL
+[2025-02-02 22:14:52] User -> FPS Added -> Bagalkote@pds| P.K.P.S. BANK TEGGI
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| P.K.P.S. BANK AMALAZARI
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| HUCHESHWAR GRAM MANDAL SIDDAPUR
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SIDDAPUR L.T.
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL BUDIHAL S.G.
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| MILK PROD. CO-OP SANGHA GULABAL
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| DIGAMBARESHWAR NEKARAR CO-OP SANGHA NAGARAL
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| SHRI MALLIKARJUN GRAM MANDAL INAMHANCHINAL
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| BALLESHWAR GRAM MANDAL BALLUR
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| SHRI.ARAVIND PANDAPPA JEERALE KORTI
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| P.K.P.S.BADAGANDI
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| P.K.P.S BANK SONNA
+[2025-02-02 22:14:53] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL DHAVALESHWARA
+[2025-02-02 22:14:54] User -> FPS Added -> Bagalkote@pds| P.K.P.S.BANK ROLLI
+[2025-02-02 22:14:54] User -> FPS Added -> Bagalkote@pds| Secretory PKPS Takkalaki
+[2025-02-02 22:14:54] User -> FPS Added -> Bagalkote@pds| NIJALINGADEV GRAM MANDAL LINGAPUR S.R. BILAGI CROSS NO.1
+[2025-02-02 22:14:54] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL ANAGAWADI
+[2025-02-02 22:14:54] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KOPPA S.R.
+[2025-02-02 22:14:54] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HONNIHAL
+[2025-02-02 22:14:54] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR V.U.S.BIRAKABBI
+[2025-02-02 22:14:54] User -> FPS Added -> Bagalkote@pds| KANAKESHWAR GRAM MANDAL KANDAGAL
+[2025-02-02 22:14:54] User -> FPS Added -> Bagalkote@pds| SOMESHWAR GRAM MANDAL BADARADINNI
+[2025-02-02 22:14:54] User -> FPS Added -> Bagalkote@pds| Siddappa Maliyappa Kerakalamatti
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SHIRAGUPPI
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| PKPS Arakeri
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| Maruteshwar Grama Sangha Arakeri Tanda
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| PKPS BANK KOPPA S.K.
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| PKPS BUDIHAL S.H.
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| MARUTI GRAM MANDAL KOVALLI
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| Chairman-Secretory Gajanana Mahila Samukhya Swasahaya Sangha Chikkalagundi
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| PKPS BANK KUNDARAGI
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KUNDARAGI L.T-1
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KUNDARAGI L.T-2
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR GRAM MANDAL JANAMATTI Temp Att (SUNAG L.T-1)
+[2025-02-02 22:14:55] User -> FPS Added -> Bagalkote@pds| JANASEVA GRAM MANDAL HERAKALL
+[2025-02-02 22:14:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL YALLIGUTTI
+[2025-02-02 22:14:56] User -> FPS Added -> Bagalkote@pds| V.S.S.S SUNAG
+[2025-02-02 22:14:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SUNAG L.T-1
+[2025-02-02 22:14:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL SUNAG L.T-2
+[2025-02-02 22:14:56] User -> FPS Added -> Bagalkote@pds| PKPS BANK TUMBARAMATTI
+[2025-02-02 22:14:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL TOLAMATTI
+[2025-02-02 22:14:56] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL MANNIKERI
+[2025-02-02 22:14:56] User -> FPS Added -> Bagalkote@pds| PKPS NAGARAL
+[2025-02-02 22:14:56] User -> FPS Added -> Bagalkote@pds| PKPSLtd Girisagar No 2
+[2025-02-02 22:14:57] User -> FPS Added -> Bagalkote@pds| TAPCMS BILAGI, Branch BADAGI
+[2025-02-02 22:14:57] User -> FPS Added -> Bagalkote@pds| P K P S ANGAWADI
+[2025-02-02 22:14:57] User -> FPS Added -> Bagalkote@pds| YALLAVVA,DHALAPPA, ARABAVVGOL
+[2025-02-02 22:14:57] User -> FPS Added -> Bagalkote@pds| BHUVANESHWARI M.S. S.SUNAGA
+[2025-02-02 22:14:57] User -> FPS Added -> Bagalkote@pds| P.K.P.S Mundaganur
+[2025-02-02 22:14:58] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HEGGUR
+[2025-02-02 22:14:59] User -> FPS Added -> Bagalkote@pds| Shri Swami Vivekananda Grameena Abhivrudhi Samste. (R) Galagali
+[2025-02-02 22:14:59] User -> FPS Added -> Bagalkote@pds| SHRI.PRASAD BHARAMAPPA MADIVALAR FPS, BAVALATTI (PH)
+[2025-02-02 22:14:59] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S. BILAGI
+[2025-02-02 22:14:59] User -> FPS Added -> Bagalkote@pds| P.K.P.S.S.BILAGI
+[2025-02-02 22:14:59] User -> FPS Added -> Bagalkote@pds| TAPCMS BILAGI Branch 3
+[2025-02-02 22:14:59] User -> FPS Added -> Bagalkote@pds| Shri. Shiddeshwar con.co-op soci- Bilagi
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| Smt. SHARAVVA SIDDAPPA GALAGALI
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL HANAPUR L.T
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAK MANDAL ASANGI
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| P.K.P.S,KATAGERI.
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR YUVAKA MANDAL HOUSANUR attached to consummer s guledgud
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA RAGHAPUR
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| MARUTI.Y.M MURUDI.-148 (C)(TEGGI)
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| V.S.S.HALADUR.
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| RAITA SANGHA ALLUR S.P
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| MUKESHWARI YUVAKA MANDAL BUDINAGAD
+[2025-02-02 22:15:00] User -> FPS Added -> Bagalkote@pds| SHASTRI Y M KATAGINAHALLI
+[2025-02-02 22:15:01] User -> FPS Added -> Bagalkote@pds| PKPS Layadagundi
+[2025-02-02 22:15:01] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL KOTNALLI
+[2025-02-02 22:15:01] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA NAGARAL S.P
+[2025-02-02 22:15:01] User -> FPS Added -> Bagalkote@pds| B H A GULEDDAGUDDA-8 (C)(SABBLAHUNACHI)
+[2025-02-02 22:15:01] User -> FPS Added -> Bagalkote@pds| DURGADEVI YUVAKA MANDAL HULLIKERI S.P
+[2025-02-02 22:15:01] User -> FPS Added -> Bagalkote@pds| V.S.S.KOTIKALL
+[2025-02-02 22:15:01] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR YUVAKA MANDAL TIMMASAGAR.
+[2025-02-02 22:15:01] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA LINGAPUR
+[2025-02-02 22:15:01] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL KELAVADI
+[2025-02-02 22:15:01] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR TARUN SANGH HIREBUDIHAL.
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| FRIENDS UNION CLUB KONKANAKOPPA
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL JAMMANAKATTI
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL LAKKASAKOPPA
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| RAITA SANGHA HULASAGERI
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| A.M.MULLA PARVATI
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL KHANAPUR S.P.
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL HANAPUR S.P.
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL MURADI
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| L.R.NAGARAL PADANAKATTI
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIMMALAGI
+[2025-02-02 22:15:02] User -> FPS Added -> Bagalkote@pds| NAGESHWAR TARUN SANGHA KATAPUR
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| S,Y,SALAGUNDI KHAJIBUDIHAL
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| V,S,S,HANGARAGI
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| Shri Mangala Shakkshanika Hagu Grameenabhruddi Samste FPS, Mangalgudda
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| PKPS, TOGUNASHI
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| JANATA N.U.S.S. GULEDAGUDD.
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| BANASHANKARI H. ASSO.GULEDGUDD
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| KAIMAGGA K.T.ASSO. GULEDGUDD
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| RENUKA MAHILA MANDAL GULEDAGUDDA.
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| CONSUMERS CO-OP SOCIETY GULEDGUDD.
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| NEHARU YUVAKA MANDAL GULEDGUDD
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| ADISHAKTI YUVAKA MANDAL GULEDGUDD
+[2025-02-02 22:15:03] User -> FPS Added -> Bagalkote@pds| KARNATAKA C C S GULEDGUDD
+[2025-02-02 22:15:04] User -> FPS Added -> Bagalkote@pds| SIDDESHWAR A.S.S.GULEDGUDD
+[2025-02-02 22:15:04] User -> FPS Added -> Bagalkote@pds| NEELKANTESHWAR H,A GULEDAGUDDA.
+[2025-02-02 22:15:04] User -> FPS Added -> Bagalkote@pds| ANUPAMA MAHILA MANDAL GULEDGUDDA.
+[2025-02-02 22:15:04] User -> FPS Added -> Bagalkote@pds| Chairman PKPS Ltd. Sangam
+[2025-02-02 22:15:04] User -> FPS Added -> Bagalkote@pds| Secratory, Ranichannamma Multipurpose Women Society , Ganjihal
+[2025-02-02 22:15:04] User -> FPS Added -> Bagalkote@pds| D.S.BHAVI. KATAGUR
+[2025-02-02 22:15:04] User -> FPS Added -> Bagalkote@pds| V.S.S.SANGAM BISALADINNI
+[2025-02-02 22:15:04] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL HUVANUR HADAGALI
+[2025-02-02 22:15:04] User -> FPS Added -> Bagalkote@pds| V.S.S. IDDALAGI
+[2025-02-02 22:15:04] User -> FPS Added -> Bagalkote@pds| P.M.MADANSHETTY, CHITTARAGI
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| F.S.C.S HUNGUND (TIMMAPUR)
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| V.S.S.BELAGAL
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| B.R ANGADI HADAGALI
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| S.V DESAI HULIGINAL
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| V.S.S NIMBALGUNDI
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| V.S.S MUGANUR
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| SIDDARUD TARUN SANGHA K.KALLAPUR
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KALLIGUDD
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL BEVINAL
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| L.N.NAGANGOUDRA.BEVINAMATTI-51 (S)(NAGUR)
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| V.S.S. BANNIHATTI
+[2025-02-02 22:15:05] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIKKAYARANAKERI
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| V.S.S. CHITTAWADGI
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| M.Y. MULLUR HUVINAHALLI
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| JAGADISH SUBAS HALLUR HIREBADAWADGI
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| SHAKHAMBARI NE.SAH.SANGHA. SULEBHAVI
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| PRIMARI CONS. CO-OP SO. SULEBAVI
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL RAKKASAGI
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| V.S.S.DHANNUR
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL LAVALASAR
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KAMALADINNI
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| PKPS MAROL
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| V.S.S. HAVARAGI.
+[2025-02-02 22:15:06] User -> FPS Added -> Bagalkote@pds| Gram Mandal Chinnapur S K 88 (S) (DASABAL)
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| V.S.S. GHATTIGANUR
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| V.S.S. HAGEDAL
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| P.S.PATIL, BUDHIHAL.SK.-96 (S)MANMATALAL
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| HUCHESHWAR YUVAKA MANDAL CHIKKAMAGI
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| V.S.S. GANGUR
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| S.A.PYATISHETTAR
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| Prakash Laxman Naganagoudar,Bevinamatti FPS
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| Smt. Shakuntala Basavaraj Karadi FPS, Amarawati
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| Sri Yallamma Devi Mahila Swa Sahaya sangha FPS,Hiremagi
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| MUDDESHWAR YUVAKA SANGHA, HIREMAGI.
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| F.A.C.S.HUNGUND
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.HUNGUND
+[2025-02-02 22:15:07] User -> FPS Added -> Bagalkote@pds| JANATA CONSUMERS CO-OP. SOCIETY HUNGUND
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| V.M.K.CO-OP.SOCIETY HUNGUND
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| SMT. P M SAJJAN AMINGAD
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| SHIVKUMAR SIDDAPPA KANNUR AMINGAD
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| DEVAL MAHARSHI CO. SOCIETY AMINGAD
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| R.S REVANAKIMATH AMINGAD
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| NANJUNDESHWAR V V S AMINGAD
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| SHREE SHAKHAMBARI SWAYAM SEWA SANGHA KAMATAGI
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| SANGAMESHWAR CONSUMERS CO-OP SOCIETY KAMATGI
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| SHAKTI CONSUMERS CO-OP SO. KAMATAGI
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| LALBAHADDUR SHATREE YUVAK SANGA KAMATAGI
+[2025-02-02 22:15:08] User -> FPS Added -> Bagalkote@pds| SHIVASHARANAYYA HARALAYYA SO KAMATAGI
+[2025-02-02 22:15:09] User -> FPS Added -> Bagalkote@pds| SAYYAD MURTUJ KHADRI SO. KAMATAGI
+[2025-02-02 22:15:09] User -> FPS Added -> Bagalkote@pds| VITHOBA M.V.S.SANGHA KAMATAGI
+[2025-02-02 22:15:09] User -> FPS Added -> Bagalkote@pds| V.S.S. KAMATAGI
+[2025-02-02 22:15:09] User -> FPS Added -> Bagalkote@pds| PARVATI M.V.V.SANGHA KAMATGI
+[2025-02-02 22:15:09] User -> FPS Added -> Bagalkote@pds| ARTHIKA H.M.SO. KAMATAGI
+[2025-02-02 22:15:09] User -> FPS Added -> Bagalkote@pds| SHREE BHAVANI VIVIDHODESHAGALA GRAMINABHIVRIDDHI MAHILA SEVA SAMSTHE
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| SRI. SURESH SHIVALINGAPPA HALLAD, KAMATAGI TANADA
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| V.M.K.CONSUMERS CO-OP SOCIETY ILKAL (Temp Susp) Attach Shakambari WCS ilkal No:08
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| MALLIKARJUN CON.CO-OP. SOCIETY ILKAL
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| Sectratory Shri Vijay Mahantesh Cottage Industries Co-op Society Ltd Ilkal
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| SHAKAMBARI,N.S. SANGHA ILKAL
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| MAHILA V.V.S.ILKAL
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| THE ANJUMAN NEKARAR SAHAKARI SANGHA ILKAL
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| JANATA NEKARAR SAHAKARI SANGHA ILKAL
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| MARKANDESHWAR NEKARAR SAHAKARI SOCIETY ILKAL
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| ILKAL DYEING CO-OP SOCIETY ILKAL
+[2025-02-02 22:15:10] User -> FPS Added -> Bagalkote@pds| R.V.Chavan. NYAYA BELE ANGADI ILKAL
+[2025-02-02 22:15:11] User -> FPS Added -> Bagalkote@pds| MARKANDESWARA HOU.NE.ILKAL
+[2025-02-02 22:15:11] User -> FPS Added -> Bagalkote@pds| ILKAL NEKARAR SAHAKARI SANGAH ILKAL
+[2025-02-02 22:15:11] User -> FPS Added -> Bagalkote@pds| ILKAL HALU UTPADAKAR SAHAKARI SANGHA ILKAL
+[2025-02-02 22:15:11] User -> FPS Added -> Bagalkote@pds| ILKAL CONSUMERS NEKARAR SAHAKARI SANGHA ILKAL
+[2025-02-02 22:15:11] User -> FPS Added -> Bagalkote@pds| Dhatatray Sahakari Society Ilkal
+[2025-02-02 22:15:11] User -> FPS Added -> Bagalkote@pds| Nelkanteswer Sahakar Society Ilkal
+[2025-02-02 22:15:11] User -> FPS Added -> Bagalkote@pds| Chairman, Veermata Jeejabai Mahila Strishakti Sangha, Ilkal
+[2025-02-02 22:15:11] User -> FPS Added -> Bagalkote@pds| Radhakrishna Kala Sanskruti And Krida Sangha, Ilkal
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| VIJAYNAGAR MAHILA SANGHA. FPS, ILKAL
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL BHIMANGAD
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| SHRI CHALAGERI CHIKANAL
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| MAHILA V.U. SANGHA GUDUR.S.C.
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| Secretory PKPS Gudur S.C
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| AJAD CONSUMERS SOCIETY GUDUR S.C.
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| Sharanappa.Basavantappa.Adin at Dammur
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KYADIGGERI
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| M.H. HIREKURABAR VADAGERI
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| PKPS Ilal
+[2025-02-02 22:15:12] User -> FPS Added -> Bagalkote@pds| V.S.S. KELUR
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL KUNIBENCHI
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GORJANAL
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR TARUN SANGHA TALLIKERI
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| M.P.KADI. AMARAWADGI
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| PKPS KODIHAL
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHINNAPUR S.K.
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| Gram Mandal Chinnapur S.K.-96 (S)(PALTI)
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL TURAMARI temp susp -p s patil - 96
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHATNIHAL
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| P.S.PATIL BUDIHAL S.K.
+[2025-02-02 22:15:13] User -> FPS Added -> Bagalkote@pds| V.S.S. JAMBALADINNI
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| V.S.S. HIRESHINGANAGUTTI
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| M.C.GONDI CHIKKASHINGANAGUTTI
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| V.S.S. TUMBA
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| V.S.S. HIREADAPUR
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| TARUN RAIT SANGH GONAL S.T
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIKKOTAGERI
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| SHRIMATI L.S.NAGANAGOUDRA
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| V.S.S. NANDAWADGI
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR TARUNA SANGHA MARATAGERI
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GONAL S.K.
+[2025-02-02 22:15:14] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GORABAL
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL CHIKKAKODAGALI L.T.
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| V.S.S. HIREKODAGALI
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| CHANNABASAVESHWAR TARUN SANGHA CHIKKAKODAGALI
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| S.S. ADAVI HERUR
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| P.P.HIREMATH BALAKUNDI (Susp) Temp Att R.V.Chavan No:14
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| FPS Chairman, Milk Producers Co-Operative Society, Tondihal
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| PKPS FPS, Kandagalla
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| PKPS FPS, Hireootageri
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| Shri Vijayananda Siddappa Kadiwal FPD
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| Prakhamika Krushi Pattina Sahakari Sangha Ltd. FPS, Karadi
+[2025-02-02 22:15:15] User -> FPS Added -> Bagalkote@pds| SMT. SHARANAVVA KALAKAMALLAPPA HADPAD,FPS, MURUDI (CG)
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| ASHOK SIDAPPA RATHOD, FPS, BALKUNDI TANDA
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| JANATA BAZAR JAMKHANDI S.NO.1
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| JANATA BAZAR JAMKHANDI S.NO.2
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.JAMKHANDI S.NO.3
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| JANATA CON.CO-OP SOCI. JAMKHANDI S.NO.4
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| JAMKHANDI CON.CO-OP SOCI. JAMKHANDI S.NO.5
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| M.R.VANI JAMKHANDI S.NO.6
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| A.L.SHIROL JAMKHANDI S.NO.7
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| G.P.TELI JAMKHANDI S.NO.8
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| VIJAYAPURA JILLA SUDAGADSIDD SOCI. S.NO.9
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| Chairman Rajeev Gandhi Meenugarara Sahakari Sangha.Ltd Jamkhandi
+[2025-02-02 22:15:16] User -> FPS Added -> Bagalkote@pds| RAMESVAR MAHILA V.U.S.SANGH JAMKHANDI NO-13
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| SHRI BANASHANKARI.S.A.SANGH JAMKHANDI NO-14
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| SHRI VARADANESHWARI V U SANGH JAMKHANDI NO-15
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| SHRI RAJESHWARI MAHELA V U S SANGH JAMKHANDI NO-16
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| ALPASANKYATAR MAHILA V U S SANGH JAMKHANDI NO-17
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| Alhuda multi purpose sosiety No10 jamkhandi
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| Shri. BHAGYAVANTI PARISHIST JATI MAHILA SAHAKARA SANGHA NIYAMITA. JAMKHANDI
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| GRAHAKAR.S.S. SANGHA.LTD.TUNGAL
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.JAMKHANDI.BRANCH,SAVALAGI NO1
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.BRANCH.SAVALAGI NO 2
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| P.K.P.S SURPALI-JAMBAGI K D
+[2025-02-02 22:15:17] User -> FPS Added -> Bagalkote@pds| T A P C M S JAMKHANDI BRANCH JAMBAGI B.K.
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| S.B.BIRADAR KURAGODA
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| MALLIKARJUNA YUVAKA MANDAL GOTE
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| PANDURANG.G.S.S. SANGHA KALABEELAGI
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| V.S.S.GOTHE-KHAJIBILAGI
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| PKPS TODALABAGI (Old)
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| PKPS TODALABAGI (New)
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| V.SS.ADIHUDI
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| V.S.S.HIREPADASALAGI
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| V.S.S.CHIKKAPADASALAGI
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| V.S.S.BIDARI
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| V.S.S.CHIKKALKI
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| V.S.S.ALAGUR
+[2025-02-02 22:15:18] User -> FPS Added -> Bagalkote@pds| HANUMANA. Y.MANDAL SANAL
+[2025-02-02 22:15:19] User -> FPS Added -> Bagalkote@pds| V.S.S.KONNUR
+[2025-02-02 22:15:19] User -> FPS Added -> Bagalkote@pds| P.K.P.S.BANK LTD.MAREGUDDI
+[2025-02-02 22:15:19] User -> FPS Added -> Bagalkote@pds| V.S.S.HULYAL
+[2025-02-02 22:15:19] User -> FPS Added -> Bagalkote@pds| SHWAMI VIVEKANAND Y.M.HUNSHIKATTI Attach V.S.S.Hulyal
+[2025-02-02 22:15:19] User -> FPS Added -> Bagalkote@pds| Kankanwadi Women Milk CO operative society Kankanwadi
+[2025-02-02 22:15:19] User -> FPS Added -> Bagalkote@pds| Muttanna sattyappa Kittur (PH) At post Muttur
+[2025-02-02 22:15:19] User -> FPS Added -> Bagalkote@pds| V.S.S.SHIRAGUPPI
+[2025-02-02 22:15:19] User -> FPS Added -> Bagalkote@pds| V.S.S.HUNNUR
+[2025-02-02 22:15:19] User -> FPS Added -> Bagalkote@pds| Shri Roup Noorsab bagawan at post Jamkhandi
+[2025-02-02 22:15:19] User -> FPS Added -> Bagalkote@pds| V.S.S.GANI
+[2025-02-02 22:15:20] User -> FPS Added -> Bagalkote@pds| M.B.GURAV BUDNI
+[2025-02-02 22:15:20] User -> FPS Added -> Bagalkote@pds| V.S.S.KUNCHANUR
+[2025-02-02 22:15:20] User -> FPS Added -> Bagalkote@pds| AKKAMAHADEVI MAHILA MANDAL CHINAGUNDI
+[2025-02-02 22:15:20] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S JAMKHANDI BRANCH KALAHALLI
+[2025-02-02 22:15:20] User -> FPS Added -> Bagalkote@pds| Hanuman Grahakara Sahakari Sangha, Madarakhandi
+[2025-02-02 22:15:20] User -> FPS Added -> Bagalkote@pds| Sadasiv vividdosh sahakari sangha gadyal
+[2025-02-02 22:15:21] User -> FPS Added -> Bagalkote@pds| KUNTALADEVI MAHILA P S SANGH TUNGAL
+[2025-02-02 22:15:21] User -> FPS Added -> Bagalkote@pds| SMT:UMADEVI JAGADISH DAYAL-SAVALAGI
+[2025-02-02 22:15:21] User -> FPS Added -> Bagalkote@pds| SHRI:BASAYYA PANCHAYYA HIREMATH-SHURAPALI
+[2025-02-02 22:15:21] User -> FPS Added -> Bagalkote@pds| SHRI:HANAMANT DUNDAPPA KAMBLE-ALAGUR
+[2025-02-02 22:15:21] User -> FPS Added -> Bagalkote@pds| SHIVANAND URBAN CO-OP SOCIETY-MAIGUR
+[2025-02-02 22:15:22] User -> FPS Added -> Bagalkote@pds| SHRI:PARASAPPA BHAGAVANT CHANNAPPAGOL-HUNNUR
+[2025-02-02 22:15:22] User -> FPS Added -> Bagalkote@pds| SHRI:SANJAY BASAVARAJ KALYANI-KADAPATTI
+[2025-02-02 22:15:22] User -> FPS Added -> Bagalkote@pds| PKPS Kumbarhalla
+[2025-02-02 22:15:22] User -> FPS Added -> Bagalkote@pds| Secretory PKPS Ltd Naganur
+[2025-02-02 22:15:22] User -> FPS Added -> Bagalkote@pds| PKPS Ltd, Kalahalli
+[2025-02-02 22:15:22] User -> FPS Added -> Bagalkote@pds| PKPS Tungal Ltd - 02
+[2025-02-02 22:15:23] User -> FPS Added -> Bagalkote@pds| PKPS Ltd FPS, Siddapur
+[2025-02-02 22:15:23] User -> FPS Added -> Bagalkote@pds| Halu Utpadakara Sahakari Sangha Niyamit FPS, Aalgur
+[2025-02-02 22:15:23] User -> FPS Added -> Bagalkote@pds| PKPS,FPS Savalagi (Old)
+[2025-02-02 22:15:23] User -> FPS Added -> Bagalkote@pds| PKPS, FPS Savalagi (New)
+[2025-02-02 22:15:23] User -> FPS Added -> Bagalkote@pds| CHIKKAPADASALAGI VIVIDHODESHAGALA SAHAKARI SANGHA FPS,CHIKKAPADASALAGI
+[2025-02-02 22:15:23] User -> FPS Added -> Bagalkote@pds| ABHYUDAYA VIVIDHODESHAGALA SAHAKARI SANGHA NI. FPS, BANAHATTI
+[2025-02-02 22:15:23] User -> FPS Added -> Bagalkote@pds| Shri.GUNDURAO SADASHIV KAMBALE, TAKKOD
+[2025-02-02 22:15:23] User -> FPS Added -> Bagalkote@pds| MILK PRODUCERS CO-OPERATIVE SOCIETY, MADARKHANDI
+[2025-02-02 22:15:23] User -> FPS Added -> Bagalkote@pds| Sri.MahalingeshwaraVividhodeshagala Seva Sangh, Nagaral
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| I.S.SARAVAN SHIROL
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| P K P S Bank Ltd., Malali
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| DALIT SANGHARSH SAMITI MALALI
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| BIRESHWAR K.S.S SORGAVI
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| V.S.S.Hebbal
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| BHARATHTAMBE SHRI shakti sva sahaya sangh Halagali
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| ASHOK SATHYAPPA BADNNUR MELIGERI
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| VEERUPAKSHI HIREMATH MANTTUR
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| VITTAL RANNAPPA MADAR (C)BUDNI P M
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| V.S.S. UTTUR
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| RAIT YUVAKA SANGHA INGALGI
+[2025-02-02 22:15:24] User -> FPS Added -> Bagalkote@pds| V.S.S. YADAHALLI
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| KADASIDDESHWAR CONSUMERS SAHAKARISANGHA BARAGI
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| H.V.PATIL BUDNI.K.D.
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| N.G.TOLAGATTI BIDARI
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| Sri.MahalingeshwaraVividhodeshagala Seva Sangh, Mugalakhod
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| V.S.S. GULAGAL JAMBAGI
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| N.R.IHolli Kulali
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| P.G PATIL PETLUR
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| V.S.S. CHINCHAKHANDI K.D.
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| S.R.KAMATAGI MUDDAPUR
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| B.H. UTTUR BANTANUR
+[2025-02-02 22:15:25] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S. MUDHOL (C) ALAGUNDI B.K.
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| MILK PRODUCERS CO-OP SANGHA JUNNUR
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| V.S.S.CHIKKUR
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| Shri Laxmidevi ShtriShakti Mahila Swasahaya sangha Venkatpur Laxanatti
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| V.V.CO-OP Society VARCHAGAL
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| T.C.SHIRUR MALLAPUR P.L
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| Shri. Malappa H Bijjannavar At Post :Dadanatti
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| Y.V Budni Arlikatti
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| PDO Gram Panchayat Vantigodi
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| Sarvodaya StriShakti Sangha Metagudda
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| PARVATI STRI SHAKTI SANGH ANTAPUR
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| SMT UMASHRI ISAWAR MANE BALLUR R.C AND HANCHANAL R C
+[2025-02-02 22:15:26] User -> FPS Added -> Bagalkote@pds| Adi Banajiga Samaj Seva Sangh Shirol
+[2025-02-02 22:15:27] User -> FPS Added -> Bagalkote@pds| MILK PRODUCERS CO-OP SANGHA BADANUR
+[2025-02-02 22:15:27] User -> FPS Added -> Bagalkote@pds| SCST vividoyoshagala sahakari sanga ni.Shirol.
+[2025-02-02 22:15:27] User -> FPS Added -> Bagalkote@pds| R.B.Patil BUDNI B.K
+[2025-02-02 22:15:27] User -> FPS Added -> Bagalkote@pds| G.K. Timmapur Ranjanagi
+[2025-02-02 22:15:27] User -> FPS Added -> Bagalkote@pds| PARASURAM HOSUR MANTUR
+[2025-02-02 22:15:27] User -> FPS Added -> Bagalkote@pds| LAXAMAN KATTIMANI MANTUR
+[2025-02-02 22:15:27] User -> FPS Added -> Bagalkote@pds| SUBAS MADAR KISHORI
+[2025-02-02 22:15:27] User -> FPS Added -> Bagalkote@pds| HANAMANT.B.MUCHANNAVAR HALAGALI
+[2025-02-02 22:15:27] User -> FPS Added -> Bagalkote@pds| AMBIGER CHOUDAYA S.S CHANNAL
+[2025-02-02 22:15:27] User -> FPS Added -> Bagalkote@pds| P.K.P.S.VAJJARAMATTI
+[2025-02-02 22:15:28] User -> FPS Added -> Bagalkote@pds| I.M.PUJARI JALIKATTI B.K
+[2025-02-02 22:15:28] User -> FPS Added -> Bagalkote@pds| M.B.PATIL CHOUDAPUR
+[2025-02-02 22:15:28] User -> FPS Added -> Bagalkote@pds| SHIVANGOUDA PATIL NAGANAPUR
+[2025-02-02 22:15:28] User -> FPS Added -> Bagalkote@pds| SURESH SHANKAR MIRJI JALIBER
+[2025-02-02 22:15:28] User -> FPS Added -> Bagalkote@pds| Secretary Sri.Ambigera Chodayya Samaja Kshemabhiruddi seva samshte, Mugalakoda
+[2025-02-02 22:15:28] User -> FPS Added -> Bagalkote@pds| Sri.Rajeeshwari Mahila Sangha. Roogi
+[2025-02-02 22:15:28] User -> FPS Added -> Bagalkote@pds| Secretary P.K.P.S Kasaba Jambagi
+[2025-02-02 22:15:28] User -> FPS Added -> Bagalkote@pds| Secretary P.K.P.S Jambagi.K.D
+[2025-02-02 22:15:28] User -> FPS Added -> Bagalkote@pds| Secretary P.K.P.S Machakanur.
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| Secretary Neeru Balakedarar Sahakari Sangha. Akkimaradi
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| Secretary P.K.P.S Ningapura
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| Chairman, Seemisalad milk producers co-op society Ltd, Mirji.
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| Bandhalakshmi Mahila SC ST Vividodesha sangha, Maalapura
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| P.K.P.S Mantur
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| Siddappa Laxman Aralikatti At Post:Nagaral
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| Chairman, Shri Mailarlingeshwar Kuri Sangopane And Unne Utpadakara Sangha, Dadanatti
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| Shri Ranganath Kuri Sangopana mattu Unne Utpadakara Sahakari Sangha, Kanasageri.
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| Malagar (Mali) SamajaKshemabhivruddhi Sangha. FPS, Shirol
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| Shri. Kadashiddeshwar Vividhodeshagala Sangha, FPS Shirol
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| PKPS,FPS, MALAPUR
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| PKPS, HALAKI
+[2025-02-02 22:15:29] User -> FPS Added -> Bagalkote@pds| PKPS, KULALI
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| Anand Shankrappa Lamani, Chikkur Tanda (PH Quata)
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| RAIT SEVA S.S.N. MUDHOL
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| M.V. KANKANAWADI MUDHOL
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| MAHILA V.U.S.S. MUDHOL
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| TOWN PRIMARI CO. SO. MUDHOL
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| HARALAYYA CHA.KAI.SAM. MUDHOL
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| MUDHOL PRIMARY G.S.Sanga.MUDHOL
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| MAHALINGESHWAR TARUN SANHG BELGALI
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| HANUMAN YUVAKA MANDAL BELAGALI
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| PRABHU BHOLISHTTI LOKAPUR
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| M M HUNDEKAR SUBAS NAGAR LOKAPUR.
+[2025-02-02 22:15:30] User -> FPS Added -> Bagalkote@pds| ISHWAR MARUTI KUGATE BELAGALI
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| SHANTJOTI MAHILA MANDAL BELAGALI
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| M.R.ARENAD BELAGALI
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| SURESH HUGGI VENKATAPUR,THANIKERI LOKAPUR
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| Shri.Bhagyalakshmi Women association and Shreeshakthi association,Mudhol
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| Shri Renuka Shtri Shakti swa sahaya sangha, kodihal Garden, Belagali
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| JAIWANT PAWAR MUDHOL GIRAGAOV
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| Secretory TAPCMS Ltd Mudhol
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| Ku. Spoorthi vivida uddeshagala souharda sahakara nigama. Mudhol.
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| Sri Veerarani Kittur Chennamma co-operative society limited, Mudhol
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| Shri Aadi Jambava SC Kshemabhivrudhi Samsthe, Mudhol
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| Shri Durgadevi Devastana Jirnodhara Samiti, Mudhol
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| Kumari Aishwarya Basavaraj Talawar,Lokapur
+[2025-02-02 22:15:31] User -> FPS Added -> Bagalkote@pds| VEERABHADRESHWAR CO.SOCI.BANAHATTI S.NO.1
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| Secratory, Madina Women Minority Multipurpose society Rampur
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| HOSUR V.CO-OP SO. S.NO.3
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| SARVODAYA SO. RAMPUR NO.5
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| RAIT YUVAKA SANGHA HOSUR NO.6
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| AKKAMAHADEVI CO. CO-OP SO. RABAKAVI NO.8
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| GARIBI HATAVO CO-OP.S. RABAKAVI NO.9
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| RABAKAVI-BANAHATTI TOWN CON. CO.SOCI. RABAKAVI NO.17
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| Bharat.Nekar.S.Sangha. Banahatti
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| VIJAYALAXMI V.V.S.S. BANAHATTI NO.6
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| WEAVERS CO-OP SO. RAMPUR NO.14
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| MAHILA V.S. RABAKAVI NO.15
+[2025-02-02 22:15:32] User -> FPS Added -> Bagalkote@pds| S.S.BIDARI BANAHATTI NO.16
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| BANASHANKARI CO-OP SO. RABAKAVI NO.17
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| JAI BHAVANI V.V.S.RAMPUR NO.19
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| ALANKAR V.U.S.S.HOSUR NO.20
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| SHRISHAIL C. JAVALAGI BANAHATTI NO.21
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| SIDDIVINAYAK ASSOCIATION.BANAHATTI
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| CHANDRODAYA K.G.S.S. BANAHATTI NO.23
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| RAGHAVENDRA V.U.S. RABAKAVI
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| The Nekarar Co-Op Society Banahatti
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| HANUMAN V S SANGH BANAHATTI NO 24
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| JAMKHANDI TQ K.G.K. Sangh Banahatti No 25
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| NILAKANTESHWAR CON.CO-OP SOCIETY
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| Dr. AMBEDKAR P J V U S SANGH RABAKAVI
+[2025-02-02 22:15:33] User -> FPS Added -> Bagalkote@pds| SRI GURUDEV DANESHWAR P J SANGH
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| KADAPPA HANAMANT MANTUR BANAHATTI NO-
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| BALAPPA S. SIDDAPPAGOL BANAHATTI NO-
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| NAMADEV SIMPI V U S SANGH Banahatti NO
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| BHUVIVADDAR SAMAJ ABIVRDDI SANGH BANAHATTI
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| SHRI MAHALXMI MAHILA ABIVRDDI SAHAKARI SANGH RABAKAVI
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| RAMABAI AMBEDKAR SC V U S SANGH RABAKAVI
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| KANNAD YUVAK SANGH HOSUR NO-
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| MALLIKARJUN VIDYUT CHALIT M U & M S SANGH NI RAMPUR NO-
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| Adrasha Kadashiddeshwar VSSN, Banahatti
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| RABAKAVI VIDYUTH CHALITH MAGGAGALA CO-OP SOCIETY, FPS, RABAKAVI
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| P.K.P.S HIPPARAGI
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| Secretory PKPS Shop-No-02 Atpost Kulahalli , Taluk Jamkhandi
+[2025-02-02 22:15:34] User -> FPS Added -> Bagalkote@pds| GAJANANA MITRA MANDAL ASANGI
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| Secretory Shri Hanuman CO. op Credit Society Madanamatti
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| ARAVIND YUVAKA MANDAL NAVALAGI
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| JAI HANUMANA YUVAKA SANGHA JAGADAL
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| MILK PRODUCERS CO-OP SOCITEY JAGADAL
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| BHARAT NEKAR SAHAKARI SANGHA YALLATTI
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| GAJANANA VIVIDHODDESHA SAHAKARI SANGHA CHIMMAD
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| GARIBI HATAVO SAHAKARI SANGHA CHIMMAD
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| BASAVRAJ P YARGUDRI GOLBHAVI
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| JAI HANUMAN YUVAKA MANDAL KALATIPPI
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| V.S.S.SASALATTI
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| V.S.S.KESARAGOPPA
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| MARUTI TARUN SANGHA BISNAL
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| V.S.S.SAIDAPUR
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| V.S.S. MADABHAVI
+[2025-02-02 22:15:35] User -> FPS Added -> Bagalkote@pds| AMBEDKAR YUVAKA SANGANATTI
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| BASAWESWAR YUVAKA MANDAL SANGANATTI
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| HARIJAN &.G..N A.S.S.N DAVALESHWAR
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| Shri Bagyalaxmi S.S V.Sangha Dawleshwar
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| LACHAPPA.G.LAMANI. SAMEERAWADI
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| NAVEEN LAXMAN MADANAMATTI HALANGALI
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| PRAKRATI SAVAYAV K.S.HIPPARAGI
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| PEERAPPA M.MADAR MARAPUR
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR ABHIVARDI SANGHA NANDAGOV
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| SHRI:PARAPPA SHENKREPPA BARAGAL-CHIMMAD
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| Shri Purushottam Prakash Bakare -(PH)-Yaragatti- Banahatti
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| SHRI:DIGAMBARESHWAR STRI SHAKTI SANGH-HANAGANDI
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| SHRI:MAHAVEER ALPASANKHYATAR V U SAHAKARI SANGH-HALINGALI
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| P.K.P.S.BANK ASANGI
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| Secretory Bhumakkanavar garden MIlk Producers Co-Operative Society Navalagi, Taluk Jamkhandi
+[2025-02-02 22:15:36] User -> FPS Added -> Bagalkote@pds| Secretory Milk Producers Co-Operative Society At:Kulahalli, Taluk -Jamkhandi
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| FPS PKPS Ltd Tamadaddi (New)
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| PKPS Ltd Tamadaddi (Old)
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| Prakhamika Krushi Pattina Sahakari Sangha Ltd. FPS, Yallatti
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| Sec. Rani Channamma Souhardha Sahakari Sangha,Navalagi.
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| Pujeri Tota Halu Utpadakara Sahakari Sangha, FPS Chimmad
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| PRATHAMIKA KRUSHI PATTINA SAHAKARI SANGHA NI. FPS, NAVALAGI-2
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| PKPS, KULAHALLI
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| PATIL TOTA HALU UTPADAKARA SAHAKARI SANGHA, Ni. HANAGANDI
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| SRI SANGAPPA VITTAL MADAR, BANDIGANNI
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.TERDAL NO-1
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.TERDAL NO-2
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| T.A.P.C.M.S.TERDAL NO-3
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| V S S KALATTI-Teradal S.NO-4
+[2025-02-02 22:15:37] User -> FPS Added -> Bagalkote@pds| GAREEBI HATAVO CON.CO-OP SOCIETY TERDAL NO-5
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| ADHILAXMI NAGAR STREE SHAKTI SANGH.TERDAL
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| ALPASANKHYATARA V.S.S.TERDAL NO-7
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| CHANNAGIRESHWAR P.CO. MAHALINGAPUR
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| GARIBI HATAVO S.S. MAHALINGAPUR
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| BHAGYALAXMI ASSOCIATION MAHALINGAPUR
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| KARNATAKA CONSUMERS.K.CO-OP. SOCI MAHALINGAPURL
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| BANASHANKARI K.G.S.S. MAHALINGAPUR
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| SHI VENKATESHWAR DALIT SEVA SAMITI MAHALINGAPUR
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| SHRI PANDURANG TARUN SANGH BUDNI P.D. MAHALINGAPUR
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| MAHALAXMI V V S N LAXMI ,MAHALINGAPUR
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| P.J.P.P. MAHILA VI.UDDESHGALA S.S.MAHALINGAPUR.
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| BHIMAPPA BABU GOUDI BASAVA NAGAR MHALINGPUR
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| DANAMMADEVI CON.SOCIETY MAHALINGAPUR
+[2025-02-02 22:15:38] User -> FPS Added -> Bagalkote@pds| MAHATHMA GANDHI V.U.S SANGH TERADAL
+[2025-02-02 22:15:39] User -> FPS Added -> Bagalkote@pds| Kuvempu Kannada Yuvaka sangha Teradal
+[2025-02-02 22:15:39] User -> FPS Added -> Bagalkote@pds| Sri Vaddina Mahalakshmidevi Mahila vivida uddeshagala Sahakari Sangha.
+[2025-02-02 22:15:39] User -> FPS Added -> Bagalkote@pds| S.B.Sajjanavar Vividha Uddeshagala Sangha, Rabakavi
+[2025-02-02 22:15:39] User -> FPS Added -> Bagalkote@pds| Sri Akkamahadevi vividha uddeshagala sahakari sangha
+[2025-02-02 22:15:39] User -> FPS Added -> Bagalkote@pds| JAI KANNADAMBE MVUS,MUGALAKHOD
+[2025-02-02 22:15:39] User -> FPS Added -> Bagalkote@pds| Mugalkhod Dakshina Bhag PKPS FPS, Mugalkhod
+[2025-02-02 22:15:39] User -> FPS Added -> Bagalkote@pds| MASAPPA SUDI KABBARAGI
+[2025-02-02 22:15:39] User -> FPS Added -> Bagalkote@pds| V S S KENGALGUTTI
+[2025-02-02 22:15:39] User -> FPS Added -> Bagalkote@pds| CHAIRMAN SHRI LAKSHMI MAHILA SVA SAHAYA SANGHA TADDEWADI
+[2025-02-02 22:15:39] User -> FPS Added -> Bagalkote@pds| CHAIRMAN SHRI BEERALINGESHWAR GRAMINABHIVRUDDI SANGHA HAGARAGUND

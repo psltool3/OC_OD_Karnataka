@@ -1,0 +1,4 @@
+[2025-01-25 23:49:27] User -> Warehouse added ->admin@pds| Requested JSON -> {"name":"test","type":"motorable","latitude":"9.89","storage":"100","district":"Bagalkote","id":"123eee","warehousetype":"swc","longitude":"76.7661"}
+[2025-01-25 23:51:49] User -> Warehouse Edit ->admin@pds| Requested JSON -> {"name":"Test","uniqueid":"WH_67952b2f32da","active":"","type":"motorable","latitude":"9.89","storage":"100","district":"Bagalkote","id":"123eee","warehousetype":"swc","longitude":"76.7661"}
+[2025-01-25 23:53:57] User -> Warehouse deleted -> admin@pds| Requested JSON -> {"uid":"WH_67952b2f32da"} | Test
+[2025-01-25 23:55:09] User -> Warehouse added ->admin@pds| Requested JSON -> {"name":"test","type":"motorable","latitude":"9.89","storage":"100","district":"Bagalkote","id":"123qwe","warehousetype":"swc","longitude":"76.7661"}

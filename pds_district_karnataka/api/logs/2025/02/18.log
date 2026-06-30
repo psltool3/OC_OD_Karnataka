@@ -1,0 +1,16 @@
+[2025-02-18 15:02:08] district_user -> Warehouse added ->Samba@pds| Requested JSON -> {"name":"aaaaa","type":"motorable","latitude":"10.124","storage":"45.126","district":"Samba","id":"154","warehousetype":"swc","longitude":"10.123"}
+[2025-02-18 15:02:34] district_user -> Warehouse Edit ->Samba@pds| Requested JSON -> {"name":"Abd","uniqueid":"WH_67b45398bf8d","active":"1","type":"motorable","latitude":"10.124","storage":"45.126","district":"Samba","id":"154","warehousetype":"swc","longitude":"10.123"}
+[2025-02-18 15:03:29] district_user -> Warehouse deleted -> Samba@pds| Requested JSON -> {"uid":"WH_67b426fb2644"} | FCI PEG JATWAL
+[2025-02-18 15:03:52] district_user -> Warehouse deleted -> Samba@pds| Requested JSON -> {"uid":"WH_67b45398bf8d"} | Abd
+[2025-02-18 15:05:02] User -> Warehouse Added -> Samba@pds| RRR1
+[2025-02-18 15:05:59] User -> Warehouse Edit -> Samba@pds| mk
+[2025-02-18 15:05:59] User -> Warehouse Edit -> Samba@pds| RRR
+[2025-02-18 15:05:59] User -> Warehouse Edit -> Samba@pds| 258
+[2025-02-18 15:05:59] User -> Warehouse Edit -> Samba@pds| ABC
+[2025-02-18 15:05:59] User -> Warehouse Edit -> Samba@pds| ABC
+[2025-02-18 15:05:59] User -> Warehouse Edit -> Samba@pds| ABC
+[2025-02-18 15:05:59] User -> Warehouse Edit -> Samba@pds| ABC
+[2025-02-18 15:05:59] User -> Warehouse Edit -> Samba@pds| PEG BIRPUR
+[2025-02-18 15:05:59] User -> Warehouse Edit -> Samba@pds| RRR2
+[2025-02-18 15:11:18] district_user -> FPS added ->Samba@pds| Requested JSON -> {"name":"aaaaa","type":"Model FPS","latitude":"10.124","longitude":"54.123","district":"Samba","id":"14","demand":"45.123","demand_rice":"129"}
+[2025-02-18 15:12:29] district_user -> FPS Edit ->Samba@pds| Requested JSON -> {"name":"ade","uniqueid":"FPS_67b455be42d","active":"1","type":"Model FPS","latitude":"10.124","longitude":"54.123","district":"Samba","id":"14","demand":"45.123","demand_rice":"129"}

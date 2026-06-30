@@ -1,0 +1,51 @@
+[2025-02-05 15:45:59] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | 
+[2025-02-05 15:46:12] User -> Warehouse Added -> Bagalkote@pds| BAGALKOT
+[2025-02-05 15:46:12] User -> Warehouse Added -> Bagalkote@pds| BILAGI
+[2025-02-05 15:46:13] User -> Warehouse Added -> Bagalkote@pds| BILAGI
+[2025-02-05 15:46:13] User -> Warehouse Added -> Bagalkote@pds| HUNGUND
+[2025-02-05 15:46:13] User -> Warehouse Added -> Bagalkote@pds| JAMKHANDI
+[2025-02-05 15:46:13] User -> Warehouse Added -> Bagalkote@pds| MUDHOL
+[2025-02-05 15:46:13] User -> Warehouse Added -> Bagalkote@pds| MUDHOL
+[2025-02-05 15:46:13] User -> Warehouse Added -> Bagalkote@pds| ILAKAL
+[2025-02-05 15:46:13] User -> Warehouse Added -> Bagalkote@pds| GULEDAGUDD
+[2025-02-05 15:46:14] User -> Warehouse Added -> Bagalkote@pds| RABAKAVI BANAHATTI
+[2025-02-05 15:48:48] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | all
+[2025-02-05 15:49:33] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | all
+[2025-02-05 15:49:48] User -> Warehouse Added -> Bagalkote@pds| BAGALKOT
+[2025-02-05 15:49:49] User -> Warehouse Added -> Bagalkote@pds| BILAGI
+[2025-02-05 15:49:52] User -> Warehouse Added -> Bagalkote@pds| BILAGI
+[2025-02-05 15:49:53] User -> Warehouse Added -> Bagalkote@pds| HUNGUND
+[2025-02-05 15:49:53] User -> Warehouse Added -> Bagalkote@pds| JAMKHANDI
+[2025-02-05 15:49:53] User -> Warehouse Added -> Bagalkote@pds| MUDHOL
+[2025-02-05 15:49:53] User -> Warehouse Added -> Bagalkote@pds| MUDHOL
+[2025-02-05 15:49:53] User -> Warehouse Added -> Bagalkote@pds| ILAKAL
+[2025-02-05 15:49:53] User -> Warehouse Added -> Bagalkote@pds| GULEDAGUDD
+[2025-02-05 15:49:53] User -> Warehouse Added -> Bagalkote@pds| RABAKAVI BANAHATTI
+[2025-02-05 15:50:01] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | all
+[2025-02-05 15:50:14] User -> Warehouse Added -> Bagalkote@pds| BAGALKOT
+[2025-02-05 15:50:14] User -> Warehouse Added -> Bagalkote@pds| BILAGI
+[2025-02-05 15:50:14] User -> Warehouse Added -> Bagalkote@pds| BILAGI
+[2025-02-05 15:50:14] User -> Warehouse Added -> Bagalkote@pds| HUNGUND
+[2025-02-05 15:50:14] User -> Warehouse Added -> Bagalkote@pds| JAMKHANDI
+[2025-02-05 15:50:14] User -> Warehouse Added -> Bagalkote@pds| MUDHOL
+[2025-02-05 15:50:14] User -> Warehouse Added -> Bagalkote@pds| MUDHOL
+[2025-02-05 15:50:14] User -> Warehouse Added -> Bagalkote@pds| ILAKAL
+[2025-02-05 15:50:14] User -> Warehouse Added -> Bagalkote@pds| GULEDAGUDD
+[2025-02-05 15:50:14] User -> Warehouse Added -> Bagalkote@pds| RABAKAVI BANAHATTI
+[2025-02-05 15:50:19] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"WH_67a33b5e1ae6"} | BAGALKOT
+[2025-02-05 15:50:59] district_user -> FPS deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | all
+[2025-02-05 15:51:11] User -> FPS Added -> Bagalkote@pds| Gram Mandal Maninagar
+[2025-02-05 15:51:11] User -> FPS Added -> Bagalkote@pds| MAHAKUTESHWAR YUVAKA MANDAL YANKANCHI
+[2025-02-05 15:51:11] User -> FPS Added -> Bagalkote@pds| MAHAKUTESHWAR Y.M. GUBBERAKOPPA
+[2025-02-05 15:53:58] User -> Normal FPS InActive -> | MAHAKUTESHWAR YUVAKA MANDAL YANKANCHI
+[2025-02-05 15:54:01] User ->Model FPS InActive -> Bagalkote@pds| Gram Mandal Maninagar
+[2025-02-05 15:54:03] User -> Normal FPS Active -> | MAHAKUTESHWAR YUVAKA MANDAL YANKANCHI
+[2025-02-05 15:54:05] User ->Model FPS Active -> Bagalkote@pds| Gram Mandal Maninagar
+[2025-02-05 15:54:06] User -> FPS InActive -> | 
+[2025-02-05 15:54:09] User -> FPS Active -> | 
+[2025-02-05 15:54:38] User -> FPS InActive -> | 
+[2025-02-05 15:55:53] User -> FPS Active -> Bagalkote@pds| Gram Mandal Maninagar
+[2025-02-05 15:56:29] User -> Warehouse InActive -> Bagalkote@pds| BILAGI
+[2025-02-05 15:56:37] User -> Warehouse Active -> Bagalkote@pds| BILAGI
+[2025-02-05 19:27:27] User -> Read  Message ->Bagalkote@pds| Requested JSON -> {"uid":"1d1c430b36"} | Bagalkote@pds
+[2025-02-05 19:31:16] User -> Read Message ->Bagalkote@pds| Requested JSON -> Nppeos | Bagalkote@pds

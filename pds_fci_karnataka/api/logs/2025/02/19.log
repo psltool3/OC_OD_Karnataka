@@ -1,0 +1,9 @@
+[2025-02-19 23:10:49] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Bagalkote@pds","district":"Bagalkote","newpassword":"Bagalkote"} | Bagalkote@pds
+[2025-02-19 23:11:55] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Ballari@pds","district":"Ballari","newpassword":"Ballari"} | Ballari@pds
+[2025-02-19 23:14:17] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Bangalore@pds","district":"Bangalore","newpassword":"Bangalore"} | Bangalore@pds
+[2025-02-19 23:14:51] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Belagavi@pds","district":"Belagavi","newpassword":"Belagavi"} | Belagavi@pds
+[2025-02-19 23:23:04] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Bengaluru Rural@pds","district":"Bengaluru Rural","newpassword":"Bengaluru Rural"} | Bengaluru Rural@pds
+[2025-02-19 23:33:22] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Bidar@pds","district":"Bidar","newpassword":"Bidar"} | Bidar@pds
+[2025-02-19 23:33:46] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Chamarajanagara@pds","district":"Chamarajanagara","newpassword":"Chamarajanagara"} | Chamarajanagara@pds
+[2025-02-19 23:34:10] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Chikkaballapura@pds","district":"Chamarajanagara","newpassword":"Chikkaballapura"} | Chikkaballapura@pds
+[2025-02-19 23:42:19] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Chikkamagaluru@pds","district":"Chikkamagaluru","newpassword":"Chikkamagaluru"} | Chikkamagaluru@pds

@@ -1,0 +1,554 @@
+[2026-01-09 10:07:14] User -> Save Data | admin approval cleared - district provided data ->admin@pds| 1 - FPS10 - FRice
+[2026-01-09 10:23:50] User -> Save Data | admin approval cleared - district provided data ->admin@pds| 1 - FPS10 - FRice
+[2026-01-09 10:24:12] User -> Save Data | admin approval cleared - district provided data ->admin@pds| 1 - FPS10 - FRice
+[2026-01-09 14:58:19] User -> Save Data | admin approve yes -> admin@pds | 1.FPS10 - FRice
+[2026-01-09 14:58:27] User -> Save Data | admin approve yes -> admin@pds | 1.FPS10 - FRice
+[2026-01-09 14:58:35] User -> Save Data | admin approve same -> admin@pds | 1.FPS10 - FRice
+[2026-01-09 14:59:29] User -> Save Data | admin approve yes -> admin@pds | 1.FPS10 - FRice
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS10 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS17 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS1 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS27 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS2 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS31 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS32 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS33 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS34 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS35 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS36 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS37 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS38 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS39 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS3 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS40 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS41 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS42 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS43 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS44 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS45 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS46 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS47 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS48 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS49 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS4 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS50 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS51 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS52 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS53 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS54 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS55 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS56 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS57 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS58 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS59 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS60 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS61 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS62 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS63 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS64 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS65 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS8 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS11 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS12 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS13 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS14 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS15 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS16 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS18 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS19 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS20 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS22 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS23 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS24 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS25 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS26 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS28 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS29 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS30 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS5 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS6 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS7 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS9 - FRice.bool
+[2026-01-09 14:59:37] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS21 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS10 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS17 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS1 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS27 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS2 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS31 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS32 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS33 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS34 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS35 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS36 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS37 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS38 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS39 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS3 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS40 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS41 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS42 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS43 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS44 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS45 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS46 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS47 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS48 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS49 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS4 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS50 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS51 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS52 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS53 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS54 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS55 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS56 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS57 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS58 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS59 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS60 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS61 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS62 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS63 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS64 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS65 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS8 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS11 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS12 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS13 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS14 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS15 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS16 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS18 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS19 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS20 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS22 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS23 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS24 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS25 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS26 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS28 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS29 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS30 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS5 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS6 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS7 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS9 - FRice.bool
+[2026-01-09 14:59:51] User -> Accept All | approve_admin=yes -> admin@pds | 1.FPS21 - FRice.bool
+[2026-01-09 15:08:09] User -> Save Data | admin approval cleared - district provided data ->admin@pds| 1 - FPS10 - FRice
+[2026-01-09 15:08:09] User -> Save Data | admin approval cleared - district provided data ->admin@pds| 1 - FPS17 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS1 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS27 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS2 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS31 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS32 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS33 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS34 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS35 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS36 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS37 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS38 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS39 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS3 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS40 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS41 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS42 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS43 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS44 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS45 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS46 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS47 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS48 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS49 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS4 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS50 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS51 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS52 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS53 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS54 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS55 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS56 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS57 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS58 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS59 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS60 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS61 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS62 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS63 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS64 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS65 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS8 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS11 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS12 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS13 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS14 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS15 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS16 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS18 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS19 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS20 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS22 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS23 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS24 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS25 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS26 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS28 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS29 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS30 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS5 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS6 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS7 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS9 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve admin change yes ->admin@pds| 8 - FPS21 - FRice
+[2026-01-09 15:08:09] User -> Save Data | approve district change id ->admin@pds| accept - all| 1
+[2026-01-09 15:08:37] User -> Save Data | admin approval cleared - district provided data ->admin@pds| 1 - FPS10 - FRice
+[2026-01-09 15:13:08] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:13:16] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS1 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS27 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS2 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS31 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS32 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS33 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS34 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS35 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS36 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS37 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS38 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS39 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS3 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS40 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS41 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS42 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS43 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS44 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS45 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS46 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS47 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS48 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS49 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS4 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS50 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS51 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS52 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS53 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS54 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS55 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS56 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS57 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS58 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS59 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS60 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS61 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS62 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS63 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS64 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS65 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS8 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS11 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS12 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS13 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS14 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS15 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS16 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS18 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS19 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS20 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS22 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS23 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS24 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS25 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS26 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS28 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS29 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS30 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS5 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS6 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS7 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS9 - FRice
+[2026-01-09 15:13:51] User -> Save Data | admin approve yes -> admin@pds | 8 - FPS21 - FRice
+[2026-01-09 15:16:37] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS27 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS1 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS2 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS31 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS32 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS33 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS34 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS35 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS36 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS37 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS38 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS39 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS3 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS40 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS41 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS42 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS43 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS44 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS45 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS46 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS47 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS48 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS49 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS4 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS50 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS51 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS52 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS53 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS54 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS55 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS56 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS57 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS58 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS59 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS60 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS61 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS62 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS63 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS64 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS65 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 1 - FPS8 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS11 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS12 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS13 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS14 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS15 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS16 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS18 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS19 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS20 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS22 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS23 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS24 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS25 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS26 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS28 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS29 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS30 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS5 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS6 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS7 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 2 - FPS9 - FRice
+[2026-01-09 15:16:47] User -> Save Data | admin approve yes -> admin@pds | 8 - FPS21 - FRice
+[2026-01-09 15:24:21] User -> Save Data | admin approval cleared - district provided data ->admin@pds| 1 - FPS10 - FRice
+[2026-01-09 15:24:21] User -> Save Data | admin approval cleared - district provided data ->admin@pds| 1 - FPS17 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS1 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS27 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS2 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS31 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS32 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS33 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS34 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS35 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS36 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS37 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS38 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS39 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS3 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS40 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS41 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS42 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS43 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS44 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS45 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS46 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS47 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS48 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS49 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS4 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS50 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS51 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS52 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS53 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS54 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS55 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS56 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS57 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS58 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS59 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS60 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS61 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS62 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS63 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS64 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS65 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS8 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS11 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS12 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS13 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS14 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS15 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS16 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS18 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS19 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS20 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS22 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS23 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS24 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS25 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS26 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS28 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS29 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS30 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS5 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS6 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS7 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 2 - FPS9 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve admin change yes ->admin@pds| 8 - FPS21 - FRice
+[2026-01-09 15:24:21] User -> Save Data | approve district change id ->admin@pds| accept - all| 1
+[2026-01-09 15:26:33] User -> Save Data | admin approval cleared - district provided data ->admin@pds| 1 - FPS10 - FRice
+[2026-01-09 15:28:11] User -> Save Data | admin approval cleared - district provided data ->admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:28:23] User -> Save Data | admin approval cleared - district provided data ->admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:28:54] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:28:54] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS1 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS27 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS2 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS31 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS32 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS33 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS34 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS35 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS36 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS37 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS38 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS39 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS3 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS40 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS41 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS42 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS43 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS44 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS45 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS46 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS47 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS48 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS49 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS4 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS50 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS51 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS52 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS53 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS54 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS55 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS56 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS57 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS58 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS59 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS60 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS61 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS62 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS63 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS64 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS65 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 1 - FPS8 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS11 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS12 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS13 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS14 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS15 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS16 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS18 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS19 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS20 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS22 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS23 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS24 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS25 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS26 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS28 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS29 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS30 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS5 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS6 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS7 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 2 - FPS9 - FRice
+[2026-01-09 15:29:41] User -> Save Data | approve admin change yes ->admin@pds | 8 - FPS21 - FRice
+[2026-01-09 15:36:49] User -> Admin Approval Cleared (District Data Exists) ->admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:37:03] User -> Admin Approval Updated ->admin@pds | 1 - FPS31
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS1 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS27 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS2 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS31 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS32 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS33 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS34 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS35 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS36 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS37 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS38 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS39 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS3 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS40 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS41 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS42 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS43 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS44 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS45 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS46 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS47 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS48 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS49 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS4 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS50 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS51 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS52 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS53 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS54 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS55 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS56 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS57 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS58 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS59 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS60 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS61 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS62 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS63 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS64 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS65 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 1 - FPS8 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS11 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS12 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS13 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS14 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS15 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS16 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS18 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS19 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS20 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS22 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS23 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS24 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS25 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS26 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS28 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS29 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS30 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS5 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS6 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS7 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 2 - FPS9 - FRice
+[2026-01-09 15:37:10] User -> Accept All ->admin@pds | 8 - FPS21 - FRice
+[2026-01-09 15:47:19] User -> Accept All ->admin@pds | updated all rows without district data
+[2026-01-09 15:47:27] User -> Admin Approval Cleared (District Data Exists) ->admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:47:34] User -> Admin Approval Cleared (District Data Exists) ->admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:48:24] User -> Admin Approval Cleared (District Data Exists) ->admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:50:51] User -> Admin Approval Cleared (District Data Exists) ->admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:50:58] User -> Admin Approval Cleared (District Data Exists) ->admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:51:06] User -> Admin Approval Cleared (District Data Exists) ->admin@pds | 1 - FPS17 - FRice
+[2026-01-09 15:51:19] User -> Admin Approval Cleared (District Data Exists) ->admin@pds | 1 - FPS10 - FRice
+[2026-01-09 15:51:29] User -> Accept All ->admin@pds | updated all rows without district data
+[2026-01-09 15:56:53] User -> Save Data | approve admin change yes ->admin@pds| 1 - FPS10 - FRice
+[2026-01-09 15:57:06] User -> Save Data | approve admin change no ->admin@pds| 1 - FPS17 - FRice
+[2026-01-09 15:57:30] User -> Save Data | approve district change id ->admin@pds| accept - all| 1
+[2026-01-09 17:04:54] User -> Delete User ->admin@pds| Requested JSON -> {"uid":"693bb8a77449c"} | fci@pds
+[2026-01-09 17:05:30] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"fci@pds","district":"fci","newpassword":"fci@123"} | fci@pds
+[2026-01-09 17:40:47] User -> User Add ->admin@pds| Requested JSON -> {"newusername":"Fci@pds","district":"admin","newpassword":"Fci@123"} | Fci@pds

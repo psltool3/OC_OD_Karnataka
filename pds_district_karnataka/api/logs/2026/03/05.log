@@ -1,0 +1,74 @@
+[2026-03-05 13:13:46] district_user -> Warehouse Edit ->Bagalkote@pds| Requested JSON -> {"name":"Array","uniqueid":"WH_69a93004b5d2","active":"1","type":"motorable","latitude":"12","storage":"1000","district":"Bagalkote","taluka":"Akki","id":"123","warehousetype":"swc","longitude":"20","ragi":"5000"}
+[2026-03-05 13:14:49] district_user -> Warehouse added ->Bagalkote@pds| Requested JSON -> {"name":"kk","type":"motorable","latitude":"12","storage":"1000","district":"Bagalkote","taluka":"Akki","id":"26001737000","warehousetype":"swc","longitude":"96.64083333","ragi":"500"}
+[2026-03-05 13:14:54] User -> Warehouse InActive -> Bagalkote@pds| Array
+[2026-03-05 13:16:07] district_user -> FPS deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | all
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| Yavatmal yass
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| Gram Mandal Maninagar
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| MAHAKUTESHWAR YUVAKA MANDAL YANKANCHI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| L.B. NAIKAR. KHANAPUR.S.K. 68 (C)(RADDERTIMMAPUR)
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL HAVALAKOD
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL FAKIRBUDIHAL
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL SAGANUR
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL CHINCHALAKATTI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| K.K.LAMANI CHINCHALAKATTI L.T.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| RAIT SANGHA HANAMANERI (S)
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| V.S.S. NEERBUDIHAL
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL GANGANABUDIHAL
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| S.M.GONNAGAR JANGAWAD
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDALA HOSAKOTI-37 (C)(KAINAKATTI)
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| Y.S.NARASANVAR SHIPARMATTI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL HOSAKOTI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL MATTIKATTI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| SHIVANAND YUVAKA MANDAL MALAGI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| SHRADDANAND YUVAKA MANDAL NARENUR
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| KRISHNA YUVAKA MANDAL NARENUR L.T.2
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| Ranganath Hanamappa Sunagad (PH) Inam Hanamaneri
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| PKPS Anawal
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| GRAMA MANDAL KALABANDKERI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL YANDIGERI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| V.S.S.KAGALGOMBA
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| V.S.S.KERAKALMATTI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| PKPS Halakurki
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| V.S.S.HULAGERI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| BASAVESHWARA YUVAKA MANDAL JALAGERI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| Manjunatha Shivappa Rathod (PH)
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| Secretory Neeralkeri Milk producers Co-Op Society Ltd.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| P.K.P.S.MUSTIGERI.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDALA HULLIKERI INAM
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| YOUTH ASSOCIATION MUMARADDIKOPPA
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| P.K.P.S. UGLVAT
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| PURNANANDA YUVAKA MANDAL KALLAPUR.S.K.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| KALIKADEVI YUVAK MANDALA TAPPASAKATTI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| MARUTI YUVAKA MANDAL HANAMASAGAR
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| PURNANAND YUVAKA MANDAL SOMANAKOPPA
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| L.B. NAYAKAR KHANAPUR S,K.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| V.S.S. KAKANUR
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| GRAMA MANDALA CHIMMANAKATTI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| NEERU BALAKEDARAR SAHAKARI SANGHA HAGANUR
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| V.S.S. TALAKAWAD
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL NEELGUND
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL LAKHAMAPUR
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| IRAPP. K.BIRANUR BIRANUR
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR YUVAKA MANDAL ALUR S.K.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| BASAVESHWAR YUVAK MANDAL TIMMAPUR S.N.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| VEERABHADHRESHWARA Y M MALLAPUR S.L.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| Kalasa (Govonakopp) Milk producers Co op Society
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| YUVAKA MANDAL ALADAKATTI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| PKPS Hebballi
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| V.S.S. MUTTALAGERI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| MARUTESHWAR TARUN SANGHA NAVILAHOLE.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| BASAVALINGESHWAR Y M BACHINAGUDDA.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL GONAL
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| V.S.S.CHOLACHAGUDDA
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| BANASHANKARI DEVASTHANA SEVA SAMITI BANASHANKARI.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| REVANASHIDDESHWAR YUVAKA SANGHA HIRENASIBI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| AMBEDAKAR VIDYA VARDHAKA SANGHA BELUR
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| V.S.S.JALIHAL
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| Halu Utpadakara sahakari sangha,Pattadakal
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| GRAM MANDAL ADAGAL.
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| V.S.S.KUTAKANAKERI
+[2026-03-05 13:16:33] User -> FPS Added -> Bagalkote@pds| Yavatmal yass
+[2026-03-05 14:09:57] district_user -> Warehouse Edit ->Bagalkote@pds| Requested JSON -> {"name":"Kk","uniqueid":"WH_69a93471ca4e","active":"1","type":"motorable","latitude":"12","storage":"1000","district":"Bagalkote","taluka":"Akki","id":"26001737000","warehousetype":"swc","longitude":"96.64083333","ragi":"500","jowar":"1000"}
+[2026-03-05 14:10:23] User -> Warehouse Edit -> Bagalkote@pds| Array
+[2026-03-05 14:10:23] User -> Warehouse Edit -> Bagalkote@pds| Kk
+[2026-03-05 14:10:23] User -> Warehouse Edit -> Bagalkote@pds| Kk

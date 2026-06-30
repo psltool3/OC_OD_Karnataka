@@ -1,0 +1,31 @@
+[2026-01-08 10:29:22] User -> DCP added ->fci@pds| Requested JSON -> {"name":"Maharstra Project","type":"ds","latitude":"24","longitude":"76","district":"Ballari","taluka":"abc","id":"admin@pds","demand":"23","demand_rice":"45"}
+[2026-01-08 10:37:33] User -> DCP added ->fci@pds| Requested JSON -> {"name":"Vishveshwar","type":"ds","latitude":"12","longitude":"10","district":"Ballari","taluka":"Badami","id":"78","demand":"223","demand_rice":"122334"}
+[2026-01-08 10:37:38] User -> DCP InActive -> fci@pds| Vishveshwar
+[2026-01-08 10:37:39] User -> DCP Active -> fci@pds| Vishveshwar
+[2026-01-08 10:37:52] User -> DCP Edit ->fci@pds| Requested JSON -> {"name":"Vishveshwarhfghfgh","uniqueid":"DCP_695f3b952e6","active":"1","type":"ds","latitude":"12","longitude":"10","district":"Ballari","taluka":"Badami","id":"78","demand":"223","demand_rice":"122334"}
+[2026-01-08 10:38:13] User -> DCP deleted -> fci@pds| Requested JSON -> {"uid":"DCP_695f3b952e6"} | Vishveshwarhfghfgh
+[2026-01-08 10:38:28] User -> DCP deleted -> fci@pds| Requested JSON -> {"uid":"all"} | all
+[2026-01-08 10:38:46] User -> DCP Added -> fci@pds| KFCSC T NARASIPURA
+[2026-01-08 10:38:46] User -> DCP Added -> fci@pds| KFCSC HUNSUR
+[2026-01-08 10:38:46] User -> DCP Added -> fci@pds| Maharstra Project
+[2026-01-08 10:38:46] User -> DCP Added -> fci@pds| Vishveshwarhfghfgh
+[2026-01-08 10:43:23] User -> DCP deleted -> fci@pds| Requested JSON -> {"uid":"all"} | all
+[2026-01-08 10:43:36] User -> DCP Added -> fci@pds| KFCSC T NARASIPURA
+[2026-01-08 10:43:36] User -> DCP Added -> fci@pds| KFCSC HUNSUR
+[2026-01-08 10:43:36] User -> DCP Added -> fci@pds| Maharstra Project
+[2026-01-08 10:43:36] User -> DCP Added -> fci@pds| Vishveshwarhfghfgh
+[2026-01-08 10:47:22] User -> DCP Edit ->fci@pds| Requested JSON -> {"name":"Maharstra Project","uniqueid":"DCP_695f3d001f3","active":"1","type":"ds","latitude":"24","longitude":"76","district":"Ballari","taluka":"akki","id":"admin@pds","demand":"231","demand_rice":"456"}
+[2026-01-08 10:48:14] User -> DCP Edit ->fci@pds| Requested JSON -> {"name":"Maharstra Project","uniqueid":"DCP_695f3d001f3","active":"1","type":"ds","latitude":"24","longitude":"76","district":"Ballari","taluka":"akki","id":"admin@pds","demand":"2312","demand_rice":"4567"}
+[2026-01-08 10:51:44] User -> DCP InActive -> fci@pds| Maharstra Project
+[2026-01-08 10:52:22] User -> DCP Edit ->fci@pds| Requested JSON -> {"name":"Vishveshwarhfghfgh","uniqueid":"DCP_695f3d00203","active":"1","type":"ds","latitude":"12","longitude":"10","district":"Ballari","taluka":"akki","id":"78","demand":"2","demand_rice":"122334"}
+[2026-01-08 10:52:32] User -> DCP InActive -> fci@pds| Vishveshwarhfghfgh
+[2026-01-08 10:53:44] User -> DCP InActive -> fci@pds| Ballari
+[2026-01-08 10:55:42] User -> DCP deleted -> fci@pds| Requested JSON -> {"uid":"DCP_695f3d00203"} | Vishveshwarhfghfgh
+[2026-01-08 11:06:20] User -> DCP deleted -> fci@pds| Requested JSON -> {"uid":"all"} | all
+[2026-01-08 11:08:15] User -> DCP Added -> fci@pds| KFCSC T NARASIPURA
+[2026-01-08 11:08:15] User -> DCP Added -> fci@pds| KFCSC HUNSUR
+[2026-01-08 11:10:26] User -> DCP deleted -> fci@pds| Requested JSON -> {"uid":"all"} | all
+[2026-01-08 11:10:38] User -> DCP Added -> fci@pds| KFCSC T NARASIPURA
+[2026-01-08 11:10:38] User -> DCP Added -> fci@pds| KFCSC HUNSUR
+[2026-01-08 12:58:00] User -> DCP added ->fci@pds| Requested JSON -> {"name":"Maharstra Project","type":"ds","latitude":"24","longitude":"76","district":"Bagalkote","taluka":"akki","id":"7888","demand":"23","demand_rice":"45"}
+[2026-01-08 12:58:17] User -> DCP deleted -> fci@pds| Requested JSON -> {"uid":"DCP_695f5c808a0"} | Maharstra Project

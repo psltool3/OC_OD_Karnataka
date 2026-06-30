@@ -1,0 +1,2 @@
+[2026-06-24 19:11:56] User ->  Optimization Start Requested JSON -> ImmutableMultiDict([('month', 'june'), ('year', '2026'), ('type', 'inter'), ('applicable', 'feb'), ('username', 'admin@pds'), ('async', '0'), ('client_id', 'admin@pds')])
+[2026-06-24 19:28:00] User ->  Optimization Start Requested JSON -> ImmutableMultiDict([('month', 'june'), ('year', '2026'), ('type', 'inter'), ('applicable', 'feb'), ('username', 'admin@pds'), ('async', '0'), ('client_id', 'admin@pds')])

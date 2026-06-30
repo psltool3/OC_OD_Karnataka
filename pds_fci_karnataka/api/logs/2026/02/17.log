@@ -1,0 +1,13 @@
+[2026-02-17 16:45:59] User -> DCP Edit ->fci@pds| Requested JSON -> {"name":"KFCSC T NARASIPURA","uniqueid":"DCP_695f4356989","active":"1","type":"FCI","latitude":"16.15499028","longitude":"75.67274778","district":"Ballari","taluka":"akki","id":"335","demand":"327800","demand_rice":"500"}
+[2026-02-17 18:58:02] User -> DCP Edit ->fci@pds| Requested JSON -> {"name":"Kfcsc T Narasipura","uniqueid":"DCP_695f4356989","active":"1","type":"FCI","latitude":"16.15499028","longitude":"75.67274778","district":"Bagalkote","taluka":"akki","id":"335","demand":"327800","demand_rice":"500"}
+[2026-02-17 18:59:29] User -> DCP Edit ->fci@pds| Requested JSON -> {"name":"Kfcsc T Narasipura","uniqueid":"DCP_695f4356989","active":"1","type":"FCI","latitude":"16.15499028","longitude":"75.67274778","district":"Bagalkote","taluka":"akki","id":"335","demand":"327800","demand_rice":"5000"}
+[2026-02-17 18:59:34] User -> DCP InActive -> fci@pds| Kfcsc T Narasipura
+[2026-02-17 18:59:35] User -> DCP Active -> fci@pds| Kfcsc T Narasipura
+[2026-02-17 19:00:27] User -> DCP added ->fci@pds| Requested JSON -> {"name":"Maharstra Project","type":"sw","latitude":"24","longitude":"76","district":"Bagalkote","taluka":"akki","id":"4589","demand":"500","demand_rice":"1000"}
+[2026-02-17 19:04:11] User -> DCP deleted -> fci@pds| Requested JSON -> {"uid":"all"} | all
+[2026-02-17 19:06:12] User -> DCP Added -> fci@pds| Kfcsc T Narasipura
+[2026-02-17 19:06:12] User -> DCP Added -> fci@pds| KFCSC HUNSUR
+[2026-02-17 19:06:12] User -> DCP Added -> fci@pds| Maharstra Project
+[2026-02-17 19:07:03] User -> DCP Edit -> fci@pds| Kfcsc T Narasipura
+[2026-02-17 19:07:03] User -> DCP Edit -> fci@pds| KFCSC HUNSUR
+[2026-02-17 19:07:03] User -> DCP Edit -> fci@pds| Maharstra Project

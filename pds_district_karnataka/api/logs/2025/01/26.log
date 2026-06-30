@@ -1,0 +1,45 @@
+[2025-01-26 19:05:57] district_user -> Warehouse deleted -> Ballari@pds| Requested JSON -> {"uid":"all"} | 
+[2025-01-26 19:34:01] district_user -> Warehouse deleted -> Ballari@pds| Requested JSON -> {"uid":"all"} | 
+[2025-01-26 19:34:59] User -> Warehouse Added -> Ballari@pds| Mudholtg
+[2025-01-26 19:34:59] User -> Warehouse Added -> Ballari@pds| BALLARI
+[2025-01-26 19:34:59] User -> Warehouse Added -> Ballari@pds| KURUGODU
+[2025-01-26 19:35:00] User -> Warehouse Added -> Ballari@pds| A
+[2025-01-26 19:35:00] User -> Warehouse Added -> Ballari@pds| Arun
+[2025-01-26 19:35:21] district_user -> Warehouse deleted -> Ballari@pds| Requested JSON -> {"uid":"all"} | 
+[2025-01-26 19:35:32] User -> Warehouse Added -> Ballari@pds| Mudholtg
+[2025-01-26 19:35:32] User -> Warehouse Added -> Ballari@pds| BALLARI
+[2025-01-26 19:35:32] User -> Warehouse Added -> Ballari@pds| KURUGODU
+[2025-01-26 19:35:32] User -> Warehouse Added -> Ballari@pds| A
+[2025-01-26 19:35:32] User -> Warehouse Added -> Ballari@pds| Arun
+[2025-01-26 19:36:24] User -> Warehouse Edit -> Ballari@pds| Mudholtg
+[2025-01-26 19:36:24] User -> Warehouse Edit -> Ballari@pds| BALLARI
+[2025-01-26 19:36:24] User -> Warehouse Edit -> Ballari@pds| KURUGODU
+[2025-01-26 19:36:24] User -> Warehouse Edit -> Ballari@pds| A
+[2025-01-26 19:36:25] User -> Warehouse Edit -> Ballari@pds| Arun
+[2025-01-26 19:37:10] User -> Warehouse Edit -> Ballari@pds| Mudholtg
+[2025-01-26 19:37:11] User -> Warehouse Edit -> Ballari@pds| BALLARI
+[2025-01-26 19:37:11] User -> Warehouse Edit -> Ballari@pds| KURUGODU
+[2025-01-26 19:37:11] User -> Warehouse Edit -> Ballari@pds| A
+[2025-01-26 19:37:11] User -> Warehouse Edit -> Ballari@pds| Arun
+[2025-01-26 19:37:49] district_user -> FPS deleted -> Ballari@pds| Requested JSON -> {"uid":"all"} | 
+[2025-01-26 19:38:01] User -> FPS Added -> Ballari@pds| Srimahalingeshwaravividhodeshagala Seva Sangh Mugalakhod
+[2025-01-26 19:38:01] User -> FPS Added -> Ballari@pds| F.P.S. YuvakaSangha halkundi
+[2025-01-26 19:38:01] User -> FPS Added -> Ballari@pds| Hjuo
+[2025-01-26 19:38:35] User -> FPS Edit -> Ballari@pds| Srimahalingeshwaravividhodeshagala Seva Sangh Mugalakhod
+[2025-01-26 19:38:35] User -> FPS Edit -> Ballari@pds| F.P.S. YuvakaSangha halkundi
+[2025-01-26 19:38:36] User -> FPS Edit -> Ballari@pds| Hjuo
+[2025-01-26 19:39:40] User -> FPS Edit -> Ballari@pds| Srimahalingeshwaravividhodeshagala Seva Sangh Mugalakhod
+[2025-01-26 19:39:40] User -> FPS Edit -> Ballari@pds| F.P.S. YuvakaSangha halkundi
+[2025-01-26 19:39:40] User -> FPS Edit -> Ballari@pds| Hjuo
+[2025-01-26 19:39:57] User -> FPS Edit -> Ballari@pds| Srimahalingeshwaravividhodeshagala Seva Sangh Mugalakhod
+[2025-01-26 19:39:57] User -> FPS Edit -> Ballari@pds| F.P.S. YuvakaSangha halkundi
+[2025-01-26 19:39:57] User -> FPS Edit -> Ballari@pds| Hjuo
+[2025-01-26 20:10:11] User -> FPS Edit -> Ballari@pds| Srimahalingeshwaravividhodeshagala Seva Sangh Mugalakhod
+[2025-01-26 20:10:11] User -> FPS Edit -> Ballari@pds| F.P.S. YuvakaSangha halkundi
+[2025-01-26 20:10:11] User -> FPS Edit -> Ballari@pds| Hjuo
+[2025-01-26 20:13:54] User -> FPS Edit -> Ballari@pds| Srimahalingeshwaravividhodeshagala Seva Sangh Mugalakhod
+[2025-01-26 20:13:54] User -> FPS Edit -> Ballari@pds| F.P.S. YuvakaSangha halkundi
+[2025-01-26 20:13:54] User -> FPS Edit -> Ballari@pds| Hjuo
+[2025-01-26 20:14:27] User -> FPS Edit -> Ballari@pds| Srimahalingeshwaravividhodeshagala Seva Sangh Mugalakhod
+[2025-01-26 20:14:29] User -> FPS Edit -> Ballari@pds| F.P.S. YuvakaSangha halkundi
+[2025-01-26 20:14:31] User -> FPS Edit -> Ballari@pds| Hjuo

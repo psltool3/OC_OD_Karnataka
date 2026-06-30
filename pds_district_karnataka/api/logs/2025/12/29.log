@@ -1,0 +1,39 @@
+[2025-12-29 12:19:02] User -> Read Message ->Bagalkote@pds| Requested JSON -> hlo | Bagalkote@pds
+[2025-12-29 12:19:40] district_user -> Warehouse added ->Bagalkote@pds| Requested JSON -> {"name":"Akshay","type":"motorable","latitude":"11","storage":"1221","district":"Bagalkote","id":"500","warehousetype":"swc","longitude":"11"}
+[2025-12-29 12:19:52] User -> Warehouse InActive -> Bagalkote@pds| Akshay
+[2025-12-29 12:19:57] User -> Warehouse Active -> Bagalkote@pds| Akshay
+[2025-12-29 12:20:15] district_user -> Warehouse Edit ->Bagalkote@pds| Requested JSON -> {"name":"Akshayeree","uniqueid":"WH_695224841544","active":"1","type":"motorable","latitude":"11","storage":"1221","district":"Bagalkote","id":"500","warehousetype":"swc","longitude":"11"}
+[2025-12-29 12:20:28] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"WH_695224841544"} | Akshayeree
+[2025-12-29 12:21:09] district_user -> Warehouse deleted -> Bagalkote@pds| Requested JSON -> {"uid":"all"} | all
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| BADAMI
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| BAGALKOT
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| BILAGI
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| BILAGI
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| HUNGUND
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| JAMKHANDI
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| MUDHOL
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| MUDHOL
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| ILAKAL
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| GULEDAGUDD
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| RABAKAVI BANAHATTI
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| A
+[2025-12-29 12:21:19] User -> Warehouse Added -> Bagalkote@pds| A
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| BADAMI
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| BAGALKOT
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| BILAGI
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| BILAGI
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| HUNGUND
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| JAMKHANDI
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| MUDHOL
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| MUDHOL
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| ILAKAL
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| GULEDAGUDD
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| RABAKAVI BANAHATTI
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| A
+[2025-12-29 12:21:28] User -> Warehouse Edit -> Bagalkote@pds| A
+[2025-12-29 12:22:17] district_user -> FPS added ->Bagalkote@pds| Requested JSON -> {"name":"Akshay","type":"Model FPS","latitude":"11","longitude":"12","district":"Bagalkote","id":"9999","demand":"1231","demand_rice":"121"}
+[2025-12-29 12:22:23] User -> FPS InActive -> Bagalkote@pds| Akshay
+[2025-12-29 12:22:40] district_user -> FPS Edit ->Bagalkote@pds| Requested JSON -> {"name":"Akshaygggg","uniqueid":"FPS_695225213c6","active":false,"type":"Model FPS","latitude":"11","longitude":"12","district":"Bagalkote","id":"9999","demand":"1231","demand_rice":"121"}
+[2025-12-29 12:22:50] district_user -> FPS deleted -> Bagalkote@pds| Requested JSON -> {"uid":"FPS_695225213c6"} | Akshaygggg
+[2025-12-29 12:22:54] User -> Normal FPS InActive -> Bagalkote@pds| Gram Mandal Maninagar
+[2025-12-29 12:22:56] User -> Normal FPS Active -> Bagalkote@pds| Gram Mandal Maninagar
