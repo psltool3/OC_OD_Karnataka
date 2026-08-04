@@ -146,25 +146,8 @@ try{
 					echo "</br>";
 					$redirect = 0;
 				}
-				
-				if (
-					!isset($column[$id]) ||
-					!preg_match('/^[A-Za-z0-9]+$/', $column[$id])
-				) {
-					echo "Error: WAREHOUSE ID should not contain spaces or any special characters: " . ($column[$id] ?? 'Missing');
-					echo "<br>";
-					$redirect = 0;
-				}
-				
-				if (!is_numeric($column[$latitude]) || $column[$latitude] >= 40) {
-					echo "Error : Latitude must be less than 40. Given: " . $column[$latitude];
-					echo "</br>";
-					$redirect = 0;
-				}
-
-				// Longitude check (must be more than 65)
-				if (!is_numeric($column[$longitude]) || $column[$longitude] <= 65) {
-					echo "Error : Longitude must be more than 65. Given: " . $column[$longitude];
+				if (!preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/', $column[$id])) {
+					echo "Error : Warehouse ID must contain both characters and numbers, and only alphanumeric characters are allowed. Invalid ID found: ".$column[$id];
 					echo "</br>";
 					$redirect = 0;
 				}

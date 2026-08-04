@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 require('util/Connection.php');
 require('util/SessionCheck.php');
 require('Header.php');
@@ -416,8 +416,12 @@ if($currentTimestamp >= $targetTimestamp) {
 					alert("Please enter distance");
 					return;
 				}
+				if (!/^\d+(\.\d+)?$/.test(distanceInput.value.trim())) {
+					alert("Distance should be a valid number (integer or float).");
+					return;
+				}
 				params[uniqueId + "_idreason"] = reasonInput.value;
-				params[uniqueId + "_iddistance"] = distanceInput.value;
+				params[uniqueId + "_iddistance"] = distanceInput.value.trim();
 			}
 			
 			$.ajax({
@@ -497,8 +501,15 @@ if($currentTimestamp >= $targetTimestamp) {
 		}
 		
 		function handleDistanceChange(selectedId){
-			newvalue = document.getElementById(selectedId).value;
-			modifiedDistanceData[selectedId] = newvalue;
+			var inputEl = document.getElementById(selectedId);
+			var newvalue = inputEl.value;
+			if (newvalue !== '' && !/^\d+(\.\d+)?$/.test(newvalue.trim())) {
+				alert("Distance should be a valid number (integer or float).");
+				inputEl.value = '';
+				delete modifiedDistanceData[selectedId];
+				return;
+			}
+			modifiedDistanceData[selectedId] = newvalue.trim();
 			if(newvalue==''){
 				delete modifiedDistanceData[selectedId];
 			}
@@ -523,6 +534,11 @@ if($currentTimestamp >= $targetTimestamp) {
 						}
 						if(!modifiedDistanceData.hasOwnProperty(key + "_iddistance")){
 							alert("New Id " + String(value) + " distance needs to be filled");
+							return;
+						}
+						var distVal = modifiedDistanceData[key + "_iddistance"];
+						if (!/^\d+(\.\d+)?$/.test(distVal.trim())) {
+							alert("New Id " + String(value) + " distance should be a valid number (integer or float).");
 							return;
 						}
 					}

@@ -31,7 +31,7 @@ $row = mysqli_fetch_assoc($result);
 
 $dbHashedPassword = $row['password'];
 if(password_verify($person->getPassword(), $dbHashedPassword)){
- if($row['role']=="admin"){
+ if($row['role']=="dfpd"){
 		$count = 1 + $row['count'];
 		$uniqueId = uniqid();
 		$authToken = md5($uniqueId);

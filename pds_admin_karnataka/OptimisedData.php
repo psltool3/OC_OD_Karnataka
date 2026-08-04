@@ -548,8 +548,15 @@ while($row = mysqli_fetch_array($result))
 		}
 		
 		function handleDistanceChange(selectedId){
-			newvalue = document.getElementById(selectedId).value;
-			modifiedDistanceData[selectedId] = newvalue;
+			var inputEl = document.getElementById(selectedId);
+			var newvalue = inputEl.value;
+			if (newvalue !== '' && !/^\d+(\.\d+)?$/.test(newvalue.trim())) {
+				alert("Distance should be a valid number (integer or float).");
+				inputEl.value = '';
+				delete modifiedDistanceData[selectedId];
+				return;
+			}
+			modifiedDistanceData[selectedId] = newvalue.trim();
 			if(newvalue==''){
 				delete modifiedDistanceData[selectedId];
 			}
@@ -581,6 +588,11 @@ while($row = mysqli_fetch_array($result))
 						}
 						if(!modifiedDistanceData.hasOwnProperty(key + "_iddistance")){
 							alert("New Id " + String(value) + " distance needs to be filled");
+							return;
+						}
+						var distVal = modifiedDistanceData[key + "_iddistance"];
+						if (!/^\d+(\.\d+)?$/.test(distVal.trim())) {
+							alert("New Id " + String(value) + " distance should be a valid number (integer or float).");
 							return;
 						}
 					}

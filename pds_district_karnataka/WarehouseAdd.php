@@ -273,6 +273,12 @@ $district = ucfirst($_SESSION["district_district"]);
                 return false;
             }
 			
+            var idRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+            if (!idRegex.test(id)) {
+                alert('Warehouse ID must contain both characters and numbers, and only alphanumeric characters are allowed.');
+                return false;
+            }
+			
             document.getElementById('popup').style.display = 'block';
         }
 		

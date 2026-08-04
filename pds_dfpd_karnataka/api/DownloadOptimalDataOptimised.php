@@ -44,7 +44,7 @@ if (isset($_GET['format'])) {
 				$row["from_name"] = $row['new_name_admin'];
 				$row["distance"] = $row['new_distance_admin'];
 			}
-			else if(($row['new_id_district']!=null or $row['new_id_district']!="") and $row['admin_approve']=="yes"){
+			else if(($row['new_id_district']!=null or $row['new_id_district']!="") and (isset($row['approve_admin']) && $row['approve_admin']=="yes")){
 				$id = $row['new_id_district'];
 				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse WHERE id='$id'";
 				$result_warehouse = mysqli_query($con,$query_warehouse);
@@ -92,7 +92,7 @@ if (isset($_GET['format'])) {
 					$row["from_name"] = $row['new_name_admin'];
 					$row["distance"] = $row['new_distance_admin'];
 				}
-				else if(($row['new_id_district']!=null or $row['new_id_district']!="") and $row['admin_approve']=="yes"){
+				else if(($row['new_id_district']!=null or $row['new_id_district']!="") and (isset($row['approve_admin']) && $row['approve_admin']=="yes")){
 					$id = $row['new_id_district'];
 					$query_warehouse = "SELECT latitude,longitude,district FROM warehouse WHERE id='$id'";
 					$result_warehouse = mysqli_query($con,$query_warehouse);
@@ -123,6 +123,7 @@ if (isset($_GET['format'])) {
     // Set headers for the chosen format
     switch ($format) {
         case 'csv':
+            if (ob_get_length()) ob_end_clean();
             header('Content-Type: text/csv');
             header('Content-Disposition: attachment; filename="' . $filename . '.csv"');
             outputCSV($tableData);
@@ -152,7 +153,8 @@ if (isset($_GET['format'])) {
             }
 
 
-            header('Content-Type: application/vnd.ms-excel');
+            if (ob_get_length()) ob_end_clean();
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="' . $filename . '.xlsx"');
             header('Cache-Control: max-age=0');
 

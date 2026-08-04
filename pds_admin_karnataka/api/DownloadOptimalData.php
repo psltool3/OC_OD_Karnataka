@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+ini_set('display_errors', 0);
 
 require('../util/Connection.php');
 require('../util/SessionCheck.php');
@@ -138,10 +140,10 @@ if (isset($_GET['format'])) {
         $temp_pdf = [];
 
         foreach ($columns as $c) {
-            $temp[] = $row[$c];
+            $temp[] = $row[$c] ?? "";
         }
         foreach ($columns_pdf as $c) {
-            $temp_pdf[] = $row[$c];
+            $temp_pdf[] = $row[$c] ?? "";
         }
 
         $tableData[] = $temp;
@@ -188,45 +190,90 @@ if (isset($_GET['format'])) {
             $pdf->AddPage();
 
             $pageWidth = $pdf->GetPageWidth() - 20;
-            $numCols = count($tableData_pdf[0]);
-            $colWidth = $pageWidth / $numCols;
-            $lineHeight = 6;
+            $lineHeight = 4; // Smaller line height for better layout
 
-            function rowHeight($pdf, $row, $colWidth, $lineHeight) {
-                $max = 1;
-                foreach ($row as $txt) {
-                    $lines = ceil($pdf->GetStringWidth($txt) / ($colWidth - 2));
-                    $max = max($max, $lines);
-                }
-                return $lineHeight * $max;
+            $col_weights = [
+                "scenario" => 0.8,
+                "from" => 0.8,
+                "from_id" => 1.0,
+                "from_name" => 2.5,
+                "from_district" => 1.2,
+                "from_lat" => 1.0,
+                "from_long" => 1.0,
+                "to" => 0.8,
+                "to_id" => 1.0,
+                "to_name" => 2.5,
+                "to_district" => 1.2,
+                "to_lat" => 1.0,
+                "to_long" => 1.0,
+                "commodity" => 1.0,
+                "quantity" => 1.0,
+                "distance" => 1.0,
+                "new_id_district" => 1.2,
+                "reason_district" => 2.5,
+                "new_distance_district" => 1.2,
+                "approve_district" => 1.0,
+                "approve_admin" => 1.0,
+                "reason_admin" => 2.5,
+                "new_id_admin" => 1.2,
+                "new_distance_admin" => 1.2
+            ];
+
+            $total_weight = 0;
+            foreach ($columns_pdf as $col) {
+                $total_weight += isset($col_weights[$col]) ? $col_weights[$col] : 1.0;
+            }
+            $colWidths = [];
+            foreach ($columns_pdf as $col) {
+                $colWidths[] = (($col_weights[$col] ?? 1.0) / $total_weight) * $pageWidth;
             }
 
-            function drawRow($pdf, $row, $colWidth, $lineHeight) {
-                $x = $pdf->GetX();
-                $y = $pdf->GetY();
-                $h = rowHeight($pdf, $row, $colWidth, $lineHeight);
-
-                foreach ($row as $cell) {
-                    $pdf->Rect($x, $y, $colWidth, $h);
-                    $pdf->MultiCell($colWidth, $lineHeight, $cell, 0, 'C');
-                    $x += $colWidth;
-                    $pdf->SetXY($x, $y);
+            if (!function_exists('rowHeight')) {
+                function rowHeight($pdf, $row, $colWidths, $lineHeight) {
+                    $max = 1;
+                    $i = 0;
+                    foreach ($row as $txt) {
+                        $w = $colWidths[$i];
+                        $lines = ceil($pdf->GetStringWidth(strval($txt)) / ($w - 2));
+                        $max = max($max, $lines);
+                        $i++;
+                    }
+                    return $lineHeight * $max;
                 }
-                $pdf->Ln($h);
+            }
+
+            if (!function_exists('drawRow')) {
+                function drawRow($pdf, $row, $colWidths, $lineHeight, $isHeader = false) {
+                    $x = $pdf->GetX();
+                    $y = $pdf->GetY();
+                    $h = rowHeight($pdf, $row, $colWidths, $lineHeight);
+                    $i = 0;
+                    $pdf->SetFillColor($isHeader ? 220 : 255, $isHeader ? 220 : 255, $isHeader ? 220 : 255);
+                    foreach ($row as $cell) {
+                        $w = $colWidths[$i];
+                        $pdf->Rect($x, $y, $w, $h);
+                        $pdf->MultiCell($w, $lineHeight, strval($cell), 0, 'C', $isHeader);
+                        $x += $w;
+                        $pdf->SetXY($x, $y);
+                        $i++;
+                    }
+                    $pdf->Ln($h);
+                }
             }
 
             $pdf->SetFont('Arial', 'B', 5);
-            drawRow($pdf, $tableData_pdf[0], $colWidth, $lineHeight);
+            drawRow($pdf, $tableData_pdf[0], $colWidths, $lineHeight, true);
 
             $pdf->SetFont('Arial', '', 5);
             for ($i = 1; $i < count($tableData_pdf); $i++) {
-                if ($pdf->GetY() > $pdf->GetPageHeight() - 20) {
+                $nextHeight = rowHeight($pdf, $tableData_pdf[$i], $colWidths, $lineHeight);
+                if ($pdf->GetY() + $nextHeight > $pdf->GetPageHeight() - 15) {
                     $pdf->AddPage();
                     $pdf->SetFont('Arial', 'B', 5);
-                    drawRow($pdf, $tableData_pdf[0], $colWidth, $lineHeight);
+                    drawRow($pdf, $tableData_pdf[0], $colWidths, $lineHeight, true);
                     $pdf->SetFont('Arial', '', 5);
                 }
-                drawRow($pdf, $tableData_pdf[$i], $colWidth, $lineHeight);
+                drawRow($pdf, $tableData_pdf[$i], $colWidths, $lineHeight);
             }
 
             header('Content-Type: application/pdf');

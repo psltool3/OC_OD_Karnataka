@@ -92,26 +92,9 @@ if(!isStringNumber($_POST["inventory_jowar"])){
 	exit();
 }
 
-
-    // Latitude check (must be less than 40)
-if (!is_numeric($_POST["latitude"]) || $_POST["latitude"] >= 40) {
-    echo "Error : Latitude must be less than 40. Given: " . $_POST["latitude"];
-    exit();
-}
-
-// FPS ID check (only letters and numbers allowed)
-if (
-    !isset($_POST["id"]) ||
-    !preg_match('/^[A-Za-z0-9]+$/', $_POST["id"])
-) {
-    echo "Error : FPS ID should contain only letters and numbers. Given: " . ($_POST["id"] ?? "Missing");
-    exit();
-}
-
-// Longitude check (must be more than 65)
-if (!is_numeric($_POST["longitude"]) || $_POST["longitude"] <= 65) {
-    echo "Error : Longitude must be more than 65. Given: " . $_POST["longitude"];
-    exit();
+if (!preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/', $_POST["id"])) {
+	echo "Error : FPS ID must contain both characters and numbers, and only alphanumeric characters are allowed.";
+	exit();
 }
 
 $dbHashedPassword = $row['password'];

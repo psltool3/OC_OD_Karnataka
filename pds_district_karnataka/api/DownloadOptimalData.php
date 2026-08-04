@@ -1,4 +1,6 @@
 <?php
+error_reporting(0);
+ini_set('display_errors', 0);
 
 require('../util/Connection.php');
 require '../vendor/autoload.php';
@@ -53,7 +55,7 @@ if (isset($_GET['format'])) {
 				$row["from_name"] = $row['new_name_admin'];
 				$row["distance"] = $row['new_distance_admin'];
 			}
-			else if(($row['new_id_district']!=null or $row['new_id_district']!="") and $row['admin_approve']=="yes"){
+			else if(($row['new_id_district']!=null or $row['new_id_district']!="") and $row['approve_admin']=="yes"){
 				$id = $row['new_id_district'];
 				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse WHERE id='$id'";
 				$result_warehouse = mysqli_query($con,$query_warehouse);
@@ -71,10 +73,10 @@ if (isset($_GET['format'])) {
             $temp = array();
             $temp_pdf = array();
             for($i=0;$i<count($columns);$i++){
-                array_push($temp,$row[$columns[$i]]);
+                array_push($temp,$row[$columns[$i]] ?? "");
             }
             for($i=0;$i<count($columns_pdf);$i++){
-                array_push($temp_pdf,$row[$columns_pdf[$i]]);
+                array_push($temp_pdf,$row[$columns_pdf[$i]] ?? "");
             }
             array_push($tableData,$temp);
             array_push($tableData_pdf,$temp_pdf);
@@ -127,57 +129,91 @@ if (isset($_GET['format'])) {
         case 'pdf':
             require('fpdf/fpdf.php');
             $pdf = new FPDF('L', 'mm', 'A4');
-			$pdf->AddPage();
-			$pdf->SetFont('Arial', 'B', 15); // Set initial font size
+            $pdf->AddPage();
 
-			// Calculate column width based on the number of columns and page width
-			$pageWidth = $pdf->GetPageWidth() - 20; // Subtract margins (10 mm each side)
-			$numCols = count($tableData_pdf[0]) + 2; // Assuming all rows have the same number of columns
-			$colWidth = $pageWidth / $numCols;
-			$originalColWidth = $colWidth;
+            $pageWidth = $pdf->GetPageWidth() - 20;
+            $lineHeight = 4; // Use slightly smaller line height for multi-line cells
 
-			// Function to add a row to the PDF with dynamic font size adjustment
-			function addRow($pdf, $row, $colWidth, $isHeader = false) {
-				global $originalColWidth;
-				global $colWidth;
-				$pdf->SetFillColor($isHeader ? 200 : 255, $isHeader ? 220 : 255, $isHeader ? 255 : 255);
-				$i = 0;
-				foreach ($row as $col) {
-					$i = $i + 1;
-					if($i==10){
-						$colWidth = $colWidth*3;
-					}else{
-						$colWidth = $originalColWidth;
-					}
-					$fontSize = 12;
-					$pdf->SetFont('Arial', 'B', $fontSize);
-					// Reduce font size if text is too wide for the cell
-					while ($pdf->GetStringWidth($col) > $colWidth - 2 && $fontSize > 1) {
-						$fontSize -= 1;
-						$pdf->SetFont('Arial', 'B', $fontSize);
-					}
-					$pdf->Cell($colWidth, 10, $col, 1, 0, 'C', true);
-				}
-				$pdf->Ln();
-			}
+            $col_weights = [
+                "scenario" => 0.8,
+                "from" => 0.8,
+                "from_id" => 1.0,
+                "from_name" => 2.5,
+                "from_district" => 1.2,
+                "from_block" => 1.2,
+                "from_lat" => 1.0,
+                "from_long" => 1.0,
+                "to" => 0.8,
+                "to_id" => 1.0,
+                "to_name" => 2.5,
+                "to_district" => 1.2,
+                "to_block" => 1.2,
+                "to_lat" => 1.0,
+                "to_long" => 1.0,
+                "commodity" => 1.0,
+                "quantity" => 1.0,
+                "distance" => 1.0
+            ];
 
-			// Add the header
-			addRow($pdf, $tableData_pdf[0], $colWidth, true);
+            $total_weight = 0;
+            foreach ($columns_pdf as $col) {
+                $total_weight += isset($col_weights[$col]) ? $col_weights[$col] : 1.0;
+            }
+            $colWidths = [];
+            foreach ($columns_pdf as $col) {
+                $colWidths[] = (($col_weights[$col] ?? 1.0) / $total_weight) * $pageWidth;
+            }
 
-			// Add the data rows
-			$rowHeight = 10;
-			$maxRowsPerPage = ($pdf->GetPageHeight() - 20) / $rowHeight; // Subtract margins (10 mm each top and bottom)
+            if (!function_exists('rowHeight')) {
+                function rowHeight($pdf, $row, $colWidths, $lineHeight) {
+                    $max = 1;
+                    $i = 0;
+                    foreach ($row as $txt) {
+                        $w = $colWidths[$i];
+                        $lines = ceil($pdf->GetStringWidth(strval($txt)) / ($w - 2));
+                        $max = max($max, $lines);
+                        $i++;
+                    }
+                    return $lineHeight * $max;
+                }
+            }
 
-			for ($i = 1; $i < count($tableData_pdf); $i++) {
-				if ($pdf->GetY() + $rowHeight > $pdf->GetPageHeight() - 10) { // Check if we need to add a new page
-					$pdf->AddPage();
-					addRow($pdf, $tableData_pdf[0], $colWidth, true); // Add the header again on the new page
-				}
-				addRow($pdf, $tableData_pdf[$i], $colWidth);
-			}
+            if (!function_exists('drawRow')) {
+                function drawRow($pdf, $row, $colWidths, $lineHeight, $isHeader = false) {
+                    $x = $pdf->GetX();
+                    $y = $pdf->GetY();
+                    $h = rowHeight($pdf, $row, $colWidths, $lineHeight);
+                    $i = 0;
+                    $pdf->SetFillColor($isHeader ? 220 : 255, $isHeader ? 220 : 255, $isHeader ? 220 : 255);
+                    foreach ($row as $cell) {
+                        $w = $colWidths[$i];
+                        $pdf->Rect($x, $y, $w, $h);
+                        $pdf->MultiCell($w, $lineHeight, strval($cell), 0, 'C', $isHeader);
+                        $x += $w;
+                        $pdf->SetXY($x, $y);
+                        $i++;
+                    }
+                    $pdf->Ln($h);
+                }
+            }
+
+            $pdf->SetFont('Arial', 'B', 5);
+            drawRow($pdf, $tableData_pdf[0], $colWidths, $lineHeight, true);
+
+            $pdf->SetFont('Arial', '', 5);
+            for ($i = 1; $i < count($tableData_pdf); $i++) {
+                $nextHeight = rowHeight($pdf, $tableData_pdf[$i], $colWidths, $lineHeight);
+                if ($pdf->GetY() + $nextHeight > $pdf->GetPageHeight() - 15) {
+                    $pdf->AddPage();
+                    $pdf->SetFont('Arial', 'B', 5);
+                    drawRow($pdf, $tableData_pdf[0], $colWidths, $lineHeight, true);
+                    $pdf->SetFont('Arial', '', 5);
+                }
+                drawRow($pdf, $tableData_pdf[$i], $colWidths, $lineHeight);
+            }
 
             header('Content-Type: application/pdf');
-            header('Content-Disposition: attachment;filename="' . $filename . '.pdf"');
+            header('Content-Disposition: attachment; filename="' . $filename . '.pdf"');
             echo $pdf->Output('S');
             break;
 

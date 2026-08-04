@@ -175,12 +175,11 @@ else{
                                                 </div>
                                             </div>
 										
-											<div class="form-group"><label class="col-md-3 control-label">FPS Id*</label>
+											<div class="form-group">                                                <label class="col-md-3 control-label">FPS Id*</label>
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                                            <input type="text" class="form-control" id="id" name="id" value="<?php echo $id ?>" style="color: black; font-weight: bold;"readonly required />
-
+                                                        <input type="text" class="form-control" id="id" name="id" value="<?php echo $id ?>" required />
                                                     </div>
                                                     <span class="help-block">FPS ID</span>
                                                 </div>
@@ -324,6 +323,12 @@ else{
 
             if (name === '' || type === '' || latitude === '' || longitude === '' || id === '' || demand === '' ||demand_rice === '' || district === '' || inventory_ragi === '' || inventory_jowar === '') {
                 alert('Please enter all fields');
+                return false;
+            }
+			
+            var idRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+            if (!idRegex.test(id)) {
+                alert('FPS ID must contain both characters and numbers, and only alphanumeric characters are allowed.');
                 return false;
             }
 			

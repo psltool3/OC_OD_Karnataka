@@ -187,8 +187,7 @@ else{
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                                            <input type="text" class="form-control" id="id" name="id" value="<?php echo $id ?>" style="color: black; font-weight: bold;"readonly required />
-
+                                                        <input type="text" class="form-control" id="id" name="id" value="<?php echo $id ?>" required />
                                                     </div>
                                                     <span class="help-block">Warehouse ID</span>
                                                 </div>
@@ -350,6 +349,12 @@ else{
 
             if (name === '' || type === '' || latitude === '' || longitude === '' || id === '' || storage === '' || district === '' || warehousetype === '' || ragi === '' || jowar === '') {
                 alert('Please enter all fields');
+                return false;
+            }
+			
+            var idRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+            if (!idRegex.test(id)) {
+                alert('Warehouse ID must contain both characters and numbers, and only alphanumeric characters are allowed.');
                 return false;
             }
 			

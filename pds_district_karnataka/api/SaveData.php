@@ -56,6 +56,15 @@ foreach ($_POST as $key => $value) {
 		$reason = isset($_POST[$key."_idreason"]) ? $_POST[$key."_idreason"] : '';
 		$distance = isset($_POST[$key."_iddistance"]) ? $_POST[$key."_iddistance"] : '';
 
+		if ($distance !== '' && !preg_match('/^\d+(\.\d+)?$/', trim($distance))) {
+			if(isset($_POST['ajax'])){
+				echo "error: Invalid distance";
+			} else {
+				echo "<script>alert('Invalid distance value: must be a positive integer or float.'); window.history.back();</script>";
+			}
+			exit;
+		}
+
 		$query = "UPDATE " . $tablename . " SET new_id_district='$value', new_name_district='$name', approve_district='yes', new_distance_district='$distance', reason_district='$reason' WHERE from_id='$fromid' AND to_id='$toid'";
 		
 		writeLog("User ->" ." Save Data | district user change id ->". $_SESSION['district_user'] . "| " . $fromid . " - " . $toid .  " - " . $commodity . "| " . $value);

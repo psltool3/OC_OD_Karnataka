@@ -84,6 +84,7 @@ if (isset($_GET['format'])) {
     // Set headers for the chosen format
     switch ($format) {
         case 'csv':
+            if (ob_get_length()) ob_end_clean();
             header('Content-Type: text/csv');
             header('Content-Disposition: attachment; filename="' . $filename . '.csv"');
             outputCSV($tableData);
@@ -113,7 +114,8 @@ if (isset($_GET['format'])) {
             }
 
 
-            header('Content-Type: application/vnd.ms-excel');
+            if (ob_get_length()) ob_end_clean();
+            header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
             header('Content-Disposition: attachment;filename="' . $filename . '.xlsx"');
             header('Cache-Control: max-age=0');
 
