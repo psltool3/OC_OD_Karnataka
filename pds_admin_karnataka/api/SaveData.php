@@ -22,34 +22,32 @@ $tablename = "optimiseddata_".$id;
 echo $tablename;
 echo "</br>";
 foreach ($_POST as $key => $value) {
-	echo $value;
-	echo "</br>";
-	if (substr($key, -8) === '_approve'){
-		$parts = explode("_", $key,3);
-		$fromid = $parts[0];
-		$toid = $parts[1];
-		$commodity = $parts[2];
-		$toid = str_replace('_', '.', $toid);
-		$commodity = str_replace('_', '.', $commodity);
-		$commodity = str_replace('.bool', '', $commodity);
-		if($value=="yes"){
-			$query = "UPDATE " . $tablename . " SET district_change_approve='yes' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
-			writeLog("User ->" ." Save Data | approve district change yes ->". $_SESSION['user'] . "| " . $fromid . " - " . $toid . " - ". $commodity);
+	if ($key === 'accept_all' || substr($key, -11) === '_iddistance' || substr($key, -9) === '_idreason' || substr($key, -8) === '_approve' || $value === "") {
+		if ($key !== 'accept_all' && substr($key, -8) === '_approve') {
+			$parts = explode("_", $key, 3);
+			$fromid = isset($parts[0]) ? $parts[0] : '';
+			$toid = isset($parts[1]) ? $parts[1] : '';
+			$commodity = isset($parts[2]) ? $parts[2] : '';
+			$toid = str_replace('_', '.', $toid);
+			$commodity = str_replace('_', '.', $commodity);
+			$commodity = str_replace('.bool', '', $commodity);
+			if($value=="yes"){
+				$query = "UPDATE " . $tablename . " SET district_change_approve='yes' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
+				writeLog("User ->" ." Save Data | approve district change yes ->". $_SESSION['user'] . "| " . $fromid . " - " . $toid . " - ". $commodity);
+			}
+			else if($value=="no"){
+				$query = "UPDATE " . $tablename . " SET district_change_approve='no' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
+				writeLog("User ->" ." Save Data | approve district change no ->". $_SESSION['user'] . "| " . $fromid . " - " . $toid . " - ". $commodity);
+			}
+			mysqli_query($con,$query);
+			echo $query;
 		}
-		else if($value=="no"){
-			$query = "UPDATE " . $tablename . " SET district_change_approve='no' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
-			writeLog("User ->" ." Save Data | approve district change no ->". $_SESSION['user'] . "| " . $fromid . " - " . $toid . " - ". $commodity);
-		}
-		mysqli_query($con,$query);
-		echo $query;
-	}	
-	if (substr($key, -11) === '_iddistance' or substr($key, -9) === '_idreason' or substr($key, -8) === '_approve' or $value===""){
 		continue;
 	}
-	$parts = explode("_", $key,3);
-	$fromid = $parts[0];
-	$toid = $parts[1];
-	$commodity = $parts[2];
+	$parts = explode("_", $key, 3);
+	$fromid = isset($parts[0]) ? $parts[0] : '';
+	$toid = isset($parts[1]) ? $parts[1] : '';
+	$commodity = isset($parts[2]) ? $parts[2] : '';
 	$toid = str_replace('_', '.', $toid);
 	$commodity = str_replace('_', '.', $commodity);
 	$commodity = str_replace('.bool', '', $commodity);
@@ -89,10 +87,10 @@ foreach ($_POST as $key => $value) {
 		$query_name = "SELECT name FROM warehouse WHERE id='$value'";
 		$result_name = mysqli_query($con,$query_name);
 		$row_name = mysqli_fetch_assoc($result_name);
-		$name = $row_name['name'];
-		$reason = $_POST[$key."_idreason"];
-		$distance = $_POST[$key."_iddistance"];
-		if (!preg_match('/^\d+(\.\d+)?$/', trim($distance))) {
+		$name = isset($row_name['name']) ? $row_name['name'] : '';
+		$reason = isset($_POST[$key."_idreason"]) ? $_POST[$key."_idreason"] : '';
+		$distance = isset($_POST[$key."_iddistance"]) ? $_POST[$key."_iddistance"] : '';
+		if ($distance !== '' && !preg_match('/^\d+(\.\d+)?$/', trim($distance))) {
 			echo "<script>alert('Invalid distance value: must be a positive integer or float.'); window.history.back();</script>";
 			exit;
 		}
