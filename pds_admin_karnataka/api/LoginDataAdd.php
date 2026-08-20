@@ -15,27 +15,29 @@ require('Header.php');
 
 $person = new Login;
 $person->setUsername($_POST["username"]);
-$Encryption = new Encryption();
-$person->setPassword($Encryption->decrypt($_POST["password"], $nonceValue));
 
 if($_SESSION['user']!=$person->getUsername()){
     echo "User is logged in with a different username and password";
     return;
 }
 
+$Encryption = new Encryption();
+$person->setPassword($Encryption->decrypt($_POST["password"], $nonceValue));
+$decryptedNewPassword = $Encryption->decrypt($_POST["newpassword"], $nonceValue);
 
-if (strlen($_POST["newpassword"]) < 5 && strlen($_POST["newusername"]) < 5) {
-    echo "Password must be at least 5 characters long.";
+// Validate password length
+if (strlen($decryptedNewPassword) < 5 || strlen($_POST["newusername"]) < 5) {
+    echo "Username & Password must be at least 5 characters long";
     return;
 }
 
 $newusername = htmlspecialchars($_POST["newusername"], ENT_QUOTES, 'UTF-8');
 
 // Ensure the new username doesn't contain special characters (optional)
-// if (!preg_match('/^[a-zA-Z0-9_@]+$/', $newusername)) {
-//     echo "Username can only contain letters, numbers, underscores and @.";
-//     return;
-// }
+if (!preg_match('/^[a-zA-Z0-9_@]+$/', $newusername)) {
+    echo "Username can only contain letters, numbers, underscores and @.";
+    return;
+}
 
 // Query the database to get the stored hash for the username
 $query = "SELECT * FROM login WHERE username='".$person->getUsername()."'";
@@ -49,7 +51,7 @@ if (password_verify($person->getPassword(), $dbHashedPassword)) {
     // Now proceed with other logic
     $person = new Login;
     $person->setUsername($_POST["newusername"]);
-    $person->setPassword($_POST["newpassword"]);
+    $person->setPassword($decryptedNewPassword);
     $person->setRole($_POST["district"]);
     $uid = uniqid();
 	

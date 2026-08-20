@@ -76,7 +76,7 @@ if (!preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/', $_POST["id"])) {
 
 $dbHashedPassword = $row['password'];
 if(password_verify($person->getPassword(), $dbHashedPassword)){
-$district = formatName($_POST["district"]);
+$district = strtoupper(trim($_POST["district"]));
 $taluka = formatName($_POST["taluka"]);
 $latitude = $_POST["latitude"];
 $longitude = $_POST["longitude"];

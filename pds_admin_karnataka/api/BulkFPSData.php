@@ -140,7 +140,8 @@ try{
 					echo "</br>";
 					$redirect = 0;
 				}
-				if(!in_array($column[$district], $districts)){
+				$upperDistricts = array_map('strtoupper', $districts);
+				if(!in_array(strtoupper(trim($column[$district])), $upperDistricts)){
 					echo "Error : Check District Name: ".$column[$district];
 					echo "</br>";
 					$redirect = 0;
@@ -238,7 +239,7 @@ try{
 					$FPS = new FPS;
 					$uniqueid = uniqid("FPS_",);
 					$FPS->setUniqueid(substr($uniqueid,0,15));
-					$FPS->setDistrict(ucwords(strtolower($column[$district])));
+					$FPS->setDistrict(strtoupper(trim($column[$district])));
 					$FPS->setTaluka(ucwords(strtolower($column[$taluka])));
 					$FPS->setLatitude($column[$latitude]);
 					$FPS->setLongitude($column[$longitude]);

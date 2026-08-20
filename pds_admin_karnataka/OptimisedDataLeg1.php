@@ -277,7 +277,8 @@ if($currentTimestamp >= $targetTimestamp) {
 												<th style="font-size:16px">FCI Release Warehouse</th>
 												<th style="font-size:16px">Reason for not Approve</th>
 												<th style="font-size:16px">Distance</th>
-												<th style="font-size:16px">Status</th>										
+												<th style="font-size:16px">Status</th>
+												<th style="font-size:16px">Action</th>
                                             </tr>
                                         </thead>
 										<tbody id="table_body">
@@ -556,14 +557,14 @@ if($currentTimestamp >= $targetTimestamp) {
 						
 						if(result!=""){
 							var resultarray = JSON.parse(result);
-							var fromidarray = resultarray.map(function(item) {
-								return item.from_id;
+							var fromid_fromnamearray = resultarray.map(function(item) {
+								return item.from_id.toString() + "_" + item.from_name.toString();
 							});
-							if (fromidarray.length > 0) {
-								fromidarray.forEach(function(fromId) {
+							if (fromid_fromnamearray.length > 0) {
+								fromid_fromnamearray.forEach(function(fromId_fromName) {
 									var option = document.createElement("option");
-									option.text = fromId;
-									option.value = fromId;
+									option.text = fromId_fromName;
+									option.value = fromId_fromName.split('_')[0];
 									selectInput.appendChild(option);
 								});
 							}
@@ -597,14 +598,14 @@ if($currentTimestamp >= $targetTimestamp) {
 						
 						if(result!=""){
 							var resultarray = JSON.parse(result);
-							var toidarray = resultarray.map(function(item) {
-								return item.to;
+							var toid_tonamearray = resultarray.map(function(item) {
+								return item.to_id.toString() + "_" + item.to_name.toString();
 							});
-							if (toidarray.length > 0) {
-								toidarray.forEach(function(toId) {
+							if (toid_tonamearray.length > 0) {
+								toid_tonamearray.forEach(function(toId_toName) {
 									var option = document.createElement("option");
-									option.text = toId;
-									option.value = toId;
+									option.text = toId_toName;
+									option.value = toId_toName.split('_')[0];
 									selectInput.appendChild(option);
 								});
 							}
@@ -721,7 +722,10 @@ if($currentTimestamp >= $targetTimestamp) {
 									var admin_reason = "<td><select class='form-control' onchange='handleReasonChange(\"" + uniqueid_idreason + "\")' id='" + uniqueid_idreason + "' name='" + uniqueid_idreason + "' disabled><option value=''>Select</option><option value='Road not accessible'>Road not accessible</option><option value='Road repair going on'>Road repair going on</option><option value='Pertaining to Distance'>Pertaining to Distance</option></select></td>";
 								}
 								
-								$('#table_body').append(subpart1 + warehouse_id_part + admin_reason + newdistance  + admin_approve + "</tr>");
+								var disabledAttr = (approve_admin === "yes" || approve_admin === "no") ? "disabled" : "";
+								var action_btn = "<td><button class='btn btn-info' onclick='saveRow(\"" + uniqueid + "\")' " + disabledAttr + " style='margin-bottom: 5px; display: block; width: 100%;'>Save</button><button class='btn btn-warning' onclick='resetRow(\"" + uniqueid + "\")' style='display: block; width: 100%;'>Reset</button></td>";
+								
+								$('#table_body').append(subpart1 + warehouse_id_part + admin_reason + newdistance  + admin_approve + action_btn + "</tr>");
 							}
 							//fetchCardDataFromServer();							
 						}
@@ -769,6 +773,73 @@ if($currentTimestamp >= $targetTimestamp) {
 			return format.replace(/%(\d+)/g, function(match, index) {
 				return typeof args[index] !== 'undefined' ? args[index] : match;
 			});
+		}
+
+		function saveRow(uniqueid) {
+			var params = {};
+			
+			var boolEl = document.getElementById(uniqueid + "_bool");
+			var newidEl = document.getElementById(uniqueid);
+			var distanceEl = document.getElementById(uniqueid + "_iddistance");
+			var reasonEl = document.getElementById(uniqueid + "_idreason");
+			
+			var boolVal = boolEl ? boolEl.value : "";
+			var newidVal = newidEl ? newidEl.value : "";
+			var distanceVal = distanceEl ? distanceEl.value : "";
+			var reasonVal = reasonEl ? reasonEl.value : "";
+			
+			if (boolVal === "no") {
+				if (!newidVal) {
+					alert("Please select a New Warehouse ID.");
+					return;
+				}
+				if (!reasonVal) {
+					alert("Please select a Reason.");
+					return;
+				}
+				if (!distanceVal) {
+					alert("Please enter the Distance.");
+					return;
+				}
+				if (isNaN(distanceVal) || parseFloat(distanceVal) <= 0) {
+					alert("Distance must be a numeric value greater than 0.");
+					return;
+				}
+				
+				params[uniqueid + "_bool"] = boolVal;
+				params[uniqueid] = newidVal;
+				params[uniqueid + "_idreason"] = reasonVal;
+				params[uniqueid + "_iddistance"] = distanceVal;
+			} else if (boolVal === "yes") {
+				params[uniqueid + "_bool"] = boolVal;
+			} else {
+				alert("Please select an option (Agree or Change ID) before saving.");
+				return;
+			}
+			
+			post(params, "api/SaveDataLeg1.php");
+		}
+
+		function resetRow(uniqueid) {
+			if(confirm("Are you sure you want to reset this row's tagging?")) {
+				$.ajax({
+					type: "POST",
+					url: "api/ResetRowAdminLeg1.php",
+					data: { uniqueid: uniqueid },
+					success: function(result) {
+						var res = typeof result === 'object' ? result : JSON.parse(result);
+						if(res.status == 'success') {
+							alert("Row reset successfully");
+							fetchDataFromServer();
+						} else {
+							alert("Error: " + res.message);
+						}
+					},
+					error: function() {
+						alert("Request failed");
+					}
+				});
+			}
 		}
     </script>
     </body>

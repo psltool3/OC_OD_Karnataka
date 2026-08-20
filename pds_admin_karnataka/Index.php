@@ -535,7 +535,7 @@ require('Header.php');
 						&nbsp
 						<div class="row">
 							<div
-								style="font-size: 20px; font-weight: 700; margin-top: 0px; padding: 5px; margin-bottom: 20px;">
+								style="font-size: 20px; font-weight: 700; margin-top: 0px; padding: 5px; margin-bottom: 20px; color: black;">
 								<i class="fa fa-info-circle" aria-hidden="true"></i> Pre-Analysis
 							</div>
 							<div class="row">
@@ -590,7 +590,7 @@ require('Header.php');
 								</center>
 								<center><img src="img\Analysis-icon-1.png" style="width:45%" /></center>
 								<center style="margin-top:20px">
-									<h2><b><span style="color: white;">Pre-Analysis</span></b></h2>
+									<h2><b><span style="color: black;">Pre-Analysis</span></b></h2>
 								</center>
 								<center style="margin-top:20px">
 									<h4><b><span style="color: white;">State-Wise &nbsp <input type="checkbox"

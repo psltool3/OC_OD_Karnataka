@@ -206,6 +206,8 @@ while($row = mysqli_fetch_array($result))
 												<option value=''>Select</option>
 												<option value='reviewed'>Reviewed</option>
 												<option value='notreviewed'>Not Reviewed</option>
+												<option value='districtagreed'>District Agreed</option>
+												<option value='changerequest'>Change Request</option>
 											</select>
 											</div>
 											<span class="help-block">Reviewed by District</span>
@@ -319,6 +321,7 @@ while($row = mysqli_fetch_array($result))
 										<th style="font-size:16px">Reason for not Approve</th>
 										<th style="font-size:16px">Suggest Warehouse</th>
 										<th style="font-size:16px">Suggested Warehouse Distance</th>
+										<th style="font-size:16px">Action</th>
 									</tr>
                                  </thead>
 								<tbody id="table_body">
@@ -603,7 +606,8 @@ while($row = mysqli_fetch_array($result))
 		}
 		
 		function rolloutPlan(){
-			post({} ,"api/RollOutPlan.php");
+			var month = document.getElementById("month").value;
+			post({month: month} ,"api/RollOutPlan.php");
 		}
 		
 		function handleNewIdChange(selectedId){
@@ -782,8 +786,11 @@ while($row = mysqli_fetch_array($result))
 								else{
 									var newid_admin_part = "<td><select class='form-control' onchange='handleNewIdChange(\"" + uniqueid + "\")' id='" + uniqueid + "' name='" + uniqueid + "' disabled required><option value=''>Select Id</option>" + warehousepart + "</select></td>";
 								}
+								var disabledAttr = (approve_admin === "yes" || approve_admin === "no") ? "disabled" : "";
+								var action_btn = "<td><button class='btn btn-info' onclick='saveRow(\"" + uniqueid + "\")' " + disabledAttr + " style='margin-bottom: 5px; display: block; width: 100%;'>Save</button><button class='btn btn-warning' onclick='resetRow(\"" + uniqueid + "\")' style='display: block; width: 100%;'>Reset</button></td>";
+
 								if(approve_district==""){
-									subpart1 = subpart1 + "<td>" + newid_district + "</td><td>" + reason_district + "</td><td>" + distance_district  + approve_district_part + "</td><td></td><td></td><td></td><td></td></tr>";
+									subpart1 = subpart1 + "<td>" + newid_district + "</td><td>" + reason_district + "</td><td>" + distance_district  + approve_district_part + "</td><td></td><td></td><td></td><td></td>" + action_btn + "</tr>";
 								}
 								else{
 									if(approve_admin=="yes"){
@@ -796,7 +803,7 @@ while($row = mysqli_fetch_array($result))
 										var approve_admin_part = "<td><select class='form-control' onchange='enableDisable(\"" + uniqueid + "\")' id='" + uniqueid_bool + "' name='" + uniqueid_bool + "' required><option value=''>Select</option><option value='yes'>Approve District</option><option value='same'>Keep System Generated</option><option value='no'>Change ID</option></select></td>";
 										uniqueid_array.push(uniqueid_bool);
 									}
-									subpart1 = subpart1 + "<td>" + newid_district + "</td><td>" + reason_district + "</td><td>" + distance_district + approve_district_part + approve_admin_part + admin_reason + newid_admin_part + distance_admin_part + "</tr>";
+									subpart1 = subpart1 + "<td>" + newid_district + "</td><td>" + reason_district + "</td><td>" + distance_district + approve_district_part + approve_admin_part + admin_reason + newid_admin_part + distance_admin_part + action_btn + "</tr>";
 								}
 								$('#table_body').append(subpart1);
 							}
@@ -900,14 +907,14 @@ while($row = mysqli_fetch_array($result))
 						
 						if(result!=""){
 							var resultarray = JSON.parse(result);
-							var toidarray = resultarray.map(function(item) {
-								return item.to;
+							var toid_tonamearray = resultarray.map(function(item) {
+								return item.to_id.toString() + "_" + item.to_name.toString();
 							});
-							if (toidarray.length > 0) {
-								toidarray.forEach(function(toId) {
+							if (toid_tonamearray.length > 0) {
+								toid_tonamearray.forEach(function(toId_toName) {
 									var option = document.createElement("option");
-									option.text = toId;
-									option.value = toId;
+									option.text = toId_toName;
+									option.value = toId_toName.split('_')[0];
 									selectInput.appendChild(option);
 								});
 							}
@@ -1025,7 +1032,72 @@ while($row = mysqli_fetch_array($result))
 			}
 		});
 		
-		
+		function saveRow(uniqueid) {
+			var params = {};
+			
+			var boolEl = document.getElementById(uniqueid + "_bool");
+			var newidEl = document.getElementById(uniqueid);
+			var distanceEl = document.getElementById(uniqueid + "_iddistance");
+			var reasonEl = document.getElementById(uniqueid + "_idreason");
+			
+			var boolVal = boolEl ? boolEl.value : "";
+			var newidVal = newidEl ? newidEl.value : "";
+			var distanceVal = distanceEl ? distanceEl.value : "";
+			var reasonVal = reasonEl ? reasonEl.value : "";
+			
+			if (boolVal === "no") {
+				if (!newidVal) {
+					alert("Please select a New Warehouse ID.");
+					return;
+				}
+				if (!reasonVal) {
+					alert("Please select a Reason.");
+					return;
+				}
+				if (!distanceVal) {
+					alert("Please enter the Suggested Distance.");
+					return;
+				}
+				if (isNaN(distanceVal) || parseFloat(distanceVal) <= 0) {
+					alert("Distance must be a numeric value greater than 0.");
+					return;
+				}
+				
+				params[uniqueid + "_bool"] = boolVal;
+				params[uniqueid] = newidVal;
+				params[uniqueid + "_idreason"] = reasonVal;
+				params[uniqueid + "_iddistance"] = distanceVal;
+			} else if (boolVal === "yes" || boolVal === "same") {
+				params[uniqueid + "_bool"] = boolVal;
+			} else {
+				alert("Please select an option (Approve District, Keep System Generated, or Change ID) before saving.");
+				return;
+			}
+			
+			post(params, "api/SaveData.php");
+		}
+
+		function resetRow(uniqueid) {
+			if(confirm("Are you sure you want to reset this row's tagging?")) {
+				$.ajax({
+					type: "POST",
+					url: "api/ResetRowAdmin.php",
+					data: { uniqueid: uniqueid },
+					success: function(result) {
+						var res = typeof result === 'object' ? result : JSON.parse(result);
+						if(res.status == 'success') {
+							alert("Row reset successfully");
+							fetchDataFromServer();
+						} else {
+							alert("Error: " + res.message);
+						}
+					},
+					error: function() {
+						alert("Request failed");
+					}
+				});
+			}
+		}
     </script>
     </body>
 </html>

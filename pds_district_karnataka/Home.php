@@ -5,6 +5,7 @@ require('Header.php');
 $district = $_SESSION['district_district'];
 
 
+$rolled_out = "0";
 $query = "SELECT * FROM optimised_table ORDER BY last_updated DESC LIMIT 1";
 $result = mysqli_query($con,$query);
 $response = array();
@@ -12,27 +13,34 @@ $id = "";
 while($row = mysqli_fetch_array($result))
 {
 	$id= $row["id"];
+	$rolled_out = isset($row["rolled_out"]) ? $row["rolled_out"] : "0";
 }
 
 
 $tablename = "optimiseddata_".$id;
 
+$totalids = 0;
+$totalidsreviewed = 0;
+$totalidsrequested = 0;
+$totalidsapproved = 0;
 
-$query = "SELECT to_district FROM ". $tablename ." WHERE to_district='$district'";
-$result = mysqli_query($con,$query);
-$totalids = mysqli_num_rows($result);
+if($rolled_out == '1') {
+	$query = "SELECT to_district FROM ". $tablename ." WHERE to_district='$district'";
+	$result = mysqli_query($con,$query);
+	$totalids = mysqli_num_rows($result);
 
-$query = "SELECT approve_district FROM ". $tablename ." WHERE to_district='$district' AND approve_district='yes'";
-$result = mysqli_query($con,$query);
-$totalidsreviewed = mysqli_num_rows($result);
+	$query = "SELECT approve_district FROM ". $tablename ." WHERE to_district='$district' AND approve_district='yes'";
+	$result = mysqli_query($con,$query);
+	$totalidsreviewed = mysqli_num_rows($result);
 
-$query = "SELECT new_id_district FROM ". $tablename ." WHERE to_district='$district' AND new_id_district<>''";
-$result = mysqli_query($con,$query);
-$totalidsrequested = mysqli_num_rows($result);
+	$query = "SELECT new_id_district FROM ". $tablename ." WHERE to_district='$district' AND new_id_district<>''";
+	$result = mysqli_query($con,$query);
+	$totalidsrequested = mysqli_num_rows($result);
 
-$query = "SELECT approve_admin FROM ". $tablename ." WHERE to_district='$district' AND approve_admin='yes'";
-$result = mysqli_query($con,$query);
-$totalidsapproved = mysqli_num_rows($result);
+	$query = "SELECT approve_admin FROM ". $tablename ." WHERE to_district='$district' AND approve_admin='yes'";
+	$result = mysqli_query($con,$query);
+	$totalidsapproved = mysqli_num_rows($result);
+}
 
 //code to check the time expiry
 
@@ -283,7 +291,7 @@ if($currentTimestamp >= $targetTimestamp) {
 												<th style="font-size:16px">District Reason for not Approve</th>
 												<th style="font-size:16px">District Suggested Warehouse Distance</th>
 												<th style="font-size:16px">Admin Approved</th>
-												<th style="font-size:16px">Save</th>										
+												<th style="font-size:16px">Action</th>										
                                             </tr>
                                         </thead>
 										<tbody id="table_body">
@@ -653,14 +661,14 @@ if($currentTimestamp >= $targetTimestamp) {
 						
 						if(result!=""){
 							var resultarray = JSON.parse(result);
-							var fromidarray = resultarray.map(function(item) {
-								return item.from_id;
+							var fromid_fromnamearray = resultarray.map(function(item) {
+								return item.from_id.toString() + "_" + item.from_name.toString();
 							});
-							if (fromidarray.length > 0) {
-								fromidarray.forEach(function(fromId) {
+							if (fromid_fromnamearray.length > 0) {
+								fromid_fromnamearray.forEach(function(fromId_fromName) {
 									var option = document.createElement("option");
-									option.text = fromId;
-									option.value = fromId;
+									option.text = fromId_fromName;
+									option.value = fromId_fromName.split('_')[0];
 									selectInput.appendChild(option);
 								});
 							}
@@ -694,14 +702,14 @@ if($currentTimestamp >= $targetTimestamp) {
 						
 						if(result!=""){
 							var resultarray = JSON.parse(result);
-							var toidarray = resultarray.map(function(item) {
-								return item.to;
+							var toid_tonamearray = resultarray.map(function(item) {
+								return item.to_id.toString() + "_" + item.to_name.toString();
 							});
-							if (toidarray.length > 0) {
-								toidarray.forEach(function(toId) {
+							if (toid_tonamearray.length > 0) {
+								toid_tonamearray.forEach(function(toId_toName) {
 									var option = document.createElement("option");
-									option.text = toId;
-									option.value = toId;
+									option.text = toId_toName;
+									option.value = toId_toName.split('_')[0];
 									selectInput.appendChild(option);
 								});
 							}
@@ -821,9 +829,10 @@ if($currentTimestamp >= $targetTimestamp) {
 										var district_reason = "<td><select class='form-control' onchange='handleReasonChange(\"" + uniqueid_idreason + "\")' id='" + uniqueid_idreason + "' name='" + uniqueid_idreason + "' disabled><option value=''>Select</option><option value='Road not accessible'>Road not accessible</option><option value='Road repair going on'>Road repair going on</option><option value='Pertaining to Distance'>Pertaining to Distance</option></select></td>";
 									}
 									
-									var save_button_part = "<td><button class='btn btn-success' onclick='saveRow(\"" + uniqueid + "\")'>Save</button></td>";
+									var disabledAttr = (approve_admin === "yes") ? "disabled" : "";
+									var action_btn = "<td><button class='btn btn-info' onclick='saveRow(\"" + uniqueid + "\")' " + disabledAttr + " style='margin-bottom: 5px; display: block; width: 100%;'>Save</button><button class='btn btn-warning' onclick='resetRow(\"" + uniqueid + "\")' " + disabledAttr + " style='display: block; width: 100%;'>Reset</button></td>";
 									
-									$('#table_body').append(subpart1 + warehouse_id_part + district_reason + newdistance  + admin_approve + save_button_part + "</tr>");
+									$('#table_body').append(subpart1 + warehouse_id_part + district_reason + newdistance  + admin_approve + action_btn + "</tr>");
 								}
 							}
 							//fetchCardDataFromServer();							
@@ -872,6 +881,28 @@ if($currentTimestamp >= $targetTimestamp) {
 			return format.replace(/%(\d+)/g, function(match, index) {
 				return typeof args[index] !== 'undefined' ? args[index] : match;
 			});
+		}
+
+		function resetRow(uniqueid) {
+			if(confirm("Are you sure you want to reset this row's tagging?")) {
+				$.ajax({
+					type: "POST",
+					url: "api/ResetRowDistrict.php",
+					data: { uniqueid: uniqueid },
+					success: function(result) {
+						var res = typeof result === 'object' ? result : JSON.parse(result);
+						if(res.status == 'success') {
+							alert("Row reset successfully");
+							fetchDataFromServer();
+						} else {
+							alert("Error: " + res.message);
+						}
+					},
+					error: function() {
+						alert("Request failed");
+					}
+				});
+			}
 		}
     </script>
     </body>

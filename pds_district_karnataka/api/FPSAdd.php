@@ -90,7 +90,7 @@ if (!preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/', $_POST["id"])) {
 
 $dbHashedPassword = $row['password'];
 if(password_verify($person->getPassword(), $dbHashedPassword)){
-$district = $_POST["district"];
+$district = strtoupper(trim($_POST["district"]));
 $taluka = $_POST["taluka"];
 $latitude = $_POST["latitude"];
 $longitude = $_POST["longitude"];
@@ -106,7 +106,7 @@ $uniqueid = uniqid("FPS_",);
 
 $FPS = new FPS;
 $FPS->setUniqueid(substr($uniqueid,0,15));
-$FPS->setDistrict($district);
+$FPS->setDistrict(strtoupper(trim($district)));
 $FPS->setTaluka($taluka);
 $FPS->setLatitude($latitude);
 $FPS->setLongitude($longitude);

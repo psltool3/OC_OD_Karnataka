@@ -524,7 +524,7 @@ require('Header.php');
 						&nbsp
 						<div class="row">
 							<div
-								style="font-size: 20px; font-weight: 700; margin-top: 0px; padding: 5px; margin-bottom: 20px;">
+								style="font-size: 20px; font-weight: 700; margin-top: 0px; padding: 5px; margin-bottom: 20px; color: black;">
 								<i class="fa fa-info-circle" aria-hidden="true"></i> Pre-Analysis
 							</div>
 							<div class="row">
@@ -605,7 +605,7 @@ require('Header.php');
 								</center>
 								<center><img src="img\Analysis-icon-1.png" style="width:45%" /></center>
 								<center style="margin-top:20px">
-									<h2><b><span style="color: white;">Pre-Analysis</span></b></h2>
+									<h2><b><span style="color: black;">Pre-Analysis</span></b></h2>
 								</center>
 								<center style="margin-top:20px">
 									<h4><b><span style="color: white;">State-Wise &nbsp <input type="checkbox" id="statewiseCheckbox" onchange="handleStateCheckboxChange()" checked  /></b></h4>
@@ -753,32 +753,35 @@ require('Header.php');
 	setInterval(checkServerStatus, 10000);
 	
 	function formatNumberWithCommas(value) {
-		const formattedNumber = Number(value).toFixed(2);
-
-		// Separate the integer and decimal parts
-		const parts = formattedNumber.split('.');
-		let integerPart = parts[0];
-		const decimalPart = parts[1] || '';
-
-		// Add commas every two digits from the right in the integer part
-		integerPart = integerPart.replace(/\B(?=(\d{2})+(?!\d))/g, ',');
-
-		// Combine the integer and decimal parts and return the formatted number
-		return integerPart + '.' + decimalPart;
+		if (value === undefined || value === null || value === "") {
+			return "0";
+		}
+		const str = String(value).trim();
+		const cleanStr = str.replace(/,/g, '');
+		const num = Number(cleanStr);
+		if (isNaN(num)) {
+			return str;
+		}
+		const hasDecimal = cleanStr.includes('.');
+		if (hasDecimal) {
+			const formattedNumber = num.toFixed(2);
+			const parts = formattedNumber.split('.');
+			let integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+			return integerPart + '.' + parts[1];
+		} else {
+			let integerPart = cleanStr.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+			return integerPart;
+		}
 	}
 	
 	function formatNumberWithCommasWithoutDecimal(value) {
-		const roundedNumber = Math.round(value);
+		const num = Number(value);
 
-		// Separate the integer and decimal parts
-		const parts = roundedNumber.toString().split('.');
-		let integerPart = parts[0];
-  
-		// Add commas every three digits from the right in the integer part
-		integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-	  
-		// Return the formatted number
-		return integerPart;
+		const roundedNumber = Math.round(num * 100) / 100;
+
+		return roundedNumber.toLocaleString('en-IN', {
+			maximumFractionDigits: 0
+		});
 	}
 	
 

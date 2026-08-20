@@ -142,7 +142,8 @@ try{
 						echo "</br>";
 						$redirect = 0;
 					}
-					if(!in_array($column[$district], $districts)){
+					$upperDistricts = array_map('strtoupper', $districts);
+					if(!in_array(strtoupper(trim($column[$district])), $upperDistricts)){
 						echo "Error : Check District Name: ".$column[$district];
 						echo "</br>";
 						$redirect = 0;
@@ -168,7 +169,7 @@ try{
                     filterData($column[$jowar]);
 					filterData($column[$warehousetype]);
 					filterData($column[$active]);
-					$Warehouse->setDistrict(ucwords(strtolower($column[$district])));
+					$Warehouse->setDistrict(strtoupper(trim($column[$district])));
 					$Warehouse->setTaluka(ucwords(strtolower($column[$taluka])));
 					$Warehouse->setLatitude($column[$latitude]);
 					$Warehouse->setLongitude($column[$longitude]);
@@ -281,7 +282,7 @@ try{
                     filterData($column[$jowar]);
 					filterData($column[$warehousetype]);
 					filterData($column[$active]);
-					$Warehouse->setDistrict($column[$district]);
+					$Warehouse->setDistrict(strtoupper(trim($column[$district])));
 					$Warehouse->setTaluka($column[$taluka]);
 					$Warehouse->setLatitude($column[$latitude]);
 					$Warehouse->setLongitude($column[$longitude]);

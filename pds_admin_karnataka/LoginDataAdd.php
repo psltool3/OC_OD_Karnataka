@@ -9,10 +9,15 @@ require('Header.php');
 <script>
 	function verifyCaptcha() {
 		var readableString = document.getElementById("password").value;
+		var readableNewPassword = document.getElementById("newpassword").value;
 		var nonceValue = "nonce_value";
 		let encryption = new Encryption();
+		
 		var encrypted = encryption.encrypt(readableString, nonceValue);
 		document.getElementById("password").value = encrypted;
+
+		var encryptedNew = encryption.encrypt(readableNewPassword, nonceValue);
+		document.getElementById("newpassword").value = encryptedNew;
 	}
 </script>
                 <!-- START BREADCRUMB -->
@@ -29,7 +34,7 @@ require('Header.php');
                     <div class="row">
                         <div class="col-md-12">
 
-                            <form action="api/LoginDataAdd.php" method="POST" class="form-horizontal" enctype = "multipart/form-data">
+                            <form action="api/LoginDataAdd.php" method="POST" class="form-horizontal" onsubmit="return verifyCaptcha()" enctype = "multipart/form-data">
                             <div class="panel panel-default">
                                <div class="panel-body">
                                     <p>Fill this form to add new user.</p>
@@ -76,7 +81,7 @@ require('Header.php');
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                                        <input type="password" class="form-control" id="newpassword" name="newpassword" required />
+                                                        <input type="text" class="form-control" id="newpassword" name="newpassword" required />
                                                     </div>
                                                     <span class="help-block">Password</span>
                                                 </div>
@@ -126,7 +131,7 @@ require('Header.php');
 											
                                         </div>
 										
-										<center><button class="btn btn-primary" onclick="verifyCaptcha()">Verify</button></center>
+										<center><button class="btn btn-primary">Verify</button></center>
 								</div>
                             </div>
                             </form>

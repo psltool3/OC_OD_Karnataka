@@ -43,7 +43,7 @@ $dbHashedPassword = $row['password'];
 if(password_verify($person->getPassword(), $dbHashedPassword)){
 $District = new District;
 
-$District->setName(formatName(str_replace("'","",$_POST['name'])));
+$District->setName(strtoupper(trim(str_replace("'","",$_POST['name']))));
 $District->setId(str_replace("'","",$_POST['uid']));
 
 $query = $District->update($District);

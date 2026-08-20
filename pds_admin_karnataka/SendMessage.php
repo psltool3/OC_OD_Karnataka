@@ -66,7 +66,7 @@ while($row = mysqli_fetch_assoc($result)){
                             <!-- START SIMPLE DATATABLE -->
                             <div class="panel panel-default">
 								<div class="panel-heading">                                
-                                    <h3 class="panel-title">Data</h3> 
+                                    <h3 class="panel-title">Send Message</h3> 
                                 </div>
 								<button class='btn btn-success' style="float:right;margin-top:10px;margin-right:13px" onclick="send_all('all')">Send Message to All</button>
 								<div class="panel-body">
@@ -74,7 +74,7 @@ while($row = mysqli_fetch_assoc($result)){
                                     <table id="export_table" class="table">
                                         <thead>
                                             <tr>
-												<th style="font-size:16px">Email Id</th>
+												<th style="font-size:16px">User Id</th>
                                                 <th style="font-size:16px">District</th>
                                                 <th style="font-size:16px">Send</th>
                                             </tr>
@@ -103,7 +103,7 @@ while($row = mysqli_fetch_assoc($result)){
                                     <table id="" class="table">
                                         <thead>
                                             <tr>
-												<th style="font-size:16px">Email Id</th>
+												<th style="font-size:16px">User Id</th>
                                                 <th style="font-size:16px">Message</th>
                                                 <th style="font-size:16px">Date</th>
                                                 <th style="font-size:16px">Acknowledged</th>

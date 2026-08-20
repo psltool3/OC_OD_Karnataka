@@ -55,7 +55,7 @@ if($district_name=="Error"){
 
 $District = new District;
 $District->setId(uniqid());
-$District->setName($district_name);
+$District->setName(strtoupper(trim($district_name)));
 
 $query = $District->check($District);
 $result = mysqli_query($con, $query);

@@ -360,32 +360,35 @@ require('Header.php');
 	}
 	
 	function formatNumberWithCommas(value) {
-		const formattedNumber = Number(value).toFixed(2);
-
-		// Separate the integer and decimal parts
-		const parts = formattedNumber.split('.');
-		let integerPart = parts[0];
-		const decimalPart = parts[1] || '';
-
-		// Add commas every two digits from the right in the integer part
-		integerPart = integerPart.replace(/\B(?=(\d{2})+(?!\d))/g, ',');
-
-		// Combine the integer and decimal parts and return the formatted number
-		return integerPart + '.' + decimalPart;
+		if (value === undefined || value === null || value === "") {
+			return "0";
+		}
+		const str = String(value).trim();
+		const cleanStr = str.replace(/,/g, '');
+		const num = Number(cleanStr);
+		if (isNaN(num)) {
+			return str;
+		}
+		const hasDecimal = cleanStr.includes('.');
+		if (hasDecimal) {
+			const formattedNumber = num.toFixed(2);
+			const parts = formattedNumber.split('.');
+			let integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+			return integerPart + '.' + parts[1];
+		} else {
+			let integerPart = cleanStr.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+			return integerPart;
+		}
 	}
 	
 	function formatNumberWithCommasWithoutDecimal(value) {
-		const roundedNumber = Math.round(value);
+		const num = Number(value);
 
-		// Separate the integer and decimal parts
-		const parts = roundedNumber.toString().split('.');
-		let integerPart = parts[0];
-  
-		// Add commas every three digits from the right in the integer part
-		integerPart = integerPart.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-	  
-		// Return the formatted number
-		return integerPart;
+		const roundedNumber = Math.round(num * 100) / 100;
+
+		return roundedNumber.toLocaleString('en-IN', {
+			maximumFractionDigits: 0
+		});
 	}
 	
 	var modifiedIdData = {};
@@ -410,7 +413,12 @@ require('Header.php');
 	
 	function acceptAll(){
 		for (let i = 0; i < uniqueid_bool_array.length; i++) {
-			markReview(uniqueid_bool_array[i]);
+			var selectedId = uniqueid_bool_array[i];
+			modifiedIdData[selectedId] = "yes";
+			var elements = document.querySelectorAll('[id="' + selectedId + '"]');
+			elements.forEach(function(el) {
+				el.className = "btn btn-danger";
+			});
 		}
 	}
 
@@ -533,9 +541,9 @@ require('Header.php');
 						cell1.innerHTML = obj["Scenario_Baseline"];
 						cell2.innerHTML = obj["WH_Used_Baseline"];
 						cell3.innerHTML = obj["FPS_Used_Baseline"];
-						cell4.innerHTML = obj["Demand_Baseline"];
-						cell5.innerHTML = obj["Total_QKM_Baseline"];
-						cell6.innerHTML = obj["Average_Distance_Baseline"];
+						cell4.innerHTML = formatNumberWithCommas(obj["Demand_Baseline"]);
+						cell5.innerHTML = formatNumberWithCommas(obj["Total_QKM_Baseline"]);
+						cell6.innerHTML = formatNumberWithCommas(obj["Average_Distance_Baseline"]);
 						
 						table.style.padding = "20px";
 						table.style.marginBottom = "50px";
