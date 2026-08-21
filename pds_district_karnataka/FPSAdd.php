@@ -270,9 +270,26 @@ $district = ucfirst($_SESSION["district_district"]);
                 return false;
             }
 			
-            var idRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+            if (isNaN(demand) || parseFloat(demand) < 0) {
+                alert('Demand FRice must be 0 or above');
+                return false;
+            }
+            if (isNaN(demand_rice) || parseFloat(demand_rice) < 0) {
+                alert('Demand Rice must be 0 or above');
+                return false;
+            }
+            if (isNaN(inventory_ragi) || parseFloat(inventory_ragi) < 0) {
+                alert('Demand Ragi must be 0 or above');
+                return false;
+            }
+            if (isNaN(inventory_jowar) || parseFloat(inventory_jowar) < 0) {
+                alert('Demand Jowar must be 0 or above');
+                return false;
+            }
+			
+            var idRegex = /^[a-zA-Z0-9]+$/;
             if (!idRegex.test(id)) {
-                alert('FPS ID must contain both characters and numbers, and only alphanumeric characters are allowed.');
+                alert('FPS ID must contain only alphanumeric characters (letters, numbers, or both).');
                 return false;
             }
 			

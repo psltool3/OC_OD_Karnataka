@@ -256,6 +256,15 @@ require('Header.php');
                 alert('Please enter all fields');
                 return false;
             }
+
+            if (isNaN(demand) || parseFloat(demand) < 0) {
+                alert('Procurement Rice must be 0 or above');
+                return false;
+            }
+            if (isNaN(demand_rice) || parseFloat(demand_rice) < 0) {
+                alert('Procurement Wheat must be 0 or above');
+                return false;
+            }
 			
             document.getElementById('popup').style.display = 'block';
         }

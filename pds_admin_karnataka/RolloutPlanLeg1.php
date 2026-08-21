@@ -363,26 +363,31 @@ require('Header.php');
 		if (value === undefined || value === null || value === "") {
 			return "0";
 		}
-		const str = String(value).trim();
-		const cleanStr = str.replace(/,/g, '');
-		const num = Number(cleanStr);
+		const str = String(value).trim().replace(/,/g, '');
+		const num = Number(str);
 		if (isNaN(num)) {
-			return str;
+			return value;
 		}
-		const hasDecimal = cleanStr.includes('.');
-		if (hasDecimal) {
-			const formattedNumber = num.toFixed(2);
-			const parts = formattedNumber.split('.');
-			let integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-			return integerPart + '.' + parts[1];
-		} else {
-			let integerPart = cleanStr.replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-			return integerPart;
+
+		if (Number.isInteger(num)) {
+			return num.toLocaleString('en-IN');
 		}
+
+		return num.toLocaleString('en-IN', {
+			minimumFractionDigits: 2,
+			maximumFractionDigits: 2
+		});
 	}
 	
 	function formatNumberWithCommasWithoutDecimal(value) {
-		const num = Number(value);
+		if (value === undefined || value === null || value === "") {
+			return "0";
+		}
+		const str = String(value).trim().replace(/,/g, '');
+		const num = Number(str);
+		if (isNaN(num)) {
+			return value;
+		}
 
 		const roundedNumber = Math.round(num * 100) / 100;
 

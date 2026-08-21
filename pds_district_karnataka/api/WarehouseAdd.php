@@ -43,7 +43,7 @@ function isValidCoordinate($value, $coordinateType) {
 }
 
 function isStringNumber($stringValue) {
-    return is_numeric($stringValue);
+    return is_numeric($stringValue) && floatval($stringValue) >= 0;
 }
 
 $person = new Login;
@@ -66,12 +66,22 @@ if(!isValidCoordinate($_POST["latitude"],'latitude') or !isValidCoordinate($_POS
 }
 
 if(!isStringNumber($_POST["storage"])){
-	echo "Error : Check Storage Value";
+	echo "Error : Check Storage Value (must be 0 or above)";
 	exit();
 }
 
-if (!preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/', $_POST["id"])) {
-	echo "Error : Warehouse ID must contain both characters and numbers, and only alphanumeric characters are allowed.";
+if(!isStringNumber($_POST["ragi"])){
+	echo "Error : Check Ragi Value (must be 0 or above)";
+	exit();
+}
+
+if(!isStringNumber($_POST["jowar"])){
+	echo "Error : Check Jowar Value (must be 0 or above)";
+	exit();
+}
+
+if (!preg_match('/^[a-zA-Z0-9]+$/', $_POST["id"])) {
+	echo "Error : Warehouse ID must contain only alphanumeric characters.";
 	exit();
 }
 

@@ -43,7 +43,7 @@ function isValidCoordinate($value, $coordinateType) {
 }
 
 function isStringNumber($stringValue) {
-    return is_numeric($stringValue);
+    return is_numeric($stringValue) && floatval($stringValue) >= 0;
 }
 
 $person = new Login;
@@ -66,11 +66,11 @@ if(!isValidCoordinate($_POST["latitude"],'latitude') or !isValidCoordinate($_POS
 }
 
 if(!isStringNumber($_POST["demand"])){
-	echo "Error : Check Procurement rice Value";
+	echo "Error : Check Procurement rice Value (must be 0 or above)";
 	exit();
 }
 if(!isStringNumber($_POST["demand_rice"])){
-	echo "Error : Check Procurement wheat Value";
+	echo "Error : Check Procurement wheat Value (must be 0 or above)";
 	exit();
 }
 if (!isset($_POST["latitude"]) || !is_numeric($_POST["latitude"]) || $_POST["latitude"] >= 40) {

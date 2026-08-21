@@ -1444,17 +1444,54 @@ function handleStateCheckboxChange() {
 
 
 				
+				function formatNumberWithCommas(value) {
+					if (value === undefined || value === null || value === "") {
+						return "0";
+					}
+					const str = String(value).trim().replace(/,/g, '');
+					const num = Number(str);
+					if (isNaN(num)) {
+						return value;
+					}
+
+					if (Number.isInteger(num)) {
+						return num.toLocaleString('en-IN');
+					}
+
+					return num.toLocaleString('en-IN', {
+						minimumFractionDigits: 2,
+						maximumFractionDigits: 2
+					});
+				}
+
+				function formatNumberWithCommasWithoutDecimal(value) {
+					if (value === undefined || value === null || value === "") {
+						return "0";
+					}
+					const str = String(value).trim().replace(/,/g, '');
+					const num = Number(str);
+					if (isNaN(num)) {
+						return value;
+					}
+
+					const roundedNumber = Math.round(num * 100) / 100;
+
+					return roundedNumber.toLocaleString('en-IN', {
+						maximumFractionDigits: 0
+					});
+				}
+
 				var month = document.getElementById("month").value;
 
-				document.getElementById("totalFciDemand").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Demand (Rice & FRIce): " + totalDemand + " (Qtl)</span>";
-				document.getElementById("totalFciSupply").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Capacity (Warehouse): " + totalCapacity + " (Qtl)</span>";
+				document.getElementById("totalFciDemand").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Demand (Rice & FRIce): " + formatNumberWithCommas(totalDemand) + " (Qtl)</span>";
+				document.getElementById("totalFciSupply").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Capacity (Warehouse): " + formatNumberWithCommas(totalCapacity) + " (Qtl)</span>";
 				
-				document.getElementById("totalFciDemand1").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Demand Ragi: " + totalDemandmillet + " (Qtl)</span>";
-				document.getElementById("totalFciSupply1").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Inventory Ragi: " + totalinventory + " (Qtl)</span>";
+				document.getElementById("totalFciDemand1").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Demand Ragi: " + formatNumberWithCommas(totalDemandmillet) + " (Qtl)</span>";
+				document.getElementById("totalFciSupply1").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Inventory Ragi: " + formatNumberWithCommas(totalinventory) + " (Qtl)</span>";
 				
 				
-				document.getElementById("totalFciDemand2").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Demand Jowar: " + totalDemandjowar + " (Qtl)</span>";
-				document.getElementById("totalFciSupply2").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Inventory Jowar: " + totalinventoryjowar + " (Qtl)</span>";
+				document.getElementById("totalFciDemand2").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Demand Jowar: " + formatNumberWithCommas(totalDemandjowar) + " (Qtl)</span>";
+				document.getElementById("totalFciSupply2").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Total Inventory Jowar: " + formatNumberWithCommas(totalinventoryjowar) + " (Qtl)</span>";
 				
 				document.getElementById("selectedMonth").innerHTML = "<span style='color: white; font-size: 14px;'>" + "Selected Month: " + capitalizeFirstLetter(month) + "</span>";
 

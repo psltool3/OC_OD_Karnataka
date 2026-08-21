@@ -87,7 +87,7 @@ function isValidCoordinate($value, $coordinateType) {
 }
 
 function isStringNumber($stringValue) {
-    return is_numeric($stringValue);
+    return is_numeric($stringValue) && floatval($stringValue) >= 0;
 }
 
 $redirect = 1;
@@ -121,22 +121,22 @@ try{
 					$redirect = 0;
 				}
 				if(!isStringNumber($column[$demand])){
-					echo "Error : Check Demand Value: ".$column[$demand];
+					echo "Error : Check Demand FRice Value: ".$column[$demand]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
 				if(!isStringNumber($column[$demand_rice])){
-					echo "Error : Check DemandRice Value: ".$column[$demand_rice];
+					echo "Error : Check Demand Rice Value: ".$column[$demand_rice]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
                 if(!isStringNumber($column[$inventory_ragi])){
-					echo "Error : Check Inventory ragi Value: ".$column[$inventory_ragi];
+					echo "Error : Check Demand Ragi Value: ".$column[$inventory_ragi]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
 				if(!isStringNumber($column[$inventory_jowar])){
-					echo "Error : Check Inventory jowar Value: ".$column[$inventory_jowar];
+					echo "Error : Check Demand Jowar Value: ".$column[$inventory_jowar]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
@@ -151,8 +151,8 @@ try{
 					echo "</br>";
 					$redirect = 0;
 				}
-				if (!preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/', $column[$id])) {
-					echo "Error : FPS ID must contain both characters and numbers, and only alphanumeric characters are allowed. Invalid ID found: ".$column[$id];
+				if (!preg_match('/^[a-zA-Z0-9]+$/', $column[$id])) {
+					echo "Error : FPS ID must contain only alphanumeric characters. Invalid ID found: ".$column[$id];
 					echo "</br>";
 					$redirect = 0;
 				}

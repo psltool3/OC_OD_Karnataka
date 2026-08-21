@@ -45,6 +45,9 @@ if(password_verify($person->getPassword(), $dbHashedPassword)){
 		mysqli_close($con);
 		 echo "<script>window.location.href = '../OptimisedDataAll.php';</script>";
     }
+	else{
+		echo "Error : Not authorized to login";
+	}
 } 
 else{
     echo "Error : Password or Username is incorrect";

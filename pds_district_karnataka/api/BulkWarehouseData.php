@@ -88,7 +88,7 @@ function isValidCoordinate($value, $coordinateType) {
 }
 
 function isStringNumber($stringValue) {
-    return is_numeric($stringValue);
+    return is_numeric($stringValue) && floatval($stringValue) >= 0;
 }
 
 $redirect = 1;
@@ -122,17 +122,17 @@ try{
 					$redirect = 0;
 				}
 				if(!isStringNumber($column[$storage])){
-					echo "Error : Check Storage Value: ".$column[$storage];
+					echo "Error : Check Storage Value: ".$column[$storage]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
 				if(!isStringNumber($column[$ragi])){
-					echo "Error : Check ragi Value: ".$column[$ragi];
+					echo "Error : Check ragi Value: ".$column[$ragi]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
 				if(!isStringNumber($column[$jowar])){
-					echo "Error : Check jowar Value: ".$column[$jowar];
+					echo "Error : Check jowar Value: ".$column[$jowar]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
@@ -147,8 +147,8 @@ try{
 					echo "</br>";
 					$redirect = 0;
 				}
-				if (!preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/', $column[$id])) {
-					echo "Error : Warehouse ID must contain both characters and numbers, and only alphanumeric characters are allowed. Invalid ID found: ".$column[$id];
+				if (!preg_match('/^[a-zA-Z0-9]+$/', $column[$id])) {
+					echo "Error : Warehouse ID must contain only alphanumeric characters. Invalid ID found: ".$column[$id];
 					echo "</br>";
 					$redirect = 0;
 				}

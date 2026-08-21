@@ -86,7 +86,7 @@ function isValidCoordinate($value, $coordinateType) {
 }
 
 function isStringNumber($stringValue) {
-    return is_numeric($stringValue);
+    return is_numeric($stringValue) && floatval($stringValue) >= 0;
 }
 
 
@@ -119,13 +119,13 @@ try{
 			while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
 				if($i>0){
 					if($district<0 or $taluka<0 or $name<0 or $id<0 or $type<0 or $demand<0 or $demand_rice<0 or $latitude<0 or $longitude<0 or $active<0 or $inventory_ragi<0 or $inventory_jowar<0){
-						echo "Error : You have modified Template Header, please check. Missing columns: ";
+						echo "Error : You have modified Template Header, please check header count missing: ";
                         if($district<0) echo "District, ";
                         if($taluka<0) echo "Taluka, ";
                         if($name<0) echo "Name, ";
-                        if($id<0) echo "ID, ";
+                        if($id<0) echo "Id, ";
                         if($type<0) echo "Type, ";
-                        if($demand<0) echo "Demand, ";
+                        if($demand<0) echo "Demand FRice, ";
                         if($demand_rice<0) echo "Demand Rice, ";
                         if($latitude<0) echo "Latitude, ";
                         if($longitude<0) echo "Longitude, ";
@@ -141,22 +141,22 @@ try{
 					}
 
 					if(!isStringNumber($column[$demand])){
-						echo "Error : Check Demand Value: ".$column[$demand];
+						echo "Error : Check Demand FRice Value: ".$column[$demand]." (must be 0 or above)";
 						echo "</br>";
 						$redirect = 0;
 					}	
 					if(!isStringNumber($column[$demand_rice])){
-						echo "Error : Check DemandRice Value: ".$column[$demand_rice];
+						echo "Error : Check Demand Rice Value: ".$column[$demand_rice]." (must be 0 or above)";
 						echo "</br>";
 						$redirect = 0;
 					}	
                     if(!isStringNumber($column[$inventory_ragi])){
-						echo "Error : Check Inventory ragi Value: ".$column[$inventory_ragi];
+						echo "Error : Check Demand Ragi Value: ".$column[$inventory_ragi]." (must be 0 or above)";
 						echo "</br>";
 						$redirect = 0;
 					}
 					if(!isStringNumber($column[$inventory_jowar])){
-						echo "Error : Check Inventory jowar Value: ".$column[$inventory_jowar];
+						echo "Error : Check Demand Jowar Value: ".$column[$inventory_jowar]." (must be 0 or above)";
 						echo "</br>";
 						$redirect = 0;
 					}
@@ -172,8 +172,8 @@ try{
 						echo "</br>";
 						$redirect = 0;
 					}
-					if (!preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/', $column[$id])) {
-						echo "Error : FPS ID must contain both characters and numbers, and only alphanumeric characters are allowed. Invalid ID found: ".$column[$id];
+					if (!preg_match('/^[a-zA-Z0-9]+$/', $column[$id])) {
+						echo "Error : FPS ID must contain only alphanumeric characters. Invalid ID found: ".$column[$id];
 						echo "</br>";
 						$redirect = 0;
 					}

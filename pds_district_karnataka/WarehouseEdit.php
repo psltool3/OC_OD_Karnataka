@@ -352,9 +352,22 @@ else{
                 return false;
             }
 			
-            var idRegex = /^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/;
+            if (isNaN(storage) || parseFloat(storage) < 0) {
+                alert('Storage Capacity must be 0 or above');
+                return false;
+            }
+            if (isNaN(ragi) || parseFloat(ragi) < 0) {
+                alert('Ragi Capacity must be 0 or above');
+                return false;
+            }
+            if (isNaN(jowar) || parseFloat(jowar) < 0) {
+                alert('Jowar Capacity must be 0 or above');
+                return false;
+            }
+			
+            var idRegex = /^[a-zA-Z0-9]+$/;
             if (!idRegex.test(id)) {
-                alert('Warehouse ID must contain both characters and numbers, and only alphanumeric characters are allowed.');
+                alert('Warehouse ID must contain only alphanumeric characters (letters, numbers, or both).');
                 return false;
             }
 			

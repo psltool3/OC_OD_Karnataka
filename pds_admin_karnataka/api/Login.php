@@ -45,6 +45,9 @@ if(password_verify($person->getPassword(), $dbHashedPassword)){
 		mysqli_close($con);
 		echo "<script>window.location.href = '../Home.php';</script>";
     }
+	else{
+		echo "Error : You are not authorised to login here";
+	}
 } 
 else{
     echo "Error : Password or Username is incorrect";

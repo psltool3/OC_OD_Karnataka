@@ -43,7 +43,7 @@ function isValidCoordinate($value, $coordinateType) {
 }
 
 function isStringNumber($stringValue) {
-    return is_numeric($stringValue);
+    return is_numeric($stringValue) && floatval($stringValue) >= 0;
 }
 
 $person = new Login;
@@ -76,24 +76,24 @@ if ($_POST['demand'] === false)
 
 
 if(!isStringNumber($_POST["demand"])){
-	echo "Error : Check Demand Value";
+	echo "Error : Check Demand FRice Value (must be 0 or above)";
 	exit();
 }
 if(!isStringNumber($_POST["demand_rice"])){
-	echo "Error : Check DemandRice Value";
+	echo "Error : Check Demand Rice Value (must be 0 or above)";
 	exit();
 }
 if(!isStringNumber($_POST["inventory_ragi"])){
-	echo "Error : Check Inventory ragi Value";
+	echo "Error : Check Demand Ragi Value (must be 0 or above)";
 	exit();
 }
 if(!isStringNumber($_POST["inventory_jowar"])){
-	echo "Error : Check Inventory jowar Value";
+	echo "Error : Check Demand Jowar Value (must be 0 or above)";
 	exit();
 }
 
-if (!preg_match('/^(?=.*[a-zA-Z])(?=.*[0-9])[a-zA-Z0-9]+$/', $_POST["id"])) {
-	echo "Error : FPS ID must contain both characters and numbers, and only alphanumeric characters are allowed.";
+if (!preg_match('/^[a-zA-Z0-9]+$/', $_POST["id"])) {
+	echo "Error : FPS ID must contain only alphanumeric characters.";
 	exit();
 }
 

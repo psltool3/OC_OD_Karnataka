@@ -85,7 +85,7 @@ function isValidCoordinate($value, $coordinateType) {
 }
 
 function isStringNumber($stringValue) {
-    return is_numeric($stringValue);
+    return is_numeric($stringValue) && floatval($stringValue) >= 0;
 }
 
 
@@ -126,12 +126,12 @@ try{
 					}
 
 					if(!isStringNumber($column[$demand])){
-						echo "Error : Check Demand Value: ".$column[$demand];
+						echo "Error : Check Procurement Rice Value: ".$column[$demand]." (must be 0 or above)";
 						echo "</br>";
 						$redirect = 0;
 					}	
 					if(!isStringNumber($column[$demand_rice])){
-						echo "Error : Check DemandRice Value: ".$column[$demand_rice];
+						echo "Error : Check Procurement Wheat Value: ".$column[$demand_rice]." (must be 0 or above)";
 						echo "</br>";
 						$redirect = 0;
 					}	
