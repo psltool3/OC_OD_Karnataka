@@ -434,21 +434,6 @@ require('Header.php');
 				<div class="col-md-3">
 					<div class="form-group">
 						<div class="col-md-2"></div>
-						<div class="col-md-9">  
-							<div class="input-group" style="width:100%;">					
-							<select class="form-control" id="year" name="year" style="border-radius:5px;font-weight:bold">
-								<option value='' style="font-weight:bold;color:#000;">Select</option>
-								
-							</select>
-							</div>
-							<span class="help-block">Selected Year</span>
-						</div>
-					</div>
-				</div>
-				<input type="hidden" id="username" name="username" value="<?php echo $_SESSION["user"]  ?>" />
-				<div class="col-md-3">
-					<div class="form-group">
-						<div class="col-md-2"></div>
 						<div class="col-md-9">
 							<div class="input-group" style="width:100%;">				
 							<select class="form-control" id="month" name="month" style="border-radius:5px;font-weight:bold">
@@ -467,7 +452,22 @@ require('Header.php');
 								<option value='dec' style="font-weight:bold;color:#000;">December</option>
 							</select>
 							</div>
-							<span class="help-block">Selected Month</span>
+							<span class="help-block">Current Month</span>
+						</div>
+					</div>
+				</div>
+				<input type="hidden" id="username" name="username" value="<?php echo $_SESSION["user"]  ?>" />
+				<div class="col-md-3">
+					<div class="form-group">
+						<div class="col-md-2"></div>
+						<div class="col-md-9">  
+							<div class="input-group" style="width:100%;">					
+							<select class="form-control" id="year" name="year" style="border-radius:5px;font-weight:bold">
+								<option value='' style="font-weight:bold;color:#000;">Select</option>
+								
+							</select>
+							</div>
+							<span class="help-block">Applicable Year</span>
 						</div>
 					</div>
 				</div>
@@ -941,6 +941,9 @@ require('Header.php');
 								checkbox.checked = true;
 							  }
 							});
+						}
+						if (typeof filterApplicableMonths === 'function') {
+							filterApplicableMonths();
 						}
 					}
 					else{
@@ -1647,15 +1650,59 @@ nextYearOption.selected = true;
 var dropdown = document.getElementById('month');
 var removeIndices = [];
 for (var i = 0; i < dropdown.options.length; i++) {
-	if (dropdown.options[i].value === currentMonthValue) {
-        dropdown.options[i].selected = true;
-    }
-	else{
+	var val = dropdown.options[i].value;
+	var valIdx = monthNames.indexOf(val);
+	if (val !== '' && val !== currentMonthValue) {
 		removeIndices.push(i);
+	} else if (val === currentMonthValue) {
+		dropdown.options[i].selected = true;
 	}
 }
 for (var j = removeIndices.length - 1; j >= 0; j--) {
     dropdown.remove(removeIndices[j]);
+}
+
+function filterApplicableMonths() {
+	var selectedYear = parseInt(document.getElementById('year').value) || currentYear;
+	var selectedMonthVal = document.getElementById('month').value || currentMonthValue;
+	var selectedIndex = monthNames.indexOf(selectedMonthVal);
+	if (selectedIndex === -1) {
+		selectedIndex = currentMonth;
+	}
+
+	monthNames.forEach(function(m, idx) {
+		var input = document.getElementById(m);
+		if (input) {
+			var label = input.closest('label');
+			if (selectedYear <= currentYear && idx < selectedIndex) {
+				if (label) {
+					label.style.display = 'block';
+					label.style.opacity = '0.5';
+					label.style.cursor = 'not-allowed';
+				}
+				input.checked = false;
+				input.disabled = true;
+			} else {
+				if (label) {
+					label.style.display = 'block';
+					label.style.opacity = '1';
+					label.style.cursor = 'pointer';
+				}
+				input.disabled = false;
+			}
+		}
+	});
+}
+
+filterApplicableMonths();
+
+var monthSelectElem = document.getElementById('month');
+if (monthSelectElem) {
+	monthSelectElem.addEventListener('change', filterApplicableMonths);
+}
+var yearSelectElem = document.getElementById('year');
+if (yearSelectElem) {
+	yearSelectElem.addEventListener('change', filterApplicableMonths);
 }
 
 var dropdown = document.getElementById('year');

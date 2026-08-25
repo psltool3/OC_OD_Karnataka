@@ -1,6 +1,6 @@
 <?php
 require('Connection.php');
-
+set_time_limit(20000);
 $ip_address = "";
 
 if (!empty($_SERVER['HTTP_CLIENT_IP']))   

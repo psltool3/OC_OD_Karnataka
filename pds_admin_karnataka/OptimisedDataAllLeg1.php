@@ -42,7 +42,7 @@ require('Header.php');
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
                     <li><a href="#">Home</a></li>                    
-                    <li class="active">All Optimised Data</li>
+                    <li class="active">All Optimised Data Leg 1</li>
                 </ul>
                 <!-- END BREADCRUMB -->                       
                 
@@ -59,40 +59,78 @@ require('Header.php');
 								<div class="panel-heading">                                
                                     <h3 class="panel-title">Data</h3> 
                                 </div>
-								<button class='btn btn-success' style="float:right;margin-top:10px;margin-right:13px" onclick="send_all('all')">Send Email to All</button>
 								<div class="panel-body">
-                                 <div class="table-responsive">
-                                    <table id="export_table" class="table">
-                                        <thead>
-                                            <tr>
-												<th style="font-size:16px">Year</th>
-                                                <th style="font-size:16px">Month</th>
-                                                <th style="font-size:16px">Applicable Month</th>
-                                                <th style="font-size:16px">Warehouse</th>
-                                                <th style="font-size:16px">FPS</th>
-                                                <th style="font-size:16px">Optimised Data</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody id="table_body">
-										<?php
-										
-										$query = "SELECT * FROM optimised_table_leg1 WHERE 1";
-										$result = mysqli_query($con,$query);
-										$numrows = mysqli_num_rows($result);
-										while($row = mysqli_fetch_array($result))
-										{
-											$temp_id = (string)$row['id'];
-											echo "<tr><td>{$row['year']}</td>".
-											 "<td>{$row['month']}</td>".
-											 "<td>{$row['applicable']}</td>".
-											 "<td> <button class='btn btn-info btn-rounded' onclick=\"warehouse_open('{$temp_id}')\">View Warehouses</button></td>".
-             								 "<td> <button class='btn btn-warning btn-rounded' onclick=\"fps_open('{$temp_id}')\">View FPS</button></td>".
-             								 "<td> <button class='btn btn-danger btn-rounded' onclick=\"optimised_open('{$temp_id}')\">View Data</button></td></tr>";
-             							}
+									<div class="row" style="margin-bottom: 15px;">
+										<div class="col-md-3">
+											<div class="form-group">
+												<label class="control-label" style="font-weight: bold; color: #000;">Select Year</label>
+												<select class="form-control" id="yearFilter" onchange="filterByYear()" style="border-radius:5px; font-weight:bold;">
+													<option value="all">All Years</option>
+													<?php
+													$year_query = "SELECT DISTINCT year FROM optimised_table WHERE year IS NOT NULL AND year != '' ORDER BY year DESC";
+													$year_result = mysqli_query($con, $year_query);
+													if ($year_result) {
+														while ($year_row = mysqli_fetch_assoc($year_result)) {
+															$y = htmlspecialchars($year_row['year']);
+															echo "<option value='{$y}'>{$y}</option>";
+														}
+													}
+													?>
+												</select>
+											</div>
+										</div>
+									</div>
+                                  <div class="table-responsive">
+                                     <table id="export_table" class="table" style="text-align: center;">
+										<thead>
+											<tr>
+												<th style="font-size:16px; text-align: center; vertical-align: middle;">Year</th>
+												<th style="font-size:16px; text-align: center; vertical-align: middle;">Month</th>
+												<th style="font-size:16px; text-align: center; vertical-align: middle;">Applicable Month</th>
+												<th style="font-size:16px; text-align: center; vertical-align: middle;">FCI</th>
+												<th style="font-size:16px; text-align: center; vertical-align: middle;">Warehouse</th>
+												<th style="font-size:16px; text-align: center; vertical-align: middle;">Optimised Data</th>
+												<th style="font-size:16px; text-align: center; vertical-align: middle;">Generate Data</th>
+											</tr>
+										</thead>
+										<tbody id="table_body">
+											<?php
+											$query = "SELECT * FROM optimised_table WHERE 1";
+											$result = mysqli_query($con, $query);
+											$numrows = mysqli_num_rows($result);
+											while ($row = mysqli_fetch_assoc($result)) {
+												$temp_id = (string)$row['id'];
+												$month = $row['month'];
 
-										?>
-                                        </tbody>
-                                    </table>
+												$query_leg1 = "SELECT * FROM optimised_table_leg1 WHERE month='$month'";
+												$result_leg1 = mysqli_query($con, $query_leg1);
+												$numrows_leg1 = mysqli_num_rows($result_leg1);
+												if ($numrows_leg1 > 0) {
+													$row_leg1 = mysqli_fetch_assoc($result_leg1);
+													$id_leg1 = $row_leg1['id'];
+													echo "<tr>
+															<td style='text-align: center; text-transform: capitalize;'>{$row['year']}</td>
+															<td style='text-align: center; text-transform: capitalize;'>{$row['month']}</td>
+															<td style='text-align: center; text-transform: capitalize;'>{$row['applicable']}</td>
+															<td style='text-align: center;'>
+																<button class='btn btn-info btn-rounded' onclick=\"fci_open('{$temp_id}','{$id_leg1}')\">View FCI</button>
+															</td>
+															<td style='text-align: center;'>
+																<button class='btn btn-warning btn-rounded' onclick=\"warehouse_open('{$temp_id}','{$id_leg1}')\">View Warehouses</button>
+															</td>
+															<td style='text-align: center;'>
+																<button class='btn btn-danger btn-rounded' onclick=\"optimised_open('{$temp_id}','{$id_leg1}')\">View Data</button>
+															</td>
+															<td style='text-align: center;'>
+																<button class='btn btn-success btn-rounded' onclick=\"generate_report('{$temp_id}','{$id_leg1}')\">View Report</button>
+															</td>
+														</tr>";
+												}
+											}
+											?>
+										</tbody>
+									</table>
+
 									<div id="popup" class="popup" style="display:none">
 										<a class="close" onclick="hidePopup()" style="font-size:25px">×</a>
 										</br></br>
@@ -179,7 +217,6 @@ require('Header.php');
 			var form = document.createElement("form");
 			form.setAttribute("method", method);
 			form.setAttribute("action", path);
-			//form.setAttribute("target", "_blank");
 
 			for(var key in params) {
 				if(params.hasOwnProperty(key)) {
@@ -196,16 +233,24 @@ require('Header.php');
 			form.submit();
 		}
 
-		function warehouse_open(temp_id){
-			post({id:temp_id,step:"leg1"} ,"WarehouseView.php");
+		function fci_open(temp_id, leg_id){
+			post({id:temp_id,step:"all",legid:leg_id} ,"FciView.php");
 		}
 		
-		function fps_open(temp_id){
-			post({id:temp_id,step:"leg1"} ,"FpsView.php");
+		function warehouse_open(temp_id, leg_id){
+			post({id:temp_id,step:"all",legid:leg_id} ,"WarehouseView_Leg1.php");
 		}
 		
-		function optimised_open(temp_id){
-			post({id:temp_id,step:"leg1"} ,"OptimisedDataView.php");
+		function fps_open(temp_id, leg_id){
+			post({id:temp_id,step:"all",legid:leg_id} ,"FpsView.php");
+		}
+		
+		function optimised_open(temp_id, leg_id){
+			post({id:temp_id,step:"all",legid:leg_id} ,"OptimisedDataView.php");
+		}
+		
+		function generate_report(temp_id, leg_id){
+			post({id:temp_id,step:"all",legid:leg_id} ,"GenerateDataView.php");
 		}
 		
 		function send_email(temp_id){	
@@ -224,28 +269,27 @@ require('Header.php');
 			post({username:username,password:password,uid:uidCalled} ,"api/SendEmail.php");
 		}
 		
-		function showPopup() {
-            
-			var name = document.getElementById('name').value;
-            var type = document.getElementById('type').value;
-			var latitude = document.getElementById('latitude').value;
-            var longitude = document.getElementById('longitude').value;
-			var id = document.getElementById('id').value;
-            var demand = document.getElementById('demand').value;
-            var district = document.getElementById('district').value;
-
-            if (name === '' || type === '' || latitude === '' || longitude === '' || id === '' || demand === '' || district === '') {
-                alert('Please enter all fields');
-                return false;
-            }
-			
-            document.getElementById('popup').style.display = 'block';
-        }
-		
 		function hidePopup() {
             document.getElementById('popup').style.display = 'none';
         }
-		
+
+		function filterByYear() {
+			var selectedYear = document.getElementById("yearFilter").value;
+			var table = document.getElementById("export_table");
+			var trs = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+			for (var i = 0; i < trs.length; i++) {
+				var yearTd = trs[i].getElementsByTagName("td")[0];
+				if (yearTd) {
+					var yearValue = yearTd.textContent || yearTd.innerText;
+					if (selectedYear === "all" || yearValue.trim() === selectedYear.trim()) {
+						trs[i].style.display = "";
+					} else {
+						trs[i].style.display = "none";
+					}
+				}
+			}
+		}
 		
 		</script>	
     </body>
