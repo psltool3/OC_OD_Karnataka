@@ -67,7 +67,7 @@ require('Header.php');
 												<select class="form-control" id="yearFilter" onchange="filterByYear()" style="border-radius:5px; font-weight:bold;">
 													<option value="all">All Years</option>
 													<?php
-													$year_query = "SELECT DISTINCT year FROM optimised_table WHERE year IS NOT NULL AND year != '' ORDER BY year DESC";
+													$year_query = "SELECT DISTINCT year FROM optimised_table_leg1 WHERE year IS NOT NULL AND year != '' ORDER BY year DESC";
 													$year_result = mysqli_query($con, $year_query);
 													if ($year_result) {
 														while ($year_row = mysqli_fetch_assoc($year_result)) {

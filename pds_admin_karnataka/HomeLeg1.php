@@ -411,7 +411,7 @@ require('Header.php');
 			<div class="panel panel-default">
 				<div class="panel-heading" style="text-align: center;">
 					<h1 style="font-weight: bold; color: #335566;">Karnataka PDS Route Optimisation</h1>
-					<h1 style="font-weight: bold; color: #FF6666;">Kindly Optimised the Leg1-FCI to Warehouse</h1>
+					<h1 style="font-weight: bold; color: #FF6666;">Kindly Optimise the Leg1-FCI to Warehouse</h1>
 
 				</div>
 			</div>
@@ -428,21 +428,20 @@ require('Header.php');
 								<!--<option value='intra' style="font-weight:bold;color:#000;">Intra District</option>-->
 							</select>
 							</div>
-							<span class="help-block">Select Scenario for Optimisation</span>
+							<span class="help-block"><b>Select Scenario for Optimisation</b></span>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-3">
 					<div class="form-group">
 						<div class="col-md-2"></div>
-						<div class="col-md-9">  
-							<div class="input-group" style="width:100%;">					
-							<select class="form-control" id="year" name="year" style="border-radius:5px;font-weight:bold">
+						<div class="col-md-9">
+							<div class="input-group" style="width:100%;">				
+							<select class="form-control" id="month" name="month" onchange="updateApplicableMonths()" style="border-radius:5px;font-weight:bold">
 								<option value='' style="font-weight:bold;color:#000;">Select</option>
-								
 							</select>
 							</div>
-							<span class="help-block">Selected Year</span>
+							<span class="help-block"><b>Current Month</b></span>
 						</div>
 					</div>
 				</div>
@@ -450,13 +449,14 @@ require('Header.php');
 				<div class="col-md-3">
 					<div class="form-group">
 						<div class="col-md-2"></div>
-						<div class="col-md-9">
-							<div class="input-group" style="width:100%;">				
-							<select class="form-control" id="month" name="month" style="border-radius:5px;font-weight:bold">
+						<div class="col-md-9">  
+							<div class="input-group" style="width:100%;">					
+							<select class="form-control" id="year" name="year" onchange="updateApplicableMonths()" style="border-radius:5px;font-weight:bold">
 								<option value='' style="font-weight:bold;color:#000;">Select</option>
+								
 							</select>
 							</div>
-							<span class="help-block">Selected Month</span>
+							<span class="help-block"><b>Applicable Year</b></span>
 						</div>
 					</div>
 				</div>
@@ -498,7 +498,7 @@ require('Header.php');
 									&nbsp <input type="checkbox" id="dec" value="dec" /> December</label>
 								</div>
 							  </div>
-							<span class="help-block">Applicable Month</span>
+							<span class="help-block"><b>Applicable Month</b></span>
 						</div>
 					</div>
 				</div>
@@ -539,14 +539,14 @@ require('Header.php');
 									<div class="card h-100"
 										style="background-color:#2ec4b6; color:white; padding:12px; font-weight: bold;">
 										<div style="font-size:20px" id="total_supply"></div>
-										   <div style="font-size:14px">Total Capacity Rice(Qtl)</div>
+										   <div style="font-size:14px">Total Rice Offered(Qtl)</div>
 									</div>
 								</div>
 								<div class="col-md-3 mb-4" style="margin-bottom: 20px;">
 									<div class="card h-100"
 										style="background-color:#11C54C; color:white; padding:12px; font-weight: bold;">
 										<div style="font-size:20px" id="total_supply_rice"></div>
-										   <div style="font-size:14px">Total Capacity Frice(Qtl)</div>
+										   <div style="font-size:14px">Total Frice Offered(Qtl)</div>
 									</div>
 								</div>
 								<div class="col-md-3 mb-4" style="margin-bottom: 20px;">
@@ -1533,6 +1533,7 @@ function fetchApplicableMonth(month){
 				});
 			});
 			document.getElementById("processingPopup").style.display = "none";
+			updateApplicableMonths();
 			fetchFromDb();
 		}
 		catch (error) {
@@ -1543,10 +1544,50 @@ function fetchApplicableMonth(month){
 	});	
 }
 
+function updateApplicableMonths() {
+    var monthNames = ['jan', 'feb', 'march', 'april', 'may', 'june', 'july', 'aug', 'sept', 'oct', 'nov', 'dec'];
+    var selectedMonth = document.getElementById("month").value;
+    var selectedIndex = monthNames.indexOf(selectedMonth);
+    var selectedYear = document.getElementById("year").value;
+    var actualCurrentYear = new Date().getFullYear();
+
+    monthNames.forEach(function(mName, index) {
+        var checkbox = document.getElementById(mName);
+        if (checkbox) {
+            var label = checkbox.closest ? checkbox.closest('label') : checkbox.parentElement;
+            // Only disable months prior to current month if the selected year is the current calendar year
+            if (selectedYear == actualCurrentYear && selectedIndex !== -1 && index < selectedIndex) {
+                checkbox.disabled = true;
+                checkbox.checked = false;
+                if (label) {
+                    label.style.color = "#aaa";
+                    label.style.cursor = "not-allowed";
+                    label.style.pointerEvents = "none";
+                }
+            } else {
+                checkbox.disabled = false;
+                if (label) {
+                    label.style.color = "#000";
+                    label.style.cursor = "pointer";
+                    label.style.pointerEvents = "auto";
+                }
+            }
+        }
+    });
+}
+
+updateApplicableMonths();
+
 document.getElementById('month').addEventListener('change', function() {
     var selectedMonth = this.value; // Get the selected month value
 	fetchApplicableMonth(selectedMonth);
+	updateApplicableMonths();
 });
+
+var yearSelectElem = document.getElementById('year');
+if (yearSelectElem) {
+	yearSelectElem.addEventListener('change', updateApplicableMonths);
+}
 
 var dropdown = document.getElementById('year');
 for (var i = 0; i < dropdown.options.length; i++) {
@@ -1568,6 +1609,7 @@ for (var i = 0; i < dropdown.options.length; i++) {
 var expanded = false;
 
 function showCheckboxes() {
+  updateApplicableMonths();
   var checkboxes = document.getElementById("checkboxes");
   if (!expanded) {
     checkboxes.style.display = "block";

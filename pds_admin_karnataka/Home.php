@@ -427,7 +427,7 @@ require('Header.php');
 								<option value='intra' style="font-weight:bold;color:#000;">Intra District</option>
 							</select>
 							</div>
-							<span class="help-block">Select scenario for Optimisation</span>
+							<span class="help-block"><b>Select Scenario for Optimisation</b></span>
 						</div>
 					</div>
 				</div>
@@ -436,7 +436,7 @@ require('Header.php');
 						<div class="col-md-2"></div>
 						<div class="col-md-9">
 							<div class="input-group" style="width:100%;">				
-							<select class="form-control" id="month" name="month" style="border-radius:5px;font-weight:bold">
+							<select class="form-control" id="month" name="month" onchange="updateApplicableMonths()" style="border-radius:5px;font-weight:bold">
 								<option value='' style="font-weight:bold;color:#000;">Select</option>
 								<option value='jan' style="font-weight:bold;color:#000;">January</option>
 								<option value='feb' style="font-weight:bold;color:#000;">February</option>
@@ -452,7 +452,7 @@ require('Header.php');
 								<option value='dec' style="font-weight:bold;color:#000;">December</option>
 							</select>
 							</div>
-							<span class="help-block">Current Month</span>
+							<span class="help-block"><b>Current Month</b></span>
 						</div>
 					</div>
 				</div>
@@ -462,12 +462,12 @@ require('Header.php');
 						<div class="col-md-2"></div>
 						<div class="col-md-9">  
 							<div class="input-group" style="width:100%;">					
-							<select class="form-control" id="year" name="year" style="border-radius:5px;font-weight:bold">
+							<select class="form-control" id="year" name="year" onchange="updateApplicableMonths()" style="border-radius:5px;font-weight:bold">
 								<option value='' style="font-weight:bold;color:#000;">Select</option>
 								
 							</select>
 							</div>
-							<span class="help-block">Applicable Year</span>
+							<span class="help-block"><b>Applicable Year</b></span>
 						</div>
 					</div>
 				</div>
@@ -509,7 +509,7 @@ require('Header.php');
 									&nbsp <input type="checkbox" id="dec" value="dec" /> December</label>
 								</div>
 							  </div>
-							<span class="help-block">Applicable Month</span>
+							<span class="help-block"><b>Applicable Month</b></span>
 						</div>
 					</div>
 				</div>
@@ -942,8 +942,8 @@ require('Header.php');
 							  }
 							});
 						}
-						if (typeof filterApplicableMonths === 'function') {
-							filterApplicableMonths();
+						if (typeof updateApplicableMonths === 'function') {
+							updateApplicableMonths();
 						}
 					}
 					else{
@@ -1662,47 +1662,51 @@ for (var j = removeIndices.length - 1; j >= 0; j--) {
     dropdown.remove(removeIndices[j]);
 }
 
-function filterApplicableMonths() {
-	var selectedYear = parseInt(document.getElementById('year').value) || currentYear;
-	var selectedMonthVal = document.getElementById('month').value || currentMonthValue;
-	var selectedIndex = monthNames.indexOf(selectedMonthVal);
-	if (selectedIndex === -1) {
-		selectedIndex = currentMonth;
-	}
+function updateApplicableMonths() {
+    var monthNames = ['jan', 'feb', 'march', 'april', 'may', 'june', 'july', 'aug', 'sept', 'oct', 'nov', 'dec'];
+    var selectedMonth = document.getElementById("month").value;
+    var selectedIndex = monthNames.indexOf(selectedMonth);
+    var selectedYear = document.getElementById("year").value;
+    var actualCurrentYear = new Date().getFullYear();
 
-	monthNames.forEach(function(m, idx) {
-		var input = document.getElementById(m);
-		if (input) {
-			var label = input.closest('label');
-			if (selectedYear <= currentYear && idx < selectedIndex) {
-				if (label) {
-					label.style.display = 'block';
-					label.style.opacity = '0.5';
-					label.style.cursor = 'not-allowed';
-				}
-				input.checked = false;
-				input.disabled = true;
-			} else {
-				if (label) {
-					label.style.display = 'block';
-					label.style.opacity = '1';
-					label.style.cursor = 'pointer';
-				}
-				input.disabled = false;
-			}
-		}
-	});
+    monthNames.forEach(function(mName, index) {
+        var checkbox = document.getElementById(mName);
+        if (checkbox) {
+            var label = checkbox.closest ? checkbox.closest('label') : checkbox.parentElement;
+            // Only disable months prior to current month if the selected year is the current calendar year
+            if (selectedYear == actualCurrentYear && selectedIndex !== -1 && index < selectedIndex) {
+                checkbox.disabled = true;
+                checkbox.checked = false;
+                if (label) {
+                    label.style.color = "#aaa";
+                    label.style.cursor = "not-allowed";
+                    label.style.pointerEvents = "none";
+                }
+            } else {
+                checkbox.disabled = false;
+                if (label) {
+                    label.style.color = "#000";
+                    label.style.cursor = "pointer";
+                    label.style.pointerEvents = "auto";
+                }
+            }
+        }
+    });
 }
 
-filterApplicableMonths();
+function filterApplicableMonths() {
+	updateApplicableMonths();
+}
+
+updateApplicableMonths();
 
 var monthSelectElem = document.getElementById('month');
 if (monthSelectElem) {
-	monthSelectElem.addEventListener('change', filterApplicableMonths);
+	monthSelectElem.addEventListener('change', updateApplicableMonths);
 }
 var yearSelectElem = document.getElementById('year');
 if (yearSelectElem) {
-	yearSelectElem.addEventListener('change', filterApplicableMonths);
+	yearSelectElem.addEventListener('change', updateApplicableMonths);
 }
 
 var dropdown = document.getElementById('year');
@@ -1725,6 +1729,7 @@ for (var i = 0; i < dropdown.options.length; i++) {
 var expanded = false;
 
 function showCheckboxes() {
+  updateApplicableMonths();
   var checkboxes = document.getElementById("checkboxes");
   if (!expanded) {
     checkboxes.style.display = "block";

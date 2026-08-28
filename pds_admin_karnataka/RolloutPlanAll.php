@@ -140,6 +140,7 @@ require('Header.php');
 									<button id="downloadPDF" class="btn btn-danger" style="margin-bottom: 10px;" type="button">Download PDF</button>
 									<a href="OptimisedDataAll.php"><button class="btn btn-info" style="margin-bottom: 10px;" type="button">Previous Data Leg2</button></a>
 									<a href="OptimisedDataAllLeg1.php"><button class="btn btn-info" style="margin-bottom: 10px; background-color: #5E35B1; border-color: #5E35B1; color: white;" type="button">Previous Data Leg1</button></a>
+
 								</div>
                             <!-- END SIMPLE DATATABLE -->
 								<div class="table-container">
@@ -538,7 +539,7 @@ require('Header.php');
 				var applicable = data[0].applicable;
 				var lastUpdated = data[0].last_updated;
 
-				var resultString = "Optimised Data for Year <b>" + year + "</b> and Month <b>" + month + "</b>, Applicable for <b>" + applicable + "</b>. Last updated at <b>" + lastUpdated + "</b>";
+				var resultString = "Optimised Data for Year <b>" + year + "</b> and Applicable for <b>" + applicable + "</b>. Last updated at <b>" + lastUpdated + "</b>";
 				document.getElementById("mainheading_big").innerHTML = resultString;
 
 

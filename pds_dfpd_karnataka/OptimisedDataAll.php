@@ -59,8 +59,27 @@ require('Header.php');
 								<div class="panel-heading">                                
                                     <h3 class="panel-title">Data</h3> 
                                 </div>
-								<!--<button class='btn btn-success' style="float:right;margin-top:10px;margin-right:13px" onclick="send_all('all')">Send Email to All</button>-->
 								<div class="panel-body">
+									<div class="row" style="margin-bottom: 15px;">
+										<div class="col-md-3">
+											<div class="form-group">
+												<label class="control-label" style="font-weight: bold; color: #000;">Select Year</label>
+												<select class="form-control" id="yearFilter" onchange="filterByYear()" style="border-radius:5px; font-weight:bold;">
+													<option value="all">All Years</option>
+													<?php
+													$year_query = "SELECT DISTINCT year FROM optimised_table WHERE year IS NOT NULL AND year != '' ORDER BY year DESC";
+													$year_result = mysqli_query($con, $year_query);
+													if ($year_result) {
+														while ($year_row = mysqli_fetch_assoc($year_result)) {
+															$y = htmlspecialchars($year_row['year']);
+															echo "<option value='{$y}'>{$y}</option>";
+														}
+													}
+													?>
+												</select>
+											</div>
+										</div>
+									</div>
                                  <div class="table-responsive">
                                     <table id="export_table" class="table" style="text-align: center;">
 										<thead>
@@ -536,6 +555,23 @@ require('Header.php');
             document.getElementById('popup').style.display = 'none';
         }
 		
+		function filterByYear() {
+			var selectedYear = document.getElementById("yearFilter").value;
+			var table = document.getElementById("export_table");
+			var trs = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+			for (var i = 0; i < trs.length; i++) {
+				var yearTd = trs[i].getElementsByTagName("td")[0];
+				if (yearTd) {
+					var yearValue = yearTd.textContent || yearTd.innerText;
+					if (selectedYear === "all" || yearValue.trim() === selectedYear.trim()) {
+						trs[i].style.display = "";
+					} else {
+						trs[i].style.display = "none";
+					}
+				}
+			}
+		}
 		
 		</script>	
     </body>
