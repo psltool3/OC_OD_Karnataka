@@ -290,7 +290,23 @@ require('Header.php');
                 alert('Please enter all fields');
                 return false;
             }
-			
+
+            var idRegex = /^[A-Za-z0-9]+$/;
+            if (!idRegex.test(id)) {
+                alert('Warehouse ID must contain only letters and numbers with no spaces or special characters');
+                return false;
+            }
+
+            if (isNaN(latitude) || parseFloat(latitude) <= 0 || parseFloat(latitude) > 45) {
+                alert('Latitude must be greater than 0 and less than or equal to 45');
+                return false;
+            }
+
+            if (isNaN(longitude) || parseFloat(longitude) < 65 || parseFloat(longitude) >= 100) {
+                alert('Longitude must be greater than or equal to 65 and less than 100');
+                return false;
+            }
+
             if (isNaN(storage) || parseFloat(storage) < 0) {
                 alert('Storage Capacity must be 0 or above');
                 return false;
@@ -301,12 +317,6 @@ require('Header.php');
             }
             if (isNaN(jowar) || parseFloat(jowar) < 0) {
                 alert('Jowar Capacity must be 0 or above');
-                return false;
-            }
-			
-            var idRegex = /^[a-zA-Z0-9]+$/;
-            if (!idRegex.test(id)) {
-                alert('Warehouse ID must contain only alphanumeric characters (letters, numbers, or both).');
                 return false;
             }
 			

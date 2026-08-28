@@ -60,36 +60,27 @@ $result = mysqli_query($con,$query);
 $row = mysqli_fetch_assoc($result);
 
 
-if(!isValidCoordinate($_POST["latitude"],'latitude') or !isValidCoordinate($_POST["longitude"],'longitude')){
-	echo "Error : Check Latitude and Longitude Value";
-	exit();
-}
-
 if(!isStringNumber($_POST["demand"])){
-	echo "Error : Check Procurement rice Value (must be 0 or above)";
+	echo "Error : Check Offered Rice Value (must be 0 or above)";
 	exit();
 }
-
 
 if(!isStringNumber($_POST["demand_rice"])){
-	echo "Error : Check Procurement wheat Value (must be 0 or above)";
+	echo "Error : Check Offered FRice Value (must be 0 or above)";
 	exit();
 }
-if (!isset($_POST["latitude"]) || !is_numeric($_POST["latitude"]) || $_POST["latitude"] >= 40) {
-    echo "Check Latitude: value must be less than 40";
+
+if (!isset($_POST["latitude"]) || !is_numeric($_POST["latitude"]) || floatval($_POST["latitude"]) <= 0 || floatval($_POST["latitude"]) > 45) {
+    echo "Check Latitude: value must be greater than 0 and less than or equal to 45";
     exit();
 }
 
-// Longitude must be greater than 65
-if (!isset($_POST["longitude"]) || !is_numeric($_POST["longitude"]) || $_POST["longitude"] <= 65) {
-    echo "Check Longitude: value must be greater than 65";
+if (!isset($_POST["longitude"]) || !is_numeric($_POST["longitude"]) || floatval($_POST["longitude"]) < 65 || floatval($_POST["longitude"]) >= 100) {
+    echo "Check Longitude: value must be greater than or equal to 65 and less than 100";
     exit();
 }
 
-if (
-    !isset($_POST["id"]) ||
-    !preg_match('/^[A-Za-z0-9]+$/', $_POST["id"])
-) {
+if (!isset($_POST["id"]) || !preg_match('/^[A-Za-z0-9]+$/', $_POST["id"])) {
     echo "Error: Check FCI ID value (only letters and numbers allowed, no spaces or special characters)";
     exit();
 }
@@ -102,7 +93,7 @@ $latitude = $_POST["latitude"];
 $longitude = $_POST["longitude"];
 $name = $_POST["name"];
 $id = $_POST["id"];
-$type = $_POST["type"];
+$type = "FCI";
 $demand = $_POST["demand"];
 $demand_rice = $_POST["demand_rice"];
 $uniqueid = uniqid("DCP_",);

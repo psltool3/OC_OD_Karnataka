@@ -18,14 +18,14 @@ require('Header.php');
 
 $mapData = [
     "District" => "district",
-    "Taluka" => "taluka",
+    "Taluka" => "block",
     "Name of FCI" => "name",
     "FCI ID" => "id",
     "Type" => "type",
     "Latitude" => "latitude",
     "Longitude" => "longitude",
-    "Allotment of Rice" => "demand",
-	"Allotment of FRice" => "demand_rice",
+    "Offered Rice" => "demand",
+	"Offered FRice" => "demand_rice",
 	"Active/Not-Active" => "active"
 ];
 
@@ -119,37 +119,34 @@ try{
 						echo "Error : You have modified Template Header, please check";
 						exit();
 					}
-					if(!isValidCoordinate($column[$latitude],'latitude') or !isValidCoordinate($column[$longitude],'longitude')){
-						echo "Error : Check Latitude and Longitude Value Latitude: ".$column[$latitude]." Longitude: ".$column[$longitude];
+					if(!is_numeric($column[$latitude]) || floatval($column[$latitude]) <= 0 || floatval($column[$latitude]) > 45){
+						echo "Error : Check Latitude Value (must be > 0 and <= 45): ".$column[$latitude];
 						echo "</br>";
 						$redirect = 0;
 					}
-
+					if(!is_numeric($column[$longitude]) || floatval($column[$longitude]) < 65 || floatval($column[$longitude]) >= 100){
+						echo "Error : Check Longitude Value (must be >= 65 and < 100): ".$column[$longitude];
+						echo "</br>";
+						$redirect = 0;
+					}
+					if(strtoupper(trim($column[$type])) !== 'FCI'){
+						echo "Error : Check Type Value: ".$column[$type]." (must be FCI)";
+						echo "</br>";
+						$redirect = 0;
+					}
 					if(!isStringNumber($column[$demand])){
-						echo "Error : Check Procurement Rice Value: ".$column[$demand]." (must be 0 or above)";
+						echo "Error : Check Offered Rice Value: ".$column[$demand]." (must be 0 or above)";
 						echo "</br>";
 						$redirect = 0;
 					}	
 					if(!isStringNumber($column[$demand_rice])){
-						echo "Error : Check Procurement Wheat Value: ".$column[$demand_rice]." (must be 0 or above)";
+						echo "Error : Check Offered FRice Value: ".$column[$demand_rice]." (must be 0 or above)";
 						echo "</br>";
 						$redirect = 0;
 					}	
 					
 					if(!in_array($column[$district], $districts)){
 						echo "Error : Check District Name: ".$column[$district];
-						echo "</br>";
-						$redirect = 0;
-					}
-					if (!is_numeric($column[$latitude]) || $column[$latitude] >= 40) {
-						echo "Error : Latitude must be less than 40. Given: " . $column[$latitude];
-						echo "</br>";
-						$redirect = 0;
-					}
-
-					// Longitude check (must be more than 65)
-					if (!is_numeric($column[$longitude]) || $column[$longitude] <= 65) {
-						echo "Error : Longitude must be more than 65. Given: " . $column[$longitude];
 						echo "</br>";
 						$redirect = 0;
 					}
@@ -182,6 +179,37 @@ try{
 					$DCP->setDemand($column[$demand]);
 					$DCP->setDemandrice($column[$demand_rice]);
 					$DCP->setActive($column[$active]);
+
+					if (!preg_match('/^[A-Za-z0-9]+$/', $column[$id])) {
+						echo "Error: Row " . ($i + 1) . " - FCI ID must contain only letters and numbers with no spaces or special characters</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
+					if (!is_numeric($column[$latitude]) || floatval($column[$latitude]) <= 0 || floatval($column[$latitude]) > 45) {
+						echo "Error: Row " . ($i + 1) . " - Latitude must be greater than 0 and less than or equal to 45</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
+					if (!is_numeric($column[$longitude]) || floatval($column[$longitude]) < 65 || floatval($column[$longitude]) >= 100) {
+						echo "Error: Row " . ($i + 1) . " - Longitude must be greater than or equal to 65 and less than 100</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
+					if (!is_numeric($column[$demand]) || floatval($column[$demand]) < 0) {
+						echo "Error: Row " . ($i + 1) . " - Offered Rice must be 0 or above</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
+					if (!is_numeric($column[$demand_rice]) || floatval($column[$demand_rice]) < 0) {
+						echo "Error: Row " . ($i + 1) . " - Offered FRice must be 0 or above</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
 					$query_check = $DCP->checkEdit($DCP);
 					$query_result = mysqli_query($con, $query_check);
 					$numrows = mysqli_num_rows($query_result);
@@ -247,15 +275,6 @@ try{
 			
 			$file = fopen($fileName, "r");
 			$i = 0;
-			$district = 0;
-			$name = 1;
-			$id = 2;
-			$type = 3;
-			$demand = 6;
-			$demand_rice = 9;
-			$longitude = 5;
-			$latitude = 4;
-			$active = 8;
 			while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
 				if($i>0){
 					$DCP = new DCP;
@@ -275,7 +294,7 @@ try{
 					$DCP->setLongitude($column[$longitude]);
 					$DCP->setName($column[$name]);
 					$DCP->setId($column[$id]);
-					$DCP->setType($column[$type]);
+					$DCP->setType("FCI");
 					$DCP->setDemand($column[$demand]);
 					$DCP->setDemandrice($column[$demand_rice]);
 					$DCP->setActive($column[$active]);
@@ -283,9 +302,11 @@ try{
 					$query_result = mysqli_query($con, $query_check);
 					$numrows = mysqli_num_rows($query_result);
 					if($numrows==0){
-						echo "Error : in loading data as DCP id doesn't exist : ".$column[$id];
+						echo "Error : in loading data as FCI id doesn't exist : ".$column[$id];
 						echo "</br>";
 						$redirect = 0;
+						$i++;
+						continue;
 					}
 					writeLog("User ->" ." DCP Edit -> ". $_SESSION['user'] . "| " . $DCP->getName());
 					$query_update = $DCP->updateEdit($DCP);

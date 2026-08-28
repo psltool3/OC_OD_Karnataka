@@ -106,7 +106,7 @@ class DCP {
     }
 	
 	function insert(DCP $dcp){
-        return "INSERT INTO dcp (district, taluka, name, id, type, latitude, longitude, demand,demand_rice, uniqueid, active) VALUES ('".$dcp->getDistrict()."','".$dcp->getTaluka()."','".$dcp->getName()."','".$dcp->getId()."','".$dcp->getType()."','".$dcp->getLatitude()."','".$dcp->getLongitude()."','".$dcp->getDemand()."','".$dcp->getDemandrice()."','".$dcp->getUniqueid()."','".$dcp->getActive()."')";
+        return "INSERT INTO dcp (district, block, name, id, type, latitude, longitude, demand,demand_rice, uniqueid, active) VALUES ('".$dcp->getDistrict()."','".$dcp->getTaluka()."','".$dcp->getName()."','".$dcp->getId()."','".$dcp->getType()."','".$dcp->getLatitude()."','".$dcp->getLongitude()."','".$dcp->getDemand()."','".$dcp->getDemandrice()."','".$dcp->getUniqueid()."','".$dcp->getActive()."')";
     }
 
     function delete(DCP $dcp){
@@ -136,11 +136,11 @@ class DCP {
     }
 
     function update(DCP $dcp){
-     return  "UPDATE dcp SET district = '".$dcp->getDistrict()."',taluka = '".$dcp->getTaluka()."',name = '".$dcp->getName()."',id = '".$dcp->getId()."',type = '".$dcp->getType()."',latitude = '".$dcp->getLatitude()."',longitude = '".$dcp->getLongitude()."',demand = '".$dcp->getDemand()."',demand_rice = '".$dcp->getDemandrice()."' WHERE uniqueid = '".$dcp->getUniqueid()."'";
+     return  "UPDATE dcp SET district = '".$dcp->getDistrict()."',block = '".$dcp->getTaluka()."',name = '".$dcp->getName()."',id = '".$dcp->getId()."',type = '".$dcp->getType()."',latitude = '".$dcp->getLatitude()."',longitude = '".$dcp->getLongitude()."',demand = '".$dcp->getDemand()."',demand_rice = '".$dcp->getDemandrice()."' WHERE uniqueid = '".$dcp->getUniqueid()."'";
     }
 	
 	function updateEdit(DCP $dcp){
-      return  "UPDATE dcp SET district = '".$dcp->getDistrict()."',taluka = '".$dcp->getTaluka()."',name = '".$dcp->getName()."',id = '".$dcp->getId()."',type = '".$dcp->getType()."',latitude = '".$dcp->getLatitude()."',longitude = '".$dcp->getLongitude()."',demand = '".$dcp->getDemand()."',demand_rice = '".$dcp->getDemandrice()."' WHERE id = '".$dcp->getId()."'";
+      return  "UPDATE dcp SET district = '".$dcp->getDistrict()."',block = '".$dcp->getTaluka()."',name = '".$dcp->getName()."',id = '".$dcp->getId()."',type = '".$dcp->getType()."',latitude = '".$dcp->getLatitude()."',longitude = '".$dcp->getLongitude()."',demand = '".$dcp->getDemand()."',demand_rice = '".$dcp->getDemandrice()."' WHERE id = '".$dcp->getId()."'";
     }
 }  
 

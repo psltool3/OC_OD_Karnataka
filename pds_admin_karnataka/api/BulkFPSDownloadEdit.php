@@ -56,7 +56,12 @@ header('Cache-Control: max-age=0');
 // Render excel data 
 echo $excelDataColumns;
 
-$query = "SELECT * FROM fps WHERE 1";
+$district = isset($_REQUEST['district']) ? trim($_REQUEST['district']) : '';
+if($district != "" && strtolower($district) != "all"){
+	$query = "SELECT * FROM fps WHERE LOWER(district) = LOWER('$district')";
+} else {
+	$query = "SELECT * FROM fps WHERE 1";
+}
 $result = mysqli_query($con,$query);
 $numrows = mysqli_num_rows($result);
 if($numrows>0){

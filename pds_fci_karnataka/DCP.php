@@ -41,7 +41,7 @@ require('Header.php');
 								<a href="BulkDCPData.php" style="float:right;margin-top:10px;margin-right:13px"><button type="button" class="btn btn-info">Bulk Data Add</button></a>
 								<span style="float:right;margin-top:10px;margin-right:13px"><button type="button" onclick="delete_all()"  class="btn btn-danger">Delete All</button></span>
 								<a href="DCPAdd.php" style="float:right;margin-top:10px;margin-right:13px"><button type="button" class="btn btn-success">Add New</button></a>
-                                <a href="api/BulkDCPDownloadEdit.php" style="float:right;margin-top:10px;margin-right:13px"><button type="button" class="btn btn-info">Download Data</button></a>
+                                <span style="float:right;margin-top:10px;margin-right:13px"><button type="button" onclick="downloadData()" class="btn btn-info">Download Data</button></span>
                             
 								</br></br>
 								<div>
@@ -80,8 +80,8 @@ require('Header.php');
 												<th style="font-size:16px">Type</th>
 												<th style="font-size:16px">Latitude</th>
 												<th style="font-size:16px">Longitude</th>
-												<th style="font-size:16px">Allotment of Rice(Qtl) </th>
-												<th style="font-size:16px">Allotment of FRice(Qtl)</th>
+												<th style="font-size:16px">Offered Rice (Qtl)</th>
+												<th style="font-size:16px">Offered FRice (Qtl)</th>
 												<th style="font-size:16px">Status</th>
 												<th style="font-size:16px">Change Status</th>
                                                 <th style="font-size:16px">Edit</th>
@@ -232,6 +232,11 @@ require('Header.php');
 		function hidePopup() {
             document.getElementById('popup').style.display = 'none';
         }
+
+		function downloadData(){
+			var dist = document.getElementById('district').value;
+			window.location.href = 'api/BulkDCPDownloadEdit.php?district=' + encodeURIComponent(dist);
+		}
 		
 		
 		function fetchDataFromServer(){
@@ -277,7 +282,8 @@ require('Header.php');
 							else{
 								status = "<span style='padding:5px' class='btn-danger btn-rounded'>InActive</span>";
 							}
-							var subpart = "<tr><td>" +  obj[datafield]["district"] +  "</td><td>" +  obj[datafield]["taluka"] +  "</td><td>"  + obj[datafield]["name"] +  "</td><td>"  + obj[datafield]["id"] +  "</td><td>"  + obj[datafield]["type"] +  "</td><td>"  + obj[datafield]["latitude"] +  "</td><td>"  + obj[datafield]["longitude"] +  "</td><td>"  + obj[datafield]["demand"] +  "</td><td>"  + obj[datafield]["demand_rice"]  + "</td><td>" + status + "</td><td> <button class='btn btn-info btn-rounded' onclick=\"change_status('"+ temp_id + "')\">Change Status</button></td><td> <button class='btn btn-warning btn-rounded' onclick=\"edit_entry('" + temp_id +  "')\">Edit</button></td><td> <button class='btn btn-danger btn-rounded' onclick=\"delete_entry('" + temp_id +"')\">Delete</button></td></tr>";
+							var talukaVal = obj[datafield]["taluka"] || obj[datafield]["block"] || obj[datafield]["taluk"] || "";
+							var subpart = "<tr><td>" +  obj[datafield]["district"] +  "</td><td>" +  talukaVal +  "</td><td>"  + obj[datafield]["name"] +  "</td><td>"  + obj[datafield]["id"] +  "</td><td>"  + obj[datafield]["type"] +  "</td><td>"  + obj[datafield]["latitude"] +  "</td><td>"  + obj[datafield]["longitude"] +  "</td><td>"  + obj[datafield]["demand"] +  "</td><td>"  + obj[datafield]["demand_rice"]  + "</td><td>" + status + "</td><td> <button class='btn btn-info btn-rounded' onclick=\"change_status('"+ temp_id + "')\">Change Status</button></td><td> <button class='btn btn-warning btn-rounded' onclick=\"edit_entry('" + temp_id +  "')\">Edit</button></td><td> <button class='btn btn-danger btn-rounded' onclick=\"delete_entry('" + temp_id +"')\">Delete</button></td></tr>";
 							$('#fps_table').append(subpart);
 						}
 					}

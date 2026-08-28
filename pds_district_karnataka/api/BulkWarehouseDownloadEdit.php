@@ -58,7 +58,7 @@ $excelDataColumns = implode(",", array_values($columns)) . "\n";
 // Render excel data 
 echo $excelDataColumns;
 
-$query = "SELECT * FROM warehouse WHERE district='$district'";
+$query = "SELECT * FROM warehouse WHERE LOWER(district) = LOWER('$district')";
 $result = mysqli_query($con,$query);
 $numrows = mysqli_num_rows($result);
 if($numrows>0){

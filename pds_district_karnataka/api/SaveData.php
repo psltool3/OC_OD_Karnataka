@@ -35,13 +35,15 @@ foreach ($_POST as $key => $value) {
 	$commodity = $parts[2];
 	$toid = str_replace('_', '.', $toid);
 	$commodity = str_replace('_', '.', $commodity);
+	$commodity = str_replace('.bool', '', $commodity);
+	$commodity = str_replace('_bool', '', $commodity);
 	
 	if($value=="yes"){
 		$query = "UPDATE " . $tablename . " SET approve_district='yes' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
 		writeLog("district User ->" ." Save Data | approve district change yes ->". $_SESSION['district_user'] . "| " . $fromid . " - " . $toid . " - " . $commodity);
 	}
 	else if($value=="no"){
-		$query = "UPDATE " . $tablename . " SET approve_district='', new_id_district='' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$toid'";
+		$query = "UPDATE " . $tablename . " SET approve_district='', new_id_district='' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
 		$filteredPost = $_POST;
 		unset($filteredPost['username'], $filteredPost['password']);
 		writeLog("district User ->" ." Save Data | approve district change no ->". $_SESSION['district_user'] . "| " . $fromid . " - " . $toid . " - " . $commodity);
@@ -50,7 +52,7 @@ foreach ($_POST as $key => $value) {
 		$query_name = "SELECT name FROM warehouse WHERE id='$value'";
 		$result_name = mysqli_query($con,$query_name);
 		$row_name = mysqli_fetch_assoc($result_name);
-		$name = $row_name['name'];
+		$name = isset($row_name['name']) ? $row_name['name'] : '';
 		
 		// Access related fields safely
 		$reason = isset($_POST[$key."_idreason"]) ? $_POST[$key."_idreason"] : '';
@@ -65,7 +67,7 @@ foreach ($_POST as $key => $value) {
 			exit;
 		}
 
-		$query = "UPDATE " . $tablename . " SET new_id_district='$value', new_name_district='$name', approve_district='yes', new_distance_district='$distance', reason_district='$reason' WHERE from_id='$fromid' AND to_id='$toid'";
+		$query = "UPDATE " . $tablename . " SET new_id_district='$value', new_name_district='$name', approve_district='yes', new_distance_district='$distance', reason_district='$reason' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
 		
 		writeLog("User ->" ." Save Data | district user change id ->". $_SESSION['district_user'] . "| " . $fromid . " - " . $toid .  " - " . $commodity . "| " . $value);
 		

@@ -3,14 +3,14 @@ require('../util/Connection.php');
 
 $mapData = [
     "District" => "district",
-    "Taluka" => "taluka",
+    "Taluka" => "block",
     "Name of FCI" => "name",
     "FCI ID" => "id",
     "Type" => "type",
     "Latitude" => "latitude",
     "Longitude" => "longitude",
-    "Allotment of Rice" => "demand",
-	"Allotment of FRice" => "demand_rice",
+    "Offered Rice" => "demand",
+	"Offered FRice" => "demand_rice",
 	"Active/Not-Active" => "active"
 ];
 
@@ -53,7 +53,12 @@ header('Cache-Control: max-age=0');
 // Render excel data 
 echo $excelDataColumns;
 
-$query = "SELECT * FROM dcp WHERE 1";
+$whereClause = "WHERE 1";
+if (isset($_GET['district']) && $_GET['district'] !== '' && strtolower($_GET['district']) !== 'all') {
+    $distParam = mysqli_real_escape_string($con, $_GET['district']);
+    $whereClause = "WHERE LOWER(district) = LOWER('$distParam')";
+}
+$query = "SELECT * FROM dcp $whereClause";
 $result = mysqli_query($con,$query);
 $numrows = mysqli_num_rows($result);
 if($numrows>0){

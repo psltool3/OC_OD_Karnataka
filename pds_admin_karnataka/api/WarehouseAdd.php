@@ -17,8 +17,6 @@ require('Header.php');
 
 
 function formatName($name) {
-	$name = preg_replace('/[^a-zA-Z0-9_ ]/', '', $name);
-    $name = ucwords(strtolower($name));
     return trim($name);
 }
 
@@ -60,11 +58,6 @@ $query = "SELECT * FROM login WHERE username='".$person->getUsername()."'";
 $result = mysqli_query($con,$query);
 $row = mysqli_fetch_assoc($result);
 
-if(!isValidCoordinate($_POST["latitude"],'latitude') or !isValidCoordinate($_POST["longitude"],'longitude')){
-	echo "Error : Check Latitude and Longitude Value";
-	exit();
-}
-
 if(!isStringNumber($_POST["storage"])){
 	echo "Error : Check Storage Value (must be 0 or above)";
 	exit();
@@ -80,8 +73,18 @@ if(!isStringNumber($_POST["jowar"])){
 	exit();
 }
 
-if (!preg_match('/^[a-zA-Z0-9]+$/', $_POST["id"])) {
-	echo "Error : Warehouse ID must contain only alphanumeric characters.";
+if (!isset($_POST["latitude"]) || !is_numeric($_POST["latitude"]) || floatval($_POST["latitude"]) <= 0 || floatval($_POST["latitude"]) > 45) {
+    echo "Check Latitude: value must be greater than 0 and less than or equal to 45";
+    exit();
+}
+
+if (!isset($_POST["longitude"]) || !is_numeric($_POST["longitude"]) || floatval($_POST["longitude"]) < 65 || floatval($_POST["longitude"]) >= 100) {
+    echo "Check Longitude: value must be greater than or equal to 65 and less than 100";
+    exit();
+}
+
+if (!isset($_POST["id"]) || !preg_match('/^[A-Za-z0-9]+$/', $_POST["id"])) {
+	echo "Error : Warehouse ID must contain only letters and numbers with no spaces or special characters.";
 	exit();
 }
 

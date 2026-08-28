@@ -83,7 +83,7 @@ else{
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
                     <li><a href="Warehouse.php">Home</a></li>
-                    <li class="active">Warehouse Add</li>
+                    <li class="active">Warehouse Edit</li>
                 </ul>
                 <!-- END BREADCRUMB -->
 
@@ -97,7 +97,7 @@ else{
                             <form action="api/WarehouseEdit.php" method="POST" class="form-horizontal" enctype = "multipart/form-data">
                             <div class="panel panel-default">
                                <div class="panel-body">
-                                    <p>Fill this form to add new warehouse.</p>
+                                    <p>Fill this form to edit warehouse.</p>
                                 </div>
 
                              <div class="panel-body">
@@ -176,8 +176,8 @@ else{
                                                 <div class="col-md-9">
                                                     <div class="input-group">
 												   <span class="input-group-addon"><span class="fa fa-arrow-down"></span></span>
-                                                    <select class="form-control" id="district" name="district">
-                                                    </select>
+                                                     <select class="form-control" id="district" name="district" onChange="fetch_taluka(this.value)">
+                                                     </select>
 													</div>
                                                     <span class="help-block">District</span>
                                                 </div>
@@ -188,7 +188,7 @@ else{
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                                        <input type="text" class="form-control" id="id" name="id" value="<?php echo $id ?>" required />
+                                                        <input type="text" class="form-control" id="id" name="id" value="<?php echo $id ?>" readonly required />
                                                     </div>
                                                     <span class="help-block">Warehouse ID</span>
                                                 </div>
@@ -364,7 +364,23 @@ else{
                 alert('Please enter all fields');
                 return false;
             }
-			
+
+            var idRegex = /^[A-Za-z0-9]+$/;
+            if (!idRegex.test(id)) {
+                alert('Warehouse ID must contain only letters and numbers with no spaces or special characters');
+                return false;
+            }
+
+            if (isNaN(latitude) || parseFloat(latitude) <= 0 || parseFloat(latitude) > 45) {
+                alert('Latitude must be greater than 0 and less than or equal to 45');
+                return false;
+            }
+
+            if (isNaN(longitude) || parseFloat(longitude) < 65 || parseFloat(longitude) >= 100) {
+                alert('Longitude must be greater than or equal to 65 and less than 100');
+                return false;
+            }
+
             if (isNaN(storage) || parseFloat(storage) < 0) {
                 alert('Storage Capacity must be 0 or above');
                 return false;
@@ -375,12 +391,6 @@ else{
             }
             if (isNaN(jowar) || parseFloat(jowar) < 0) {
                 alert('Jowar Capacity must be 0 or above');
-                return false;
-            }
-			
-            var idRegex = /^[a-zA-Z0-9]+$/;
-            if (!idRegex.test(id)) {
-                alert('Warehouse ID must contain only alphanumeric characters (letters, numbers, or both).');
                 return false;
             }
 			

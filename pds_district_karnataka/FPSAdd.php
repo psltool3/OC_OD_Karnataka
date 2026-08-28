@@ -111,9 +111,10 @@ $district = ucfirst($_SESSION["district_district"]);
                                                 <label class="col-md-3 control-label">Taluka*</label>
                                                 <div class="col-md-9">
                                                     <div class="input-group">
-                                                        <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                                        <input type="text" class="form-control" id="taluka" name="taluka" required />
-                                                    </div>
+												   <span class="input-group-addon"><span class="fa fa-arrow-down"></span></span>
+                                                     <select class="form-control" id="taluka" name="taluka">
+                                                     </select>
+													</div>
                                                     <span class="help-block">Taluka</span>
                                                 </div>
                                             </div>
@@ -250,6 +251,7 @@ $district = ucfirst($_SESSION["district_district"]);
         <script type='text/javascript' src='js/plugins/icheck/icheck.min.js'></script>
         <script type="text/javascript" src="js/plugins/mcustomscrollbar/jquery.mCustomScrollbar.min.js"></script>
         <!-- END PAGE PLUGINS -->
+		<?php require('TalukaAutocomplete.php');  ?>
 		
 		<script>
 		function showPopup() {
@@ -262,14 +264,31 @@ $district = ucfirst($_SESSION["district_district"]);
             var demand = document.getElementById('demand').value;
 			var demand_rice = document.getElementById('demand_rice').value;
             var district = document.getElementById('district').value;
+            var taluka = document.getElementById('taluka').value;
             var inventory_ragi = document.getElementById('inventory_ragi').value;
             var inventory_jowar = document.getElementById('inventory_jowar').value;
 
-            if (name === '' || type === '' || latitude === '' || longitude === '' || id === '' || demand === '' ||demand_rice === '' || district === '' || inventory_ragi === '' || inventory_jowar === '') {
+            if (name === '' || type === '' || latitude === '' || longitude === '' || id === '' || demand === '' ||demand_rice === '' || district === '' || taluka === '' || inventory_ragi === '' || inventory_jowar === '') {
                 alert('Please enter all fields');
                 return false;
             }
-			
+
+            var idRegex = /^[A-Za-z0-9]+$/;
+            if (!idRegex.test(id)) {
+                alert('FPS ID must contain only letters and numbers with no spaces or special characters');
+                return false;
+            }
+
+            if (isNaN(latitude) || parseFloat(latitude) <= 0 || parseFloat(latitude) > 45) {
+                alert('Latitude must be greater than 0 and less than or equal to 45');
+                return false;
+            }
+
+            if (isNaN(longitude) || parseFloat(longitude) < 65 || parseFloat(longitude) >= 100) {
+                alert('Longitude must be greater than or equal to 65 and less than 100');
+                return false;
+            }
+
             if (isNaN(demand) || parseFloat(demand) < 0) {
                 alert('Demand FRice must be 0 or above');
                 return false;
@@ -279,17 +298,11 @@ $district = ucfirst($_SESSION["district_district"]);
                 return false;
             }
             if (isNaN(inventory_ragi) || parseFloat(inventory_ragi) < 0) {
-                alert('Demand Ragi must be 0 or above');
+                alert('Inventory Ragi must be 0 or above');
                 return false;
             }
             if (isNaN(inventory_jowar) || parseFloat(inventory_jowar) < 0) {
-                alert('Demand Jowar must be 0 or above');
-                return false;
-            }
-			
-            var idRegex = /^[a-zA-Z0-9]+$/;
-            if (!idRegex.test(id)) {
-                alert('FPS ID must contain only alphanumeric characters (letters, numbers, or both).');
+                alert('Inventory Jowar must be 0 or above');
                 return false;
             }
 			

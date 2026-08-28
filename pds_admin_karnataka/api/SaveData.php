@@ -19,8 +19,6 @@ while($row = mysqli_fetch_array($result))
 }
 
 $tablename = "optimiseddata_".$id;
-echo $tablename;
-echo "</br>";
 foreach ($_POST as $key => $value) {
 	if ($key === 'accept_all' || substr($key, -11) === '_iddistance' || substr($key, -9) === '_idreason' || substr($key, -8) === '_approve' || $value === "") {
 		if ($key !== 'accept_all' && substr($key, -8) === '_approve') {
@@ -40,7 +38,6 @@ foreach ($_POST as $key => $value) {
 				writeLog("User ->" ." Save Data | approve district change no ->". $_SESSION['user'] . "| " . $fromid . " - " . $toid . " - ". $commodity);
 			}
 			mysqli_query($con,$query);
-			echo $query;
 		}
 		continue;
 	}
@@ -94,8 +91,8 @@ foreach ($_POST as $key => $value) {
 			echo "<script>alert('Invalid distance value: must be a positive integer or float.'); window.history.back();</script>";
 			exit;
 		}
-		$query = "UPDATE " . $tablename . " SET new_id_admin='$value', new_name_admin='$name', approve_admin='yes', new_distance_admin='$distance', reason_admin='$reason' WHERE from_id='$fromid' AND to_id='$toid'";
-		writeLog("User ->" ." Save Data | approve district change id ->". $_SESSION['user'] . "| " . $fromid . " - " . $toid . "| " . $value);
+		$query = "UPDATE " . $tablename . " SET new_id_admin='$value', new_name_admin='$name', approve_admin='yes', new_distance_admin='$distance', reason_admin='$reason' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
+		writeLog("User ->" ." Save Data | approve district change id ->". $_SESSION['user'] . "| " . $fromid . " - " . $toid . " - " . $commodity . "| " . $value);
 	}
 	mysqli_query($con,$query);
 }

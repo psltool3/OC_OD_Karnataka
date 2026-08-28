@@ -4,11 +4,6 @@ require('../structures/Login.php');
 require('../util/Security.php');
 require('../util/Encryption.php');
 $nonceValue = 'nonce_value';
-require('../util/SessionFunction.php');
-
-if (!SessionCheck()) {
-    return;
-}
 
 if (empty($_POST) || empty($_POST["oldpassword"]) || empty($_POST["newpassword"]) || empty($_POST["confirmpassword"]) || empty($_POST['username'])) {
     die("Something went wrong...");
@@ -106,6 +101,6 @@ mysqli_close($con);
 session_unset();
 session_destroy();
 
-echo "<script>window.location.href = '../AdminLogin.html';</script>";
+echo "<script>window.location.href = '../Login.html';</script>";
 ?>
 <?php require('Fullui.php'); ?>

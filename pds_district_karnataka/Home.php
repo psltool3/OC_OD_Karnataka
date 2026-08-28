@@ -272,7 +272,7 @@ if($currentTimestamp >= $targetTimestamp) {
 												<th style="font-size:16px">From_ID</th>
 												<th style="font-size:16px">From_Name</th>
 												<th style="font-size:16px">From_District</th>
-												<th style="font-size:16px">From_Taluk</th>
+												<th style="font-size:16px">From_Taluka</th>
 												<th style="font-size:16px">From_Lat</th>
 												<th style="font-size:16px">From_Long</th>
 												<th style="font-size:16px">To</th>
@@ -280,7 +280,7 @@ if($currentTimestamp >= $targetTimestamp) {
 												<th style="font-size:16px">To_ID</th>
 												<th style="font-size:16px">To_Name</th>
 												<th style="font-size:16px">To_District</th>
-												<th style="font-size:16px">To_Taluk</th>
+												<th style="font-size:16px">To_Taluka</th>
 												<th style="font-size:16px">To_Lat</th>
 												<th style="font-size:16px">To_Long</th>
 												<th style="font-size:16px">Commodity</th>
@@ -628,12 +628,14 @@ if($currentTimestamp >= $targetTimestamp) {
 			if(district=="" || district=="all"){
 				district = "";
 				var dropdown = document.getElementById("district");
-				for (var i = 0; i < dropdown.options.length; i++) {
-					var option = dropdown.options[i];
-					if (option.value.trim() !== "" && option.value.trim().toLowerCase() !== "all") {
-						dropdown.selectedIndex = i;
-						district = option.value;
-						break;
+				if (dropdown) {
+					for (var i = 0; i < dropdown.options.length; i++) {
+						var option = dropdown.options[i];
+						if (option.value.trim() !== "" && option.value.trim().toLowerCase() !== "all") {
+							dropdown.selectedIndex = i;
+							district = option.value;
+							break;
+						}
 					}
 				}
 			}

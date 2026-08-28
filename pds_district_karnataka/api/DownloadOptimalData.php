@@ -15,9 +15,31 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 if (isset($_GET['format'])) {
     $format = $_GET['format'];
     $district = $_SESSION['district_district'];
-    #$columns = ["from_district","from_id","from_name","to_district","to_id","to_name"];
-	$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance"];
+    	$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance"];
 	$columns_pdf = ["scenario","from","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance"];
+
+	$column_labels = [
+		"scenario" => "Scenario",
+		"from" => "From",
+		"from_state" => "From_State",
+		"from_id" => "From_ID",
+		"from_name" => "From_Name",
+		"from_district" => "From_District",
+		"from_block" => "From_Taluka",
+		"from_lat" => "From_Lat",
+		"from_long" => "From_Long",
+		"to" => "To",
+		"to_state" => "To_State",
+		"to_id" => "To_ID",
+		"to_name" => "To_Name",
+		"to_district" => "To_District",
+		"to_block" => "To_Taluka",
+		"to_lat" => "To_Lat",
+		"to_long" => "To_Long",
+		"commodity" => "Commodity",
+		"quantity" => "quantity(Qtl)",
+		"distance" => "Distance(Km)"
+	];
 
 	
 	$query = "SELECT * FROM optimised_table ORDER BY last_updated DESC LIMIT 1";
@@ -35,8 +57,17 @@ if (isset($_GET['format'])) {
     $numrows = mysqli_num_rows($result);
     $tableData = array();
     $tableData_pdf = array();
-    array_push($tableData,$columns);
-    array_push($tableData_pdf,$columns_pdf);
+
+	$header = array();
+	foreach($columns as $c) {
+		$header[] = $column_labels[$c] ?? $c;
+	}
+	$header_pdf = array();
+	foreach($columns_pdf as $c) {
+		$header_pdf[] = $column_labels[$c] ?? $c;
+	}
+    array_push($tableData,$header);
+    array_push($tableData_pdf,$header_pdf);
 
     if($numrows>0){
         while($row = mysqli_fetch_array($result)){
@@ -102,7 +133,7 @@ if (isset($_GET['format'])) {
             // Set column names as the first row
             $columnIndex = 1;
             foreach ($columns as $columnName) {
-                $sheet->setCellValueByColumnAndRow($columnIndex, 1, $columnName);
+                $sheet->setCellValueByColumnAndRow($columnIndex, 1, $column_labels[$columnName] ?? $columnName);
                 $columnIndex++;
             }
 

@@ -115,8 +115,13 @@ try{
 					echo "Error : You have modified Template Header, please check";
 					exit();
 				}
-				if(!isValidCoordinate($column[$latitude],'latitude') or !isValidCoordinate($column[$longitude],'longitude')){
-					echo "Error : Check Latitude and Longitude Value Latitude: ".$column[$latitude]." Longitude: ".$column[$longitude];
+				if(!is_numeric($column[$latitude]) || floatval($column[$latitude]) <= 0 || floatval($column[$latitude]) > 45){
+					echo "Error : Check Latitude value (must be greater than 0 and less than or equal to 45): ".$column[$latitude];
+					echo "</br>";
+					$redirect = 0;
+				}
+				if(!is_numeric($column[$longitude]) || floatval($column[$longitude]) < 65 || floatval($column[$longitude]) >= 100){
+					echo "Error : Check Longitude value (must be greater than or equal to 65 and less than 100): ".$column[$longitude];
 					echo "</br>";
 					$redirect = 0;
 				}
@@ -131,12 +136,12 @@ try{
 					$redirect = 0;
 				}
                 if(!isStringNumber($column[$inventory_ragi])){
-					echo "Error : Check Demand Ragi Value: ".$column[$inventory_ragi]." (must be 0 or above)";
+					echo "Error : Check Inventory Ragi Value: ".$column[$inventory_ragi]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
 				if(!isStringNumber($column[$inventory_jowar])){
-					echo "Error : Check Demand Jowar Value: ".$column[$inventory_jowar]." (must be 0 or above)";
+					echo "Error : Check Inventory Jowar Value: ".$column[$inventory_jowar]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
@@ -151,8 +156,8 @@ try{
 					echo "</br>";
 					$redirect = 0;
 				}
-				if (!preg_match('/^[a-zA-Z0-9]+$/', $column[$id])) {
-					echo "Error : FPS ID must contain only alphanumeric characters. Invalid ID found: ".$column[$id];
+				if (!preg_match('/^[A-Za-z0-9]+$/', $column[$id])) {
+					echo "Error : FPS ID must contain only letters and numbers with no spaces or special characters. Invalid ID found: ".$column[$id];
 					echo "</br>";
 					$redirect = 0;
 				}

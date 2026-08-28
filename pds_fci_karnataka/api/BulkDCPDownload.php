@@ -3,14 +3,14 @@ require('../util/Connection.php');
 
 $mapData = [
     "District" => "district",
-    "Taluka" => "taluka",
+    "Taluka" => "block",
     "Name of FCI" => "name",
     "FCI ID" => "id",
     "Type" => "type",
     "Latitude" => "latitude",
     "Longitude" => "longitude",
-    "Allotment of Rice" => "demand",
-	"Allotment of FRice" => "demand_rice",
+    "Offered Rice" => "demand",
+	"Offered FRice" => "demand_rice",
 	"Active/Not-Active" => "active"
 ];
 

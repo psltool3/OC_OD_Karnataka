@@ -276,7 +276,23 @@ require('Header.php');
                 alert('Please enter all fields');
                 return false;
             }
-			
+
+            var idRegex = /^[A-Za-z0-9]+$/;
+            if (!idRegex.test(id)) {
+                alert('FPS ID must contain only letters and numbers with no spaces or special characters');
+                return false;
+            }
+
+            if (isNaN(latitude) || parseFloat(latitude) <= 0 || parseFloat(latitude) > 45) {
+                alert('Latitude must be greater than 0 and less than or equal to 45');
+                return false;
+            }
+
+            if (isNaN(longitude) || parseFloat(longitude) < 65 || parseFloat(longitude) >= 100) {
+                alert('Longitude must be greater than or equal to 65 and less than 100');
+                return false;
+            }
+
             if (isNaN(demand) || parseFloat(demand) < 0) {
                 alert('Demand FRice must be 0 or above');
                 return false;
@@ -286,17 +302,11 @@ require('Header.php');
                 return false;
             }
             if (isNaN(inventory_ragi) || parseFloat(inventory_ragi) < 0) {
-                alert('Demand Ragi must be 0 or above');
+                alert('Inventory Ragi must be 0 or above');
                 return false;
             }
             if (isNaN(inventory_jowar) || parseFloat(inventory_jowar) < 0) {
-                alert('Demand Jowar must be 0 or above');
-                return false;
-            }
-			
-            var idRegex = /^[a-zA-Z0-9]+$/;
-            if (!idRegex.test(id)) {
-                alert('FPS ID must contain only alphanumeric characters (letters, numbers, or both).');
+                alert('Inventory Jowar must be 0 or above');
                 return false;
             }
 			

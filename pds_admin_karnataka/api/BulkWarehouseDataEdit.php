@@ -121,43 +121,48 @@ try{
 						echo "Error : You have modified Template Header, please check";
 						exit();
 					}
-					if(!isValidCoordinate($column[$latitude],'latitude') or !isValidCoordinate($column[$longitude],'longitude')){
-						echo "Error : Check Latitude and Longitude Value Latitude: ".$column[$latitude]." Longitude: ".$column[$longitude];
-						echo "</br>";
-						$redirect = 0;
-					}
+				if(!is_numeric($column[$latitude]) || floatval($column[$latitude]) <= 0 || floatval($column[$latitude]) > 45){
+					echo "Error : Check Latitude value (must be greater than 0 and less than or equal to 45): ".$column[$latitude];
+					echo "</br>";
+					$redirect = 0;
+				}
+				if(!is_numeric($column[$longitude]) || floatval($column[$longitude]) < 65 || floatval($column[$longitude]) >= 100){
+					echo "Error : Check Longitude value (must be greater than or equal to 65 and less than 100): ".$column[$longitude];
+					echo "</br>";
+					$redirect = 0;
+				}
 
-					if(!isStringNumber($column[$storage])){
-						echo "Error : Check Storage Value: ".$column[$storage]." (must be 0 or above)";
-						echo "</br>";
-						$redirect = 0;
-					}
+				if(!isStringNumber($column[$storage])){
+					echo "Error : Check Storage Value: ".$column[$storage]." (must be 0 or above)";
+					echo "</br>";
+					$redirect = 0;
+				}
                     if(!isStringNumber($column[$ragi])){
-						echo "Error : Check ragi Value: ".$column[$ragi]." (must be 0 or above)";
-						echo "</br>";
-						$redirect = 0;
-					}
+					echo "Error : Check ragi Value: ".$column[$ragi]." (must be 0 or above)";
+					echo "</br>";
+					$redirect = 0;
+				}
                     if(!isStringNumber($column[$jowar])){
-						echo "Error : Check jowar Value: ".$column[$jowar]." (must be 0 or above)";
-						echo "</br>";
-						$redirect = 0;
-					}
-					$upperDistricts = array_map('strtoupper', $districts);
-					if(!in_array(strtoupper(trim($column[$district])), $upperDistricts)){
-						echo "Error : Check District Name: ".$column[$district];
-						echo "</br>";
-						$redirect = 0;
-					}
-					if(!($column[$active]==0 || $column[$active]==1)){
-						echo "Error : Check value of active/inactive column: ".$column[$active];
-						echo "</br>";
-						$redirect = 0;
-					}
-					if (!preg_match('/^[a-zA-Z0-9]+$/', $column[$id])) {
-						echo "Error : Warehouse ID must contain only alphanumeric characters. Invalid ID found: ".$column[$id];
-						echo "</br>";
-						$redirect = 0;
-					}
+					echo "Error : Check jowar Value: ".$column[$jowar]." (must be 0 or above)";
+					echo "</br>";
+					$redirect = 0;
+				}
+				$upperDistricts = array_map('strtoupper', $districts);
+				if(!in_array(strtoupper(trim($column[$district])), $upperDistricts)){
+					echo "Error : Check District Name: ".$column[$district];
+					echo "</br>";
+					$redirect = 0;
+				}
+				if(!($column[$active]==0 || $column[$active]==1)){
+					echo "Error : Check value of active/inactive column: ".$column[$active];
+					echo "</br>";
+					$redirect = 0;
+				}
+				if (!preg_match('/^[A-Za-z0-9]+$/', $column[$id])) {
+					echo "Error : Warehouse ID must contain only letters and numbers with no spaces or special characters. Invalid ID found: ".$column[$id];
+					echo "</br>";
+					$redirect = 0;
+				}
 					$Warehouse = new Warehouse;
 					filterData($column[$latitude]);
 					filterData($column[$longitude]);

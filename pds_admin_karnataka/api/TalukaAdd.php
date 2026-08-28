@@ -17,7 +17,7 @@ require('Header.php');
 
 function talukaNameFormat($name){
 	$name = preg_replace('/[^a-zA-Z0-9_ ]/', '', $name);
-	$name = trim($name);
+	$name = ucwords(strtolower(trim($name)));
 	return $name;
 }
 

@@ -57,7 +57,7 @@ require('Header.php');
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-info"></span></span>
-                                                        <input type="text" class="form-control" id="type" name="type" required />
+                                                        <input type="text" class="form-control" id="type" name="type" value="FCI" readonly required />
                                                     </div>
                                                     <span class="help-block">Type</span>
                                                 </div>
@@ -128,23 +128,23 @@ require('Header.php');
 											
 											
 											<div class="form-group">
-                                                <label class="col-md-3 control-label">Allotment of Rice in Quintals*</label>
+                                                <label class="col-md-3 control-label">Offered Rice in Quintals*</label>
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                                         <input type="text" class="form-control" id="demand" name="demand" required />
                                                     </div>
-                                                    <span class="help-block"> Allotment in Quintals</span>
+                                                    <span class="help-block"> Offered Rice in Quintals</span>
                                                 </div>
                                             </div>
 											<div class="form-group">
-                                                <label class="col-md-3 control-label">Allotment of FRice in Quintals*</label>
+                                                <label class="col-md-3 control-label">Offered FRice in Quintals*</label>
                                                 <div class="col-md-9">
                                                     <div class="input-group">
                                                         <span class="input-group-addon"><span class="fa fa-info"></span></span>
                                                         <input type="text" class="form-control" id="demand_rice" name="demand_rice" required />
                                                     </div>
-                                                    <span class="help-block">Allotment in Quintals</span>
+                                                    <span class="help-block">Offered FRice in Quintals</span>
                                                 </div>
                                             </div>
 										   
@@ -257,12 +257,28 @@ require('Header.php');
                 return false;
             }
 
+            var idRegex = /^[A-Za-z0-9]+$/;
+            if (!idRegex.test(id)) {
+                alert('FCI ID must contain only letters and numbers with no spaces or special characters');
+                return false;
+            }
+
+            if (isNaN(latitude) || parseFloat(latitude) <= 0 || parseFloat(latitude) > 45) {
+                alert('Latitude must be greater than 0 and less than or equal to 45');
+                return false;
+            }
+
+            if (isNaN(longitude) || parseFloat(longitude) < 65 || parseFloat(longitude) >= 100) {
+                alert('Longitude must be greater than or equal to 65 and less than 100');
+                return false;
+            }
+
             if (isNaN(demand) || parseFloat(demand) < 0) {
-                alert('Procurement Rice must be 0 or above');
+                alert('Offered Rice must be 0 or above');
                 return false;
             }
             if (isNaN(demand_rice) || parseFloat(demand_rice) < 0) {
-                alert('Procurement Wheat must be 0 or above');
+                alert('Offered FRice must be 0 or above');
                 return false;
             }
 			

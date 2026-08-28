@@ -59,41 +59,36 @@ $query = "SELECT * FROM login WHERE username='".$person->getUsername()."'";
 $result = mysqli_query($con,$query);
 $row = mysqli_fetch_assoc($result);
 
-if(!isValidCoordinate($_POST["latitude"],'latitude') or !isValidCoordinate($_POST["longitude"],'longitude')){
-	echo "Error : Check Latitude and Longitude Value";
-	exit();
-}
-
-if ($_POST['demand_rice'] === false)
-{
-    $_POST['demand_rice'] = 0;
-}
-if ($_POST['demand'] === false)
-{
-    $_POST['demand'] = 0;
-}
-
 if(!isStringNumber($_POST["demand"])){
 	echo "Error : Check Demand FRice Value (must be 0 or above)";
 	exit();
 }
 
-
 if(!isStringNumber($_POST["demand_rice"])){
 	echo "Error : Check Demand Rice Value (must be 0 or above)";
 	exit();
 }
-if(!isStringNumber($_POST["inventory_ragi"])){
-	echo "Error : Check Demand Ragi Value (must be 0 or above)";
+if(isset($_POST["inventory_ragi"]) && !isStringNumber($_POST["inventory_ragi"])){
+	echo "Error : Check Inventory Ragi Value (must be 0 or above)";
 	exit();
 }
-if(!isStringNumber($_POST["inventory_jowar"])){
-	echo "Error : Check Demand Jowar Value (must be 0 or above)";
+if(isset($_POST["inventory_jowar"]) && !isStringNumber($_POST["inventory_jowar"])){
+	echo "Error : Check Inventory Jowar Value (must be 0 or above)";
 	exit();
 }
 
-if (!preg_match('/^[a-zA-Z0-9]+$/', $_POST["id"])) {
-	echo "Error : FPS ID must contain only alphanumeric characters.";
+if (!isset($_POST["latitude"]) || !is_numeric($_POST["latitude"]) || floatval($_POST["latitude"]) <= 0 || floatval($_POST["latitude"]) > 45) {
+    echo "Check Latitude: value must be greater than 0 and less than or equal to 45";
+    exit();
+}
+
+if (!isset($_POST["longitude"]) || !is_numeric($_POST["longitude"]) || floatval($_POST["longitude"]) < 65 || floatval($_POST["longitude"]) >= 100) {
+    echo "Check Longitude: value must be greater than or equal to 65 and less than 100";
+    exit();
+}
+
+if (!isset($_POST["id"]) || !preg_match('/^[A-Za-z0-9]+$/', $_POST["id"])) {
+	echo "Error : FPS ID must contain only letters and numbers with no spaces or special characters.";
 	exit();
 }
 

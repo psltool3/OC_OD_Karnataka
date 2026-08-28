@@ -1,4 +1,4 @@
-FCI<?php
+<?php
 require('../util/Connection.php');
 require('../structures/DCP.php');
 require('../util/SessionFunction.php');
@@ -23,14 +23,14 @@ $person->setPassword($Encryption->decrypt($_POST["password"], $nonceValue));
 
 $mapData = [
     "District" => "district",
-    "Taluka" => "taluka",
+    "Taluka" => "block",
     "Name of FCI" => "name",
     "FCI ID" => "id",
     "Type" => "type",
     "Latitude" => "latitude",
     "Longitude" => "longitude",
-    "Allotment of Rice" => "demand",
-	"Allotment of FRice" => "demand_rice",
+    "Offered Rice" => "demand",
+	"Offered FRice" => "demand_rice",
 	"Active/Not-Active" => "active"
 ];
 
@@ -55,20 +55,15 @@ function formatName($name) {
 }
 
 function isValidCoordinate($value, $coordinateType) {
-    // Check if the value is a number and not a string
     if (!is_numeric($value)) {
         return false;
     }
-	
-    // Convert the value to a float
     $coordinate = floatval($value);
-
-    // Check if it's latitude or longitude and validate within the range
     switch ($coordinateType) {
         case 'latitude':
-            return ($coordinate >= -90 && $coordinate <= 90);
+            return ($coordinate > 0 && $coordinate <= 45);
         case 'longitude':
-            return ($coordinate >= -180 && $coordinate <= 180);
+            return ($coordinate >= 65 && $coordinate < 100);
         default:
             return false;
     }
@@ -106,18 +101,28 @@ try{
 					echo "Error : You have modified Template Header, please check";
 					exit();
 				}
-				if(!isValidCoordinate($column[$latitude],'latitude') or !isValidCoordinate($column[$longitude],'longitude')){
-					echo "Error : Check Latitude and Longitude Value Latitude: ".$column[$latitude]." Longitude: ".$column[$longitude];
+				if(!is_numeric($column[$latitude]) || floatval($column[$latitude]) <= 0 || floatval($column[$latitude]) > 45){
+					echo "Error : Check Latitude Value (must be > 0 and <= 45): ".$column[$latitude];
+					echo "</br>";
+					$redirect = 0;
+				}
+				if(!is_numeric($column[$longitude]) || floatval($column[$longitude]) < 65 || floatval($column[$longitude]) >= 100){
+					echo "Error : Check Longitude Value (must be >= 65 and < 100): ".$column[$longitude];
+					echo "</br>";
+					$redirect = 0;
+				}
+				if(strtoupper(trim($column[$type])) !== 'FCI'){
+					echo "Error : Check Type Value: ".$column[$type]." (must be FCI)";
 					echo "</br>";
 					$redirect = 0;
 				}
 				if(!isStringNumber($column[$demand])){
-					echo "Error : Check Procurement Rice Value: ".$column[$demand]." (must be 0 or above)";
+					echo "Error : Check Offered Rice Value: ".$column[$demand]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
 				if(!isStringNumber($column[$demand_rice])){
-					echo "Error : Check Procurement Wheat Value: ".$column[$demand_rice]." (must be 0 or above)";
+					echo "Error : Check Offered FRice Value: ".$column[$demand_rice]." (must be 0 or above)";
 					echo "</br>";
 					$redirect = 0;
 				}
@@ -131,24 +136,11 @@ try{
 					echo "</br>";
 					$redirect = 0;
 				}
-				if (!is_numeric($column[$latitude]) || $column[$latitude] >= 40) {
-					echo "Error : Latitude must be less than 40. Given: " . $column[$latitude];
-					echo "</br>";
-					$redirect = 0;
-				}
-
-				// Longitude check (must be more than 65)
-				if (!is_numeric($column[$longitude]) || $column[$longitude] <= 65) {
-					echo "Error : Longitude must be more than 65. Given: " . $column[$longitude];
-					echo "</br>";
-					$redirect = 0;
-				}
-					
 				if (
 					!isset($column[$id]) ||
 					!preg_match('/^[A-Za-z0-9]+$/', $column[$id])
 				) {
-					echo "Error: FCI ID should not contain spaces or any special characters: " . ($column[$id] ?? 'Missing');
+					echo "Error: FCI ID should contain only letters and numbers with no spaces or special characters: " . ($column[$id] ?? 'Missing');
 					echo "<br>";
 					$redirect = 0;
 				}
@@ -237,6 +229,37 @@ try{
 					$DCP->setDemand($column[$demand]);
 					$DCP->setDemandRice($column[$demand_rice]);
 					$DCP->setActive($column[$active]);
+
+					if (!preg_match('/^[A-Za-z0-9]+$/', $column[$id])) {
+						echo "Error: Row " . ($i + 1) . " - FCI ID must contain only letters and numbers with no spaces or special characters</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
+					if (!is_numeric($column[$latitude]) || floatval($column[$latitude]) <= 0 || floatval($column[$latitude]) > 45) {
+						echo "Error: Row " . ($i + 1) . " - Latitude must be greater than 0 and less than or equal to 45</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
+					if (!is_numeric($column[$longitude]) || floatval($column[$longitude]) < 65 || floatval($column[$longitude]) >= 100) {
+						echo "Error: Row " . ($i + 1) . " - Longitude must be greater than or equal to 65 and less than 100</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
+					if (!is_numeric($column[$demand]) || floatval($column[$demand]) < 0) {
+						echo "Error: Row " . ($i + 1) . " - Offered Rice must be 0 or above</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
+					if (!is_numeric($column[$demand_rice]) || floatval($column[$demand_rice]) < 0) {
+						echo "Error: Row " . ($i + 1) . " - Offered FRice must be 0 or above</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
 					while(true){
 						$query_check = $DCP->check($DCP);
 						$query_result = mysqli_query($con, $query_check);
