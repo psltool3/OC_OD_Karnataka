@@ -4,7 +4,7 @@ require('util/SessionCheck.php');
 require('Header.php');
 
 $target_id = !empty($_POST['legid']) ? $_POST['legid'] : (isset($_POST['id']) ? $_POST['id'] : '');
-$tablename = "fci_leg1_".$target_id;
+$tablename = "warehouse_leg1_".$target_id;
 
 ?>
 <style>
@@ -22,7 +22,7 @@ $tablename = "fci_leg1_".$target_id;
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
                     <li><a href="OptimisedDataAllLeg1.php">Home</a></li>
-                    <li class="active">FCI View</li>
+                    <li class="active">Warehouse View Leg 1</li>
                 </ul>
                 <!-- END BREADCRUMB -->
 
@@ -36,7 +36,7 @@ $tablename = "fci_leg1_".$target_id;
                             <!-- START SIMPLE DATATABLE -->
                             <div class="panel panel-default">
 							<div class="panel-heading">
-                                    <h3 class="panel-title">FCI</h3>
+                                    <h3 class="panel-title">Warehouse (Leg 1)</h3>
                                 </div>
 								<div style="float:right; margin:10px">
 									<button id="downloadCSV" class="btn btn-warning" style="margin-bottom: 10px;" type="button">Download CSV</button>
@@ -48,14 +48,13 @@ $tablename = "fci_leg1_".$target_id;
                                         <thead>
                                             <tr>
 												<th style="font-size:15px">District</th>
-												<th style="font-size:15px">Taluka</th>
-												<th style="font-size:15px">Name of FCI</th>
-												<th style="font-size:15px">FCI ID</th> 
-												<th style="font-size:15px">Type</th>
+												<th style="font-size:15px">Name of Warehouse</th>
+												<th style="font-size:15px">Warehouse ID</th> 
+												<th style="font-size:15px">Motorable/Non-Motorable</th>
+												<th style="font-size:15px">Warehouse Type</th>
 												<th style="font-size:15px">Latitude</th>
 												<th style="font-size:15px">Longitude</th>
-												<th style="font-size:15px">Offered Rice (Qtl)</th>
-												<th style="font-size:15px">Offered FRice (Qtl)</th>
+												<th style="font-size:15px">Storage(Qtl)</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -65,19 +64,16 @@ $tablename = "fci_leg1_".$target_id;
 										if($result){
 											while($row = mysqli_fetch_array($result))
 											{
-												$taluka = isset($row['taluka']) ? $row['taluka'] : (isset($row['block']) ? $row['block'] : '');
-												$fci_type = isset($row['type']) ? $row['type'] : (isset($row['warehousetype']) ? $row['warehousetype'] : '');
-												$offered_rice = isset($row['demand']) ? $row['demand'] : '';
-												$offered_frice = isset($row['demand_rice']) ? $row['demand_rice'] : '';
+												$w_type = isset($row['warehousetype']) ? $row['warehousetype'] : (isset($row['type']) ? $row['type'] : '');
+												$storage_val = isset($row['storage']) ? $row['storage'] : (isset($row['capacity']) ? $row['capacity'] : (isset($row['demand']) ? $row['demand'] : ''));
 												echo "<tr><td>{$row['district']}</td>".
-												"<td>{$taluka}</td>".
 												"<td>{$row['name']}</td>".
 												"<td>{$row['id']}</td>".
-												"<td>{$fci_type}</td>".
+												"<td>{$row['type']}</td>".
+												"<td>{$w_type}</td>".
 												"<td>{$row['latitude']}</td>".
 												"<td>{$row['longitude']}</td>".
-												"<td>{$offered_rice}</td>".
-												"<td>{$offered_frice}</td></tr>";
+												"<td>{$storage_val}</td></tr>";
 											}
 										}
 										?>
@@ -142,7 +138,7 @@ $tablename = "fci_leg1_".$target_id;
 				var tableName = '<?php echo $tablename ?>';
 				const csvResponse = await fetch('api/DownloadOptimalDataWarehouse.php?format=csv&tableName='+tableName);
 				const csvBlob = await csvResponse.blob();
-				downloadFile(csvBlob, 'FCI_' + getDateString() + '.csv');
+				downloadFile(csvBlob, 'Warehouse_Leg1_' + getDateString() + '.csv');
 			} catch (error) {
 				console.error('Error downloading CSV file:', error);
 			}
@@ -154,7 +150,7 @@ $tablename = "fci_leg1_".$target_id;
 				var tableName = '<?php echo $tablename ?>';
 				const excelResponse = await fetch('api/DownloadOptimalDataWarehouse.php?format=xlsx&tableName='+tableName);
 				const excelBlob = await excelResponse.blob();
-				downloadFile(excelBlob, 'FCI_' + getDateString() + '.xlsx');
+				downloadFile(excelBlob, 'Warehouse_Leg1_' + getDateString() + '.xlsx');
 			} catch (error) {
 				console.error('Error downloading XLSX file:', error);
 			}
