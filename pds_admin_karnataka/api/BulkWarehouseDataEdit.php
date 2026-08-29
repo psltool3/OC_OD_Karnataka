@@ -186,6 +186,12 @@ try{
                     $Warehouse->setjowar($column[$jowar]);
 					$Warehouse->setWarehousetype($column[$warehousetype]);
 					$Warehouse->setActive($column[$active]);
+					if (!isset($column[$taluka]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($column[$taluka]))) {
+						echo "Error : Row " . ($i + 1) . " - Taluka must contain only letters, numbers, and spaces with no special characters</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
 					$query_check = $Warehouse->checkEdit($Warehouse);
 					$query_result = mysqli_query($con, $query_check);
 					$numrows = mysqli_num_rows($query_result);

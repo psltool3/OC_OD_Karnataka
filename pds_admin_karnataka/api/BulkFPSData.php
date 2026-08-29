@@ -161,6 +161,11 @@ try{
 					echo "</br>";
 					$redirect = 0;
 				}
+				if (!isset($column[$taluka]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($column[$taluka]))) {
+					echo "Error : Check Taluka value (only letters, numbers, and spaces allowed, no special characters): " . ($column[$taluka] ?? 'Missing');
+					echo "</br>";
+					$redirect = 0;
+				}
 			}
 			else{
 				for($j=0;$j<count($column);$j++){
@@ -256,6 +261,12 @@ try{
                     $FPS->setInventoryragi($column[$inventory_ragi]);
 					$FPS->setInventoryjowar($column[$inventory_jowar]);
 					$FPS->setActive($column[$active]);
+					if (!isset($column[$taluka]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($column[$taluka]))) {
+						echo "Error : Row " . ($i + 1) . " - Taluka must contain only letters, numbers, and spaces with no special characters</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
 					while(true){
 						$query_check = $FPS->check($FPS);
 						$query_result = mysqli_query($con, $query_check);

@@ -15,8 +15,8 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 if (isset($_GET['format'])) {
     $format = $_GET['format'];
     $district = $_SESSION['district_district'];
-    	$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance"];
-	$columns_pdf = ["scenario","from","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance"];
+    $columns = ["scenario","from","from_state","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance","status"];
+	$columns_pdf = ["scenario","from","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance","status"];
 
 	$column_labels = [
 		"scenario" => "Scenario",
@@ -38,7 +38,8 @@ if (isset($_GET['format'])) {
 		"to_long" => "To_Long",
 		"commodity" => "Commodity",
 		"quantity" => "quantity(Qtl)",
-		"distance" => "Distance(Km)"
+		"distance" => "Distance(Km)",
+		"status" => "Status"
 	];
 
 	
@@ -101,6 +102,11 @@ if (isset($_GET['format'])) {
 				$row["from_name"] = $row['new_name_district'];
 				$row["distance"] = $row['new_distance_district'];
 			}
+			$isImplemented = (
+				isset($row["status"]) && strtolower(trim($row["status"])) === 'implemented' &&
+				isset($row["approve_district"]) && strtolower(trim($row["approve_district"])) === 'yes'
+			);
+			$row["status"] = $isImplemented ? 'Implemented' : '';
             $temp = array();
             $temp_pdf = array();
             for($i=0;$i<count($columns);$i++){

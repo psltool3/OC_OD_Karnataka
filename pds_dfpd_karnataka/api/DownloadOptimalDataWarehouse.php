@@ -23,7 +23,13 @@ if (isset($_GET['format'])) {
 	$tableData = array();
     array_push($tableData,$columns);
 
-	$query = "SELECT * FROM ".$tablename." WHERE 1";
+	$district = isset($_GET['district']) ? trim($_GET['district']) : '';
+	$where = " WHERE 1";
+	if ($district != "" && strtolower($district) != "all") {
+		$where .= " AND district='" . mysqli_real_escape_string($con, $district) . "'";
+	}
+
+	$query = "SELECT * FROM ".$tablename.$where;
     $result = mysqli_query($con,$query);
     $numrows = mysqli_num_rows($result);
     
@@ -49,11 +55,14 @@ if (isset($_GET['format'])) {
 	
 	if($tablename!=$tablename1 and $tablename1!="")
 	{
-		$query = "SELECT * FROM " . $tablename1 . " t 
-					WHERE NOT EXISTS (
+		$where1 = " WHERE NOT EXISTS (
 					  SELECT 1 FROM " . $tablename . " t1 
 					  WHERE t.name = t1.name AND t.id = t1.id
 					)";
+		if ($district != "" && strtolower($district) != "all") {
+			$where1 .= " AND t.district='" . mysqli_real_escape_string($con, $district) . "'";
+		}
+		$query = "SELECT * FROM " . $tablename1 . " t " . $where1;
 		$result = mysqli_query($con,$query);
 		$numrows = mysqli_num_rows($result);
 		

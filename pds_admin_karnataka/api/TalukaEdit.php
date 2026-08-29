@@ -17,8 +17,8 @@ require('Header.php');
 
 
 function formatName($name) {
-	if(preg_match('/[^a-zA-Z\s]/', $name)){
-        echo "Error : Name contains invalid characters. Only letters and spaces are allowed.";
+	if(!preg_match('/^[A-Za-z0-9 ]+$/', trim($name))){
+        echo "Error : Name contains invalid characters. Only letters, numbers, and spaces are allowed.";
 		exit();
     }
     $name = ucwords(strtolower($name));

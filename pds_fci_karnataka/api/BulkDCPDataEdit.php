@@ -115,7 +115,7 @@ try{
 			$active = -1;
 			while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
 				if($i>0){
-					if($district<0 or $name<0 or $id<0 or $type<0 or $demand<0 or $demand_rice<0 or $latitude<0 or $longitude<0 or $active<0){
+					if($district<0 or $taluka<0 or $name<0 or $id<0 or $type<0 or $demand<0 or $demand_rice<0 or $latitude<0 or $longitude<0 or $active<0){
 						echo "Error : You have modified Template Header, please check";
 						exit();
 					}
@@ -145,7 +145,8 @@ try{
 						$redirect = 0;
 					}	
 					
-					if(!in_array($column[$district], $districts)){
+					$upperDistricts = array_map('strtoupper', $districts);
+					if(!in_array(strtoupper(trim($column[$district])), $upperDistricts)){
 						echo "Error : Check District Name: ".$column[$district];
 						echo "</br>";
 						$redirect = 0;
@@ -153,6 +154,16 @@ try{
 					
 					if(!($column[$active]==0 || $column[$active]==1)){
 						echo "Error : Check value of active/inactive column: ".$column[$active];
+						echo "</br>";
+						$redirect = 0;
+					}
+					if (!preg_match('/^[A-Za-z0-9]+$/', $column[$id])) {
+						echo "Error : FCI ID must contain only letters and numbers with no spaces or special characters. Invalid ID found: ".$column[$id];
+						echo "</br>";
+						$redirect = 0;
+					}
+					if (!isset($column[$taluka]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($column[$taluka]))) {
+						echo "Error : Check Taluka value (only letters, numbers, and spaces allowed, no special characters): " . ($column[$taluka] ?? 'Missing');
 						echo "</br>";
 						$redirect = 0;
 					}
@@ -169,8 +180,8 @@ try{
 					filterData($column[$active]);
 					$uniqueid = uniqid("DCP_",);
 					$DCP->setUniqueid(substr($uniqueid,0,15));
-					$DCP->setDistrict(ucwords(strtolower($column[$district])));
-					$DCP->setTaluka(ucwords(strtolower($column[$taluka])));
+					$DCP->setDistrict(strtoupper(trim($column[$district])));
+					$DCP->setTaluka(ucwords(strtolower(trim($column[$taluka]))));
 					$DCP->setLatitude($column[$latitude]);
 					$DCP->setLongitude($column[$longitude]);
 					$DCP->setName($column[$name]);
@@ -182,6 +193,12 @@ try{
 
 					if (!preg_match('/^[A-Za-z0-9]+$/', $column[$id])) {
 						echo "Error: Row " . ($i + 1) . " - FCI ID must contain only letters and numbers with no spaces or special characters</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
+					if (!isset($column[$taluka]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($column[$taluka]))) {
+						echo "Error: Row " . ($i + 1) . " - Taluka must contain only letters, numbers, and spaces with no special characters</br>";
 						$redirect = 2;
 						$i++;
 						continue;
@@ -224,6 +241,9 @@ try{
 						switch($column[$j]){
 							case $reverseMapData["district"]:
 								$district = $j;
+								break;
+							case $reverseMapData["block"]:
+								$taluka = $j;
 								break;
 							case $reverseMapData["latitude"]:
 								$latitude = $j;
@@ -275,6 +295,16 @@ try{
 			
 			$file = fopen($fileName, "r");
 			$i = 0;
+			$district = -1;
+			$taluka = -1;
+			$name = -1;
+			$id = -1;
+			$type = -1;
+			$demand = -1;
+			$demand_rice = -1;
+			$longitude = -1;
+			$latitude = -1;
+			$active = -1;
 			while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
 				if($i>0){
 					$DCP = new DCP;
@@ -289,7 +319,8 @@ try{
 					filterData($column[$active]);
 					$uniqueid = uniqid("DCP_",);
 					$DCP->setUniqueid(substr($uniqueid,0,15));
-					$DCP->setDistrict($column[$district]);
+					$DCP->setDistrict(strtoupper(trim($column[$district])));
+					$DCP->setTaluka(ucwords(strtolower(trim($column[$taluka]))));
 					$DCP->setLatitude($column[$latitude]);
 					$DCP->setLongitude($column[$longitude]);
 					$DCP->setName($column[$name]);
@@ -298,6 +329,10 @@ try{
 					$DCP->setDemand($column[$demand]);
 					$DCP->setDemandrice($column[$demand_rice]);
 					$DCP->setActive($column[$active]);
+					if (!isset($column[$taluka]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($column[$taluka]))) {
+						echo "Error : Row " . ($i + 1) . " - Taluka must contain only letters, numbers, and spaces with no special characters</br>";
+						$redirect = 0;
+					}
 					$query_check = $DCP->checkEdit($DCP);
 					$query_result = mysqli_query($con, $query_check);
 					$numrows = mysqli_num_rows($query_result);
@@ -317,6 +352,9 @@ try{
 						switch($column[$j]){
 							case $reverseMapData["district"]:
 								$district = $j;
+								break;
+							case $reverseMapData["block"]:
+								$taluka = $j;
 								break;
 							case $reverseMapData["latitude"]:
 								$latitude = $j;

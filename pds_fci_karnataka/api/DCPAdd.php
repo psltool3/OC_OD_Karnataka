@@ -85,6 +85,11 @@ if (!isset($_POST["id"]) || !preg_match('/^[A-Za-z0-9]+$/', $_POST["id"])) {
     exit();
 }
 
+if (!isset($_POST["taluka"]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($_POST["taluka"]))) {
+    echo "Error: Check Taluka value (only letters, numbers, and spaces allowed, no special characters)";
+    exit();
+}
+
 $dbHashedPassword = $row['password'];
 if(password_verify($person->getPassword(), $dbHashedPassword)){
 $district = $_POST["district"];

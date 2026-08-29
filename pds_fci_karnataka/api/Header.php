@@ -138,9 +138,9 @@
 				<li>
 					<a href="../PerformaLeg1.php" style="padding-left:0px"><span class="xn-text" style="font-family:sans-serif;font-weight:italic;font-size:16px;">Performa Leg1</span></a>
 				</li>
-				<li>
-					<a href="Logout.php" style="padding-left:0px"><span class="xn-text" style="font-family:sans-serif;font-weight:italic;font-size:16px;">Logout</span></a>
-				</li>-->
+				<li <?php echo (basename($_SERVER['PHP_SELF']) === 'OptimisedDataLeg1.php') ? 'class="active"' : ''; ?>>
+					<a href="../OptimisedDataLeg1.php" style="padding-left:0px"><span class="xn-text" style="font-family:sans-serif;font-weight:italic;font-size:16px;">Optimised Plan</span></a>
+				</li>
 				<li>
 				<a style="background-color:#FFC167"><center><span class="xn-text" style="font-family:sans-serif;font-weight:italic;font-size:16px;">Edit PDS Details</span></center></a>
 				</li>

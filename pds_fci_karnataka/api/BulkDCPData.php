@@ -97,7 +97,7 @@ try{
 		$active = -1;
 		while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
 			if($i>0){
-				if($district<0 or $name<0 or $id<0 or $type<0 or $demand<0 or $demand_rice<0 or $latitude<0 or $longitude<0 or $active<0){
+				if($district<0 or $taluka<0 or $name<0 or $id<0 or $type<0 or $demand<0 or $demand_rice<0 or $latitude<0 or $longitude<0 or $active<0){
 					echo "Error : You have modified Template Header, please check";
 					exit();
 				}
@@ -126,7 +126,8 @@ try{
 					echo "</br>";
 					$redirect = 0;
 				}
-				if(!in_array($column[$district], $districts)){
+				$upperDistricts = array_map('strtoupper', $districts);
+				if(!in_array(strtoupper(trim($column[$district])), $upperDistricts)){
 					echo "Error : Check District Name: ".$column[$district];
 					echo "</br>";
 					$redirect = 0;
@@ -144,6 +145,11 @@ try{
 					echo "<br>";
 					$redirect = 0;
 				}
+				if (!isset($column[$taluka]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($column[$taluka]))) {
+					echo "Error: Check Taluka value (only letters, numbers, and spaces allowed, no special characters): " . ($column[$taluka] ?? 'Missing');
+					echo "<br>";
+					$redirect = 0;
+				}
 			}
 			else{
 				for($j=0;$j<count($column);$j++){
@@ -151,11 +157,11 @@ try{
 						case $reverseMapData["district"]:
 							$district = $j;
 							break;
-						case $reverseMapData["taluka"]:
+						case $reverseMapData["block"]:
 							$taluka = $j;
 							break;
 						case $reverseMapData["latitude"]:
-							$latitude = $j;
+							$latitude = $j	;
 							break;
 						case $reverseMapData["longitude"]:
 							$longitude = $j;
@@ -212,15 +218,15 @@ try{
 			$active = -1;
 			while (($column = fgetcsv($file, 10000, ",")) !== FALSE) {
 				if($i>0){
-					if($district<0 or $name<0 or $id<0 or $type<0 or $demand<0 or $demand_rice<0 or $latitude<0 or $longitude<0 or $active<0){
+					if($district<0 or $taluka<0 or $name<0 or $id<0 or $type<0 or $demand<0 or $demand_rice<0 or $latitude<0 or $longitude<0 or $active<0){
 						echo "Error : You have modified Template Header, please check";
 						exit();
 					}
 					$DCP = new DCP;
 					$uniqueid = uniqid("DCP_",);
 					$DCP->setUniqueid(substr($uniqueid,0,15));
-					$DCP->setDistrict(ucwords(strtolower($column[$district])));
-					$DCP->setTaluka(ucwords(strtolower($column[$taluka])));
+					$DCP->setDistrict(strtoupper(trim($column[$district])));
+					$DCP->setTaluka(ucwords(strtolower(trim($column[$taluka]))));
 					$DCP->setLatitude($column[$latitude]);
 					$DCP->setLongitude($column[$longitude]);
 					$DCP->setName($column[$name]);
@@ -232,6 +238,12 @@ try{
 
 					if (!preg_match('/^[A-Za-z0-9]+$/', $column[$id])) {
 						echo "Error: Row " . ($i + 1) . " - FCI ID must contain only letters and numbers with no spaces or special characters</br>";
+						$redirect = 2;
+						$i++;
+						continue;
+					}
+					if (!isset($column[$taluka]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($column[$taluka]))) {
+						echo "Error: Row " . ($i + 1) . " - Taluka must contain only letters, numbers, and spaces with no special characters</br>";
 						$redirect = 2;
 						$i++;
 						continue;
@@ -292,7 +304,7 @@ try{
 							case $reverseMapData["district"]:
 								$district = $j;
 								break;
-							case $reverseMapData["taluka"]:
+							case $reverseMapData["block"]:
 								$taluka = $j;
 								break;
 							case $reverseMapData["latitude"]:

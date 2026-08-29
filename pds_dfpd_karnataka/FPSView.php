@@ -132,7 +132,8 @@ $tablename = "fps_".$id;
 		document.getElementById('downloadCSV').addEventListener('click', async function() {
 			try {
 				var tableName = '<?php echo $tablename ?>';
-				const csvResponse = await fetch('api/DownloadOptimalDataFPS.php?format=csv&tableName='+tableName);
+				var district = document.getElementById('district').value;
+				const csvResponse = await fetch('api/DownloadOptimalDataFPS.php?format=csv&tableName='+tableName+'&district='+encodeURIComponent(district));
 				const csvBlob = await csvResponse.blob();
 				downloadFile(csvBlob, 'Karnataka_FPS_' + getDateString() + '.csv');
 			} catch (error) {
@@ -144,7 +145,8 @@ $tablename = "fps_".$id;
 		document.getElementById('downloadXLSX').addEventListener('click', async function() {
 			try {
 				var tableName = '<?php echo $tablename ?>';
-				const excelResponse = await fetch('api/DownloadOptimalDataFPS.php?format=xlsx&tableName='+tableName);
+				var district = document.getElementById('district').value;
+				const excelResponse = await fetch('api/DownloadOptimalDataFPS.php?format=xlsx&tableName='+tableName+'&district='+encodeURIComponent(district));
 				const excelBlob = await excelResponse.blob();
 				downloadFile(excelBlob, 'Karnataka_FPS_' + getDateString() + '.xlsx');
 			} catch (error) {

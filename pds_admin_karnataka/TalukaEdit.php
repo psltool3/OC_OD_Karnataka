@@ -173,6 +173,12 @@ if($numrows!=0)
                 alert('Please enter all fields');
                 return false;
             }
+
+            var talukaRegex = /^[A-Za-z0-9 ]+$/;
+            if (!talukaRegex.test(name)) {
+                alert('Taluka must contain only letters, numbers, and spaces with no special characters');
+                return false;
+            }
 			
             document.getElementById('popup').style.display = 'block';
         }

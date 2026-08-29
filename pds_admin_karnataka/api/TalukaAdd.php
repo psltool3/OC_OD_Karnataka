@@ -46,12 +46,12 @@ $row = mysqli_fetch_assoc($result);
 
 $dbHashedPassword = $row['password'];
 if(password_verify($person->getPassword(), $dbHashedPassword)){
+if (!isset($_POST["name"]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($_POST["name"]))) {
+    echo "Error : Check Taluka name (only letters, numbers, and spaces allowed, no special characters)";
+    exit();
+}
 $taluka_name = $_POST["name"];
 $taluka_name = talukaNameFormat($taluka_name);
-if($taluka_name=="Error"){
-	echo "Error in taluka name";
-	exit();
-}
 
 $Taluka = new Taluka;
 $Taluka->setId(uniqid());

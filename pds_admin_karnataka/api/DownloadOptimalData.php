@@ -18,7 +18,7 @@ if (isset($_GET['format'])) {
         "to_lat","to_long","commodity","quantity","distance",
         "new_id_district","reason_district","new_distance_district",
         "approve_district","approve_admin","reason_admin",
-        "new_id_admin","new_distance_admin"
+        "new_id_admin","new_distance_admin","status"
     ];
 
     $columns_pdf = [
@@ -27,7 +27,7 @@ if (isset($_GET['format'])) {
         "to_lat","to_long","commodity","quantity","distance",
         "new_id_district","reason_district","new_distance_district",
         "approve_district","approve_admin","reason_admin",
-        "new_id_admin","new_distance_admin"
+        "new_id_admin","new_distance_admin","status"
     ];
 
     // ================= COLUMN DISPLAY NAMES =================
@@ -60,7 +60,8 @@ if (isset($_GET['format'])) {
         "approve_admin" => "Approve / Not Approve",
         "reason_admin" => "Reason for not Approve",
         "new_id_admin" => "Suggested Warehouse",
-        "new_distance_admin" => "Suggested Warehouse Distance"
+        "new_distance_admin" => "Suggested Warehouse Distance",
+        "status" => "Status"
     ];
 
     // ================= INPUT =================
@@ -166,6 +167,12 @@ if (isset($_GET['format'])) {
             $row["from_name"] = $row['new_name_district'];
             $row["distance"] = $row['new_distance_district'];
         }
+
+        $isImplemented = (
+            isset($row["status"]) && strtolower(trim($row["status"])) === 'implemented' &&
+            isset($row["approve_district"]) && strtolower(trim($row["approve_district"])) === 'yes'
+        );
+        $row["status"] = $isImplemented ? 'Implemented' : '';
 
         $temp = [];
         $temp_pdf = [];

@@ -69,12 +69,6 @@ require('Header.php');
 											$allocation = 0;
 											$qkm = 0;
 											$qkm_optimised = 0;
-											$averagedistance = 0;
-											
-											$query_fps = "SELECT SUM(storage) FROM fci_leg1_".$id;
-											$result_fps = mysqli_query($con,$query_fps);
-											$row_fps = mysqli_fetch_assoc($result_fps);
-											
 											$tablename = "optimiseddata_leg1_".$id;
 
 											$query = "SELECT * FROM ".$tablename." WHERE 1";

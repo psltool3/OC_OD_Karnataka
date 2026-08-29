@@ -297,6 +297,12 @@ require('Header.php');
                 return false;
             }
 
+            var talukaRegex = /^[A-Za-z0-9 ]+$/;
+            if (!talukaRegex.test(taluka)) {
+                alert('Taluka must contain only letters, numbers, and spaces with no special characters');
+                return false;
+            }
+
             if (isNaN(latitude) || parseFloat(latitude) <= 0 || parseFloat(latitude) > 45) {
                 alert('Latitude must be greater than 0 and less than or equal to 45');
                 return false;

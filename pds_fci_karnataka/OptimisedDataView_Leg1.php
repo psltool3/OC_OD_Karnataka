@@ -3,26 +3,78 @@ require('util/Connection.php');
 require('util/SessionCheck.php');
 require('Header.php');
 
-$id = $_POST['id'];
-$tablename = "fps_".$id;
+$target_id = !empty($_POST['legid']) ? $_POST['legid'] : (isset($_POST['id']) ? $_POST['id'] : '');
+$tablename = "optimiseddata_leg1_".$target_id;
+$tablename1 = $tablename;
 
 ?>
 <style>
-    td {
-            font-size: 15px; /* Increase font size for table headers and data cells */
+
+		body {
+            font-size: 15px; /* Set the base font size for the entire page */
         }
-        .table thead tr th {
-    background-color: #95b75d !important;
-    /* border: 2px solid #777; */
-    color: black;
-    /* Optional: Font size for table header */
-}
+
+        /* Apply increased font size to specific elements */
+        h3 {
+            font-size: 24px; /* Increase font size for heading elements */
+        }
+
+        /* You can add similar styles for other elements as needed */
+        /* For example: */
+        th,
+        td {
+            font-size: 18px; /* Increase font size for table headers and data cells */
+        }
+
+        .btn {
+            font-size: 12px; /* Increase font size for buttons */
+        }
+		
+		.table-container {
+			width: 100%;
+			overflow-x: auto;
+		}
+		
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			background-color: #95b75d !important;
+			color: black;
+		}
+		
+        .thead tr th {
+			background-color: #95b75d !important;
+			color: black;
+		}
+
+		th,	td {
+			border: 2px solid black;
+			padding: 25px;
+			text-align: center;
+			color: black;
+			border-color: black !important;
+			
+		}
+
+		tr {
+			border: 2px solid black; /* Set border for table rows */
+		}
+		.table > tfoot > tr > td {
+			border-color: black !important;
+			border-width: 2px !important;
+		}
+
+
+		/* Apply background color to even rows */
+		#export_table tbody tr:nth-child(even) {
+			background-color: #FFCF8B;
+		}
     </style>
 
                 <!-- START BREADCRUMB -->
                 <ul class="breadcrumb">
-                    <li><a href="FPS.php">Home</a></li>
-                    <li class="active">FPS View</li>
+                    <li><a href="OptimisedDataAllLeg1.php">Home</a></li>
+                    <li class="active">Optimised Data View Leg 1</li>
                 </ul>
                 <!-- END BREADCRUMB -->
 
@@ -36,13 +88,13 @@ $tablename = "fps_".$id;
                             <!-- START SIMPLE DATATABLE -->
                             <div class="panel panel-default">
 							<div class="panel-heading">
-                                    <h3 class="panel-title">FPS</h3>
+                                    <h3 class="panel-title">Optimised Data View Leg 1</h3>
                                 </div>
-								<div style="float:right" style="margin:10px">
+								<div style="float:right; margin:10px">
 									<button id="downloadCSV" class="btn btn-warning" style="margin-bottom: 10px;" type="button">Download CSV</button>
 									<button id="downloadXLSX" class="btn btn-success" style="margin-bottom: 10px;" type="button">Download XLSX</button>
 								</div>
-								<div class="row" style="float:right;margin-top:20px">
+								<div class="row" style="margin-top:30px;float:left">
 									<div class="col-md-8">
 									</div>
 									<div class="col-md-4">
@@ -53,30 +105,46 @@ $tablename = "fps_".$id;
 												<span class="input-group-addon"><span class="fa fa-certificate"></span></span>						
 												<select class="form-control" id="district" name="district" onchange="fetchDataFromServer()">
 													<option value=''>Select</option>
+													<option value='all'>All</option>
 												</select>
 												</div>
+												<span class="help-block">All option will work only for download</span>
 											</div>
 										</div>
 									</div>
 								</div>
                                 <div class="panel-body">
                                  <div class="table-responsive">
-                                    <table id="export_table" class="table">
+								 <div class="table-container">
+								<table id="export_table" class="table">
                                         <thead>
-                                            <tr>
-												<th style="font-size:16px">District</th>
-												<th style="font-size:16px">Name of FPS</th>
-												<th style="font-size:16px">FPS ID</th>
-												<th style="font-size:16px">Model FPS/Normal FPS</th>
-												<th style="font-size:16px">Latitude</th>
-												<th style="font-size:16px">Longitude</th>
-												<th style="font-size:16px">Demand of FRice(Qtl)</th>
-												<th style="font-size:16px">Demand of Rice(Qtl)</th>
+                                            <tr>												
+												<th style="font-size:16px">Scenario</th>
+												<th style="font-size:16px">From</th>
+												<th style="font-size:16px">From_State</th>
+												<th style="font-size:16px">From_ID</th>
+												<th style="font-size:16px">From_Name</th>
+												<th style="font-size:16px">From_District</th>
+												<th style="font-size:16px">From_Lat</th>
+												<th style="font-size:16px">From_Long</th>
+												<th style="font-size:16px">To</th>
+												<th style="font-size:16px">To_State</th>
+												<th style="font-size:16px">To_ID</th>
+												<th style="font-size:16px">To_Name</th>
+												<th style="font-size:16px">To_District</th>
+												<th style="font-size:16px">To_Lat</th>
+												<th style="font-size:16px">To_Long</th>
+												<th style="font-size:16px">Commodity</th>
+												<th style="font-size:16px">Quantity(Qtl)</th>
+												<th style="font-size:16px">Distance(Km)</th>
                                             </tr>
                                         </thead>
-										 <tbody id="fps_table">
+										 <tbody id="optimised_table">
+										
 										</tbody>
+										
                                     </table>
+									</div>
                                   </div>
                                 </div>
                             </div>
@@ -92,7 +160,7 @@ $tablename = "fps_".$id;
         </div>
         <!-- END PAGE CONTAINER -->
 
-
+		<?php  require('DistrictAutocomplete.php'); ?>
 
     <!-- START SCRIPTS -->
         <!-- START PLUGINS -->
@@ -115,11 +183,7 @@ $tablename = "fps_".$id;
         <script type="text/javascript" src="js/actions.js"></script>
         <!-- END PAGE PLUGINS -->
 
-        <!-- START TEMPLATE -->
-        
-		<?php  require('DistrictAutocomplete.php'); ?>
-        <!-- END TEMPLATE -->
-		<script>
+        <script>
 		function getDateString(){
 			var currentDate = new Date();
 			var year = currentDate.getFullYear();
@@ -132,10 +196,11 @@ $tablename = "fps_".$id;
 		document.getElementById('downloadCSV').addEventListener('click', async function() {
 			try {
 				var tableName = '<?php echo $tablename ?>';
+				var tableName1 = '<?php echo $tablename1 ?>';
 				var district = document.getElementById('district').value;
-				const csvResponse = await fetch('api/DownloadOptimalDataFPS.php?format=csv&tableName='+tableName+'&district='+encodeURIComponent(district));
+				const csvResponse = await fetch('api/DownloadOptimalDataOptimised.php?format=csv&tableName=' + tableName + '&tableName1=' + tableName1 + '&district=' + district);
 				const csvBlob = await csvResponse.blob();
-				downloadFile(csvBlob, 'Karnataka_FPS_' + getDateString() + '.csv');
+				downloadFile(csvBlob, 'Optimised_Data_Leg1_' + getDateString() + '.csv');
 			} catch (error) {
 				console.error('Error downloading CSV file:', error);
 			}
@@ -145,34 +210,17 @@ $tablename = "fps_".$id;
 		document.getElementById('downloadXLSX').addEventListener('click', async function() {
 			try {
 				var tableName = '<?php echo $tablename ?>';
+				var tableName1 = '<?php echo $tablename1 ?>';
 				var district = document.getElementById('district').value;
-				const excelResponse = await fetch('api/DownloadOptimalDataFPS.php?format=xlsx&tableName='+tableName+'&district='+encodeURIComponent(district));
+				const excelResponse = await fetch('api/DownloadOptimalDataOptimised.php?format=xlsx&tableName=' + tableName + '&tableName1=' + tableName1 + '&district=' + district);
 				const excelBlob = await excelResponse.blob();
-				downloadFile(excelBlob, 'Karnataka_FPS_' + getDateString() + '.xlsx');
+				downloadFile(excelBlob, 'Optimised_Data_Leg1_' + getDateString() + '.xlsx');
 			} catch (error) {
 				console.error('Error downloading XLSX file:', error);
 			}
 		});
 
-		// Event listener for downloading PDF
-		/*document.getElementById('downloadPDF').addEventListener('click', async function() {
-			try {
-				var tableName = '<?php echo $tablename ?>';	
-				const pdfResponse = await fetch('api/DownloadOptimalDataFPS.php?format=pdf&tableName='+tableName);
-				const pdfBlob = await pdfResponse.blob();
-
-				const url = window.URL.createObjectURL(pdfBlob);
-				const link = document.createElement('a');
-				link.href = url;
-				link.download = 'Pb_Warehouse_' + getDateString() + '.pdf';
-				link.click();
-				window.URL.revokeObjectURL(url);
-			} catch (error) {
-				console.error('Error downloading PDF file:', error);
-			}
-		});*/
-		
-		// Functions for file download and PDF generation (similar to previous code)
+		// Functions for file download
 		function downloadFile(blob, fileName) {
 			const url = window.URL.createObjectURL(blob);
 			const link = document.createElement('a');
@@ -181,8 +229,6 @@ $tablename = "fps_".$id;
 			link.click();
 			window.URL.revokeObjectURL(url);
 		}
-		
-		
 		
 		function fetchDataFromServer(){
 			var districtElement = document.getElementById('district');
@@ -199,12 +245,11 @@ $tablename = "fps_".$id;
 				}
 			}
 			
-			var dataString = "district=" + district + "&tablename=" + '<?php echo $tablename ?>';
-			
+			var dataString = "district=" + district + "&tablename=" + "<?php echo $tablename ?>" + "&tablename1=" + "<?php echo $tablename1 ?>";
 			
 			$.ajax({
 				type: "POST",
-				url: "api/fetchFPSViewData.php",
+				url: "api/fetchOptimisedDataView.php",
 				data: dataString,
 				cache: false,
 				error: function(){
@@ -213,23 +258,14 @@ $tablename = "fps_".$id;
 				},
 				timeout: 216000,
 				success: function(result){
-					//console.log(result);
 					try{
-						$('#fps_table').empty();
+						$('#optimised_table').empty();
 						var resultarray = JSON.parse(result);
 						var obj = resultarray["data"];
-						console.log(obj);
 						for (var datafield in obj){
-							var temp_id = obj[datafield]["uniqueid"];
-							var status = obj[datafield]["active"];
-							if(status==1){
-								status = "<span style='padding:5px' class='btn-success btn-rounded'>Active</span>";
-							}
-							else{
-								status = "<span style='padding:5px' class='btn-danger btn-rounded'>InActive</span>";
-							}
-							var subpart = "<tr><td>" +  obj[datafield]["district"] +  "</td><td>"  + obj[datafield]["name"] +  "</td><td>"  + obj[datafield]["id"] +  "</td><td>"  + obj[datafield]["type"] +  "</td><td>"  + obj[datafield]["latitude"] +  "</td><td>"  + obj[datafield]["longitude"] +  "</td><td>"  + obj[datafield]["demand"] +"</td><td>"  + obj[datafield]["demand_rice"]+  "</td></tr>";
-							$('#fps_table').append(subpart);
+							var subpart = "<tr><td>" +  obj[datafield]["scenario"] +  "</td><td>"  + obj[datafield]["from"] +  "</td><td>"  + obj[datafield]["from_state"] +  "</td><td>"  + obj[datafield]["from_id"] +  "</td><td>"  + obj[datafield]["from_name"] +  "</td><td>"  + obj[datafield]["from_district"] +  "</td><td>"  + obj[datafield]["from_lat"] + "</td><td>" + obj[datafield]["from_long"] + "</td><td>" + obj[datafield]["to"] + "</td><td>" + obj[datafield]["to_state"] + "</td><td>" + obj[datafield]["to_id"] + "</td><td>" + obj[datafield]["to_name"] + "</td><td>" + obj[datafield]["to_district"] + "</td><td>" + obj[datafield]["to_lat"] + "</td><td>" + obj[datafield]["to_long"] + "</td><td>" + obj[datafield]["commodity"] + "</td><td>" + obj[datafield]["quantity"] + "</td><td>" + obj[datafield]["distance"] + "</td></tr>";
+							
+							$('#optimised_table').append(subpart);
 						}
 					}
 					catch (error) {
@@ -237,12 +273,7 @@ $tablename = "fps_".$id;
 				}
 			});
 		}
-		
 		fetchDataFromServer();
-		
-			
 		</script>
-
-
     </body>
 </html>
