@@ -309,7 +309,7 @@ require('Header.php');
 		try {
 			var month = document.getElementById("month").value;
 			var district = document.getElementById("district").value;
-			const excelResponse = await fetch('api/DownloadOptimalData1.php?format=xlsx&month=' + month + "&district=" + district);
+			const excelResponse = await fetch('api/DownloadOptimalData.php?format=xlsx&month=' + month + "&district=" + district);
 			const excelBlob = await excelResponse.blob();
 			downloadFile(excelBlob, 'Rollout_Plan_' + getDateString() + '.xlsx');
 		} catch (error) {

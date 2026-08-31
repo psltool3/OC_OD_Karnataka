@@ -7,14 +7,14 @@ use PhpOffice\PhpSpreadsheet\Spreadsheet;
 use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 
 $month = "";
-$query = "SELECT * FROM optimised_table_leg1 ORDER BY last_updated DESC LIMIT 1";
-$result = mysqli_query($con,$query);
+	$query = "SELECT * FROM optimised_table_leg1 ORDER BY last_updated DESC LIMIT 1";
+	$result = mysqli_query($con,$query);
 $response = array();
-while($row = mysqli_fetch_array($result))
-{
-	$month = $row["month"];
-	$year = $row["year"];
-}
+	while($row = mysqli_fetch_array($result))
+	{
+		$month = $row["month"];
+		$year = $row["year"];
+	}
 
 
 // Check if format is specified in GET request
@@ -29,13 +29,13 @@ if (isset($_GET['format'])) {
     $query = "SELECT * FROM optimised_table_leg1 WHERE month='$month' AND year='$year'";
 	$result = mysqli_query($con,$query);
 	$numrow = mysqli_num_rows($result);
-	$opt_id = "";
+	$id = "";
 	if($numrow>0){
 		$row = mysqli_fetch_assoc($result);
-		$opt_id = $row['id'];
+		$id = $row['id'];
 	}
 
-	$tablename = "optimiseddata_leg1_".$opt_id;
+	$tablename = "optimiseddata_leg1_".$id;
 	$query = "SELECT * FROM ".$tablename." WHERE 1";
 	
 	if($district!="" and $district!="all"){
@@ -50,9 +50,9 @@ if (isset($_GET['format'])) {
 
     if($numrows>0){
         while($row = mysqli_fetch_array($result)){
-			if(!empty($row['new_id_admin'])){
-				$new_id = $row['new_id_admin'];
-				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse_leg1_".$opt_id." WHERE id='$new_id'";
+			if($row['new_id_admin']!=null or $row['new_id_admin']!=""){
+				$id = $row['new_id_admin'];
+				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse_leg1_".$id." WHERE id='$id'";
 				$result_warehouse = mysqli_query($con,$query_warehouse);
 				$numrows_warehouse = mysqli_num_rows($result_warehouse);
 				if($numrows_warehouse!=0){
@@ -65,9 +65,9 @@ if (isset($_GET['format'])) {
 				$row["from_name"] = $row['new_name_admin'];
 				$row["distance"] = $row['new_distance_admin'];
 			}
-			else if(!empty($row['new_id_district']) and $row['approve_admin']=="yes"){
-				$new_id = $row['new_id_district'];
-				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse_leg1_".$opt_id." WHERE id='$new_id'";
+			else if(($row['new_id_district']!=null or $row['new_id_district']!="") and $row['approve_admin']=="yes"){
+				$id = $row['new_id_district'];
+				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse_leg1_".$id." WHERE id='$id'";
 				$result_warehouse = mysqli_query($con,$query_warehouse);
 				$numrows_warehouse = mysqli_num_rows($result_warehouse);
 				if($numrows_warehouse!=0){
@@ -83,7 +83,7 @@ if (isset($_GET['format'])) {
 			$isImplemented = (
 				isset($row["status"]) && strtolower(trim($row["status"])) === 'implemented'
 			);
-			$row["status"] = $isImplemented ? 'Already Implemented' : 'Not Implemented';
+			$row["status"] = $isImplemented ? 'Implemented' : 'Not Implemented';
             $temp = array();
 			$temp_pdf = array();
             for($i=0;$i<count($columns);$i++){

@@ -102,11 +102,17 @@ if (isset($_GET['format'])) {
 				$row["from_name"] = $row['new_name_district'];
 				$row["distance"] = $row['new_distance_district'];
 			}
-			$isImplemented = (
-				isset($row["status"]) && strtolower(trim($row["status"])) === 'implemented' &&
-				isset($row["approve_district"]) && strtolower(trim($row["approve_district"])) === 'yes'
-			);
-			$row["status"] = $isImplemented ? 'Implemented' : '';
+			// $isImplemented = (
+			// 	isset($row["status"]) && strtolower(trim($row["status"])) === 'implemented' &&
+			// 	isset($row["approve_district"]) && strtolower(trim($row["approve_district"])) === 'yes'
+			// );
+			// $row["status"] = $isImplemented ? 'Implemented' : '';
+            $isImplemented = (
+    isset($row["status"]) && strtolower(trim($row["status"])) === 'implemented' &&
+    isset($row["approve_district"]) && strtolower(trim($row["approve_district"])) === 'yes'
+);
+
+$row["status"] = $isImplemented ? 'Implemented' : 'Not Implemented';
             $temp = array();
             $temp_pdf = array();
             for($i=0;$i<count($columns);$i++){

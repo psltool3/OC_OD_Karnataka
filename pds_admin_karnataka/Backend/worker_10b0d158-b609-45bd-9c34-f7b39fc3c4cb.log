@@ -1,0 +1,44 @@
+Running for district: bagalkote
+shallu
+shallu
+✅ LP District-wise tagging completed
+pandas\core\internals\concat.py:491: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+shallu
+Changed Warehouses: 1
+shallubhasin
+shallubhasin1
+shallubhasin2
+shallubhasin3
+Changed FPS: 0
+FPS Columns Removed: 0
+shalluBhasin
+FPS Rows Removed: 0
+Warehouse Columns Removed: 1
+Distance matrix updated successfully.
+Final Shape: (20219, 320)
+pandas\core\internals\blocks.py:517: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value 'shallu' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
+'shallu' found → processing 10 rows
+anmol
+Processing batch 1/1
+Pawaa
+pandas\core\internals\concat.py:491: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+Total Result: 2058442.300239
+Process Completed Successfully
+Changed Warehouses: 1
+Changed FPS: 0
+FPS Columns Removed: 0
+FPS Rows Removed: 0
+Warehouse Columns Removed: 1
+Distance matrix updated successfully.
+Final Shape: (20219, 320)
+pandas\core\internals\blocks.py:517: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value 'shallu' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
+pandas\core\internals\concat.py:491: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+Changed Warehouses: 1
+Changed FPS: 0
+FPS Columns Removed: 0
+FPS Rows Removed: 0
+Warehouse Columns Removed: 1
+Distance matrix updated successfully.
+Final Shape: (20219, 320)
+pandas\core\internals\blocks.py:517: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise an error in a future version of pandas. Value 'shallu' has dtype incompatible with float64, please explicitly cast to a compatible dtype first.
+pandas\core\internals\concat.py:491: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.

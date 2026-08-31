@@ -15,19 +15,13 @@ if (isset($_GET['format'])) {
     $columns = [
         "scenario","from","from_state","from_id","from_name","from_district","from_block",
         "from_lat","from_long","to","to_state","to_id","to_name","to_district","to_block",
-        "to_lat","to_long","commodity","quantity","distance",
-        "new_id_district","reason_district","new_distance_district",
-        "approve_district","approve_admin","reason_admin",
-        "new_id_admin","new_distance_admin","status"
+        "to_lat","to_long","commodity","quantity","distance","status"
     ];
 
     $columns_pdf = [
         "scenario","from","from_id","from_name","from_district","from_block",
         "from_lat","from_long","to","to_id","to_name","to_district","to_block",
-        "to_lat","to_long","commodity","quantity","distance",
-        "new_id_district","reason_district","new_distance_district",
-        "approve_district","approve_admin","reason_admin",
-        "new_id_admin","new_distance_admin","status"
+        "to_lat","to_long","commodity","quantity","distance","status"
     ];
 
     // ================= COLUMN DISPLAY NAMES =================
@@ -86,7 +80,7 @@ if (isset($_GET['format'])) {
 
     $query = "SELECT * FROM $tablename WHERE to_district='$district'";
     if ($district == "" || $district == "all") {
-        $query = "SELECT * FROM $tablename";
+        $query = "SELECT * FROM $tablename WHERE status='implemented'";
     }
 
     $result = mysqli_query($con, $query);
@@ -169,10 +163,9 @@ if (isset($_GET['format'])) {
         }
 
         $isImplemented = (
-            isset($row["status"]) && strtolower(trim($row["status"])) === 'implemented' &&
-            isset($row["approve_district"]) && strtolower(trim($row["approve_district"])) === 'yes'
+            isset($row["status"]) && strtolower(trim($row["status"])) === 'implemented'
         );
-        $row["status"] = $isImplemented ? 'Implemented' : '';
+        $row["status"] = $isImplemented ? 'Implemented' : 'Not Implemented';
 
         $temp = [];
         $temp_pdf = [];
