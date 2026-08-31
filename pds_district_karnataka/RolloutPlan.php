@@ -321,7 +321,14 @@ $totalidsapproved = mysqli_num_rows($result);
 	}
 	
 	function sendData(){
-		post(modifiedIdData ,"api/SaveDataRolloutPlan.php");
+		var dataToSend = {};
+		for (var key in modifiedIdData) {
+			if (modifiedIdData.hasOwnProperty(key)) {
+				var safeKey = key.replace(/\./g, '__DOT__');
+				dataToSend[safeKey] = modifiedIdData[key];
+			}
+		}
+		post(dataToSend, "api/SaveDataRolloutPlan.php");
 	}
 	
 	var uniqueid_bool_array = [];
