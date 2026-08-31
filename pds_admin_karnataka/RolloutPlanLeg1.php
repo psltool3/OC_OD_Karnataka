@@ -410,8 +410,15 @@ require('Header.php');
 	
 	function sendData(){
 		var month = document.getElementById("month").value;
-		modifiedIdData["month"] = month;
-		post(modifiedIdData, "api/SaveDataRolloutPlan.php");
+		var dataToSend = {};
+		for (var key in modifiedIdData) {
+			if (modifiedIdData.hasOwnProperty(key)) {
+				var safeKey = key.replace(/\./g, '__DOT__');
+				dataToSend[safeKey] = modifiedIdData[key];
+			}
+		}
+		dataToSend["month"] = month;
+		post(dataToSend, "api/SaveDataRolloutPlan.php");
 	}
 	
 	var uniqueid_bool_array = [];

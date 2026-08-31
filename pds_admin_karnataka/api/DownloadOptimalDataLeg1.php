@@ -23,19 +23,19 @@ if (isset($_GET['format'])) {
 	$district = $_GET['district'];
     
     #$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_lat","to_long","commodity","quantity","distance","new_id_district","reason_district","new_distance_district","approve_district","approve_admin","reason_admin","new_id_admin","new_distance_admin"];
-	$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_lat","to_long","commodity","quantity","distance"];
-	$columns_pdf = ["scenario","from","from_id","from_name","from_district","from_lat","from_long","to","to_id","to_name","to_district","to_lat","to_long","commodity","quantity","distance"];
+	$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_lat","to_long","commodity","quantity","distance","status"];
+	$columns_pdf = ["scenario","from","from_id","from_name","from_district","from_lat","from_long","to","to_id","to_name","to_district","to_lat","to_long","commodity","quantity","distance","status"];
 
     $query = "SELECT * FROM optimised_table_leg1 WHERE month='$month' AND year='$year'";
 	$result = mysqli_query($con,$query);
 	$numrow = mysqli_num_rows($result);
-	$id = "";
+	$opt_id = "";
 	if($numrow>0){
 		$row = mysqli_fetch_assoc($result);
-		$id = $row['id'];
+		$opt_id = $row['id'];
 	}
 
-	$tablename = "optimiseddata_leg1_".$id;
+	$tablename = "optimiseddata_leg1_".$opt_id;
 	$query = "SELECT * FROM ".$tablename." WHERE 1";
 	
 	if($district!="" and $district!="all"){
@@ -50,9 +50,9 @@ if (isset($_GET['format'])) {
 
     if($numrows>0){
         while($row = mysqli_fetch_array($result)){
-			if($row['new_id_admin']!=null or $row['new_id_admin']!=""){
-				$id = $row['new_id_admin'];
-				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse_leg1_".$id." WHERE id='$id'";
+			if(!empty($row['new_id_admin'])){
+				$new_id = $row['new_id_admin'];
+				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse_leg1_".$opt_id." WHERE id='$new_id'";
 				$result_warehouse = mysqli_query($con,$query_warehouse);
 				$numrows_warehouse = mysqli_num_rows($result_warehouse);
 				if($numrows_warehouse!=0){
@@ -65,9 +65,9 @@ if (isset($_GET['format'])) {
 				$row["from_name"] = $row['new_name_admin'];
 				$row["distance"] = $row['new_distance_admin'];
 			}
-			else if(($row['new_id_district']!=null or $row['new_id_district']!="") and $row['approve_admin']=="yes"){
-				$id = $row['new_id_district'];
-				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse_leg1_".$id." WHERE id='$id'";
+			else if(!empty($row['new_id_district']) and $row['approve_admin']=="yes"){
+				$new_id = $row['new_id_district'];
+				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse_leg1_".$opt_id." WHERE id='$new_id'";
 				$result_warehouse = mysqli_query($con,$query_warehouse);
 				$numrows_warehouse = mysqli_num_rows($result_warehouse);
 				if($numrows_warehouse!=0){
@@ -81,10 +81,9 @@ if (isset($_GET['format'])) {
 				$row["distance"] = $row['new_distance_district'];
 			}
 			$isImplemented = (
-				isset($row["status"]) && strtolower(trim($row["status"])) === 'implemented' &&
-				isset($row["approve_district"]) && strtolower(trim($row["approve_district"])) === 'yes'
+				isset($row["status"]) && strtolower(trim($row["status"])) === 'implemented'
 			);
-			$row["status"] = $isImplemented ? 'Implemented' : '';
+			$row["status"] = $isImplemented ? 'Already Implemented' : 'Not Implemented';
             $temp = array();
 			$temp_pdf = array();
             for($i=0;$i<count($columns);$i++){

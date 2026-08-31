@@ -1,0 +1,22 @@
+Warehouse IDs to remove: 1
+FCI IDs to remove: 0
+pandas\core\indexing.py:2152: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value '0        1
+1        2
+2        3
+3        4
+4        5
+      ... 
+315    316
+316    317
+317    318
+318    319
+319    320
+Name: FPS_ID, Length: 320, dtype: object' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+Distance matrix updated successfully.
+Final Shape: (320, 57)
+pandas\core\internals\concat.py:491: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+1216.19
+Process Done
+Process Done1
+Process Done2
+{'Scenario': 'Inter', 'Scenario_Baseline': 'Baseline', 'WH_Used': 1, 'WH_Used_Baseline': '46', 'FPS_Used': 2, 'FPS_Used_Baseline': '315', 'Demand': 1216.19, 'Demand_Baseline': '25,45,157', 'Total_QKM': 2524256.222217, 'Total_QKM_Baseline': '12,03,59,384', 'Average_Distance': np.float64(2075.5442981770943), 'Average_Distance_Baseline': '47.29'}

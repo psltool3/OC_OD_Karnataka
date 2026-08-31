@@ -1,0 +1,23 @@
+Warehouse IDs to remove: 1
+FCI IDs to remove: 0
+C:\xampp\htdocs\KA\karnataka_Distribution\pds_admin_karnataka\Backend\server_karnataka_GSBFL_f.py:7626: FutureWarning: Setting an item of incompatible dtype is deprecated and will raise in a future error of pandas. Value '0        1
+1        2
+2        3
+3        4
+4        5
+      ... 
+315    316
+316    317
+317    318
+318    319
+319    320
+Name: FPS_ID, Length: 320, dtype: object' has dtype incompatible with int64, please explicitly cast to a compatible dtype first.
+  DistanceBing.iloc[:, 0] = DistanceBing.iloc[:, 0].astype(str)
+Distance matrix updated successfully.
+Final Shape: (320, 57)
+C:\xampp\htdocs\KA\karnataka_Distribution\pds_admin_karnataka\Backend\server_karnataka_GSBFL_f.py:7839: FutureWarning: The behavior of DataFrame concatenation with empty or all-NA entries is deprecated. In a future version, this will no longer exclude empty or all-NA columns when determining the result dtypes. To retain the old behavior, exclude the relevant entries before the concat operation.
+  df10 = pd.concat([df9, df7], ignore_index=True)
+1216.19
+Process Done
+Process Done1
+Process Done2
