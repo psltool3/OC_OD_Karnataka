@@ -65,13 +65,16 @@ $tablename = "fps_".$id;
                                         <thead>
                                             <tr>
 												<th style="font-size:16px">District</th>
-												<th style="font-size:16px">Name of FPS</th>
+												<th style="font-size:16px">Taluka</th>
+												<th style="font-size:15px">Name of FPS</th>
 												<th style="font-size:16px">FPS ID</th>
 												<th style="font-size:16px">Model FPS/Normal FPS</th>
 												<th style="font-size:16px">Latitude</th>
 												<th style="font-size:16px">Longitude</th>
 												<th style="font-size:16px">Demand of FRice(Qtl)</th>
 												<th style="font-size:16px">Demand of Rice(Qtl)</th>
+												<th style="font-size:16px">Demand of Ragi(Qtl)</th>
+												<th style="font-size:16px">Demand of Jowar(Qtl)</th>
                                             </tr>
                                         </thead>
 										 <tbody id="fps_table">
@@ -228,7 +231,7 @@ $tablename = "fps_".$id;
 							else{
 								status = "<span style='padding:5px' class='btn-danger btn-rounded'>InActive</span>";
 							}
-							var subpart = "<tr><td>" +  obj[datafield]["district"] +  "</td><td>"  + obj[datafield]["name"] +  "</td><td>"  + obj[datafield]["id"] +  "</td><td>"  + obj[datafield]["type"] +  "</td><td>"  + obj[datafield]["latitude"] +  "</td><td>"  + obj[datafield]["longitude"] +  "</td><td>"  + obj[datafield]["demand"] +"</td><td>"  + obj[datafield]["demand_rice"]+  "</td></tr>";
+							var subpart = "<tr><td>" +  obj[datafield]["district"] +  "</td><td>" +  obj[datafield]["taluka"] +  "</td><td>"  + obj[datafield]["name"] +  "</td><td>"  + obj[datafield]["id"] +  "</td><td>"  + obj[datafield]["type"] +  "</td><td>"  + obj[datafield]["latitude"] +  "</td><td>"  + obj[datafield]["longitude"] +  "</td><td>"  + obj[datafield]["demand"] +"</td><td>"  + obj[datafield]["demand_rice"]+  "</td><td>" + obj[datafield]["inventory_ragi"] + "</td><td>" + obj[datafield]["inventory_jowar"] + "</td></tr>";
 							$('#fps_table').append(subpart);
 						}
 					}

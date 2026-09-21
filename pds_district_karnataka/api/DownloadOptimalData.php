@@ -170,32 +170,134 @@ $row["status"] = $isImplemented ? 'Implemented' : 'Not Implemented';
             break;
 
         case 'pdf':
-            require('fpdf/fpdf.php');
-            $pdf = new FPDF('L', 'mm', 'A4');
+            require_once('fpdf/fpdf.php');
+
+            if (!class_exists('PDF_Table')) {
+                class PDF_Table extends FPDF {
+                    function NbLines($w, $txt) {
+                        $cw = &$this->CurrentFont['cw'];
+                        if ($w == 0) {
+                            $w = $this->w - $this->rMargin - $this->x;
+                        }
+                        $wmax = ($w - 2 * $this->cMargin) * 1000 / $this->FontSize;
+                        $s = str_replace("\r", '', (string)$txt);
+                        $nb = strlen($s);
+                        if ($nb > 0 && $s[$nb - 1] == "\n") {
+                            $nb--;
+                        }
+                        $sep = -1;
+                        $i = 0;
+                        $j = 0;
+                        $l = 0;
+                        $nl = 1;
+                        while ($i < $nb) {
+                            $c = $s[$i];
+                            if ($c == "\n") {
+                                $i++;
+                                $sep = -1;
+                                $j = $i;
+                                $l = 0;
+                                $nl++;
+                                continue;
+                            }
+                            if ($c == ' ') {
+                                $sep = $i;
+                            }
+                            $l += $cw[$c] ?? 0;
+                            if ($l > $wmax) {
+                                if ($sep == -1) {
+                                    if ($i == $j) {
+                                        $i++;
+                                    }
+                                } else {
+                                    $i = $sep + 1;
+                                }
+                                $sep = -1;
+                                $j = $i;
+                                $l = 0;
+                                $nl++;
+                            } else {
+                                $i++;
+                            }
+                        }
+                        return $nl;
+                    }
+
+                    function rowHeight($row, $colWidths, $lineHeight) {
+                        $max = 1;
+                        $i = 0;
+                        foreach ($row as $txt) {
+                            $w = $colWidths[$i];
+                            $lines = $this->NbLines($w, strval($txt));
+                            $max = max($max, $lines);
+                            $i++;
+                        }
+                        return $lineHeight * $max + 2;
+                    }
+
+                    function drawRow($row, $colWidths, $lineHeight, $isHeader = false) {
+                        $startX = $this->GetX();
+                        $y = $this->GetY();
+                        $h = $this->rowHeight($row, $colWidths, $lineHeight);
+                        $i = 0;
+
+                        foreach ($row as $cell) {
+                            $w = $colWidths[$i];
+                            $x = $this->GetX();
+
+                            if ($isHeader) {
+                                $this->SetFillColor(215, 225, 245);
+                            } else {
+                                $this->SetFillColor(255, 255, 255);
+                            }
+                            $this->Rect($x, $y, $w, $h, 'F');
+
+                            $cellText = strval($cell);
+                            $lines = $this->NbLines($w, $cellText);
+                            $textHeight = $lines * $lineHeight;
+                            $topPadding = max(0, ($h - $textHeight) / 2);
+
+                            $this->SetXY($x, $y + $topPadding);
+                            $this->MultiCell($w, $lineHeight, $cellText, 0, 'C');
+
+                            $this->Rect($x, $y, $w, $h, 'D');
+
+                            $this->SetXY($x + $w, $y);
+                            $i++;
+                        }
+                        $this->SetXY($startX, $y + $h);
+                    }
+                }
+            }
+
+            $pdf = new PDF_Table('L', 'mm', 'A4');
+            $pdf->SetMargins(5, 8, 5);
+            $pdf->SetAutoPageBreak(false);
             $pdf->AddPage();
 
-            $pageWidth = $pdf->GetPageWidth() - 20;
-            $lineHeight = 4; // Use slightly smaller line height for multi-line cells
+            $pageWidth = $pdf->GetPageWidth() - 10;
+            $lineHeight = 3.2;
 
             $col_weights = [
-                "scenario" => 0.8,
-                "from" => 0.8,
-                "from_id" => 1.0,
-                "from_name" => 2.5,
-                "from_district" => 1.2,
-                "from_block" => 1.2,
-                "from_lat" => 1.0,
-                "from_long" => 1.0,
-                "to" => 0.8,
-                "to_id" => 1.0,
-                "to_name" => 2.5,
-                "to_district" => 1.2,
-                "to_block" => 1.2,
-                "to_lat" => 1.0,
-                "to_long" => 1.0,
-                "commodity" => 1.0,
-                "quantity" => 1.0,
-                "distance" => 1.0
+                "scenario"               => 0.9,
+                "from"                   => 0.7,
+                "from_id"                => 0.9,
+                "from_name"              => 1.7,
+                "from_district"          => 1.1,
+                "from_block"             => 1.0,
+                "from_lat"               => 0.9,
+                "from_long"              => 0.9,
+                "to"                     => 0.6,
+                "to_id"                  => 0.9,
+                "to_name"                => 1.7,
+                "to_district"            => 1.1,
+                "to_block"               => 1.0,
+                "to_lat"                 => 0.9,
+                "to_long"                => 0.9,
+                "commodity"              => 1.0,
+                "quantity"               => 0.9,
+                "distance"               => 0.9,
+                "status"                 => 0.9
             ];
 
             $total_weight = 0;
@@ -207,52 +309,22 @@ $row["status"] = $isImplemented ? 'Implemented' : 'Not Implemented';
                 $colWidths[] = (($col_weights[$col] ?? 1.0) / $total_weight) * $pageWidth;
             }
 
-            if (!function_exists('rowHeight')) {
-                function rowHeight($pdf, $row, $colWidths, $lineHeight) {
-                    $max = 1;
-                    $i = 0;
-                    foreach ($row as $txt) {
-                        $w = $colWidths[$i];
-                        $lines = ceil($pdf->GetStringWidth(strval($txt)) / ($w - 2));
-                        $max = max($max, $lines);
-                        $i++;
-                    }
-                    return $lineHeight * $max;
-                }
-            }
-
-            if (!function_exists('drawRow')) {
-                function drawRow($pdf, $row, $colWidths, $lineHeight, $isHeader = false) {
-                    $x = $pdf->GetX();
-                    $y = $pdf->GetY();
-                    $h = rowHeight($pdf, $row, $colWidths, $lineHeight);
-                    $i = 0;
-                    $pdf->SetFillColor($isHeader ? 220 : 255, $isHeader ? 220 : 255, $isHeader ? 220 : 255);
-                    foreach ($row as $cell) {
-                        $w = $colWidths[$i];
-                        $pdf->Rect($x, $y, $w, $h);
-                        $pdf->MultiCell($w, $lineHeight, strval($cell), 0, 'C', $isHeader);
-                        $x += $w;
-                        $pdf->SetXY($x, $y);
-                        $i++;
-                    }
-                    $pdf->Ln($h);
-                }
-            }
-
-            $pdf->SetFont('Arial', 'B', 5);
-            drawRow($pdf, $tableData_pdf[0], $colWidths, $lineHeight, true);
+            $pdf->SetFont('Arial', 'B', 5.5);
+            $pdf->drawRow($tableData_pdf[0], $colWidths, $lineHeight, true);
 
             $pdf->SetFont('Arial', '', 5);
+            $pageHeight = $pdf->GetPageHeight();
+            $bottomMargin = 10;
+
             for ($i = 1; $i < count($tableData_pdf); $i++) {
-                $nextHeight = rowHeight($pdf, $tableData_pdf[$i], $colWidths, $lineHeight);
-                if ($pdf->GetY() + $nextHeight > $pdf->GetPageHeight() - 15) {
+                $nextHeight = $pdf->rowHeight($tableData_pdf[$i], $colWidths, $lineHeight);
+                if ($pdf->GetY() + $nextHeight > $pageHeight - $bottomMargin) {
                     $pdf->AddPage();
-                    $pdf->SetFont('Arial', 'B', 5);
-                    drawRow($pdf, $tableData_pdf[0], $colWidths, $lineHeight, true);
+                    $pdf->SetFont('Arial', 'B', 5.5);
+                    $pdf->drawRow($tableData_pdf[0], $colWidths, $lineHeight, true);
                     $pdf->SetFont('Arial', '', 5);
                 }
-                drawRow($pdf, $tableData_pdf[$i], $colWidths, $lineHeight);
+                $pdf->drawRow($tableData_pdf[$i], $colWidths, $lineHeight);
             }
 
             header('Content-Type: application/pdf');

@@ -204,59 +204,102 @@ if (isset($_GET['format'])) {
             break;
 
         case 'pdf':
-			require('fpdf/fpdf.php');
-            $pdf = new FPDF('L', 'mm', 'A4');
-			$pdf->AddPage();
-			$pdf->SetFont('Arial', 'B', 15); // Set initial font size
-
-			// Calculate column width based on the number of columns and page width
-			$pageWidth = $pdf->GetPageWidth() - 20; // Subtract margins (10 mm each side)
-			$numCols = count($tableData_pdf[0]) + 2; // Assuming all rows have the same number of columns
-			$colWidth = $pageWidth / $numCols;
-			$originalColWidth = $colWidth;
-
-			// Function to add a row to the PDF with dynamic font size adjustment
-			function addRow($pdf, $row, $colWidth, $isHeader = false) {
-				global $originalColWidth;
-				global $colWidth;
-				$pdf->SetFillColor($isHeader ? 200 : 255, $isHeader ? 220 : 255, $isHeader ? 255 : 255);
-				$i = 0;
-				foreach ($row as $col) {
-					$i = $i + 1;
-					if($i==10){
-						$colWidth = $colWidth*3;
-					}else{
-						$colWidth = $originalColWidth;
-					}
-					$fontSize = 12;
-					$pdf->SetFont('Arial', 'B', $fontSize);
-					// Reduce font size if text is too wide for the cell
-					while ($pdf->GetStringWidth($col) > $colWidth - 2 && $fontSize > 1) {
-						$fontSize -= 1;
-						$pdf->SetFont('Arial', 'B', $fontSize);
-					}
-					$pdf->Cell($colWidth, 10, $col, 1, 0, 'C', true);
-				}
-				$pdf->Ln();
-			}
-
-			// Add the header
-			addRow($pdf, $tableData_pdf[0], $colWidth, true);
-
-			// Add the data rows
-			$rowHeight = 10;
-			$maxRowsPerPage = ($pdf->GetPageHeight() - 20) / $rowHeight; // Subtract margins (10 mm each top and bottom)
-
-			for ($i = 1; $i < count($tableData_pdf); $i++) {
-				if ($pdf->GetY() + $rowHeight > $pdf->GetPageHeight() - 10) { // Check if we need to add a new page
-					$pdf->AddPage();
-					addRow($pdf, $tableData_pdf[0], $colWidth, true); // Add the header again on the new page
-				}
-				addRow($pdf, $tableData_pdf[$i], $colWidth);
-			}
-
+            require_once('fpdf/fpdf.php');
+            if (!class_exists('PDF_Table')) {
+                class PDF_Table extends FPDF {
+                    function NbLines($w, $txt) {
+                        $cw = &$this->CurrentFont['cw'];
+                        if ($w == 0) $w = $this->w - $this->rMargin - $this->x;
+                        $wmax = ($w - 2 * $this->cMargin) * 1000 / $this->FontSize;
+                        $s = str_replace("", '', (string)$txt);
+                        $nb = strlen($s);
+                        if ($nb > 0 && $s[$nb - 1] == "
+") $nb--;
+                        $sep = -1; $i = 0; $j = 0; $l = 0; $nl = 1;
+                        while ($i < $nb) {
+                            $c = $s[$i];
+                            if ($c == "
+") {
+                                $i++; $sep = -1; $j = $i; $l = 0; $nl++; continue;
+                            }
+                            if ($c == ' ') $sep = $i;
+                            $l += $cw[$c] ?? 0;
+                            if ($l > $wmax) {
+                                if ($sep == -1) {
+                                    if ($i == $j) $i++;
+                                } else {
+                                    $i = $sep + 1;
+                                }
+                                $sep = -1; $j = $i; $l = 0; $nl++;
+                            } else {
+                                $i++;
+                            }
+                        }
+                        return $nl;
+                    }
+                    function rowHeight($row, $colWidths, $lineHeight) {
+                        $max = 1; $i = 0;
+                        foreach ($row as $txt) {
+                            $w = $colWidths[$i];
+                            $lines = $this->NbLines($w, strval($txt));
+                            $max = max($max, $lines);
+                            $i++;
+                        }
+                        return $lineHeight * $max + 2;
+                    }
+                    function drawRow($row, $colWidths, $lineHeight, $isHeader = false) {
+                        $startX = $this->GetX(); $y = $this->GetY();
+                        $h = $this->rowHeight($row, $colWidths, $lineHeight);
+                        $i = 0;
+                        foreach ($row as $cell) {
+                            $w = $colWidths[$i]; $x = $this->GetX();
+                            if ($isHeader) $this->SetFillColor(215, 225, 245);
+                            else $this->SetFillColor(255, 255, 255);
+                            $this->Rect($x, $y, $w, $h, 'F');
+                            $cellText = strval($cell);
+                            $lines = $this->NbLines($w, $cellText);
+                            $textHeight = $lines * $lineHeight;
+                            $topPadding = max(0, ($h - $textHeight) / 2);
+                            $this->SetXY($x, $y + $topPadding);
+                            $this->MultiCell($w, $lineHeight, $cellText, 0, 'C');
+                            $this->Rect($x, $y, $w, $h, 'D');
+                            $this->SetXY($x + $w, $y);
+                            $i++;
+                        }
+                        $this->SetXY($startX, $y + $h);
+                    }
+                }
+            }
+            $pdf = new PDF_Table('L', 'mm', 'A4');
+            $pdf->SetMargins(5, 8, 5);
+            $pdf->SetAutoPageBreak(false);
+            $pdf->AddPage();
+            $pageWidth = $pdf->GetPageWidth() - 10;
+            $lineHeight = 3.2;
+            
+            $numCols = count($tableData[0]);
+            $colWidths = [];
+            for ($i = 0; $i < $numCols; $i++) {
+                $colWidths[] = $pageWidth / $numCols;
+            }
+            
+            $pdf->SetFont('Arial', 'B', 5.5);
+            $pdf->drawRow($tableData[0], $colWidths, $lineHeight, true);
+            $pdf->SetFont('Arial', '', 5);
+            $pageHeight = $pdf->GetPageHeight();
+            $bottomMargin = 10;
+            for ($i = 1; $i < count($tableData); $i++) {
+                $nextHeight = $pdf->rowHeight($tableData[$i], $colWidths, $lineHeight);
+                if ($pdf->GetY() + $nextHeight > $pageHeight - $bottomMargin) {
+                    $pdf->AddPage();
+                    $pdf->SetFont('Arial', 'B', 5.5);
+                    $pdf->drawRow($tableData[0], $colWidths, $lineHeight, true);
+                    $pdf->SetFont('Arial', '', 5);
+                }
+                $pdf->drawRow($tableData[$i], $colWidths, $lineHeight);
+            }
             header('Content-Type: application/pdf');
-            header('Content-Disposition: attachment;filename="' . $filename . '.pdf"');
+            header('Content-Disposition: attachment; filename="' . $filename . '.pdf"');
             echo $pdf->Output('S');
             break;
 

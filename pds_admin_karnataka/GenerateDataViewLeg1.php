@@ -271,6 +271,7 @@ if($leg_id!="" && $leg != 1){
 	$pdf->Cell(40, 10, $cost1, 1);
 	$pdf->Ln();
 }
+$pdf->Ln();
 // Add the header
 addRow($pdf, $tableData_pdf[0], $colWidth, true);
 

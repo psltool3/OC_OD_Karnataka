@@ -5,7 +5,27 @@ require('../structures/FPS.php');
 require('../util/SessionFunction.php');
 require('../structures/Login.php');
 require('../util/Logger.php');
+
+$rawDemand = isset($_POST['demand']) ? $_POST['demand'] : null;
+$rawDemandRice = isset($_POST['demand_rice']) ? $_POST['demand_rice'] : null;
+$rawInventoryRagi = isset($_POST['inventory_ragi']) ? $_POST['inventory_ragi'] : null;
+$rawInventoryJowar = isset($_POST['inventory_jowar']) ? $_POST['inventory_jowar'] : null;
+
 require('../util/Security.php');
+
+if (($rawDemand === '0' || $rawDemand === 0 || $rawDemand === '0.0') && $_POST["demand"] === false) {
+    $_POST["demand"] = (string)$rawDemand;
+}
+if (($rawDemandRice === '0' || $rawDemandRice === 0 || $rawDemandRice === '0.0') && $_POST["demand_rice"] === false) {
+    $_POST["demand_rice"] = (string)$rawDemandRice;
+}
+if (($rawInventoryRagi === '0' || $rawInventoryRagi === 0 || $rawInventoryRagi === '0.0') && isset($_POST["inventory_ragi"]) && $_POST["inventory_ragi"] === false) {
+    $_POST["inventory_ragi"] = (string)$rawInventoryRagi;
+}
+if (($rawInventoryJowar === '0' || $rawInventoryJowar === 0 || $rawInventoryJowar === '0.0') && isset($_POST["inventory_jowar"]) && $_POST["inventory_jowar"] === false) {
+    $_POST["inventory_jowar"] = (string)$rawInventoryJowar;
+}
+
 require ('../util/Encryption.php');
 $nonceValue = 'nonce_value';
 

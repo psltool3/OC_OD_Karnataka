@@ -261,6 +261,7 @@ if($currentTimestamp >= $targetTimestamp) {
 												<th style="font-size:16px">From_ID</th>
 												<th style="font-size:16px">From_Name</th>
 												<th style="font-size:16px">From_District</th>
+												<th style="font-size:16px">From_Taluka</th>
 												<th style="font-size:16px">From_Lat</th>
 												<th style="font-size:16px">From_Long</th>
 												<th style="font-size:16px">To</th>
@@ -268,6 +269,7 @@ if($currentTimestamp >= $targetTimestamp) {
 												<th style="font-size:16px">To_ID</th>
 												<th style="font-size:16px">To_Name</th>
 												<th style="font-size:16px">To_District</th>
+												<th style="font-size:16px">To_Taluka</th>
 												<th style="font-size:16px">To_Lat</th>
 												<th style="font-size:16px">To_Long</th>
 												<th style="font-size:16px">Commodity</th>
@@ -677,7 +679,10 @@ if($currentTimestamp >= $targetTimestamp) {
 								//var distance_district = obj[datafield]["new_distance_district"] !== null ? obj[datafield]["new_distance_district"] : "";
 								//var district_change_approve = obj[datafield]["district_change_approve"] !== null ? obj[datafield]["district_change_approve"] : "";
 								
-								var subpart1 = "<tr><td>" +  obj[datafield]["scenario"] +  "</td><td>"  + obj[datafield]["from"] +  "</td><td>"  + obj[datafield]["from_state"] +  "</td><td>"  + obj[datafield]["from_id"] +  "</td><td>"  + obj[datafield]["from_name"] +  "</td><td>"  + obj[datafield]["from_district"] +  "</td><td>"  + obj[datafield]["from_lat"] +  "</td><td>"  + obj[datafield]["from_long"] +  "</td><td>"  + obj[datafield]["to"] +  "</td><td>"  + obj[datafield]["to_state"] +  "</td><td>"  + obj[datafield]["to_id"] +  "</td><td>"  + obj[datafield]["to_name"] +  "</td><td>"  + obj[datafield]["to_district"] +  "</td><td>"  + obj[datafield]["to_lat"] +  "</td><td>"  + obj[datafield]["to_long"] +  "</td><td>"  + obj[datafield]["commodity"] +  "</td><td>"  + obj[datafield]["quantity"] +  "</td><td>"  + obj[datafield]["distance"] + "</td>";
+								
+								var from_block = obj[datafield]["from_block"] !== null ? obj[datafield]["from_block"] : "";
+								var to_block = obj[datafield]["to_block"] !== null ? obj[datafield]["to_block"] : "";
+								var subpart1 = "<tr><td>" +  obj[datafield]["scenario"] +  "</td><td>"  + obj[datafield]["from"] +  "</td><td>"  + obj[datafield]["from_state"] +  "</td><td>"  + obj[datafield]["from_id"] +  "</td><td>"  + obj[datafield]["from_name"] +  "</td><td>"  + obj[datafield]["from_district"] +  "</td><td>"  + from_block + "</td><td>" + obj[datafield]["from_lat"] +  "</td><td>"  + obj[datafield]["from_long"] +  "</td><td>"  + obj[datafield]["to"] +  "</td><td>"  + obj[datafield]["to_state"] +  "</td><td>"  + obj[datafield]["to_id"] +  "</td><td>"  + obj[datafield]["to_name"] +  "</td><td>"  + obj[datafield]["to_district"] +  "</td><td>"  + to_block + "</td><td>" + obj[datafield]["to_lat"] +  "</td><td>"  + obj[datafield]["to_long"] +  "</td><td>"  + obj[datafield]["commodity"] +  "</td><td>"  + obj[datafield]["quantity"] +  "</td><td>"  + obj[datafield]["distance"] + "</td>";
 								
 								if(obj[datafield]["new_id"]==null){
 									obj[datafield]["new_id"] = "";

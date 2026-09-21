@@ -242,7 +242,7 @@ require('Header.php');
 		}
 		
 		function generate_report(temp_id, leg_id){
-			post({id:temp_id,step:"leg1",legid:leg_id} ,"GenerateDataView.php");
+			post({id:temp_id,step:"leg1",legid:leg_id} ,"GenerateDataViewLeg1.php");
 		}
 		
 		function send_email(temp_id){	

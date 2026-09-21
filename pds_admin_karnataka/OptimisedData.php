@@ -255,7 +255,7 @@ while($row = mysqli_fetch_array($result))
 												<option value=''>Select</option>
 											</select>
 											</div>
-											<span class="help-block">Select Warehouse</span>
+											<span class="help-block">Select From ID</span>
 										</div>
 									</div>
 								</div>
@@ -268,7 +268,7 @@ while($row = mysqli_fetch_array($result))
 												<option value=''>Select</option>
 											</select>
 											</div>
-											<span class="help-block">Select To</span>
+											<span class="help-block">Select To ID</span>
 										</div>
 									</div>
 								</div>

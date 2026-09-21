@@ -258,9 +258,11 @@ if($currentTimestamp >= $targetTimestamp) {
 							</div>
 							</br></br></br>
                             <!-- END SIMPLE DATATABLE -->
+								<?php if($rolled_out == '1') { ?>
 								<button id="downloadCSV" class="btn btn-warning pull-right" style="margin-left: 10px;" type="button">Download CSV</button>
 								<button id="downloadXLSX" class="btn btn-success pull-right" style="margin-left: 10px;" type="button">Download XLSX</button>
 								<button id="downloadPDF" class="btn btn-danger pull-right" style="margin-bottom: 10px;" type="button">Download PDF</button>
+								<?php } ?>
 								</br></br>
 								<div class="table-container">
                                     <table id="export_table" class="table">

@@ -5,7 +5,23 @@ require('../structures/Warehouse.php');
 require('../util/SessionFunction.php');
 require('../structures/Login.php');
 require('../util/Logger.php');
+
+$rawStorage = isset($_POST['storage']) ? $_POST['storage'] : null;
+$rawRagi = isset($_POST['ragi']) ? $_POST['ragi'] : null;
+$rawJowar = isset($_POST['jowar']) ? $_POST['jowar'] : null;
+
 require('../util/Security.php');
+
+if (($rawStorage === '0' || $rawStorage === 0 || $rawStorage === '0.0') && $_POST["storage"] === false) {
+    $_POST["storage"] = (string)$rawStorage;
+}
+if (($rawRagi === '0' || $rawRagi === 0 || $rawRagi === '0.0') && $_POST["ragi"] === false) {
+    $_POST["ragi"] = (string)$rawRagi;
+}
+if (($rawJowar === '0' || $rawJowar === 0 || $rawJowar === '0.0') && $_POST["jowar"] === false) {
+    $_POST["jowar"] = (string)$rawJowar;
+}
+
 require ('../util/Encryption.php');
 $nonceValue = 'nonce_value';
 

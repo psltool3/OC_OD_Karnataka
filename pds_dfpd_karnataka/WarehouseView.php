@@ -63,6 +63,7 @@ if(isset($_POST['step'])){
                                         <thead>
                                             <tr>
 												<th style="font-size:15px">District</th>
+												<th style="font-size:15px">Taluka</th>
 												<th style="font-size:15px">Name of Warehouse</th>
 												<th style="font-size:15px">Warehouse ID</th> 
 												<th style="font-size:15px">Motorable/Non-Motorable</th>
@@ -70,6 +71,8 @@ if(isset($_POST['step'])){
 												<th style="font-size:15px">Latitude</th>
 												<th style="font-size:15px">Longitude</th>
 												<th style="font-size:15px">Storage(Qtl)</th>
+												<th style="font-size:15px">Ragi(Qtl)</th>
+												<th style="font-size:15px">Jowar(Qtl)</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -83,13 +86,16 @@ if(isset($_POST['step'])){
 											while($row = mysqli_fetch_array($result))
 											{
 												echo "<tr><td>{$row['district']}</td>".
+												"<td>{$row['taluka']}</td>".
 												"<td>{$row['name']}</td>".
 												"<td>{$row['id']}</td>".
 												"<td>{$row['type']}</td>".
 												"<td>{$row['warehousetype']}</td>".
 												"<td>{$row['latitude']}</td>".
 												"<td>{$row['longitude']}</td>".
-												"<td>{$row['storage']}</td></tr>";
+												"<td>{$row['storage']}</td>".
+												"<td>{$row['ragi']}</td>".
+												"<td>{$row['jowar']}</td></tr>";
 											}
 											$query_leg1 = "SELECT * FROM " . $tablename . " t 
 															WHERE NOT EXISTS (
@@ -102,13 +108,16 @@ if(isset($_POST['step'])){
 										while($row = mysqli_fetch_array($result))
 										{
 											echo "<tr><td>{$row['district']}</td>".
+											"<td>{$row['taluka']}</td>".
 											"<td>{$row['name']}</td>".
 											"<td>{$row['id']}</td>".
 											"<td>{$row['type']}</td>".
 											"<td>{$row['warehousetype']}</td>".
 											"<td>{$row['latitude']}</td>".
 											"<td>{$row['longitude']}</td>".
-											"<td>{$row['storage']}</td></tr>";
+											"<td>{$row['storage']}</td>".
+											"<td>{$row['ragi']}</td>".
+											"<td>{$row['jowar']}</td></tr>";
 										}
 										
 										?>

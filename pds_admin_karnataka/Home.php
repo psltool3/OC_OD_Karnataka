@@ -1246,7 +1246,7 @@ require('Header.php');
 	}
 
 	function pollJobStatus(jobId) {
-		var checkInterval = setInterval(function() {
+		window.checkInterval = setInterval(function() {
 			fetch(pythonUrl + 'job_status/' + jobId)
 				.then(response => response.json())
 				.then(statusData => {
@@ -1254,7 +1254,7 @@ require('Header.php');
 						var state = statusData.job.status;
 						if (state === 'completed') {
 							isOptimizationRunning = false;
-							clearInterval(checkInterval);
+							clearInterval(window.checkInterval);
 							fetch(pythonUrl + 'job_result/' + jobId)
 								.then(res => res.json())
 								.then(data => {
@@ -1262,7 +1262,7 @@ require('Header.php');
 								});
 						} else if (state === 'failed' || state === 'cancelled') {
 							isOptimizationRunning = false;
-							clearInterval(checkInterval);
+							clearInterval(window.checkInterval);
 							alert("Optimization not possible. Please increase supply (e.g.20%) and try again: " + (statusData.job.message || ""));
 							if(!isOptimizationRunning) document.getElementById("processingPopup").style.display = "none";
 							document.getElementById("cancel-request").style.display = "none";
@@ -1285,6 +1285,17 @@ require('Header.php');
 		if (controller) {
 			controller.abort(); // Abort the fetch request using the AbortController
 			console.log('Request cancelled.');
+			
+			if (window.checkInterval) clearInterval(window.checkInterval);
+			isOptimizationRunning = false;
+			document.getElementById("processingPopup").style.display = "none";
+			document.getElementById("cancel-request").style.display = "none";
+			var toggleButton = document.querySelector('.toggle');
+			if (toggleButton) {
+				toggleButton.classList.remove('toggle--on');
+				toggleButton.classList.add('toggle--off');
+				toggleButton.setAttribute('data-content', 'Off');
+			}
 			const formData = new FormData();
 			fetch(pythonUrl + 'processCancel', {
 				method: 'POST',

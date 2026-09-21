@@ -154,11 +154,11 @@ class FPS {
     }
 
     function update(FPS $fps){
-      return  "UPDATE fps SET district = '".$fps->getDistrict()."',taluka = '".$fps->getTaluka()."',name = '".$fps->getName()."',id = '".$fps->getId()."',type = '".$fps->getType()."',latitude = '".$fps->getLatitude()."',longitude = '".$fps->getLongitude()."',demand = '".$fps->getDemand()."',demand_rice = '".$fps->getDemandrice()."',inventory_ragi = '".$fps->getInventoryragi()."',inventory_jowar = '".$fps->getInventoryjowar()."' WHERE uniqueid = '".$fps->getUniqueid()."'";
+      return  "UPDATE fps SET district = '".$fps->getDistrict()."',taluka = '".$fps->getTaluka()."',name = '".$fps->getName()."',id = '".$fps->getId()."',type = '".$fps->getType()."',latitude = '".$fps->getLatitude()."',longitude = '".$fps->getLongitude()."',demand = '".$fps->getDemand()."',demand_rice = '".$fps->getDemandrice()."',inventory_ragi = '".$fps->getInventoryragi()."',inventory_jowar = '".$fps->getInventoryjowar()."',active = '".$fps->getActive()."' WHERE uniqueid = '".$fps->getUniqueid()."'";
     }
 	
 	function updateEdit(FPS $fps){
-      return  "UPDATE fps SET district = '".$fps->getDistrict()."',taluka = '".$fps->getTaluka()."',name = '".$fps->getName()."',id = '".$fps->getId()."',type = '".$fps->getType()."',latitude = '".$fps->getLatitude()."',longitude = '".$fps->getLongitude()."',demand = '".$fps->getDemand()."',demand_rice = '".$fps->getDemandrice()."',inventory_ragi = '".$fps->getInventoryragi()."',inventory_jowar = '".$fps->getInventoryjowar()."' WHERE id = '".$fps->getId()."'";
+      return  "UPDATE fps SET district = '".$fps->getDistrict()."',taluka = '".$fps->getTaluka()."',name = '".$fps->getName()."',id = '".$fps->getId()."',type = '".$fps->getType()."',latitude = '".$fps->getLatitude()."',longitude = '".$fps->getLongitude()."',demand = '".$fps->getDemand()."',demand_rice = '".$fps->getDemandrice()."',inventory_ragi = '".$fps->getInventoryragi()."',inventory_jowar = '".$fps->getInventoryjowar()."',active = '".$fps->getActive()."' WHERE id = '".$fps->getId()."'";
     }
 }  
 

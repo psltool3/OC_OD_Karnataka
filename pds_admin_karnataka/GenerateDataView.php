@@ -4,7 +4,7 @@ require('util/SessionCheck.php');
 require 'vendor/autoload.php';
 require('api/fpdf/fpdf.php');
 
-$columns_pdf = ["scenario","from","from_state","from_id","from_name","from_district","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_lat","to_long","commodity","quantity","distance","status"];
+$columns_pdf = ["scenario","from","from_state","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance","status"];
 
 $filename = 'Karnataka_data';
 
@@ -13,19 +13,19 @@ $tablename = "optimiseddata_".$id;
 $tablename1 = "optimiseddata_".$id;
 $leg = 0;
 $leg_id = 0;
-if(isset($_POST['step'])){
-	if($_POST['step']=="leg1"){
-		$leg = 1;
-		$tablename = "optimiseddata_leg1_".$id;
-		$tablename1 = "optimiseddata_leg1_".$id;
-	}
-	if($_POST['step']=="all"){
-		$leg = 2;
-		$leg_id = $_POST['legid'];
-		$tablename = "optimiseddata_".$id;
-		$tablename1 = "optimiseddata_leg1_".$leg_id;
-	}
-}
+// if(isset($_POST['step'])){
+// 	if($_POST['step']=="leg1"){
+// 		$leg = 1;
+// 		$tablename = "optimiseddata_leg1_".$id;
+// 		$tablename1 = "optimiseddata_leg1_".$id;
+// 	}
+// 	if($_POST['step']=="all"){
+// 		$leg = 2;
+// 		$leg_id = $_POST['legid'];
+// 		$tablename = "optimiseddata_".$id;
+// 		$tablename1 = "optimiseddata_leg1_".$leg_id;
+// 	}
+// }
 
 $month = "";
 $date = "";
@@ -255,22 +255,23 @@ $pdf->Cell(50, 10, $averagedistanceoptimised, 1);
 $pdf->Cell(40, 10, $cost, 1);
 $pdf->Ln();
 
-if($leg_id!="" && $leg != 1){
-	$text = "Cost saving for L1";
-	$pdf->Cell(0, 10, $text, 0, 1);
+// if($leg_id!="" && $leg != 1){
+// 	$text = "Cost saving for L1";
+// 	$pdf->Cell(0, 10, $text, 0, 1);
 
-	$pdf->Cell(40, 10, 'Qkm', 1);
-	$pdf->Cell(40, 10, 'Allocation', 1);
-	$pdf->Cell(50, 10, 'Average Distance', 1);
-	$pdf->Cell(40, 10, 'Cost', 1);
-	$pdf->Ln();
+// 	$pdf->Cell(40, 10, 'Qkm', 1);
+// 	$pdf->Cell(40, 10, 'Allocation', 1);
+// 	$pdf->Cell(50, 10, 'Average Distance', 1);
+// 	$pdf->Cell(40, 10, 'Cost', 1);
+// 	$pdf->Ln();
 
-	$pdf->Cell(40, 10, $qkm1, 1);
-	$pdf->Cell(40, 10, $allocation1, 1);
-	$pdf->Cell(50, 10, $averagedistanceoptimised1, 1);
-	$pdf->Cell(40, 10, $cost1, 1);
-	$pdf->Ln();
-}$pdf->Ln();
+// 	$pdf->Cell(40, 10, $qkm1, 1);
+// 	$pdf->Cell(40, 10, $allocation1, 1);
+// 	$pdf->Cell(50, 10, $averagedistanceoptimised1, 1);
+// 	$pdf->Cell(40, 10, $cost1, 1);
+// 	$pdf->Ln();
+// }
+$pdf->Ln();
 // Add the header
 addRow($pdf, $tableData_pdf[0], $colWidth, true);
 
@@ -293,6 +294,7 @@ if($data!=null){
 			$temp["from_id"] = $data[$i]["from_id"];
 			$temp["from_name"] = $data[$i]["from_name"];
 			$temp["from_district"] = $data[$i]["from_district"];
+			$temp["from_block"] = $data[$i]["from_block"];
 			$temp["from_lat"] = $data[$i]["from_lat"];
 			$temp["from_long"] = $data[$i]["from_long"];
 			$temp["to"] = $data[$i]["to"];
@@ -300,6 +302,7 @@ if($data!=null){
 			$temp["to_id"] = $data[$i]["to_id"];
 			$temp["to_name"] = $data[$i]["to_name"];
 			$temp["to_district"] = $data[$i]["to_district"];
+			$temp["to_block"] = $data[$i]["to_block"];
 			$temp["to_lat"] = $data[$i]["to_lat"];
 			$temp["to_long"] = $data[$i]["to_long"];
 			$temp["commodity"] = $data[$i]["commodity"];
@@ -325,6 +328,7 @@ if($data1!=null){
 			$temp["from_id"] = $data1[$i]["from_id"];
 			$temp["from_name"] = $data1[$i]["from_name"];
 			$temp["from_district"] = $data1[$i]["from_district"];
+			$temp["from_block"] = $data1[$i]["from_block"];
 			$temp["from_lat"] = $data1[$i]["from_lat"];
 			$temp["from_long"] = $data1[$i]["from_long"];
 			$temp["to"] = $data1[$i]["to"];
@@ -332,6 +336,7 @@ if($data1!=null){
 			$temp["to_id"] = $data1[$i]["to_id"];
 			$temp["to_name"] = $data1[$i]["to_name"];
 			$temp["to_district"] = $data1[$i]["to_district"];
+			$temp["to_block"] = $data1[$i]["to_block"];
 			$temp["to_lat"] = $data1[$i]["to_lat"];
 			$temp["to_long"] = $data1[$i]["to_long"];
 			$temp["commodity"] = $data1[$i]["commodity"];

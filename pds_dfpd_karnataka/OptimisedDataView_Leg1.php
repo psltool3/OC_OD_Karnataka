@@ -125,6 +125,7 @@ $tablename1 = $tablename;
 												<th style="font-size:16px">From_ID</th>
 												<th style="font-size:16px">From_Name</th>
 												<th style="font-size:16px">From_District</th>
+												<th style="font-size:16px">From_Taluka</th>
 												<th style="font-size:16px">From_Lat</th>
 												<th style="font-size:16px">From_Long</th>
 												<th style="font-size:16px">To</th>
@@ -132,6 +133,7 @@ $tablename1 = $tablename;
 												<th style="font-size:16px">To_ID</th>
 												<th style="font-size:16px">To_Name</th>
 												<th style="font-size:16px">To_District</th>
+												<th style="font-size:16px">To_Taluka</th>
 												<th style="font-size:16px">To_Lat</th>
 												<th style="font-size:16px">To_Long</th>
 												<th style="font-size:16px">Commodity</th>
@@ -263,7 +265,9 @@ $tablename1 = $tablename;
 						var resultarray = JSON.parse(result);
 						var obj = resultarray["data"];
 						for (var datafield in obj){
-							var subpart = "<tr><td>" +  obj[datafield]["scenario"] +  "</td><td>"  + obj[datafield]["from"] +  "</td><td>"  + obj[datafield]["from_state"] +  "</td><td>"  + obj[datafield]["from_id"] +  "</td><td>"  + obj[datafield]["from_name"] +  "</td><td>"  + obj[datafield]["from_district"] +  "</td><td>"  + obj[datafield]["from_lat"] + "</td><td>" + obj[datafield]["from_long"] + "</td><td>" + obj[datafield]["to"] + "</td><td>" + obj[datafield]["to_state"] + "</td><td>" + obj[datafield]["to_id"] + "</td><td>" + obj[datafield]["to_name"] + "</td><td>" + obj[datafield]["to_district"] + "</td><td>" + obj[datafield]["to_lat"] + "</td><td>" + obj[datafield]["to_long"] + "</td><td>" + obj[datafield]["commodity"] + "</td><td>" + obj[datafield]["quantity"] + "</td><td>" + obj[datafield]["distance"] + "</td></tr>";
+							var from_block = obj[datafield]["from_block"] !== null ? obj[datafield]["from_block"] : "";
+							var to_block = obj[datafield]["to_block"] !== null ? obj[datafield]["to_block"] : "";
+							var subpart = "<tr><td>" +  obj[datafield]["scenario"] +  "</td><td>"  + obj[datafield]["from"] +  "</td><td>"  + obj[datafield]["from_state"] +  "</td><td>"  + obj[datafield]["from_id"] +  "</td><td>"  + obj[datafield]["from_name"] +  "</td><td>"  + obj[datafield]["from_district"] +  "</td><td>" + from_block + "</td><td>" + obj[datafield]["from_lat"] + "</td><td>" + obj[datafield]["from_long"] + "</td><td>" + obj[datafield]["to"] + "</td><td>" + obj[datafield]["to_state"] + "</td><td>" + obj[datafield]["to_id"] + "</td><td>" + obj[datafield]["to_name"] + "</td><td>" + obj[datafield]["to_district"] + "</td><td>" + to_block + "</td><td>" + obj[datafield]["to_lat"] + "</td><td>" + obj[datafield]["to_long"] + "</td><td>" + obj[datafield]["commodity"] + "</td><td>" + obj[datafield]["quantity"] + "</td><td>" + obj[datafield]["distance"] + "</td></tr>";
 							
 							$('#optimised_table').append(subpart);
 						}

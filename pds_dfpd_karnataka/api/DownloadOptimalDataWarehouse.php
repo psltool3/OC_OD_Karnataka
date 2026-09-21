@@ -11,7 +11,7 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 if (isset($_GET['format'])) {
     $format = $_GET['format'];
     
-    $columns = ["district","name","id","warehousetype","type","latitude","longitude","storage"];
+    $columns = ["district","taluka","name","id","warehousetype","type","latitude","longitude","storage","ragi","jowar"];
     $tablename = $_GET['tableName'];
 	if(isset($_GET['tableName1']))
 	{
@@ -133,27 +133,102 @@ if (isset($_GET['format'])) {
             break;
 
         case 'pdf':
-            require('fpdf/fpdf.php');
-
-            $pdf = new FPDF();
-            $pdf->AddPage();
-            $pdf->SetFont('Arial', 'B', 0);
-
-            // Highlight the first row as header
-            $pdf->SetFillColor(200, 220, 255); // Set background color
-            $pdf->SetTextColor(0); // Reset text color
-            $case = 0;
-			$pdf->SetFont('helvetica', '', 7); // Font family, style (empty for regular), and size (8)
-            foreach ($tableData as $row) {
-                foreach ($row as $col) {
-                    $pdf->Cell(22, 5, $col, 1, 0, 'C', true);
+            require_once('fpdf/fpdf.php');
+            if (!class_exists('PDF_Table')) {
+                class PDF_Table extends FPDF {
+                    function NbLines($w, $txt) {
+                        $cw = &$this->CurrentFont['cw'];
+                        if ($w == 0) $w = $this->w - $this->rMargin - $this->x;
+                        $wmax = ($w - 2 * $this->cMargin) * 1000 / $this->FontSize;
+                        $s = str_replace("", '', (string)$txt);
+                        $nb = strlen($s);
+                        if ($nb > 0 && $s[$nb - 1] == "
+") $nb--;
+                        $sep = -1; $i = 0; $j = 0; $l = 0; $nl = 1;
+                        while ($i < $nb) {
+                            $c = $s[$i];
+                            if ($c == "
+") {
+                                $i++; $sep = -1; $j = $i; $l = 0; $nl++; continue;
+                            }
+                            if ($c == ' ') $sep = $i;
+                            $l += $cw[$c] ?? 0;
+                            if ($l > $wmax) {
+                                if ($sep == -1) {
+                                    if ($i == $j) $i++;
+                                } else {
+                                    $i = $sep + 1;
+                                }
+                                $sep = -1; $j = $i; $l = 0; $nl++;
+                            } else {
+                                $i++;
+                            }
+                        }
+                        return $nl;
+                    }
+                    function rowHeight($row, $colWidths, $lineHeight) {
+                        $max = 1; $i = 0;
+                        foreach ($row as $txt) {
+                            $w = $colWidths[$i];
+                            $lines = $this->NbLines($w, strval($txt));
+                            $max = max($max, $lines);
+                            $i++;
+                        }
+                        return $lineHeight * $max + 2;
+                    }
+                    function drawRow($row, $colWidths, $lineHeight, $isHeader = false) {
+                        $startX = $this->GetX(); $y = $this->GetY();
+                        $h = $this->rowHeight($row, $colWidths, $lineHeight);
+                        $i = 0;
+                        foreach ($row as $cell) {
+                            $w = $colWidths[$i]; $x = $this->GetX();
+                            if ($isHeader) $this->SetFillColor(215, 225, 245);
+                            else $this->SetFillColor(255, 255, 255);
+                            $this->Rect($x, $y, $w, $h, 'F');
+                            $cellText = strval($cell);
+                            $lines = $this->NbLines($w, $cellText);
+                            $textHeight = $lines * $lineHeight;
+                            $topPadding = max(0, ($h - $textHeight) / 2);
+                            $this->SetXY($x, $y + $topPadding);
+                            $this->MultiCell($w, $lineHeight, $cellText, 0, 'C');
+                            $this->Rect($x, $y, $w, $h, 'D');
+                            $this->SetXY($x + $w, $y);
+                            $i++;
+                        }
+                        $this->SetXY($startX, $y + $h);
+                    }
                 }
-                $pdf->Ln();
-                $pdf->SetFillColor(255, 255, 255); 
             }
-
+            $pdf = new PDF_Table('L', 'mm', 'A4');
+            $pdf->SetMargins(5, 8, 5);
+            $pdf->SetAutoPageBreak(false);
+            $pdf->AddPage();
+            $pageWidth = $pdf->GetPageWidth() - 10;
+            $lineHeight = 3.2;
+            
+            $numCols = count($tableData[0]);
+            $colWidths = [];
+            for ($i = 0; $i < $numCols; $i++) {
+                $colWidths[] = $pageWidth / $numCols;
+            }
+            
+            $pdf->SetFont('Arial', 'B', 5.5);
+            $pdf->drawRow($tableData[0], $colWidths, $lineHeight, true);
+            $pdf->SetFont('Arial', '', 5);
+            $pageHeight = $pdf->GetPageHeight();
+            $bottomMargin = 10;
+            for ($i = 1; $i < count($tableData); $i++) {
+                $nextHeight = $pdf->rowHeight($tableData[$i], $colWidths, $lineHeight);
+                if ($pdf->GetY() + $nextHeight > $pageHeight - $bottomMargin) {
+                    $pdf->AddPage();
+                    $pdf->SetFont('Arial', 'B', 5.5);
+                    $pdf->drawRow($tableData[0], $colWidths, $lineHeight, true);
+                    $pdf->SetFont('Arial', '', 5);
+                }
+                $pdf->drawRow($tableData[$i], $colWidths, $lineHeight);
+            }
             header('Content-Type: application/pdf');
-            header('Content-Disposition: attachment;filename="' . $filename . '.pdf"');
+            header('Content-Disposition: attachment; filename="' . $filename . '.pdf"');
             echo $pdf->Output('S');
             break;
 

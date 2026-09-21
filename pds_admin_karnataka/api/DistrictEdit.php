@@ -5,7 +5,15 @@ require('../structures/District.php');
 require('../util/SessionFunction.php');
 require('../structures/Login.php');
 require('../util/Logger.php');
+
+$rawName = isset($_POST['name']) ? $_POST['name'] : null;
+
 require('../util/Security.php');
+
+if (($rawName === '0' || $rawName === 0) && $_POST["name"] === false) {
+    $_POST["name"] = (string)$rawName;
+}
+
 require ('../util/Encryption.php');
 $nonceValue = 'nonce_value';
 
