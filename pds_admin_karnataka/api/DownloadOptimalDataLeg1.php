@@ -23,8 +23,8 @@ if (isset($_GET['format'])) {
 	$district = $_GET['district'];
     
     #$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_lat","to_long","commodity","quantity","distance","new_id_district","reason_district","new_distance_district","approve_district","approve_admin","reason_admin","new_id_admin","new_distance_admin"];
-	$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance"];
-	$columns_pdf = ["scenario","from","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance"];
+	$columns = ["scenario","from","from_state","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_state","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance","status","approve_district","new_id_admin","reason_admin","new_distance_admin"];
+	$columns_pdf = ["scenario","from","from_id","from_name","from_district","from_block","from_lat","from_long","to","to_id","to_name","to_district","to_block","to_lat","to_long","commodity","quantity","distance","status","approve_district","new_id_admin","reason_admin","new_distance_admin"];
 
     $query = "SELECT * FROM optimised_table_leg1 WHERE month='$month' AND year='$year'";
 	$result = mysqli_query($con,$query);
@@ -45,8 +45,16 @@ if (isset($_GET['format'])) {
     $numrows = mysqli_num_rows($result);
     $tableData = array();
 	$tableData_pdf = array();
-    $header_csv = array_map(function($v) { return $v === 'from_block' ? 'from_taluka' : ($v === 'to_block' ? 'to_taluka' : $v); }, $columns);
-    $header_pdf = array_map(function($v) { return $v === 'from_block' ? 'from_taluka' : ($v === 'to_block' ? 'to_taluka' : $v); }, $columns_pdf);
+    $label_map = [
+        'from_block' => 'from_taluka',
+        'to_block' => 'to_taluka',
+        'approve_district' => 'RO Accepted',
+        'new_id_admin' => 'FCI Release Warehouse',
+        'reason_admin' => 'Reason for not Approve',
+        'new_distance_admin' => 'Distance'
+    ];
+    $header_csv = array_map(function($v) use ($label_map) { return isset($label_map[$v]) ? $label_map[$v] : $v; }, $columns);
+    $header_pdf = array_map(function($v) use ($label_map) { return isset($label_map[$v]) ? $label_map[$v] : $v; }, $columns_pdf);
     array_push($tableData, $header_csv);
     array_push($tableData_pdf, $header_pdf);
 
