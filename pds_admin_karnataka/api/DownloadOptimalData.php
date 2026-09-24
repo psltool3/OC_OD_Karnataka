@@ -15,7 +15,8 @@ if (isset($_GET['format'])) {
     $columns = [
         "scenario","from","from_state","from_id","from_name","from_district","from_block",
         "from_lat","from_long","to","to_state","to_id","to_name","to_district","to_block",
-        "to_lat","to_long","commodity","quantity","distance","status"
+        "to_lat","to_long","commodity","quantity","distance","status",
+        "new_id_district", "reason_district", "new_distance_district", "approve_district", "approve_admin"
     ];
 
     $columns_pdf = [
