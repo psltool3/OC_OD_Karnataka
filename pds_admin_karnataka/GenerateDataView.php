@@ -192,7 +192,8 @@ if($tablename!=$tablename1){
 }
 
 $tableData_pdf = array();
-array_push($tableData_pdf,$columns_pdf);
+$header_pdf = array_map(function($v) { return $v === 'from_block' ? 'from_taluka' : ($v === 'to_block' ? 'to_taluka' : $v); }, $columns_pdf);
+array_push($tableData_pdf,$header_pdf);
 
 $pdf = new FPDF('L', 'mm', 'A4');
 $pdf->AddPage();

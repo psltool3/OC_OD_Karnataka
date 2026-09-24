@@ -47,9 +47,9 @@ $result = $con->query($query);
 
 if ($result && $result->num_rows > 0) {
 	if ($district == "" || $district == "all") {
-		$query = "SELECT * FROM ".$tablename." WHERE status='implemented' AND approve_district='yes'";
+		$query = "SELECT * FROM ".$tablename." WHERE approve_admin='yes'";
 	} else {
-		$query = "SELECT * FROM ".$tablename." WHERE to_district='$district' AND status='implemented' AND approve_district='yes'";
+		$query = "SELECT * FROM ".$tablename." WHERE to_district='$district' AND approve_admin='yes'";
 	}
 	$result = mysqli_query($con,$query);
 	$numrows = mysqli_num_rows($result);

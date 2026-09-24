@@ -283,7 +283,8 @@ require('Header.php');
 								status = "<span style='padding:5px' class='btn-danger btn-rounded'>InActive</span>";
 							}
 							var talukaVal = obj[datafield]["taluka"] || obj[datafield]["block"] || obj[datafield]["taluk"] || "";
-							var subpart = "<tr><td>" +  obj[datafield]["district"] +  "</td><td>" +  talukaVal +  "</td><td>"  + obj[datafield]["name"] +  "</td><td>"  + obj[datafield]["id"] +  "</td><td>"  + obj[datafield]["type"] +  "</td><td>"  + obj[datafield]["latitude"] +  "</td><td>"  + obj[datafield]["longitude"] +  "</td><td>"  + obj[datafield]["demand"] +  "</td><td>"  + obj[datafield]["demand_rice"]  + "</td><td>" + status + "</td><td> <button class='btn btn-info btn-rounded' onclick=\"change_status('"+ temp_id + "')\">Change Status</button></td><td> <button class='btn btn-warning btn-rounded' onclick=\"edit_entry('" + temp_id +  "')\">Edit</button></td><td> <button class='btn btn-danger btn-rounded' onclick=\"delete_entry('" + temp_id +"')\">Delete</button></td></tr>";
+							var districtName = obj[datafield]["district"] ? obj[datafield]["district"].toUpperCase() : "";
+							var subpart = "<tr><td>" +  districtName +  "</td><td>" +  talukaVal +  "</td><td>"  + obj[datafield]["name"] +  "</td><td>"  + obj[datafield]["id"] +  "</td><td>"  + obj[datafield]["type"] +  "</td><td>"  + obj[datafield]["latitude"] +  "</td><td>"  + obj[datafield]["longitude"] +  "</td><td>"  + obj[datafield]["demand"] +  "</td><td>"  + obj[datafield]["demand_rice"]  + "</td><td>" + status + "</td><td> <button class='btn btn-info btn-rounded' onclick=\"change_status('"+ temp_id + "')\">Change Status</button></td><td> <button class='btn btn-warning btn-rounded' onclick=\"edit_entry('" + temp_id +  "')\">Edit</button></td><td> <button class='btn btn-danger btn-rounded' onclick=\"delete_entry('" + temp_id +"')\">Delete</button></td></tr>";
 							$('#fps_table').append(subpart);
 						}
 					}

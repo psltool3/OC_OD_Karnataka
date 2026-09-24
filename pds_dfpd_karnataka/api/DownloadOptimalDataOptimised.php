@@ -18,7 +18,8 @@ if (isset($_GET['format'])) {
 	$district = $_GET['district'];
     
 	$tableData = array();
-    array_push($tableData,$columns);
+    $header_csv = array_map(function($v) { return $v === 'from_block' ? 'from_taluka' : ($v === 'to_block' ? 'to_taluka' : $v); }, $columns);
+    array_push($tableData,$header_csv);
 	
 	$query = "SELECT * FROM ".$tablename." WHERE to_district='".$district."'";
 	if($district=="all"){

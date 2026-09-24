@@ -506,7 +506,7 @@ require('Header.php');
 						var obj = resultarray["table"];
 						var thead = document.createElement("thead");
 						var headerRow = document.createElement("tr");
-						var headers = ["Scenario", "WH_Used", "FPS_Used", "Total_Allocation", "Total_QKM", "Average Distance"];
+						var headers = ["Scenario", "FCI_Used", "WH_Used", "Total_Allocation", "Total_QKM", "Average Distance"];
 						headers.forEach(function(headerText) {
 							var th = document.createElement("th");
 							th.textContent = headerText;

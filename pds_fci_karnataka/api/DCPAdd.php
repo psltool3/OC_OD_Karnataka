@@ -106,7 +106,7 @@ $uniqueid = uniqid("DCP_",);
 
 $DCP = new DCP;
 $DCP->setUniqueid(substr($uniqueid,0,15));
-$DCP->setDistrict(ucwords(strtolower($district)));
+$DCP->setDistrict(strtoupper(trim($district)));
 $DCP->setTaluka(ucwords(strtolower($taluka)));
 $DCP->setLatitude($latitude);
 $DCP->setLongitude($longitude);

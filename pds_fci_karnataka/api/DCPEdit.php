@@ -91,7 +91,7 @@ if (!isset($_POST["taluka"]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($_POST["ta
 
 $dbHashedPassword = $row['password'];
 if(password_verify($person->getPassword(), $dbHashedPassword)){
-	$district = formatName($_POST["district"]);
+	$district = $_POST["district"];
 	$taluka = formatName($_POST["taluka"]);
 	$latitude = $_POST["latitude"];
 	$longitude = $_POST["longitude"];
@@ -105,7 +105,7 @@ if(password_verify($person->getPassword(), $dbHashedPassword)){
 
 	$DCP = new DCP;
 	$DCP->setUniqueid($uniqueid);
-	$DCP->setDistrict($district);
+	$DCP->setDistrict(strtoupper(trim($district)));
 	$DCP->setTaluka($taluka);
 	$DCP->setLatitude($latitude);
 	$DCP->setLongitude($longitude);

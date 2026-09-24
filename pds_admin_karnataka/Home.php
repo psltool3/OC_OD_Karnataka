@@ -878,7 +878,7 @@ require('Header.php');
 
 	// Initial data for the chart
 	var initialData = {
-		labels: ['Amritsar', 'Jalandhar', 'Bathinda', 'Ludhiana', 'Fazilka'],
+		labels: ['Bangalore', 'Mysuru', 'Kalburgi', 'Belagavi', 'Dharwad'],
 		datasets: [{
 			label: 'Supply',
 			backgroundColor: '#1640D6',

@@ -35,7 +35,8 @@ if (isset($_GET['format'])) {
     $result = mysqli_query($con,$query);
     $numrows = mysqli_num_rows($result);
     $tableData = array();
-    array_push($tableData,$columns);
+    $header_csv = array_map(function($v) { return $v === 'from_block' ? 'from_taluka' : ($v === 'to_block' ? 'to_taluka' : $v); }, $columns);
+    array_push($tableData,$header_csv);
 
     if($numrows>0){
         while($row = mysqli_fetch_array($result)){

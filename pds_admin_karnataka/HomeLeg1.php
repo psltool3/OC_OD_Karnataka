@@ -827,7 +827,7 @@ require('Header.php');
 
 	// Initial data for the chart
 	var initialData = {
-		labels: ['Amritsar', 'Jalandhar', 'Bathinda', 'Ludhiana', 'Fazilka'],
+		labels: ['Bangalore', 'Mysuru', 'Kalburgi', 'Belagavi', 'Dharwad'],
 		datasets: [{
 			label: 'Supply',
 			backgroundColor: '#1640D6',
@@ -1075,7 +1075,7 @@ require('Header.php');
 		
 		var thead = document.createElement("thead");
 		var headerRow = document.createElement("tr");
-		var headers = ["Scenario", "WH_Used", "FPS_Used", "Total_Allocation", "Total_QKM", "Average Distance"];
+		var headers = ["Scenario", "FCI_Used", "WH_Used", "Total_Allocation", "Total_QKM", "Average Distance"];
 		headers.forEach(function(headerText) {
 			var th = document.createElement("th");
 			th.textContent = headerText;
