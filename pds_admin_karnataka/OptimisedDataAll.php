@@ -95,16 +95,22 @@ require('Header.php');
 										</thead>
 										<tbody id="table_body">
 											<?php
-											$query = "SELECT * FROM optimised_table WHERE 1";
+											$query = "SELECT * FROM optimised_table WHERE 1 ORDER BY year DESC, last_updated DESC";
 											$result = mysqli_query($con, $query);
 											$numrows = mysqli_num_rows($result);
 											while ($row = mysqli_fetch_assoc($result)) {
 												$temp_id = (string)$row['id'];
 												$month = $row['month'];
+												$year = $row['year'];
 
-												$query_leg1 = "SELECT * FROM optimised_table_leg1 WHERE month='$month'";
+												$query_leg1 = "SELECT * FROM optimised_table_leg1 WHERE month='$month' AND year='$year'";
 												$result_leg1 = mysqli_query($con, $query_leg1);
 												$numrows_leg1 = mysqli_num_rows($result_leg1);
+												if ($numrows_leg1 == 0) {
+													$query_leg1 = "SELECT * FROM optimised_table_leg1 WHERE month='$month' ORDER BY year DESC, last_updated DESC LIMIT 1";
+													$result_leg1 = mysqli_query($con, $query_leg1);
+													$numrows_leg1 = mysqli_num_rows($result_leg1);
+												}
 												if ($numrows_leg1 > 0) {
 													$row_leg1 = mysqli_fetch_assoc($result_leg1);
 													$id_leg1 = $row_leg1['id'];

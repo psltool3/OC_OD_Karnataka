@@ -3,7 +3,13 @@ require('util/Connection.php');
 require('util/SessionCheck.php');
 require('Header.php');
 
-$id = $_POST['id'];
+$id = !empty($_POST['id']) ? $_POST['id'] : (!empty($_GET['id']) ? $_GET['id'] : '');
+if (empty($id)) {
+	$q_latest = mysqli_query($con, "SELECT id FROM optimised_table ORDER BY last_updated DESC LIMIT 1");
+	if ($q_latest && $row_latest = mysqli_fetch_assoc($q_latest)) {
+		$id = $row_latest['id'];
+	}
+}
 $tablename = "fps_".$id;
 
 ?>

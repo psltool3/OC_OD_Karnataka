@@ -95,7 +95,7 @@ require('Header.php');
 										</thead>
 										<tbody id="table_body">
 											<?php
-											$query = "SELECT * FROM optimised_table_leg1 ORDER BY id DESC";
+											$query = "SELECT * FROM optimised_table_leg1 ORDER BY year DESC, last_updated DESC";
 											$result = mysqli_query($con, $query);
 											if ($result) {
 												while ($row = mysqli_fetch_assoc($result)) {

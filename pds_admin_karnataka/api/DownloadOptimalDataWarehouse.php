@@ -11,8 +11,48 @@ use PhpOffice\PhpSpreadsheet\Writer\Xlsx;
 if (isset($_GET['format'])) {
     $format = $_GET['format'];
     
-    $columns = ["district","taluka","name","id","warehousetype","type","latitude","longitude","storage","ragi","jowar"];
-    $tablename = $_GET['tableName'];
+    $tablename = isset($_GET['tableName']) ? $_GET['tableName'] : '';
+    $is_fci = (strpos($tablename, 'fci_') !== false);
+    if ($is_fci) {
+        $columns = ["district","taluka","name","id","type","latitude","longitude","demand","demand_rice"];
+    } else {
+        $columns = ["district","taluka","name","id","warehousetype","type","latitude","longitude","storage","ragi","jowar"];
+    }
+
+    if (!function_exists('get_cell_val')) {
+        function get_cell_val($row, $col, $is_fci) {
+            if ($col == "taluka") {
+                return isset($row['taluka']) ? $row['taluka'] : (isset($row['block']) ? $row['block'] : '');
+            }
+            if ($col == "type" && $is_fci) {
+                return isset($row['type']) ? $row['type'] : (isset($row['warehousetype']) ? $row['warehousetype'] : '');
+            }
+            if ($col == "demand") {
+                return isset($row['demand']) ? $row['demand'] : (isset($row['storage']) ? $row['storage'] : '');
+            }
+            if ($col == "demand_rice") {
+                return isset($row['demand_rice']) ? $row['demand_rice'] : (isset($row['frice']) ? $row['frice'] : '');
+            }
+            if ($col == "ragi") {
+                return isset($row['ragi']) ? $row['ragi'] : (isset($row['Ragi']) ? $row['Ragi'] : '');
+            }
+            if ($col == "jowar") {
+                return isset($row['jowar']) ? $row['jowar'] : (isset($row['Jowar']) ? $row['Jowar'] : '');
+            }
+            return isset($row[$col]) ? $row[$col] : '';
+        }
+    }
+
+    if (!function_exists('outputCSV')) {
+        function outputCSV($data) {
+            $output = fopen('php://output', 'w');
+            foreach ($data as $row) {
+                fputcsv($output, $row);
+            }
+            fclose($output);
+        }
+    }
+
 	if(isset($_GET['tableName1']))
 	{
 		$tablename1 = $_GET['tableName1'];
@@ -31,7 +71,7 @@ if (isset($_GET['format'])) {
 
 	$query = "SELECT * FROM ".$tablename.$where;
     $result = mysqli_query($con,$query);
-    $numrows = mysqli_num_rows($result);
+    $numrows = $result ? mysqli_num_rows($result) : 0;
     
     if($numrows>0){
         while($row = mysqli_fetch_array($result)){
@@ -42,11 +82,11 @@ if (isset($_GET['format'])) {
                         array_push($temp,$row["new_id"]);
                     }
                     else{
-                        array_push($temp,$row[$columns[$i]]);
+                        array_push($temp, get_cell_val($row, $columns[$i], $is_fci));
                     }
                 }
                 else{            
-                    array_push($temp,$row[$columns[$i]]);
+                    array_push($temp, get_cell_val($row, $columns[$i], $is_fci));
                 }
             }
             array_push($tableData,$temp);
@@ -64,7 +104,7 @@ if (isset($_GET['format'])) {
 		}
 		$query = "SELECT * FROM " . $tablename1 . " t " . $where1;
 		$result = mysqli_query($con,$query);
-		$numrows = mysqli_num_rows($result);
+		$numrows = $result ? mysqli_num_rows($result) : 0;
 		
 		if($numrows>0){
 			while($row = mysqli_fetch_array($result)){
@@ -75,11 +115,11 @@ if (isset($_GET['format'])) {
 							array_push($temp,$row["new_id"]);
 						}
 						else{
-							array_push($temp,$row[$columns[$i]]);
+							array_push($temp, get_cell_val($row, $columns[$i], $is_fci));
 						}
 					}
 					else{            
-						array_push($temp,$row[$columns[$i]]);
+						array_push($temp, get_cell_val($row, $columns[$i], $is_fci));
 					}
 				}
 				array_push($tableData,$temp);
@@ -241,12 +281,14 @@ if (isset($_GET['format'])) {
 
 
 // Function to output CSV data
-function outputCSV($data) {
-    $output = fopen('php://output', 'w');
-    foreach ($data as $row) {
-        fputcsv($output, $row);
+if (!function_exists('outputCSV')) {
+    function outputCSV($data) {
+        $output = fopen('php://output', 'w');
+        foreach ($data as $row) {
+            fputcsv($output, $row);
+        }
+        fclose($output);
     }
-    fclose($output);
 }
 
 //exit();

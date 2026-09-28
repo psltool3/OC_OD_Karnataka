@@ -3,24 +3,14 @@ require('util/Connection.php');
 require('util/SessionCheck.php');
 require('Header.php');
 
-$id = $_POST['id'];
-$tablename = "warehouse_".$id;
-$tablename1 = "warehouse_".$id;
-$leg = 0;
-if(isset($_POST['step'])){
-	if($_POST['step']=="leg1"){
-		$leg = 1;
-		$tablename = "warehouse_leg1_".$id;
-		$tablename1 = "warehouse_leg1_".$id;
-	}
-	if($_POST['step']=="all"){
-		$leg = 2;
-		$leg_id = $_POST['legid'];
-		$tablename1 = "warehouse_".$id;
-		$tablename = "warehouse_leg1_".$leg_id;
+$id = !empty($_POST['id']) ? $_POST['id'] : (!empty($_GET['id']) ? $_GET['id'] : '');
+if (empty($id)) {
+	$q_latest = mysqli_query($con, "SELECT id FROM optimised_table ORDER BY last_updated DESC LIMIT 1");
+	if ($q_latest && $row_latest = mysqli_fetch_assoc($q_latest)) {
+		$id = $row_latest['id'];
 	}
 }
-
+$tablename = "warehouse_".$id;
 ?>
 <style>
      td {
@@ -51,7 +41,7 @@ if(isset($_POST['step'])){
                             <!-- START SIMPLE DATATABLE -->
                             <div class="panel panel-default">
 							<div class="panel-heading">
-                                    <h3 class="panel-title">Warehouse</h3>
+                                    <h3 class="panel-title">Warehouse (<?php echo htmlspecialchars($tablename); ?>)</h3>
                                 </div>
 								<div style="float:right" style="margin:10px">
 									<button id="downloadCSV" class="btn btn-warning" style="margin-bottom: 10px;" type="button">Download CSV</button>
@@ -77,16 +67,16 @@ if(isset($_POST['step'])){
                                         </thead>
                                         <tbody>
 										<?php
-										$query_leg1 = "SELECT * FROM ".$tablename." WHERE 1";
-										
-										if($leg==2){
-											$query = "SELECT * FROM ".$tablename1." WHERE 1";								
-											$result = mysqli_query($con,$query);
-											$numrows = mysqli_num_rows($result);
+										$query = "SELECT * FROM ".$tablename." WHERE 1";
+										$result = mysqli_query($con,$query);
+										if($result){
 											while($row = mysqli_fetch_array($result))
 											{
+												$taluka = isset($row['taluka']) ? $row['taluka'] : '';
+												$ragi = isset($row['ragi']) ? $row['ragi'] : '';
+												$jowar = isset($row['jowar']) ? $row['jowar'] : '';
 												echo "<tr><td>{$row['district']}</td>".
-												"<td>{$row['taluka']}</td>".
+												"<td>{$taluka}</td>".
 												"<td>{$row['name']}</td>".
 												"<td>{$row['id']}</td>".
 												"<td>{$row['type']}</td>".
@@ -94,32 +84,10 @@ if(isset($_POST['step'])){
 												"<td>{$row['latitude']}</td>".
 												"<td>{$row['longitude']}</td>".
 												"<td>{$row['storage']}</td>".
-												"<td>{$row['ragi']}</td>".
-												"<td>{$row['jowar']}</td></tr>";
+												"<td>{$ragi}</td>".
+												"<td>{$jowar}</td></tr>";
 											}
-											$query_leg1 = "SELECT * FROM " . $tablename . " t 
-															WHERE NOT EXISTS (
-															  SELECT 1 FROM " . $tablename1 . " t1 
-															  WHERE t.name = t1.name AND t.id = t1.id
-															)";
 										}
-										$result = mysqli_query($con,$query_leg1);
-										$numrows = mysqli_num_rows($result);
-										while($row = mysqli_fetch_array($result))
-										{
-											echo "<tr><td>{$row['district']}</td>".
-											"<td>{$row['taluka']}</td>".
-											"<td>{$row['name']}</td>".
-											"<td>{$row['id']}</td>".
-											"<td>{$row['type']}</td>".
-											"<td>{$row['warehousetype']}</td>".
-											"<td>{$row['latitude']}</td>".
-											"<td>{$row['longitude']}</td>".
-											"<td>{$row['storage']}</td>".
-											"<td>{$row['ragi']}</td>".
-											"<td>{$row['jowar']}</td></tr>";
-										}
-										
 										?>
                                         </tbody>
                                     </table>
@@ -180,8 +148,7 @@ if(isset($_POST['step'])){
 		document.getElementById('downloadCSV').addEventListener('click', async function() {
 			try {
 				var tableName = '<?php echo $tablename ?>';
-				var tableName1 = '<?php echo $tablename1 ?>';
-				const csvResponse = await fetch('api/DownloadOptimalDataWarehouse.php?format=csv&tableName='+tableName+'&tableName1='+tableName1);
+				const csvResponse = await fetch('api/DownloadOptimalDataWarehouse.php?format=csv&tableName='+tableName);
 				const csvBlob = await csvResponse.blob();
 				downloadFile(csvBlob, 'Warehouse_' + getDateString() + '.csv');
 			} catch (error) {
@@ -193,8 +160,7 @@ if(isset($_POST['step'])){
 		document.getElementById('downloadXLSX').addEventListener('click', async function() {
 			try {
 				var tableName = '<?php echo $tablename ?>';
-				var tableName1 = '<?php echo $tablename1 ?>';
-				const excelResponse = await fetch('api/DownloadOptimalDataWarehouse.php?format=xlsx&tableName='+tableName+'&tableName1='+tableName1);
+				const excelResponse = await fetch('api/DownloadOptimalDataWarehouse.php?format=xlsx&tableName='+tableName);
 				const excelBlob = await excelResponse.blob();
 				downloadFile(excelBlob, 'Warehouse_' + getDateString() + '.xlsx');
 			} catch (error) {

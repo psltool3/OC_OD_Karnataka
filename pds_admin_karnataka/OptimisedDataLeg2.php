@@ -76,7 +76,7 @@ require('Header.php');
                                         <tbody id="table_body">
 										<?php
 										
-										$query = "SELECT * FROM optimised_table WHERE 1";
+										$query = "SELECT * FROM optimised_table WHERE 1 ORDER BY year DESC, last_updated DESC";
 										$result = mysqli_query($con,$query);
 										$numrows = mysqli_num_rows($result);
 										while($row = mysqli_fetch_array($result))
