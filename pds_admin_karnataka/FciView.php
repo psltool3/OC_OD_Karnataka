@@ -42,7 +42,7 @@ $tablename = "fci_leg1_".$target_id;
                             <!-- START SIMPLE DATATABLE -->
                             <div class="panel panel-default">
 							<div class="panel-heading">
-                                    <h3 class="panel-title">FCI (<?php echo htmlspecialchars($tablename); ?>)</h3>
+                                    <h3 class="panel-title">FCI</h3>
                                 </div>
 								<div style="float:right; margin:10px">
 									<button id="downloadCSV" class="btn btn-warning" style="margin-bottom: 10px;" type="button">Download CSV</button>

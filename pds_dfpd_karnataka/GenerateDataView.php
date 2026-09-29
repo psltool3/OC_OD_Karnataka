@@ -8,24 +8,45 @@ $columns_pdf = ["scenario","from","from_state","from_id","from_name","from_distr
 
 $filename = 'Karnataka_data';
 
-$id = $_POST['id'];
-$tablename = "optimiseddata_".$id;
-$tablename1 = "optimiseddata_".$id;
-$leg = 0;
-$leg_id = 0;
-if(isset($_POST['step'])){
-	if($_POST['step']=="leg1"){
-		$leg = 1;
-		$tablename = "optimiseddata_leg1_".$id;
-		$tablename1 = "optimiseddata_leg1_".$id;
+$step = isset($_POST['step']) ? $_POST['step'] : (isset($_GET['step']) ? $_GET['step'] : '');
+$id = !empty($_POST['id']) ? $_POST['id'] : (!empty($_GET['id']) ? $_GET['id'] : '');
+
+if ($step == 'leg1') {
+	$leg = 1;
+	if (empty($id)) {
+		$q_latest = mysqli_query($con, "SELECT id FROM optimised_table_leg1 ORDER BY year DESC, last_updated DESC LIMIT 1");
+		if ($q_latest && $row_latest = mysqli_fetch_assoc($q_latest)) {
+			$id = $row_latest['id'];
+		}
 	}
-	if($_POST['step']=="all"){
-		$leg = 2;
-		$leg_id = $_POST['legid'];
+	$tablename = "optimiseddata_leg1_".$id;
+} else {
+	if (empty($id)) {
+		$q_latest = mysqli_query($con, "SELECT id FROM optimised_table ORDER BY last_updated DESC LIMIT 1");
+		if ($q_latest && $row_latest = mysqli_fetch_assoc($q_latest)) {
+			$id = $row_latest['id'];
+		}
+		$leg = 0;
 		$tablename = "optimiseddata_".$id;
-		$tablename1 = "optimiseddata_leg1_".$leg_id;
+	} else {
+		$chk = mysqli_query($con, "SHOW TABLES LIKE 'optimiseddata_" . mysqli_real_escape_string($con, $id) . "'");
+		if ($chk && mysqli_num_rows($chk) > 0) {
+			$leg = 0;
+			$tablename = "optimiseddata_".$id;
+		} else {
+			$chk_leg1 = mysqli_query($con, "SHOW TABLES LIKE 'optimiseddata_leg1_" . mysqli_real_escape_string($con, $id) . "'");
+			if ($chk_leg1 && mysqli_num_rows($chk_leg1) > 0) {
+				$leg = 1;
+				$tablename = "optimiseddata_leg1_".$id;
+			} else {
+				$leg = 0;
+				$tablename = "optimiseddata_".$id;
+			}
+		}
 	}
 }
+$tablename1 = $tablename;
+$leg_id = 0;
 
 $month = "";
 $date = "";
@@ -73,39 +94,7 @@ $qkm1 = 0;
 $qkm_optimised1 = 0;
 $averagedistanceoptimised1 = 0;
 
-if($leg_id!=""){
-	$query = "SELECT * FROM optimised_table_leg1 WHERE id='$leg_id'";
-	$result = mysqli_query($con,$query);
-	$numrows = mysqli_num_rows($result);
-	if($numrows>0){
-		while($row=mysqli_fetch_assoc($result)){
-			$cost1 = $row["cost"];
-		}
-	}
-	
-	$query = "SELECT * FROM $tablename1 WHERE 1";
-	$result = mysqli_query($con,$query);
-	$numrows = mysqli_num_rows($result);
-	while($row = mysqli_fetch_assoc($result))
-	{		
-		$qkm_optimised = $qkm_optimised + (float)$row["quantity"] * (float)$row["distance"];
-		if($row['new_id_admin']!=null or $row['new_id_admin']!=""){
-			$row["distance"] = $row['new_distance_admin'];
-		}
-		else if(($row['new_id_district']!=null or $row['new_id_district']!="") and $row['approve_admin']=="yes"){
-			$row["distance"] = $row['new_distance_district'];
-		}		
-		$allocation1 = $allocation1 + (float)$row["quantity"];
-		$qkm1 = $qkm1 + (float)$row["quantity"] * (float)$row["distance"];
-	}
-	$averagedistanceoptimised1 = round($qkm1/$allocation1,2);
-	$qkm1 = round($qkm1,2);
-	
-}
-
 $data = null;
-$data1 = null;
-
 
 $query = "SELECT * FROM ".$tablename." WHERE 1";
 $result = mysqli_query($con,$query);
@@ -114,8 +103,8 @@ while($row = mysqli_fetch_array($result))
 {
 	
 	if($row['new_id_admin']!=null or $row['new_id_admin']!=""){
-		$id = $row['new_id_admin'];
-		$query_warehouse = "SELECT latitude,longitude,district FROM warehouse WHERE id='$id'";
+		$wh_id = $row['new_id_admin'];
+		$query_warehouse = "SELECT latitude,longitude,district FROM warehouse WHERE id='$wh_id'";
 		$result_warehouse = mysqli_query($con,$query_warehouse);
 		$numrows_warehouse = mysqli_num_rows($result_warehouse);
 		if($numrows_warehouse!=0){
@@ -130,8 +119,8 @@ while($row = mysqli_fetch_array($result))
 	}
 	else if(($row['new_id_district']!=null or $row['new_id_district']!="") and $row['approve_admin']=="yes"){
 	
-		$id = $row['new_id_district'];
-		$query_warehouse = "SELECT latitude,longitude,district FROM warehouse WHERE id='$id'";
+		$wh_id = $row['new_id_district'];
+		$query_warehouse = "SELECT latitude,longitude,district FROM warehouse WHERE id='$wh_id'";
 		$result_warehouse = mysqli_query($con,$query_warehouse);
 		$numrows_warehouse = mysqli_num_rows($result_warehouse);
 		if($numrows_warehouse!=0){
@@ -146,49 +135,6 @@ while($row = mysqli_fetch_array($result))
 	}
 	$data[] = $row;
 
-}
-
-if($tablename!=$tablename1){
-	$query = "SELECT * FROM ".$tablename1." WHERE 1";
-	$result = mysqli_query($con,$query);
-	$numrows = mysqli_num_rows($result);
-	while($row = mysqli_fetch_array($result))
-	{
-		
-		if($row['new_id_admin']!=null or $row['new_id_admin']!=""){
-			$id = $row['new_id_admin'];
-			$query_warehouse = "SELECT latitude,longitude,district FROM warehouse WHERE id='$id'";
-			$result_warehouse = mysqli_query($con,$query_warehouse);
-			$numrows_warehouse = mysqli_num_rows($result_warehouse);
-			if($numrows_warehouse!=0){
-				$row_warehouse = mysqli_fetch_assoc($result_warehouse);
-				$row["from_lat"] = $row_warehouse['latitude'];
-				$row["from_long"] = $row_warehouse['longitude'];
-				$row["from_district"] = $row_warehouse['district'];
-			}
-			$row["from_id"] = $row['new_id_admin'];
-			$row["from_name"] = $row['new_name_admin'];
-			$row["distance"] = $row['new_distance_admin'];
-		}
-		else if(($row['new_id_district']!=null or $row['new_id_district']!="") and $row['approve_admin']=="yes"){
-		
-			$id = $row['new_id_district'];
-			$query_warehouse = "SELECT latitude,longitude,district FROM warehouse WHERE id='$id'";
-			$result_warehouse = mysqli_query($con,$query_warehouse);
-			$numrows_warehouse = mysqli_num_rows($result_warehouse);
-			if($numrows_warehouse!=0){
-				$row_warehouse = mysqli_fetch_assoc($result_warehouse);
-				$row["from_lat"] = $row_warehouse['latitude'];
-				$row["from_long"] = $row_warehouse['longitude'];
-				$row["from_district"] = $row_warehouse['district'];
-			}
-			$row["from_id"] = $row['new_id_district'];
-			$row["from_name"] = $row['new_name_district'];
-			$row["distance"] = $row['new_distance_district'];
-		}
-		$data1[] = $row;
-
-	}
 }
 
 $tableData_pdf = array();
@@ -256,22 +202,23 @@ $pdf->Cell(50, 10, $averagedistanceoptimised, 1);
 $pdf->Cell(40, 10, $cost, 1);
 $pdf->Ln();
 
-if($leg_id!="" && $leg != 1){
-	$text = "Cost saving for L1";
-	$pdf->Cell(0, 10, $text, 0, 1);
+// if($leg_id!="" && $leg != 1){
+// 	$text = "Cost saving for L1";
+// 	$pdf->Cell(0, 10, $text, 0, 1);
 
-	$pdf->Cell(40, 10, 'Qkm', 1);
-	$pdf->Cell(40, 10, 'Allocation', 1);
-	$pdf->Cell(50, 10, 'Average Distance', 1);
-	$pdf->Cell(40, 10, 'Cost', 1);
-	$pdf->Ln();
+// 	$pdf->Cell(40, 10, 'Qkm', 1);
+// 	$pdf->Cell(40, 10, 'Allocation', 1);
+// 	$pdf->Cell(50, 10, 'Average Distance', 1);
+// 	$pdf->Cell(40, 10, 'Cost', 1);
+// 	$pdf->Ln();
 
-	$pdf->Cell(40, 10, $qkm1, 1);
-	$pdf->Cell(40, 10, $allocation1, 1);
-	$pdf->Cell(50, 10, $averagedistanceoptimised1, 1);
-	$pdf->Cell(40, 10, $cost1, 1);
-	$pdf->Ln();
-}
+// 	$pdf->Cell(40, 10, $qkm1, 1);
+// 	$pdf->Cell(40, 10, $allocation1, 1);
+// 	$pdf->Cell(50, 10, $averagedistanceoptimised1, 1);
+// 	$pdf->Cell(40, 10, $cost1, 1);
+// 	$pdf->Ln();
+// }
+$pdf->Ln();
 // Add the header
 addRow($pdf, $tableData_pdf[0], $colWidth, true);
 
@@ -314,39 +261,7 @@ if($data!=null){
 	}
 }
 
-if($data1!=null){
-	for ($i = 0; $i < count($data1); $i++) {
-		if ($pdf->GetY() + $rowHeight > $pdf->GetPageHeight() - 10) { // Check if we need to add a new page
-			$pdf->AddPage();
-			addRow($pdf, $tableData_pdf[0], $colWidth, true); // Add the header again on the new page
-		}
-		$temp = array();
-		for($j=0;$j<count($data1[$i]);$j++){
-			$temp["scenario"] = $data1[$i]["scenario"];
-			$temp["from"] = $data1[$i]["from"];
-			$temp["from_state"] = $data1[$i]["from_state"];
-			$temp["from_id"] = $data1[$i]["from_id"];
-			$temp["from_name"] = $data1[$i]["from_name"];
-			$temp["from_district"] = $data1[$i]["from_district"];
-			$temp["from_block"] = $data1[$i]["from_block"];
-			$temp["from_lat"] = $data1[$i]["from_lat"];
-			$temp["from_long"] = $data1[$i]["from_long"];
-			$temp["to"] = $data1[$i]["to"];
-			$temp["to_state"] = $data1[$i]["to_state"];
-			$temp["to_id"] = $data1[$i]["to_id"];
-			$temp["to_name"] = $data1[$i]["to_name"];
-			$temp["to_district"] = $data1[$i]["to_district"];
-			$temp["to_block"] = $data1[$i]["to_block"];
-			$temp["to_lat"] = $data1[$i]["to_lat"];
-			$temp["to_long"] = $data1[$i]["to_long"];
-			$temp["commodity"] = $data1[$i]["commodity"];
-			$temp["quantity"] = $data1[$i]["quantity"];
-			$temp["distance"] = $data1[$i]["distance"];
-			$temp["status"] = $data1[$i]["status"];
-		}
-		addRow($pdf, $temp, $colWidth);
-	}
-}
+
 
 header('Content-Type: application/pdf');
 header('Content-Disposition: attachment;filename="' . $filename . '.pdf"');

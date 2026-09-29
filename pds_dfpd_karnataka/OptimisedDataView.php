@@ -3,24 +3,16 @@ require('util/Connection.php');
 require('util/SessionCheck.php');
 require('Header.php');
 
-$id = $_POST['id'];
+$id = !empty($_POST['id']) ? $_POST['id'] : (!empty($_GET['id']) ? $_GET['id'] : '');
+if (empty($id)) {
+	$q_latest = mysqli_query($con, "SELECT id FROM optimised_table ORDER BY last_updated DESC LIMIT 1");
+	if ($q_latest && $row_latest = mysqli_fetch_assoc($q_latest)) {
+		$id = $row_latest['id'];
+	}
+}
 $tablename = "optimiseddata_".$id;
 $tablename1 = "optimiseddata_".$id;
 $leg = 0;
-if(isset($_POST['step'])){
-	if($_POST['step']=="leg1"){
-		$leg = 1;
-		$tablename = "optimiseddata_leg1_".$id;
-		$tablename1 = "optimiseddata_leg1_".$id;
-	}
-	if($_POST['step']=="all"){
-		$leg = 2;
-		$leg_id = $_POST['legid'];
-		$tablename = "optimiseddata_".$id;
-		$tablename1 = "optimiseddata_leg1_".$leg_id;
-	}
-}
-
 ?>
 <style>
 
@@ -212,9 +204,8 @@ if(isset($_POST['step'])){
 		document.getElementById('downloadCSV').addEventListener('click', async function() {
 			try {
 				var tableName = '<?php echo $tablename ?>';
-				var tableName1 = '<?php echo $tablename1 ?>';
 				var district = document.getElementById('district').value;
-				const csvResponse = await fetch('api/DownloadOptimalDataOptimised.php?format=csv&tableName=' + tableName + '&tableName1=' + tableName1 + '&district=' + district);
+				const csvResponse = await fetch('api/DownloadOptimalDataOptimised.php?format=csv&tableName=' + tableName + '&tableName1=' + tableName + '&district=' + encodeURIComponent(district));
 				const csvBlob = await csvResponse.blob();
 				downloadFile(csvBlob, 'Optimised_Data_' + getDateString() + '.csv');
 			} catch (error) {
@@ -226,9 +217,8 @@ if(isset($_POST['step'])){
 		document.getElementById('downloadXLSX').addEventListener('click', async function() {
 			try {
 				var tableName = '<?php echo $tablename ?>';
-				var tableName1 = '<?php echo $tablename1 ?>';
 				var district = document.getElementById('district').value;
-				const excelResponse = await fetch('api/DownloadOptimalDataOptimised.php?format=xlsx&tableName=' + tableName + '&tableName1=' + tableName1 + '&district=' + district);
+				const excelResponse = await fetch('api/DownloadOptimalDataOptimised.php?format=xlsx&tableName=' + tableName + '&tableName1=' + tableName + '&district=' + encodeURIComponent(district));
 				const excelBlob = await excelResponse.blob();
 				downloadFile(excelBlob, 'Optimised_Data_' + getDateString() + '.xlsx');
 			} catch (error) {
@@ -279,7 +269,7 @@ if(isset($_POST['step'])){
 				}
 			}
 			
-			var dataString = "district=" + district + "&tablename=" + "<?php echo $tablename ?>" + "&tablename1=" + "<?php echo $tablename1 ?>";
+			var dataString = "district=" + encodeURIComponent(district) + "&tablename=" + "<?php echo $tablename ?>" + "&tablename1=" + "<?php echo $tablename ?>";
 			
 			$.ajax({
 				type: "POST",

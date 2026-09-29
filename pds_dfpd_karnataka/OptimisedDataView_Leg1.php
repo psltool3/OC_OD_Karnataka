@@ -3,7 +3,13 @@ require('util/Connection.php');
 require('util/SessionCheck.php');
 require('Header.php');
 
-$target_id = !empty($_POST['legid']) ? $_POST['legid'] : (isset($_POST['id']) ? $_POST['id'] : '');
+$target_id = !empty($_POST['legid']) ? $_POST['legid'] : (!empty($_POST['id']) ? $_POST['id'] : (!empty($_GET['legid']) ? $_GET['legid'] : (!empty($_GET['id']) ? $_GET['id'] : '')));
+if (empty($target_id)) {
+	$q_latest = mysqli_query($con, "SELECT id FROM optimised_table_leg1 ORDER BY year DESC, last_updated DESC LIMIT 1");
+	if ($q_latest && $row_latest = mysqli_fetch_assoc($q_latest)) {
+		$target_id = $row_latest['id'];
+	}
+}
 $tablename = "optimiseddata_leg1_".$target_id;
 $tablename1 = $tablename;
 

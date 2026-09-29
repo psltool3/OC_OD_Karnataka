@@ -8,16 +8,44 @@ $columns_pdf = ["scenario","from","from_state","from_id","from_name","from_distr
 
 $filename = 'Karnataka_data';
 
+$step = isset($_POST['step']) ? $_POST['step'] : (isset($_GET['step']) ? $_GET['step'] : '');
 $id = !empty($_POST['id']) ? $_POST['id'] : (!empty($_GET['id']) ? $_GET['id'] : '');
-if (empty($id)) {
-	$q_latest = mysqli_query($con, "SELECT id FROM optimised_table ORDER BY last_updated DESC LIMIT 1");
-	if ($q_latest && $row_latest = mysqli_fetch_assoc($q_latest)) {
-		$id = $row_latest['id'];
+
+if ($step == 'leg1') {
+	$leg = 1;
+	if (empty($id)) {
+		$q_latest = mysqli_query($con, "SELECT id FROM optimised_table_leg1 ORDER BY year DESC, last_updated DESC LIMIT 1");
+		if ($q_latest && $row_latest = mysqli_fetch_assoc($q_latest)) {
+			$id = $row_latest['id'];
+		}
+	}
+	$tablename = "optimiseddata_leg1_".$id;
+} else {
+	if (empty($id)) {
+		$q_latest = mysqli_query($con, "SELECT id FROM optimised_table ORDER BY last_updated DESC LIMIT 1");
+		if ($q_latest && $row_latest = mysqli_fetch_assoc($q_latest)) {
+			$id = $row_latest['id'];
+		}
+		$leg = 0;
+		$tablename = "optimiseddata_".$id;
+	} else {
+		$chk = mysqli_query($con, "SHOW TABLES LIKE 'optimiseddata_" . mysqli_real_escape_string($con, $id) . "'");
+		if ($chk && mysqli_num_rows($chk) > 0) {
+			$leg = 0;
+			$tablename = "optimiseddata_".$id;
+		} else {
+			$chk_leg1 = mysqli_query($con, "SHOW TABLES LIKE 'optimiseddata_leg1_" . mysqli_real_escape_string($con, $id) . "'");
+			if ($chk_leg1 && mysqli_num_rows($chk_leg1) > 0) {
+				$leg = 1;
+				$tablename = "optimiseddata_leg1_".$id;
+			} else {
+				$leg = 0;
+				$tablename = "optimiseddata_".$id;
+			}
+		}
 	}
 }
-$tablename = "optimiseddata_".$id;
-$tablename1 = "optimiseddata_".$id;
-$leg = 0;
+$tablename1 = $tablename;
 $leg_id = 0;
 
 $month = "";

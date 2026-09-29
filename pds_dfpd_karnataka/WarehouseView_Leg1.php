@@ -3,7 +3,13 @@ require('util/Connection.php');
 require('util/SessionCheck.php');
 require('Header.php');
 
-$target_id = !empty($_POST['legid']) ? $_POST['legid'] : (isset($_POST['id']) ? $_POST['id'] : '');
+$target_id = !empty($_POST['legid']) ? $_POST['legid'] : (!empty($_POST['id']) ? $_POST['id'] : (!empty($_GET['legid']) ? $_GET['legid'] : (!empty($_GET['id']) ? $_GET['id'] : '')));
+if (empty($target_id)) {
+	$q_latest = mysqli_query($con, "SELECT id FROM optimised_table_leg1 ORDER BY year DESC, last_updated DESC LIMIT 1");
+	if ($q_latest && $row_latest = mysqli_fetch_assoc($q_latest)) {
+		$target_id = $row_latest['id'];
+	}
+}
 $tablename = "warehouse_leg1_".$target_id;
 
 ?>
@@ -67,19 +73,20 @@ $tablename = "warehouse_leg1_".$target_id;
 										if($result){
 											while($row = mysqli_fetch_array($result))
 											{
-												$w_type = isset($row['warehousetype']) ? $row['warehousetype'] : (isset($row['type']) ? $row['type'] : '');
-												$storage_val = isset($row['storage']) ? $row['storage'] : (isset($row['capacity']) ? $row['capacity'] : (isset($row['demand']) ? $row['demand'] : ''));
+												$taluka = isset($row['taluka']) ? $row['taluka'] : (isset($row['block']) ? $row['block'] : '');
+												$ragi = isset($row['ragi']) ? $row['ragi'] : (isset($row['Ragi']) ? $row['Ragi'] : '');
+												$jowar = isset($row['jowar']) ? $row['jowar'] : (isset($row['Jowar']) ? $row['Jowar'] : '');
 												echo "<tr><td>{$row['district']}</td>".
-												"<td>{$row['taluka']}</td>".
+												"<td>{$taluka}</td>".
 												"<td>{$row['name']}</td>".
 												"<td>{$row['id']}</td>".
 												"<td>{$row['type']}</td>".
-												"<td>{$w_type}</td>".
+												"<td>{$row['warehousetype']}</td>".
 												"<td>{$row['latitude']}</td>".
 												"<td>{$row['longitude']}</td>".
-												"<td>{$storage_val}</td>".
-												"<td>{$row['ragi']}</td>".
-												"<td>{$row['jowar']}</td></tr>";
+												"<td>{$row['storage']}</td>".
+												"<td>{$ragi}</td>".
+												"<td>{$jowar}</td></tr>";
 											}
 										}
 										?>

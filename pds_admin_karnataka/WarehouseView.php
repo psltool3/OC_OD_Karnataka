@@ -41,7 +41,7 @@ $tablename = "warehouse_".$id;
                             <!-- START SIMPLE DATATABLE -->
                             <div class="panel panel-default">
 							<div class="panel-heading">
-                                    <h3 class="panel-title">Warehouse (<?php echo htmlspecialchars($tablename); ?>)</h3>
+                                    <h3 class="panel-title">Warehouse</h3>
                                 </div>
 								<div style="float:right" style="margin:10px">
 									<button id="downloadCSV" class="btn btn-warning" style="margin-bottom: 10px;" type="button">Download CSV</button>
