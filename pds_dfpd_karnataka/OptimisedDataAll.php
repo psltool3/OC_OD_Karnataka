@@ -293,7 +293,24 @@ require('Header.php');
 		function hidePopup() {
             document.getElementById('popup').style.display = 'none';
         }
-		
+
+		function filterByYear() {
+			var selectedYear = document.getElementById("yearFilter").value;
+			var table = document.getElementById("export_table");
+			var trs = table.getElementsByTagName("tbody")[0].getElementsByTagName("tr");
+
+			for (var i = 0; i < trs.length; i++) {
+				var yearTd = trs[i].getElementsByTagName("td")[0];
+				if (yearTd) {
+					var yearValue = yearTd.textContent || yearTd.innerText;
+					if (selectedYear === "all" || yearValue.trim() === selectedYear.trim()) {
+						trs[i].style.display = "";
+					} else {
+						trs[i].style.display = "none";
+					}
+				}
+			}
+		}
 		
 		</script>	
     </body>

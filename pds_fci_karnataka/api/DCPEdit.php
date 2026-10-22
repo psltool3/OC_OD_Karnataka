@@ -4,7 +4,19 @@ require('../util/Connection.php');
 require('../structures/DCP.php');
 require('../util/SessionFunction.php');
 require('../structures/Login.php');
+
+$rawDemand = isset($_POST['demand']) ? $_POST['demand'] : null;
+$rawDemandRice = isset($_POST['demand_rice']) ? $_POST['demand_rice'] : null;
+
 require('../util/Security.php');
+
+if (($rawDemand === '0' || $rawDemand === 0 || $rawDemand === '0.0' || (is_numeric($rawDemand) && floatval($rawDemand) == 0)) && $_POST["demand"] === false) {
+    $_POST["demand"] = (string)$rawDemand;
+}
+if (($rawDemandRice === '0' || $rawDemandRice === 0 || $rawDemandRice === '0.0' || (is_numeric($rawDemandRice) && floatval($rawDemandRice) == 0)) && $_POST["demand_rice"] === false) {
+    $_POST["demand_rice"] = (string)$rawDemandRice;
+}
+
 require ('../util/Encryption.php');
 require('../util/Logger.php');
 $nonceValue = 'nonce_value';
@@ -17,8 +29,6 @@ require('Header.php');
 
 
 function formatName($name) {
-	$name = preg_replace('/[^a-zA-Z0-9_ ]/', '', $name);
-    $name = ucwords(strtolower($name));
     return trim($name);
 }
 

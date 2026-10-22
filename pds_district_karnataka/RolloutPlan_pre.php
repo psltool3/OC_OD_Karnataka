@@ -266,7 +266,8 @@ $totalidsapproved = mysqli_num_rows($result);
 	document.getElementById('downloadCSV').addEventListener('click', async function() {
 		try {
 			var month = document.getElementById("month").value;
-			const csvResponse = await fetch('api/DownloadOptimalData.php?format=csv&month='+month);
+			var status = document.getElementById("status") ? document.getElementById("status").value : "";
+			const csvResponse = await fetch('api/DownloadOptimalData.php?format=csv&month='+month+'&status='+encodeURIComponent(status)+'&source=rollout');
 			const csvBlob = await csvResponse.blob();
 			downloadFile(csvBlob, 'Rollout_Plan.csv');
 		} catch (error) {
@@ -278,7 +279,8 @@ $totalidsapproved = mysqli_num_rows($result);
 	document.getElementById('downloadXLSX').addEventListener('click', async function() {
 		try {
 			var month = document.getElementById("month").value;
-			const excelResponse = await fetch('api/DownloadOptimalData.php?format=xlsx&month='+month);
+			var status = document.getElementById("status") ? document.getElementById("status").value : "";
+			const excelResponse = await fetch('api/DownloadOptimalData.php?format=xlsx&month='+month+'&status='+encodeURIComponent(status)+'&source=rollout');
 			const excelBlob = await excelResponse.blob();
 			downloadFile(excelBlob, 'Rollout_Plan.xlsx');
 		} catch (error) {
@@ -286,11 +288,12 @@ $totalidsapproved = mysqli_num_rows($result);
 		}
 	});
 	
-	// Event listener for downloading XLSX
+	// Event listener for downloading PDF
 	document.getElementById('downloadPDF').addEventListener('click', async function() {
 		try {
 			var month = document.getElementById("month").value;
-			const excelResponse = await fetch('api/DownloadOptimalData.php?format=pdf&month='+month);
+			var status = document.getElementById("status") ? document.getElementById("status").value : "";
+			const excelResponse = await fetch('api/DownloadOptimalData.php?format=pdf&month='+month+'&status='+encodeURIComponent(status)+'&source=rollout');
 			const excelBlob = await excelResponse.blob();
 			downloadFile(excelBlob, 'Rollout_Plan.pdf');
 		} catch (error) {

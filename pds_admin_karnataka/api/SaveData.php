@@ -1,7 +1,6 @@
 <?php
 require('../util/Connection.php');
 require('../util/SessionCheck.php');
-require('Header.php');
 require('../util/Logger.php');
 ini_set('max_input_vars', 23000000000000);
 ini_set('memory_limit', '4G');
@@ -98,7 +97,6 @@ foreach ($_POST as $key => $value) {
 }
 mysqli_close($con);
 
-echo "<script>window.location.href = '../OptimisedData.php';</script>";
-
+header("Location: ../OptimisedData.php");
+exit();
 ?>
-<?php require('Fullui.php');  ?>

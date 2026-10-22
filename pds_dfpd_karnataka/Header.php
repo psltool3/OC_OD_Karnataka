@@ -39,7 +39,7 @@ if($numrows>0){
                 <!-- START X-NAVIGATION -->
                 <ul class="x-navigation">
                     <li class="xn-logo">
-                        <a href="index.php">DFPD Panel</a>
+                        <a href="OptimisedDataAll.php">DFPD Panel</a>
                         <a href="#" class="x-navigation-control"></a>
                     </li>
                     <li class="xn-profile">

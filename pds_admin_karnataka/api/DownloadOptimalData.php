@@ -80,9 +80,10 @@ if (isset($_GET['format'])) {
 
     $tablename = "optimiseddata_" . $id;
 
-    $query = "SELECT * FROM $tablename WHERE to_district='$district'";
     if ($district == "" || $district == "all") {
-        $query = "SELECT * FROM $tablename WHERE status='implemented'";
+        $query = "SELECT * FROM $tablename WHERE status='implemented' AND approve_district='yes'";
+    } else {
+        $query = "SELECT * FROM $tablename WHERE to_district='$district' AND status='implemented' AND approve_district='yes'";
     }
 
     $result = mysqli_query($con, $query);

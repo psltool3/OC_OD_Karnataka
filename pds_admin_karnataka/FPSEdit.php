@@ -95,7 +95,7 @@ else{
                             <form action="api/FPSEdit.php" method="POST" class="form-horizontal" enctype = "multipart/form-data">
                             <div class="panel panel-default">
                                <div class="panel-body">
-                                    <p>Fill this form to add new FPS.</p>
+                                    <p>Fill this form to edit new FPS.</p>
                                 </div>
                              <div class="panel-body">
                                     <div class="row">

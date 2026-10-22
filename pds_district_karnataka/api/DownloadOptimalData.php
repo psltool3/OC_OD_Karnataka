@@ -43,17 +43,41 @@ if (isset($_GET['format'])) {
 	];
 
 	
-	$query = "SELECT * FROM optimised_table ORDER BY last_updated DESC LIMIT 1";
-	$result = mysqli_query($con,$query);
-	$numrow = mysqli_num_rows($result);
 	$id = "";
-	if($numrow>0){
-		$row = mysqli_fetch_assoc($result);
-		$id = $row['id'];
+	if(isset($_GET['month']) && !empty($_GET['month'])){
+		$parts = explode('_', $_GET['month']);
+		$m = $parts[0];
+		$y = isset($parts[1]) ? $parts[1] : '';
+		$query = "SELECT * FROM optimised_table WHERE month='$m' AND year='$y'";
+		$result = mysqli_query($con,$query);
+		if($result && mysqli_num_rows($result) > 0){
+			$row = mysqli_fetch_assoc($result);
+			$id = $row['id'];
+		}
+	}
+	if(empty($id)){
+		$query = "SELECT * FROM optimised_table ORDER BY last_updated DESC LIMIT 1";
+		$result = mysqli_query($con,$query);
+		if($result && mysqli_num_rows($result) > 0){
+			$row = mysqli_fetch_assoc($result);
+			$id = $row['id'];
+		}
 	}
 
 	$tablename = "optimiseddata_".$id;
-    $query = "SELECT * FROM ".$tablename." WHERE to_district='$district'";
+	$source = isset($_GET['source']) ? $_GET['source'] : '';
+	$status = isset($_GET['status']) ? $_GET['status'] : '';
+
+	if ($source == 'rollout' || !empty($status) || isset($_GET['month'])) {
+		$query = "SELECT * FROM ".$tablename." WHERE to_district='$district' AND approve_district='yes' AND (approve_admin='yes' OR approve_admin='no')";
+		if($status == "implemented"){
+			$query = "SELECT * FROM ".$tablename." WHERE to_district='$district' AND status='implemented' AND approve_district='yes' AND (approve_admin='yes' OR approve_admin='no')";
+		} else if($status == "not implemented"){
+			$query = "SELECT * FROM ".$tablename." WHERE to_district='$district' AND (status IS NULL OR status='') AND approve_district='yes' AND (approve_admin='yes' OR approve_admin='no')";
+		}
+	} else {
+		$query = "SELECT * FROM ".$tablename." WHERE to_district='$district'";
+	}
     $result = mysqli_query($con,$query);
     $numrows = mysqli_num_rows($result);
     $tableData = array();

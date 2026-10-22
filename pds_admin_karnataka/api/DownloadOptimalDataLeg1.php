@@ -36,10 +36,10 @@ if (isset($_GET['format'])) {
 	}
 
 	$tablename = "optimiseddata_leg1_".$id;
-	$query = "SELECT * FROM ".$tablename." WHERE 1";
-	
 	if($district!="" and $district!="all"){
-		$query = "SELECT * FROM ".$tablename." WHERE to_district='$district'";
+		$query = "SELECT * FROM ".$tablename." WHERE to_district='$district' AND approve_admin='yes'";
+	} else {
+		$query = "SELECT * FROM ".$tablename." WHERE approve_admin='yes'";
 	}
     $result = mysqli_query($con,$query);
     $numrows = mysqli_num_rows($result);
@@ -62,14 +62,23 @@ if (isset($_GET['format'])) {
         while($row = mysqli_fetch_array($result)){
 			if($row['new_id_admin']!=null or $row['new_id_admin']!=""){
 				$new_id = $row['new_id_admin'];
-				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse_leg1_".$id." WHERE id='$new_id'";
+				$query_warehouse = "SELECT latitude,longitude,district FROM fci_leg1_".$id." WHERE id='$new_id'";
 				$result_warehouse = mysqli_query($con,$query_warehouse);
-				$numrows_warehouse = mysqli_num_rows($result_warehouse);
+				$numrows_warehouse = ($result_warehouse) ? mysqli_num_rows($result_warehouse) : 0;
 				if($numrows_warehouse!=0){
 					$row_warehouse = mysqli_fetch_assoc($result_warehouse);
 					$row["from_lat"] = $row_warehouse['latitude'];
 					$row["from_long"] = $row_warehouse['longitude'];
 					$row["from_district"] = $row_warehouse['district'];
+				} else {
+					$query_warehouse2 = "SELECT latitude,longitude,district FROM warehouse_leg1_".$id." WHERE id='$new_id'";
+					$result_warehouse2 = mysqli_query($con,$query_warehouse2);
+					if($result_warehouse2 && mysqli_num_rows($result_warehouse2)!=0){
+						$row_warehouse2 = mysqli_fetch_assoc($result_warehouse2);
+						$row["from_lat"] = $row_warehouse2['latitude'];
+						$row["from_long"] = $row_warehouse2['longitude'];
+						$row["from_district"] = $row_warehouse2['district'];
+					}
 				}
 				$row["from_id"] = $row['new_id_admin'];
 				$row["from_name"] = $row['new_name_admin'];
@@ -77,14 +86,23 @@ if (isset($_GET['format'])) {
 			}
 			else if(($row['new_id_district']!=null or $row['new_id_district']!="") and $row['approve_admin']=="yes"){
 				$new_id = $row['new_id_district'];
-				$query_warehouse = "SELECT latitude,longitude,district FROM warehouse_leg1_".$id." WHERE id='$new_id'";
+				$query_warehouse = "SELECT latitude,longitude,district FROM fci_leg1_".$id." WHERE id='$new_id'";
 				$result_warehouse = mysqli_query($con,$query_warehouse);
-				$numrows_warehouse = mysqli_num_rows($result_warehouse);
+				$numrows_warehouse = ($result_warehouse) ? mysqli_num_rows($result_warehouse) : 0;
 				if($numrows_warehouse!=0){
 					$row_warehouse = mysqli_fetch_assoc($result_warehouse);
 					$row["from_lat"] = $row_warehouse['latitude'];
 					$row["from_long"] = $row_warehouse['longitude'];
 					$row["from_district"] = $row_warehouse['district'];
+				} else {
+					$query_warehouse2 = "SELECT latitude,longitude,district FROM warehouse_leg1_".$id." WHERE id='$new_id'";
+					$result_warehouse2 = mysqli_query($con,$query_warehouse2);
+					if($result_warehouse2 && mysqli_num_rows($result_warehouse2)!=0){
+						$row_warehouse2 = mysqli_fetch_assoc($result_warehouse2);
+						$row["from_lat"] = $row_warehouse2['latitude'];
+						$row["from_long"] = $row_warehouse2['longitude'];
+						$row["from_district"] = $row_warehouse2['district'];
+					}
 				}
 				$row["from_id"] = $row['new_id_district'];
 				$row["from_name"] = $row['new_name_district'];

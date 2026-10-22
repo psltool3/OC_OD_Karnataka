@@ -1,7 +1,6 @@
 <?php
 require('../util/Connection.php');
 require('../util/SessionCheck.php');
-require('Header.php');
 require('../util/Logger.php');
 
 $query = "SELECT * FROM optimised_table_leg1 ORDER BY last_updated DESC LIMIT 1";
@@ -52,10 +51,19 @@ foreach ($_POST as $key => $value) {
 		$query = "UPDATE " . $tablename . " SET approve_admin='', new_id_admin='' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
 	}
 	else{
-		$query_name = "SELECT name FROM warehouse_leg1_".$id." WHERE id='$value'";
+		$name = '';
+		$query_name = "SELECT name FROM fci_leg1_".$id." WHERE id='$value'";
 		$result_name = mysqli_query($con,$query_name);
-		$row_name = mysqli_fetch_assoc($result_name);
-		$name = $row_name['name'];
+		if($result_name && $row_name = mysqli_fetch_assoc($result_name)){
+			$name = $row_name['name'];
+		}
+		if(empty($name)){
+			$query_name_wh = "SELECT name FROM warehouse_leg1_".$id." WHERE id='$value'";
+			$result_name_wh = mysqli_query($con,$query_name_wh);
+			if($result_name_wh && $row_name_wh = mysqli_fetch_assoc($result_name_wh)){
+				$name = $row_name_wh['name'];
+			}
+		}
 		$reason = $_POST[$key."_idreason"];
 		$distance = $_POST[$key."_iddistance"];
 		$query = "UPDATE " . $tablename . " SET new_id_admin='$value', new_name_admin='$name', approve_admin='yes', new_distance_admin='$distance', reason_admin='$reason' WHERE from_id='$fromid' AND to_id='$toid' AND commodity='$commodity'";
@@ -66,7 +74,6 @@ foreach ($_POST as $key => $value) {
 }
 mysqli_close($con);
 
-echo "<script>window.location.href = '../OptimisedDataLeg1.php';</script>";
-
+header("Location: ../OptimisedDataLeg1.php");
+exit();
 ?>
-<?php require('Fullui.php');  ?>
