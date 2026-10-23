@@ -274,15 +274,26 @@ require('Header.php');
 						var obj = resultarray["data"];
 						console.log(obj);
 						for (var datafield in obj){
-							var temp_id = obj[datafield]["uniqueid"];
-							var status = obj[datafield]["active"];
-							if(status==1){
-								status = "<span style='padding:5px' class='btn-success btn-rounded'>Active</span>";
-							}
-							else{
-								status = "<span style='padding:5px' class='btn-danger btn-rounded'>InActive</span>";
-							}
-							var subpart = "<tr><td>" +  obj[datafield]["district"] +  "</td><td>" +  obj[datafield]["taluka"] +  "</td><td>"  + obj[datafield]["name"] +  "</td><td>"  + obj[datafield]["id"] +  "</td><td>"  + obj[datafield]["type"] +  "</td><td>"  + obj[datafield]["latitude"] +  "</td><td>"  + obj[datafield]["longitude"] +  "</td><td>"  + obj[datafield]["demand"] +  "</td><td>"  + obj[datafield]["demand_rice"]  + "</td><td>" + obj[datafield]["inventory_ragi"] + "</td><td>" + obj[datafield]["inventory_jowar"] + "</td><td>" + status + "</td><td> <button class='btn btn-info btn-rounded' onclick=\"change_status('"+ temp_id + "')\">Change Status</button></td><td> <button class='btn btn-warning btn-rounded' onclick=\"edit_entry('" + temp_id +  "')\">Edit</button></td><td> <button class='btn btn-danger btn-rounded' onclick=\"delete_entry('" + temp_id +"')\">Delete</button></td></tr>";
+							var temp_id   = obj[datafield]["uniqueid"];
+							var rawActive = obj[datafield]["active"];
+							var lat       = parseFloat(obj[datafield]["latitude"]);
+							var lng       = parseFloat(obj[datafield]["longitude"]);
+							var qty       = parseFloat(obj[datafield]["demand"]);
+
+							var isValidLat = (!isNaN(lat) && lat > 0 && lat < 40);
+							var isValidLng = (!isNaN(lng) && lng > 65 && lng < 100);
+							var isValidQty = (!isNaN(qty) && qty >= 0);
+							var isRowValid = (isValidLat && isValidLng && isValidQty);
+
+							var status = (rawActive == 1 && isRowValid)
+								? "<span style='padding:5px' class='btn-success btn-rounded'>Active</span>"
+								: "<span style='padding:5px' class='btn-danger btn-rounded'>InActive</span>";
+
+							var changeStatusBtn = (!isRowValid)
+								? "<button class='btn btn-info btn-rounded' disabled style='opacity:0.5;cursor:not-allowed;' title='Cannot activate: Coordinates out of range or negative value'>Change Status</button>"
+								: "<button class='btn btn-info btn-rounded' onclick=\"change_status('"+ temp_id + "')\">Change Status</button>";
+
+							var subpart = "<tr><td>" +  obj[datafield]["district"] +  "</td><td>" +  obj[datafield]["taluka"] +  "</td><td>"  + obj[datafield]["name"] +  "</td><td>"  + obj[datafield]["id"] +  "</td><td>"  + obj[datafield]["type"] +  "</td><td>"  + obj[datafield]["latitude"] +  "</td><td>"  + obj[datafield]["longitude"] +  "</td><td>"  + obj[datafield]["demand"] +  "</td><td>"  + obj[datafield]["demand_rice"]  + "</td><td>" + obj[datafield]["inventory_ragi"] + "</td><td>" + obj[datafield]["inventory_jowar"] + "</td><td>" + status + "</td><td> " + changeStatusBtn + "</td><td> <button class='btn btn-warning btn-rounded' onclick=\"edit_entry('" + temp_id +  "')\">Edit</button></td><td> <button class='btn btn-danger btn-rounded' onclick=\"delete_entry('" + temp_id +"')\">Delete</button></td></tr>";
 							$('#fps_table').append(subpart);
 						}
 					}

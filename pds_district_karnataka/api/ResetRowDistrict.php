@@ -3,6 +3,19 @@ require('../util/Connection.php');
 require('../util/SessionCheck.php');
 require('../util/Logger.php');
 
+// Check timer expiry
+$queryTimer = "SELECT * FROM timer WHERE 1";
+$resultTimer = mysqli_query($con, $queryTimer);
+while($rowTimer = mysqli_fetch_array($resultTimer)) {
+	$dateTimer = $rowTimer['deadline_date'];
+	$timeTimer = $rowTimer['deadline_time'];
+	$targetTimestamp = strtotime($dateTimer . " " . $timeTimer);
+	if($targetTimestamp && time() >= $targetTimestamp) {
+		echo json_encode(["status" => "error", "message" => "Time is expired. Changes cannot be reset."]);
+		exit;
+	}
+}
+
 if (!isset($_POST['uniqueid'])) {
     echo json_encode(["status" => "error", "message" => "Missing uniqueid parameter"]);
     exit;

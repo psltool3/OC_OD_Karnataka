@@ -35,7 +35,7 @@ $district = $_POST["district"];
 $status = $_POST["status"];
 
 if($status=='active'){
-	$query = "UPDATE warehouse SET active='1' WHERE district='$district'";
+	$query = "UPDATE warehouse SET active='1' WHERE district='$district' AND (latitude + 0 > 0 AND latitude + 0 < 40 AND longitude + 0 > 65 AND longitude + 0 < 100 AND storage + 0 >= 0)";
 	writeLog("User ->" ." Warehouse Active -> ". $_SESSION['user'] . "| " . $district);
 }
 else{

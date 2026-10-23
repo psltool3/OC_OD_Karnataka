@@ -44,6 +44,8 @@ if($rolled_out == '1') {
 
 //code to check the time expiry
 
+$date = "";
+$time = "";
 $query = "SELECT * FROM timer WHERE 1";
 $result = mysqli_query($con,$query);
 while($row = mysqli_fetch_array($result)){
@@ -55,7 +57,7 @@ $targetTimestamp = strtotime($targetDateTime);
 $currentTimestamp = time();
 $expired = 0; 
 
-if($currentTimestamp >= $targetTimestamp) {
+if($targetTimestamp && $currentTimestamp >= $targetTimestamp) {
     $expired = 1;
 }
 
@@ -122,6 +124,11 @@ if($currentTimestamp >= $targetTimestamp) {
 		background-color: #FFCF8B;
 	}
 
+	.btn:disabled, .btn[disabled] {
+		cursor: not-allowed;
+		opacity: 0.6;
+		pointer-events: none;
+	}
 </style>
 
 
@@ -305,9 +312,9 @@ if($currentTimestamp >= $targetTimestamp) {
 										<input type="hidden" id="district" name="district" value="<?php echo $district ?>" />
 										<?php
 										if($expired==0){
-											echo "<button class='btn btn-info pull-right' onClick='acceptAll()' type='button' style='margin-left:10px;'>Accept All</button><button class='btn btn-primary pull-right' onClick='sendData()' type='button'>Save</button>";
+											echo "<button class='btn btn-info pull-right' id='btn_accept_all' onClick='acceptAll()' type='button' style='margin-left:10px;'>Accept All</button><button class='btn btn-primary pull-right' id='btn_save_all' onClick='sendData()' type='button'>Save</button>";
 										}else{
-											echo "<button class='btn btn-primary pull-right' type='button'>Time Expired</button>";
+											echo "<button class='btn btn-primary pull-right' id='btn_time_expired' type='button' disabled>Time Expired</button>";
 										}
 										?>
                                         &nbsp </br>
@@ -385,7 +392,18 @@ if($currentTimestamp >= $targetTimestamp) {
         <!-- END TEMPLATE -->
 
 		<script>
-		
+		var isExpired = <?php echo $expired ? 1 : 0; ?>;
+		var endTime = "<?php echo strtotime($date." ".$time); ?>";
+
+		function isTimeExpired() {
+			if (isExpired == 1) return true;
+			var currentTime = Math.floor(Date.now() / 1000);
+			if (endTime && currentTime >= endTime) {
+				return true;
+			}
+			return false;
+		}
+
 		var modifiedData = {};
 		var modifiedIdData = {};
 		var modifiedReasonData = {};
@@ -393,6 +411,10 @@ if($currentTimestamp >= $targetTimestamp) {
 		var modifiedApproveData = {};
 
 		function saveRow(uniqueId) {
+			if (isTimeExpired()) {
+				alert("Time is expired. Changes cannot be saved.");
+				return;
+			}
 			// Find the value selected for this row
 			var boolSelect = document.getElementById(uniqueId + "_bool");
 			var value = "";
@@ -441,6 +463,8 @@ if($currentTimestamp >= $targetTimestamp) {
 				success: function(response){
 					if(response.trim() === "success") {
 						alert("Saved successfully");
+					} else if(response.trim() === "time_expired") {
+						alert("Time is expired. Changes cannot be saved.");
 					} else {
 						alert("Saved"); 
 						fetchDataFromServerId(); 
@@ -534,6 +558,10 @@ if($currentTimestamp >= $targetTimestamp) {
 		}
 		
 		function sendData(){
+			if (isTimeExpired()) {
+				alert("Time is expired. Changes cannot be saved.");
+				return;
+			}
 			for (var key in modifiedData) {
 				if (modifiedData.hasOwnProperty(key)) {
 					var value = modifiedData[key];
@@ -561,6 +589,10 @@ if($currentTimestamp >= $targetTimestamp) {
 		var uniqueid_bool_array = [];
 		
 		function acceptAll(){
+			if (isTimeExpired()) {
+				alert("Time is expired.");
+				return;
+			}
 			for (let i = 0; i < uniqueid_bool_array.length; i++) {
 				setSelectedValue(uniqueid_bool_array[i],'yes');
 				enableDisable(uniqueid_bool_array[i].substring(0, uniqueid_bool_array[i].indexOf('_bool')));
@@ -833,8 +865,8 @@ if($currentTimestamp >= $targetTimestamp) {
 										var district_reason = "<td><select class='form-control' onchange='handleReasonChange(\"" + uniqueid_idreason + "\")' id='" + uniqueid_idreason + "' name='" + uniqueid_idreason + "' disabled><option value=''>Select</option><option value='Road not accessible'>Road not accessible</option><option value='Road repair going on'>Road repair going on</option><option value='Pertaining to Distance'>Pertaining to Distance</option></select></td>";
 									}
 									
-									var disabledAttr = (approve_admin === "yes") ? "disabled" : "";
-									var action_btn = "<td><button class='btn btn-info' onclick='saveRow(\"" + uniqueid + "\")' " + disabledAttr + " style='margin-bottom: 5px; display: block; width: 100%;'>Save</button><button class='btn btn-warning' onclick='resetRow(\"" + uniqueid + "\")' " + disabledAttr + " style='display: block; width: 100%;'>Reset</button></td>";
+									var disabledAttr = (approve_admin === "yes" || isTimeExpired()) ? "disabled" : "";
+									var action_btn = "<td><button class='btn btn-info btn-save-row' onclick='saveRow(\"" + uniqueid + "\")' " + disabledAttr + " style='margin-bottom: 5px; display: block; width: 100%;'>Save</button><button class='btn btn-warning btn-reset-row' onclick='resetRow(\"" + uniqueid + "\")' " + disabledAttr + " style='display: block; width: 100%;'>Reset</button></td>";
 									
 									$('#table_body').append(subpart1 + warehouse_id_part + district_reason + newdistance  + admin_approve + action_btn + "</tr>");
 								}
@@ -849,9 +881,6 @@ if($currentTimestamp >= $targetTimestamp) {
 			}
 		}
 		fetchDataFromServer();
-		
-		// Set the end time from PHP to JavaScript
-		var endTime = "<?php echo strtotime($date." ".$time); ?>";
 		
 		// Update the countdown timer every second
 		function updateTimer() {
@@ -871,6 +900,17 @@ if($currentTimestamp >= $targetTimestamp) {
 
 			// Display the updated time
 			document.getElementById('countdown').innerHTML = "<b>Days:</b>" + days.toString() + " <b>Hours:</b>" + remainingHours.toString() + " <b>Minutes:</b>" + minutes.toString() + " <b>Seconds:</b>" + seconds.toString();
+
+			if (remainingTime <= 0 || isExpired == 1) {
+				isExpired = 1;
+				$('.btn-save-row, .btn-reset-row').prop('disabled', true);
+				if ($('#btn_save_all').length) {
+					$('#btn_save_all').replaceWith("<button class='btn btn-primary pull-right' id='btn_time_expired' type='button' disabled>Time Expired</button>");
+				}
+				if ($('#btn_accept_all').length) {
+					$('#btn_accept_all').remove();
+				}
+			}
 		}
 
 		// Update the timer initially
@@ -888,6 +928,10 @@ if($currentTimestamp >= $targetTimestamp) {
 		}
 
 		function resetRow(uniqueid) {
+			if (isTimeExpired()) {
+				alert("Time is expired. Changes cannot be reset.");
+				return;
+			}
 			if(confirm("Are you sure you want to reset this row's tagging?")) {
 				$.ajax({
 					type: "POST",

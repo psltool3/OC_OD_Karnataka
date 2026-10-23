@@ -37,7 +37,7 @@ $fpstype = $_POST["fpstype"];
 
 if($fpstype=='Model FPS'){
 	if($status=='active'){
-		$query = "UPDATE fps SET active='1' WHERE district='$district' AND type='Model FPS'";
+		$query = "UPDATE fps SET active='1' WHERE district='$district' AND type='Model FPS' AND (latitude + 0 > 0 AND latitude + 0 < 40 AND longitude + 0 > 65 AND longitude + 0 < 100 AND demand + 0 >= 0)";
 		writeLog("User ->" ." Model FPS Active -> ". $_SESSION['user'] . "| " . $district);
 	}
 	else{
@@ -47,7 +47,7 @@ if($fpstype=='Model FPS'){
 }
 else{
 	if($status=='active'){
-		$query = "UPDATE fps SET active='1' WHERE district='$district' AND type='Normal FPS'";
+		$query = "UPDATE fps SET active='1' WHERE district='$district' AND type='Normal FPS' AND (latitude + 0 > 0 AND latitude + 0 < 40 AND longitude + 0 > 65 AND longitude + 0 < 100 AND demand + 0 >= 0)";
 		writeLog("User ->" ." Normal FPS Active -> ". $_SESSION['user'] . "| " . $district);
 	}
 	else{

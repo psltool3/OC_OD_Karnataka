@@ -8,6 +8,23 @@ require('Header.php');
 set_time_limit(300); // Set to 300 seconds (5 minutes), or 0 for no limit
 
 
+// Check timer expiry
+$queryTimer = "SELECT * FROM timer WHERE 1";
+$resultTimer = mysqli_query($con, $queryTimer);
+while($rowTimer = mysqli_fetch_array($resultTimer)) {
+	$dateTimer = $rowTimer['deadline_date'];
+	$timeTimer = $rowTimer['deadline_time'];
+	$targetTimestamp = strtotime($dateTimer . " " . $timeTimer);
+	if($targetTimestamp && time() >= $targetTimestamp) {
+		if(isset($_POST['ajax'])) {
+			echo "time_expired";
+		} else {
+			echo "<script>alert('Time is expired. Changes cannot be saved.'); window.location.href='../Home.php';</script>";
+		}
+		exit;
+	}
+}
+
 $query = "SELECT * FROM optimised_table ORDER BY last_updated DESC LIMIT 1";
 $result = mysqli_query($con,$query);
 $response = array();

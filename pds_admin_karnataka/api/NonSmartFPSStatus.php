@@ -21,7 +21,7 @@ if($numrows>0){
 	$status = $row['active'];
 	$fpsname = $row['name'];
 	if($status==0){
-		$query = "UPDATE fps SET active='1' WHERE type='Normal FPS'";
+		$query = "UPDATE fps SET active='1' WHERE type='Normal FPS' AND (latitude + 0 > 0 AND latitude + 0 < 40 AND longitude + 0 > 65 AND longitude + 0 < 100 AND demand + 0 >= 0)";
 		writeLog("User ->" ."All Normal FPS Active -> ". $_SESSION['user']);
 		mysqli_query($con,$query);
 	}

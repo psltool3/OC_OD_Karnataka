@@ -232,7 +232,14 @@ try{
 					$DCP->setType($column[$type]);
 					$DCP->setDemand($column[$demand]);
 					$DCP->setDemandRice($column[$demand_rice]);
-					$DCP->setActive($column[$active]);
+					$isActive = (isset($column[$active]) && $column[$active] == 1) ? '1' : '0';
+					$vLat = is_numeric($column[$latitude]) ? (float)$column[$latitude] : 0;
+					$vLng = is_numeric($column[$longitude]) ? (float)$column[$longitude] : 0;
+					$vDemand = is_numeric($column[$demand]) ? (float)$column[$demand] : -1;
+					if (!($vLat > 0 && $vLat < 40 && $vLng > 65 && $vLng < 100 && $vDemand >= 0)) {
+						$isActive = '0';
+					}
+					$DCP->setActive($isActive);
 
 					if (!preg_match('/^[A-Za-z0-9]+$/', $column[$id])) {
 						echo "Error: Row " . ($i + 1) . " - FCI ID must contain only letters and numbers with no spaces or special characters</br>";

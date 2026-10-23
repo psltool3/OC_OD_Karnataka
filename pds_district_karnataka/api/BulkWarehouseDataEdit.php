@@ -193,7 +193,14 @@ try{
 					$Warehouse->setragi($column[$ragi]);
 					$Warehouse->setjowar($column[$jowar]);
 					$Warehouse->setWarehousetype($column[$warehousetype]);
-					$Warehouse->setActive($column[$active]);
+					$isActive = (isset($column[$active]) && $column[$active] == 1) ? '1' : '0';
+					$vLat = is_numeric($column[$latitude]) ? (float)$column[$latitude] : 0;
+					$vLng = is_numeric($column[$longitude]) ? (float)$column[$longitude] : 0;
+					$vStorage = is_numeric($column[$storage]) ? (float)$column[$storage] : -1;
+					if (!($vLat > 0 && $vLat < 40 && $vLng > 65 && $vLng < 100 && $vStorage >= 0)) {
+						$isActive = '0';
+					}
+					$Warehouse->setActive($isActive);
 					$query_check = $Warehouse->checkEdit($Warehouse);
 					$query_result = mysqli_query($con, $query_check);
 					$numrows = mysqli_num_rows($query_result);
@@ -307,7 +314,14 @@ try{
 					$Warehouse->setragi($column[$ragi]);
 					$Warehouse->setjowar($column[$jowar]);
 					$Warehouse->setWarehousetype($column[$warehousetype]);
-					$Warehouse->setActive($column[$active]);
+					$isActive = (isset($column[$active]) && $column[$active] == 1) ? '1' : '0';
+					$vLat = is_numeric($column[$latitude]) ? (float)$column[$latitude] : 0;
+					$vLng = is_numeric($column[$longitude]) ? (float)$column[$longitude] : 0;
+					$vStorage = is_numeric($column[$storage]) ? (float)$column[$storage] : -1;
+					if (!($vLat > 0 && $vLat < 40 && $vLng > 65 && $vLng < 100 && $vStorage >= 0)) {
+						$isActive = '0';
+					}
+					$Warehouse->setActive($isActive);
 					if (!isset($column[$taluka]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($column[$taluka]))) {
 						echo "Error : Row " . ($i + 1) . " - Taluka must contain only letters, numbers, and spaces with no special characters</br>";
 						$redirect = 0;

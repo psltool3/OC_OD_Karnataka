@@ -208,7 +208,14 @@ try{
 					$FPS->setType($column[$type]);
 					$FPS->setDemand($column[$demand]);
 					$FPS->setDemandrice($column[$demand_rice]);
-					$FPS->setActive($column[$active]);
+					$isActive = (isset($column[$active]) && $column[$active] == 1) ? '1' : '0';
+					$vLat = is_numeric($column[$latitude]) ? (float)$column[$latitude] : 0;
+					$vLng = is_numeric($column[$longitude]) ? (float)$column[$longitude] : 0;
+					$vDemand = is_numeric($column[$demand]) ? (float)$column[$demand] : -1;
+					if (!($vLat > 0 && $vLat < 40 && $vLng > 65 && $vLng < 100 && $vDemand >= 0)) {
+						$isActive = '0';
+					}
+					$FPS->setActive($isActive);
 					$query_check = $FPS->checkEdit($FPS);
 					$query_result = mysqli_query($con, $query_check);
 					$numrows = mysqli_num_rows($query_result);
@@ -324,7 +331,14 @@ try{
 					$FPS->setDemandrice($column[$demand_rice]);
 				    $FPS->setInventoryragi($column[$inventory_ragi]);
 					$FPS->setInventoryjowar($column[$inventory_jowar]);
-					$FPS->setActive($column[$active]);
+					$isActive = (isset($column[$active]) && $column[$active] == 1) ? '1' : '0';
+					$vLat = is_numeric($column[$latitude]) ? (float)$column[$latitude] : 0;
+					$vLng = is_numeric($column[$longitude]) ? (float)$column[$longitude] : 0;
+					$vDemand = is_numeric($column[$demand]) ? (float)$column[$demand] : -1;
+					if (!($vLat > 0 && $vLat < 40 && $vLng > 65 && $vLng < 100 && $vDemand >= 0)) {
+						$isActive = '0';
+					}
+					$FPS->setActive($isActive);
 					if (!isset($column[$taluka]) || !preg_match('/^[A-Za-z0-9 ]+$/', trim($column[$taluka]))) {
 						echo "Error : Row " . ($i + 1) . " - Taluka must contain only letters, numbers, and spaces with no special characters</br>";
 						$redirect = 0;

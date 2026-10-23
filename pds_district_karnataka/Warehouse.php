@@ -71,13 +71,29 @@ td {
 										while($row = mysqli_fetch_array($result))
 										{
 											$temp_id = (string)$row['uniqueid'];
-											$status = $row['active'];
-											if($status==1){
+											$lat     = $row['latitude'];
+											$lng     = $row['longitude'];
+											$qty     = $row['storage'];
+
+											$isValidLat = ($lat !== null && $lat !== '' && is_numeric($lat) && (float)$lat > 0 && (float)$lat < 40);
+											$isValidLng = ($lng !== null && $lng !== '' && is_numeric($lng) && (float)$lng > 65 && (float)$lng < 100);
+											$isValidQty = ($qty !== null && $qty !== '' && is_numeric($qty) && (float)$qty >= 0);
+											$isRowValid = ($isValidLat && $isValidLng && $isValidQty);
+
+											if($row['active'] == 1 && $isRowValid){
 												$status = "<span style='padding:5px' class='btn-success btn-rounded'>Active</span>";
 											}
 											else{
 												$status = "<span style='padding:5px' class='btn-danger btn-rounded'>InActive</span>";
 											}
+
+											if(!$isRowValid){
+												$changeStatusBtn = "<button class='btn btn-info btn-rounded' disabled style='opacity:0.5;cursor:not-allowed;' title='Cannot activate: Coordinates out of range or negative value'>Change Status</button>";
+											}
+											else{
+												$changeStatusBtn = "<button class='btn btn-info btn-rounded' onclick=\"change_status('{$temp_id}')\">Change Status</button>";
+											}
+
 											echo "<tr><td>{$row['district']}</td>".
 											"<td>{$row['taluka']}</td>".
 											"<td>{$row['name']}</td>".
@@ -90,7 +106,7 @@ td {
 											"<td>{$row['ragi']}</td>".
 											"<td>{$row['jowar']}</td>".
 											"<td>$status</td>".
-											 "<td> <button class='btn btn-info btn-rounded' onclick=\"change_status('{$temp_id}')\">Change Status</button></td>".
+											 "<td> {$changeStatusBtn}</td>".
 											 "<td> <button class='btn btn-warning btn-rounded' onclick=\"edit_entry('{$temp_id}')\">Edit</button></td>".
 											 "<td> <button class='btn btn-danger btn-rounded' onclick=\"delete_entry('{$temp_id}')\">Delete</button></td></tr>";
 										}

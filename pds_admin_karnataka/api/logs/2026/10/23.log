@@ -1,0 +1,5 @@
+[2026-10-23 23:13:53] User -> Warehouse Edit ->admin@pds| Requested JSON -> {"name":"Kk","taluka":"akki","uniqueid":"WH_69ab83b932e98","active":false,"type":"motorable","latitude":"27.89","storage":"1000","district":"Bagalkote","id":"2600175675","warehousetype":"swc","ragi":"500","jowar":"1000","longitude":"78.4"}
+[2026-10-23 23:13:55] User -> Warehouse InActive -> admin@pds| Kk
+[2026-10-23 23:13:56] User -> Warehouse Active -> admin@pds| Kk
+[2026-10-23 23:13:57] User -> Warehouse InActive -> admin@pds| Kk
+[2026-10-23 23:13:58] User -> Warehouse Active -> admin@pds| Kk
